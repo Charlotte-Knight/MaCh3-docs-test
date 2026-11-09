@@ -77,7 +77,13 @@ nitpick_ignore_regex = [
 ]
 
 exclude_patterns = ["_build"]
-html_theme = "furo"
+html_theme = "pydata_sphinx_theme"
 html_title = "MaCh3 documentation"
 html_logo = "_static/mach3logo.png"
 html_static_path = ["_static"]
+html_theme_options = {
+    "logo": {
+        "image_light": "_static/mach3logo.png",
+        "image_dark": "_static/mach3logo.png",
+    },
+}
