@@ -2,7 +2,7 @@
 > **Last updated:** 20 Feb 2026
 
 ## Centrum Informatyczne Świerk (CIS), Warsaw Cluster
-<img src="https://github.com/mach3-software/MaCh3/assets/45295406/9c8b2900-d3c2-4a04-a6a5-99ff2c7d10b0" width="30%"/>
+<img src="../_static/images/clusters-01.png" width="30%"/>
 
 ```
 source /mnt/opt/spack/0.20/share/spack/setup-env.sh
@@ -29,7 +29,7 @@ System: CentOS Linux 7
 ```
 
 ## LXPLUS, CERN Cluster
-<img src="https://github.com/mach3-software/MaCh3/assets/45295406/1fb468ab-c923-4869-8225-d5ae2473aeb3" width="60%"/>
+<img src="../_static/images/clusters-02.png" width="60%"/>
 
 Works with default configuration:
 ```
@@ -40,7 +40,7 @@ ROOT:   6.30/04
 ```
 
 ## Fir/Rorqual/Narval, Digital Research Alliance of Canada
-<img src="https://github.com/mach3-software/MaCh3/assets/45295406/bfd11868-31b2-4f71-82d5-c4503c919434" width="60%"/>
+<img src="../_static/images/clusters-03.png" width="60%"/>
 
 ```
 module load root

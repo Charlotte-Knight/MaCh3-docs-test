@@ -25,7 +25,7 @@ However, there are other explanation of such phenomena.
 #### Marginalisation
 If we have two highly correlated parameters and one of them has restrictive physical boundaries (for example allowed values are 0 or 1, and the expected value is close to 0), then this can manifest in marginalisation. When you diagnose 1D posterior, it is marginalised over all other dimensions. Aforementioned parameters with boundary often have non-Gaussian distribution. When we marginalise, it often cuts distribution. It is best seen in the below example.
 
-<img width="880" alt="Structure" src="https://github.com/user-attachments/assets/c99d520d-383f-4b21-9953-9a5eabdc6cb6">
+<img width="880" alt="Structure" src="../_static/images/faq-01.png">
 
 #### Degeneracy
 If multiple parameters produce similar changes in the likelihood (for example by affecting the same bins in a similar way), the fit may contain degeneracies. In such cases, the posterior can become broad or multi-modal, making convergence slower and causing apparent shifts from the Asimov point.
@@ -105,4 +105,4 @@ MaCh3 is version controlled. You can find all releases [here](https://github.com
 
 ### Code Structure
 > **Last updated:** 27 Feb 2026
-<img width="880" alt="Structure" src="https://github.com/user-attachments/assets/8fcf367c-0e93-4950-a894-ec6a2a4ab7c9">
+<img width="880" alt="Structure" src="../_static/images/faq-02.png">

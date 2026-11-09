@@ -17,7 +17,7 @@
 * The T2K Collaboration. Measurements of neutrino oscillation in appearance and disappearance channels by the T2K experiment with 6.6×10²⁰ protons on target. *Phys. Rev. D, 91(7), 072010* (**2015**). [https://doi.org/10.1103/PhysRevD.91.072010](https://doi.org/10.1103/PhysRevD.91.072010)
 * The T2K Collaboration. Measurement of Neutrino Oscillation Parameters from Muon Neutrino Disappearance with an Off-axis BeamMeasurement of Neutrino Oscillation Parameters from Muon Neutrino Disappearance with an Off-axis Beam. *Phys. Rev. Lett. 111, 211803* (**2013**). [https://doi.org/10.1103/PhysRevLett.111.211803](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.111.211803)
 
-<img width="60%" alt="mach3_publications_per_year" src="https://github.com/user-attachments/assets/788ba854-da98-4213-bfa8-e675f7e6e65f" />
+<img width="60%" alt="mach3_publications_per_year" src="../_static/images/publications-01.png" />
 
 ## Theses using MaCh3
 * Naseem Khan, [Prototyping of and sensitivity studies for a gaseous argon near detector for the deep underground neutrino experiment](https://spiral.imperial.ac.uk/entities/publication/1115681d-77aa-4014-b1eb-d947ab7d4388), (**2026**)
@@ -55,7 +55,7 @@ Constrain Oscillation Parameters](https://theses.gla.ac.uk/84120/), (**2023**)
 * Richard Calland, [A 3 flavour joint near and far detector neutrino oscillation analysis at T2K](https://livrepository.liverpool.ac.uk/2009123/), (**2014**)
 * Casey Bojechko, [Simultaneous Analysis of Near and Far Detector Samples of the T2K Experiment to Measure Muon Neutrino Disappearance](https://www.t2k.org/docs/thesis/035/cb_phd), (**2013**)
 
-<img width="60%" alt="image" src="https://github.com/user-attachments/assets/6cab074f-6768-42fa-8de4-7b413673832c" />
+<img width="60%" alt="image" src="../_static/images/publications-02.png" />
 
 <!--
 ## Conference talks using MaCh3

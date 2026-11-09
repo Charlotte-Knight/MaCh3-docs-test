@@ -31,7 +31,7 @@ If you have really good traces but bad auto-correlations, it might simply be the
 ### When does it Work?
 Adaptive MCMC works really well when all your parameters are Gaussian! This is typically the case for ND-only fits and most cross-section/flux parameters. As a rule of thumb it's best to start throwing from your covariance matrix about 1000 - 10,000 steps into running your fit. You can see the effects of changing the adaption starting step as well as how well tuned the initial step sizes here:
 
-<img src=https://github.com/user-attachments/assets/fd968ef5-f6e6-4a5d-bdcb-0cbe31beb39c width="500"/>
+<img src=../_static/images/adaptive-mcmc-01.png width="500"/>
 
 *MCMC traces for chains with manual tuning (top), adaption applied from the first step (middle) and adaption applied from step 10,000. The chain with adaption from 10,000 shows the best fit with the lowest auto-correlation and a trace that rapidly improves before stabilising.*
 
@@ -43,7 +43,7 @@ As with all MCMC, the first step is to check your traces and auto-correlations. 
 ### When Does This Fail?
 So far it seems that AMCMC fails for multi-modal and cyclical parameters i.e. oscillations (and anything correlated with them like detector parameters). This can result in chains that converge to entirely incorrect results as in the following figure.
 
-<img src=https://github.com/user-attachments/assets/27663413-7b4f-499e-b76a-f76e1aa01ac4 width="500"/>
+<img src=../_static/images/adaptive-mcmc-02.png width="500"/>
 
 *MCMC fit with adaption switched off for all parameters (blue), non-oscillation parameters (green) and all parameters (red). One can see that they converge to totally different values.*
 
@@ -72,12 +72,12 @@ If this happens you've simply not accepted enough steps. Set the gap between Sta
 * Try plotting the log-likelihood vs step plot.
 If the plot you've got looks something like this:
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/3be7e0cf-06fc-4c6c-863b-82086f0d8c12" />
+<img width="500" alt="image" src="../_static/images/adaptive-mcmc-03.png" />
 
 you simply need to adapt for longer!
 
 ### I've plotted my Likelihood-trace it looks like a saw-tooth
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/b5d8871e-5575-4fce-ac3b-4d6f6e01de1b" />
+<img width="500" alt="image" src="../_static/images/adaptive-mcmc-04.png" />
 
 This is caused by over-zealous use of Robbins-Monro's reset functionality. Typically we want to reset maybe once or twice to ensure the process is stable + not too badly affected by burn-in.
 

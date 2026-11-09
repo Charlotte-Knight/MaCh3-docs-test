@@ -37,7 +37,7 @@ posterior predictive distribution with the following steps:
 Figure shows the prior and posterior predictive distributions of the number of events. The prior predictive distribution is very wide compared to the posterior predictive distribution, and the relative error on the number of events for this sample has been reduced from 14\% to 0.7\%, which demonstrates how fit can reduce uncertainties.
 
 
-<img width="60%" alt="Prior and posterior predictive distributions" src="https://github.com/user-attachments/assets/eee1c0bb-b14a-4f1f-9063-3e84f7a3ab12" />
+<img width="60%" alt="Prior and posterior predictive distributions" src="../_static/images/posterior-predictive-01.png" />
 
 This technique is visualised in following animation:
 
@@ -63,7 +63,7 @@ similarly between the drawn prediction and the data distribution:
 _-LLH(Data, Draw)_. We repeat this process a few thousand times. An example of
 _-LLH(Data, Draw)_ vs. _-2LLH(Draw Fluc, Draw)_ is shown below.
 
-<img width="60%" alt="image" src="https://github.com/user-attachments/assets/519d4b46-5d11-402a-858b-9e9fc9daf99e" />
+<img width="60%" alt="image" src="../_static/images/posterior-predictive-02.png" />
 
 We identify two methods for calculating the $p$-value, statistically
 fluctuating two different distributions. The first method uses the prediction

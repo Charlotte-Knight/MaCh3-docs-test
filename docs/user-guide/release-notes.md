@@ -1,6 +1,6 @@
 # Release Notes
 
-<img width="80%" alt="mach3_release_timeline" src="https://github.com/user-attachments/assets/0967a7b3-8a15-4f6e-8eb1-1e89d04d81bc" />
+<img width="80%" alt="mach3_release_timeline" src="../_static/images/release-notes-01.png" />
 
 Legend:
 * **Bold** - indicate breaking change.

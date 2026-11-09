@@ -19,7 +19,7 @@ breathe_default_project = "MaCh3"
 exhale_args = {
     "containmentFolder": "./api",
     "rootFileName": "library_root.rst",
-    "rootFileTitle": "MaCh3 C++ API",
+    "rootFileTitle": "C++ API",
     "doxygenStripFromPath": "..",
     "createTreeView": True,
     "exhaleExecutesDoxygen": True,
@@ -27,6 +27,7 @@ exhale_args = {
         PROJECT_NAME = MaCh3
         GENERATE_HTML = NO
         GENERATE_XML = YES
+        GENERATE_TODOLIST = NO
         XML_OUTPUT = xml
         INPUT = ../CLI ../Doc/MaCh3Web/Definitions.dox ../Fitters ../Manager ../NuDock ../Parameters ../Samples ../Splines ../Utils/Plotting
         FILE_PATTERNS = *.h *.hh *.hpp *.hxx *.dox
@@ -76,7 +77,7 @@ nitpick_ignore_regex = [
     ),
 ]
 
-exclude_patterns = ["_build"]
+exclude_patterns = ["_build", "README.md"]
 html_theme = "pydata_sphinx_theme"
 html_title = "MaCh3 documentation"
 html_logo = "_static/mach3logo.png"

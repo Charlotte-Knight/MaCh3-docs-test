@@ -14,7 +14,7 @@ The C++ API is available for further detail on
 {cpp:class}`ParameterHandlerGeneric` and
 {cpp:func}`ParameterHandlerBase::GetNumParams`. For overloaded methods, include
 the parameter types in the C++ domain role, as explained in the
-[documentation build guide](../README.md).
+[Docs section](docs/index.md).
 
 ## Fun first steps with MCMC
 

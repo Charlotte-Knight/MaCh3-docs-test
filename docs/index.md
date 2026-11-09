@@ -19,6 +19,12 @@ The API is also linked from the guide; for example, see
 user-guide/index
 tutorials/index
 api/library_root
-README
-Legacy Doxygen documentation <https://mach3-software.github.io/MaCh3/index.html>
+Doxygen <https://mach3-software.github.io/MaCh3/index.html>
+```
+
+```{toctree}
+:caption: Project Info
+
+user-guide/publications
+user-guide/release-notes
 ```

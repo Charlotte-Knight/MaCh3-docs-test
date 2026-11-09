@@ -15,6 +15,5 @@ adaptive-mcmc
 splines
 containers
 clusters
-publications
-release-notes
+docs/index
 ```
