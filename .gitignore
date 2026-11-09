@@ -6,12 +6,16 @@
 
 build*/
 install/
+.venv/
 Doc/html
 Doc/latex
 Doc/Doxyfile
 Doc/User-Guide
 Doc/sphinx/source/api/
 Doc/sphinx/source/conf.py
+docs/api/
+docs/xml/
+docs/_build/
 .cache/
 
 sphinx_env/
