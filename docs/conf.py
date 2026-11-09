@@ -87,4 +87,5 @@ html_theme_options = {
         "image_light": "_static/mach3logo.png",
         "image_dark": "_static/mach3logo.png",
     },
+    "github_url": "https://github.com/mach3-software/MaCh3",
 }
