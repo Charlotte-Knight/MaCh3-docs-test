@@ -74,6 +74,6 @@ method to be better.
 
 The p-value is the ratio of number of draws below the y = x line to all considered draws.
 
-## References
+## Further reading
 
-[1] Kamil Skwarczynski PhD thesis.
+Kamil Skwarczynski's PhD thesis.

@@ -27,4 +27,5 @@ Doxygen <https://mach3-software.github.io/MaCh3/index.html>
 
 user-guide/publications
 user-guide/release-notes
+bibliography
 ```

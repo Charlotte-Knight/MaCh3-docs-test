@@ -11,6 +11,7 @@ extensions = [
     "myst_parser",
     "sphinx.ext.graphviz",
     "sphinx.ext.mathjax",
+    "sphinxcontrib.bibtex",
 ]
 
 root_doc = "index"
@@ -19,6 +20,7 @@ nitpicky = True
 
 breathe_projects = {"MaCh3": "./xml"}
 breathe_default_project = "MaCh3"
+bibtex_bibfiles = ["../Doc/MaCh3Web/bibliography.bib"]
 
 
 def breathe_specifications(kind):
@@ -51,6 +53,7 @@ exhale_args = {
         CLASS_GRAPH = YES
         COLLABORATION_GRAPH = YES
         XML_OUTPUT = xml
+        CITE_BIB_FILES = ../Doc/MaCh3Web/bibliography.bib
         INPUT = ../CLI ../Doc/MaCh3Web/Definitions.dox ../Fitters ../Manager ../NuDock ../Parameters ../Samples ../Splines ../Utils/Plotting
         FILE_PATTERNS = *.h *.hh *.hpp *.hxx *.dox
         RECURSIVE = YES

@@ -61,7 +61,10 @@ Geweke Diagnostic helps to define what burn it should it be. You should select b
 <img src="../_static/images/mcmc-convergence-09.png" width="400" height="400"/>
 
 ## Global Step Scale
-According to **[1]** (Section 3.2.1), the global step size should be equal to 2.38^2/N_params. Keep in mind this refers to the global step scale for a given covariance object like xsec covariance or detector covariance.
+According to {cite:p}`luengo2020survey` (Section 3.2.1), the global step size
+should be equal to $2.38^2/N_{\mathrm{params}}$. Keep in mind this refers to
+the global step scale for a given covariance object like xsec covariance or
+detector covariance.
 
 ## Manual Tuning
 This procedure is very tedious and requires intuition of how a given parameter behaves. It is a bit of dark magic however skilled users should be able to tune it relatively fast compared with the non-skilled user. The process is as follows, you run the chain, run the `diagnostic` executable look at plots adjust the step scale then run again fit and the process repeats. Each time you should look at autocorrelations, traces, etc. (see discussion above). Another important trick is not to run full fit. Instead of running 10M chain, you might run 200k. Number of steps depends on number of parameters and _Lag(n = ?)_ you are interested in. <br />
@@ -80,7 +83,3 @@ The last point is that data fit may require a different tuning than the Asimov f
 * To avoid having to hand tune a large number of parameters where correlations will impact the tuning of one another, a good first step is using the LLH scan step scale. It considers the LLH distribution, assuming it is Gaussian, and assigns the step scale for the parameter as 2.38/sqrt(N_params*LLH_value), where the LLH_value is the maximum value in the distribution.
 * The code also ensures that any correlated parameters (where correlated is defined as > 0.3) have the same step scale assigned, by taking the average of the LLH results for each case.
 * It is also possible to consider the LLH step scale for only a set combination of parameters, but it is important to take care that any changes to some step scales, do not effect the convergence of other parameters, especially those that are correlated to the newly tuned parameters.
-
-
-## References
-[1] https://asp-eurasipjournals.springeropen.com/track/pdf/10.1186/s13634-020-00675-6.pdf  <br />

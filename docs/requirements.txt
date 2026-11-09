@@ -3,3 +3,4 @@ breathe>=5.1,<6
 exhale>=0.3.7,<1
 myst-parser>=3,<5
 pydata-sphinx-theme>=0.16.1,<0.25
+sphinxcontrib-bibtex>=2.6,<3
