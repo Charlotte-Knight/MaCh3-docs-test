@@ -2,10 +2,14 @@ project = "MaCh3"
 copyright = "MaCh3 Collaboration"
 author = "MaCh3 Collaboration"
 
+from exhale.utils import makeCustomSpecificationsMapping
+
+
 extensions = [
     "breathe",
     "exhale",
     "myst_parser",
+    "sphinx.ext.graphviz",
     "sphinx.ext.mathjax",
 ]
 
@@ -16,18 +20,36 @@ nitpicky = True
 breathe_projects = {"MaCh3": "./xml"}
 breathe_default_project = "MaCh3"
 
+
+def breathe_specifications(kind):
+    if kind in ("class", "struct"):
+        return [
+            ":members:",
+            ":protected-members:",
+            ":undoc-members:",
+            ":allow-dot-graphs:",
+        ]
+    return []
+
+
 exhale_args = {
     "containmentFolder": "./api",
     "rootFileName": "library_root.rst",
     "rootFileTitle": "C++ API",
     "doxygenStripFromPath": "..",
     "createTreeView": True,
+    "customSpecificationsMapping": makeCustomSpecificationsMapping(
+        breathe_specifications
+    ),
     "exhaleExecutesDoxygen": True,
     "exhaleDoxygenStdin": """
         PROJECT_NAME = MaCh3
         GENERATE_HTML = NO
         GENERATE_XML = YES
         GENERATE_TODOLIST = NO
+        HAVE_DOT = YES
+        CLASS_GRAPH = YES
+        COLLABORATION_GRAPH = YES
         XML_OUTPUT = xml
         INPUT = ../CLI ../Doc/MaCh3Web/Definitions.dox ../Fitters ../Manager ../NuDock ../Parameters ../Samples ../Splines ../Utils/Plotting
         FILE_PATTERNS = *.h *.hh *.hpp *.hxx *.dox
@@ -44,7 +66,6 @@ exhale_args = {
         PREDEFINED = _noexcept_:=noexcept _restrict_:= _MaCh3_Safe_Include_Start_:= _MaCh3_Safe_Include_End_:= ClassDef(name,version)= MULTITHREAD
         EXPAND_AS_DEFINED = _noexcept_ _restrict_ _MaCh3_Safe_Include_Start_ _MaCh3_Safe_Include_End_ ClassDef
         QUIET = YES
-        HAVE_DOT = YES
     """,
 }
 

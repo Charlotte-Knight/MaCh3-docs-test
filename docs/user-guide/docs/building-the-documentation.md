@@ -21,6 +21,12 @@ Exhale runs Doxygen during the Sphinx build and writes XML for Breathe to
 consume. The generated API pages are written to `docs/api/` and are not
 committed.
 
+Doxygen records class inheritance and collaboration relationships in the XML.
+Exhale adds Breathe's graph option to every generated class and struct page,
+and Sphinx renders available diagrams with Graphviz. These diagrams are
+regenerated automatically on every documentation build; no per-class pages
+or diagram files need to be maintained by hand.
+
 ## Publishing with Read the Docs
 
 The repository includes a Read the Docs configuration in `.readthedocs.yaml`.
