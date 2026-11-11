@@ -72,6 +72,9 @@ jobs:
     steps:
     - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
 
+    - name: Set container image name
+      run: echo "IMAGE_NAME=ghcr.io/$(printf '%s' "$GITHUB_REPOSITORY_OWNER" | tr '[:upper:]' '[:lower:]')/mach3" >> "$GITHUB_ENV"
+
     - name: Log in to GitHub Container Registry
       run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
@@ -87,7 +90,7 @@ jobs:
       run: |
         docker build . \
           --file ${{ matrix.file }} \
-          --tag ghcr.io/${{ github.repository_owner }}/mach3:${{ matrix.tag }} \
+          --tag "${IMAGE_NAME}:${{ matrix.tag }}" \
           --build-arg MACH3_VERSION="$MACH3_VERSION" \
           --build-arg CMAKE_OPTIONS="${{ matrix.cmakeoptions }}" \
           --build-arg REPOSITORY_URL="https://github.com/${{ github.repository }}"

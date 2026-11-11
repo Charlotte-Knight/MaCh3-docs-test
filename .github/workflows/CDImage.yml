@@ -38,6 +38,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
 
+      - name: Set container image name
+        run: echo "IMAGE_NAME=ghcr.io/$(printf '%s' "$GITHUB_REPOSITORY_OWNER" | tr '[:upper:]' '[:lower:]')/mach3" >> "$GITHUB_ENV"
+
       - name: Log in to GitHub Container Registry
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
@@ -49,14 +52,14 @@ jobs:
           if [ "${{ github.ref_type }}" == "tag" ]; then
             docker build . \
               --file "${{ matrix.file }}" \
-              --tag "ghcr.io/${{ github.repository_owner }}/mach3:${{ matrix.os }}${{ github.ref_name }}" \
+              --tag "${IMAGE_NAME}:${{ matrix.os }}${{ github.ref_name }}" \
               --build-arg MACH3_VERSION="${{ github.ref_name }}" \
               --build-arg CMAKE_OPTIONS="${{ matrix.cmakeoptions }}" \
               --build-arg INSTALL_OPTIONS="${{ matrix.installoptions }}"
           else
             docker build . \
               --file "${{ matrix.file }}" \
-              --tag "ghcr.io/${{ github.repository_owner }}/mach3:${{ matrix.tag_latest }}" \
+              --tag "${IMAGE_NAME}:${{ matrix.tag_latest }}" \
               --build-arg MACH3_VERSION="develop" \
               --build-arg CMAKE_OPTIONS="${{ matrix.cmakeoptions }}" \
               --build-arg INSTALL_OPTIONS="${{ matrix.installoptions }}"
@@ -65,9 +68,9 @@ jobs:
       - name: Push Docker image
         run: |
           if [ "${{ github.ref_type }}" == "tag" ]; then
-            docker push "ghcr.io/${{ github.repository_owner }}/mach3:${{ matrix.os }}${{ github.ref_name }}"
+            docker push "${IMAGE_NAME}:${{ matrix.os }}${{ github.ref_name }}"
           else
-            docker push "ghcr.io/${{ github.repository_owner }}/mach3:${{ matrix.tag_latest }}"
+            docker push "${IMAGE_NAME}:${{ matrix.tag_latest }}"
           fi
 
       - name: Delete old images
