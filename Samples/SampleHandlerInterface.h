@@ -145,7 +145,7 @@ class SampleHandlerInterface
   /// @param mc is mc
   double GetPoissonLLH(const double data, const double mc) const;
 
-  /// @brief Calculate test statistic for a single bin. Calculation depends on setting of @p fTestStatistic. Data and mc -> 0 cut-offs are defined in M3::_LOW_MC_BOUND_.
+  /// @brief Calculate test statistic for a single bin. Calculation depends on setting of @p fTestStatistic. Data and mc -> 0 cut-offs are defined in `M3::_LOW_MC_BOUND_`.
   ///
   /// @details
   ///
@@ -219,7 +219,7 @@ class SampleHandlerInterface
   ///
   /// ### Treatment of low data/mc
   /// Implemented fTestStatistic are @p kPoisson (with Stirling's approx.), @p kBarlowBeeston (arXiv:1103.0354), @p kDembinskiAbdelmotteleb (arXiv:2206.12346), @p kIceCube (arxiv:1901.04645), and @p kPearson.
-  /// Test statistics require mc > 0, therefore low mc and data values are treated with cut-offs based on M3::_LOW_MC_BOUND_ = .00001 by default.
+  /// Test statistics require mc > 0, therefore low mc and data values are treated with cut-offs based on `M3::_LOW_MC_BOUND_` = .00001 by default.
   /// For @p kPoisson, @p kBarlowBeeston, @p kDembinskiAbdelmotteleb, @p kPearson:
   /// data > _LOW_MC_BOUND_ & mc <= _LOW_MC_BOUND_: returns GetTestStatLLH(data, _LOW_MC_BOUND_, w2), with Poisson(data,_LOW_MC_BOUND_) limit for mc->0, w2->0.
   /// mc < data <= _LOW_MC_BOUND_: returns 0 (as if any data <= _LOW_MC_BOUND_ were effectively consistent with 0 data count), with a limit of 0 for mc->0.

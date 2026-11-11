@@ -1,11 +1,23 @@
 # Building the documentation
 
-The documentation build needs Python 3.12 or newer, Doxygen, and Graphviz
-(`dot`). For example, on macOS install Doxygen and Graphviz with Homebrew:
+The documentation build needs Python 3.12 or newer, Doxygen, Graphviz
+(`dot`), BibTeX, and Perl. Doxygen 1.9.8 (Ubuntu 24.04) requires the
+`bibtex` and `perl` executables to generate the API bibliography.
+On Ubuntu, install the system dependencies with:
+
+```sh
+sudo apt-get install doxygen graphviz texlive-binaries perl
+```
+
+On macOS, install Doxygen, Graphviz, and a TeX distribution providing
+BibTeX (Perl is supplied by macOS):
 
 ```sh
 brew install doxygen graphviz
+brew install --cask basictex
 ```
+
+After installing BasicTeX, ensure `/Library/TeX/texbin` is on your `PATH`.
 
 From the repository root, create a Python environment, install the Sphinx
 extensions, and build the HTML site:

@@ -7,6 +7,8 @@ build:
   apt_packages:
     - doxygen
     - graphviz
+    - texlive-binaries
+    - perl
 
 python:
   install:

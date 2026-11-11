@@ -280,7 +280,7 @@ class SampleHandlerBase :  public SampleHandlerInterface
   ///          objects that are used to apply the shifts are able to access the
   ///          full event information from the experiment class, rather than
   ///          only being able to respond to event properties defined in
-  ///          Samples/EventInfo.h
+  ///          @ref EventInfo.
   ///          A vector of input parameter names that should be consumed by the
   ///          functional shift is also passed. For a 1D version of this method,
   ///          see below.

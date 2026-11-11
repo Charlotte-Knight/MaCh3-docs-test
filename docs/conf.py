@@ -63,7 +63,6 @@ exhale_args = {
         EXTRACT_PRIVATE = NO
         EXTRACT_STATIC = NO
         FULL_PATH_NAMES = YES
-        HIDE_UNDOC_NAMESPACES = NO
         ENABLE_PREPROCESSING = YES
         MACRO_EXPANSION = YES
         PREDEFINED = _noexcept_:=noexcept _restrict_:= _MaCh3_Safe_Include_Start_:= _MaCh3_Safe_Include_End_:= ClassDef(name,version)= MULTITHREAD
@@ -86,7 +85,6 @@ nitpick_ignore = [
     ("cpp:identifier", "M3::Utils"),
     ("cpp:identifier", "M3::Plotting"),
     ("cpp:identifier", "M3::rand"),
-    ("std:ref", "_event_info_8h"),
     ("std:ref", "_nu_dock_factory_8h_1a9e5eb57352d19ee0660059fafb4fffd1"),
     ("std:ref", "_get_penalty_term_module_8hpp"),
 ]
