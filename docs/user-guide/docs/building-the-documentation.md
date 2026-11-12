@@ -57,6 +57,11 @@ also set `DYLD_LIBRARY_PATH` to the build's `lib` directory.
 Exhale runs Doxygen during the Sphinx build and writes XML for Breathe to
 consume. The generated API pages are written to `docs/api/` and are not
 committed.
+After upstream moves or removes headers, delete the generated `docs/api/`
+directory before rebuilding to avoid retaining obsolete Exhale pages.
+Sphinx checks references strictly. External `std` and ROOT names are excluded
+from missing-reference warnings using full-match patterns; MaCh3 API references
+remain checked.
 
 Doxygen records class inheritance and collaboration relationships in the XML.
 Exhale adds Breathe's graph option to every generated class and struct page,

@@ -126,7 +126,7 @@ nitpick_ignore = [
 nitpick_ignore_regex = [
     (
         r"cpp:.*",
-        r"^(?:std::|ROOT::|T[A-Z0-9][A-Za-z0-9_:]*)",
+        r"^(?:(?:std|ROOT)(?:::.*)?|T[A-Z0-9][A-Za-z0-9_:]*)$",
     ),
     (
         r"cpp:.*",
