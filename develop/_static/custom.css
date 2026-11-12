@@ -3,6 +3,11 @@
   width: 10ch;
 }
 
+.mach3-home-grid .sd-card-title {
+  color: var(--pst-color-primary);
+  font-size: 1.4rem;
+}
+
 .config-setting {
   margin-block: 1.5rem;
 }

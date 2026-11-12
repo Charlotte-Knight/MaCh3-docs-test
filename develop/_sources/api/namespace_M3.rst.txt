@@ -77,11 +77,11 @@ Functions
 
 - :ref:`exhale_function_namespaceM3_1a6a398d9cc5c005959286835d630b0092`
 
-- :ref:`exhale_function_namespaceM3_1a17d30caa6b00bcf8c43b7834bcd031d9`
-
 - :ref:`exhale_function_namespaceM3_1a763e2ffed22d70815be09edb9c932690`
 
 - :ref:`exhale_function_namespaceM3_1a5dc2b96f9e1931503d9413941a951249`
+
+- :ref:`exhale_function_namespaceM3_1a17d30caa6b00bcf8c43b7834bcd031d9`
 
 - :ref:`exhale_function_namespaceM3_1aa374c88684482cdd66297f6ae828372d`
 

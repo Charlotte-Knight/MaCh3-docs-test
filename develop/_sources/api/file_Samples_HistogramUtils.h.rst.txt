@@ -102,11 +102,11 @@ Functions
 
 - :ref:`exhale_function_HistogramUtils_8h_1a154b384372cf349df645df390b285620`
 
-- :ref:`exhale_function_namespaceM3_1a17d30caa6b00bcf8c43b7834bcd031d9`
-
 - :ref:`exhale_function_namespaceM3_1a763e2ffed22d70815be09edb9c932690`
 
 - :ref:`exhale_function_namespaceM3_1a5dc2b96f9e1931503d9413941a951249`
+
+- :ref:`exhale_function_namespaceM3_1a17d30caa6b00bcf8c43b7834bcd031d9`
 
 - :ref:`exhale_function_namespaceM3_1aa374c88684482cdd66297f6ae828372d`
 
@@ -122,11 +122,11 @@ Functions
 
 - :ref:`exhale_function_HistogramUtils_8h_1a84d9f672d5b59d6a5c998147f4c9714f`
 
-- :ref:`exhale_function_HistogramUtils_8h_1a1f7d3fee3ea9db203af9801b26a6d982`
-
 - :ref:`exhale_function_HistogramUtils_8h_1a8c35fd0f4c254f680f40cc47190335ae`
 
 - :ref:`exhale_function_HistogramUtils_8h_1a9d457c3fcee7d9a0cdd298a3a0cc47fc`
+
+- :ref:`exhale_function_HistogramUtils_8h_1a1f7d3fee3ea9db203af9801b26a6d982`
 
 - :ref:`exhale_function_HistogramUtils_8h_1a9372bd8295f0ce1759ebf5a35106f4af`
 
