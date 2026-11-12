@@ -21,6 +21,7 @@ extensions = [
     "sphinxcontrib.bibtex",
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
+    "sphinxcontrib.jquery",
     "api_navigation",
     "cli_help",
     "config_reference",

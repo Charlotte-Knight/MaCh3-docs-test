@@ -71,6 +71,8 @@ boxes and labels using PyData's active theme colours, updates them when the
 theme changes, and brightens dark relationship colours while preserving their
 distinctions. Default blue arrows become black in light mode and white in dark
 mode. Without JavaScript, the original Graphviz styling remains.
+Exhale's collapsible API hierarchies use `sphinxcontrib-jquery` to supply
+their JavaScript dependency independently of the theme.
 
 ## Automatic C++ API navigation
 
@@ -202,6 +204,9 @@ branch: it stores the release snapshots, not the seven-day review artifacts.
 The deployment job needs `contents: write` for this branch as well as Pages
 permissions; repository rules must permit the Actions bot to update `docs-site`.
 Deployments are serialized to prevent concurrent updates from losing versions.
+Inside that queue, superseded `develop` builds are skipped if their commit no
+longer matches the branch head, so a slower old build cannot replace newer docs.
+Tag snapshots are not skipped by this check.
 The deployment queue retains pending releases rather than replacing them with
 newer runs.
 

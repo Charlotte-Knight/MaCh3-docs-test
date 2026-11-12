@@ -8,4 +8,4 @@ diagnostic plots, and developing systematic uncertainties and samples.
 See the rendered [MaCh3 Tutorial](https://mach3-software.github.io/MaCh3Tutorial/)
 or clone the repository and follow its README to build and run the examples.
 
-Python-binding documentation is not part of this site yet.
+For Python examples and binding references, see the [pyMaCh3 guides](../pymach3/index.md).
