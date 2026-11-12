@@ -1,0 +1,69 @@
+
+.. _program_listing_file_CLI_Modules_CombineModule.hpp:
+
+Program Listing for File CombineModule.hpp
+==========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_Modules_CombineModule.hpp>` (``CLI/Modules/CombineModule.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   
+   #pragma once
+   #include "CLI/API/plugin.hpp"
+   // C++ includes
+   #include <unistd.h>
+   
+   // MaCh3 includes
+   #include "Manager/Manager.h"
+   #include "Samples/SampleStructs.h"
+   #include "Utils/HistogramUtils.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   // ROOT includes
+   #include "TList.h"
+   #include "TFile.h"
+   #include "TMacro.h"
+   #include "TTree.h"
+   #include "TMD5.h"
+   #include "TFileMerger.h"
+   #include "TKey.h"
+   #include "TROOT.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   namespace M3{
+   class CombineModule: public IModuleBase{
+    public:
+     virtual ~CombineModule();
+   
+     MaCh3ArgumentParser* get_parser() override;
+   
+     int Run() override;
+   
+     bool ShouldSkipLine(const std::string& line, const std::vector<std::string>& SkipVector);
+   
+     bool CompareTwoConfigs(const std::string& File1, const std::string& File2, const std::vector<std::string>& SkipVector);
+   
+     bool checkSoftwareVersions(TFile *file, TFile *prevFile, const std::string& ConfigName, const std::vector<std::string>& SkipVector = {});
+   
+     void CopyDir(TDirectory *source);
+   
+     bool CompareHistograms(const TH1* h1, const TH1* h2, const std::string& histName, const std::string& folderName);
+   
+     bool CheckFolder(TFile* file, TFile* prevFile, const std::string& FolderName, const std::vector<std::string>& SkipVector = {});
+   
+     void FastMergeTTrees(const std::vector<std::string>& files, const std::string& outFile, const std::string& TTreeName);
+   
+     void CombineChain();
+             
+    private:
+     std::string OutFileName = "";
+     int targetCompression = 1;
+     std::vector<std::string> inpFileList;
+     bool forceOverwrite = false;
+     bool forceMerge = false;
+   };
+   }

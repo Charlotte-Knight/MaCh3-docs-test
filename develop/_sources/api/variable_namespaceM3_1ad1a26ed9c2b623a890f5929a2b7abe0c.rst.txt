@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceM3_1ad1a26ed9c2b623a890f5929a2b7abe0c:
+
+Variable M3::debug_mode
+=======================
+
+- Defined in :ref:`file_CLI_Modules_UmbrellaModule.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: M3::debug_mode
+   :project: MaCh3

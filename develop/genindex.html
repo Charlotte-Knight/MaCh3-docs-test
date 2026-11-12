@@ -40,6 +40,8 @@
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
 <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
 
+    <script src="_static/jquery.js?v=5d32c60e"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -569,6 +571,8 @@
 </li>
       <li><a href="api/classAdaptiveMCMCHandler.html#_CPPv4NK19AdaptiveMCMCHandler9GetNFixedEv">AdaptiveMCMCHandler::GetNFixed (C++ function)</a>
 </li>
+      <li><a href="api/classAdaptiveMCMCHandler.html#_CPPv4NK19AdaptiveMCMCHandler26GetNumberUpdatedParametersEv">AdaptiveMCMCHandler::GetNumberUpdatedParameters (C++ function)</a>
+</li>
       <li><a href="api/classAdaptiveMCMCHandler.html#_CPPv4NK19AdaptiveMCMCHandler12GetNumParamsEv">AdaptiveMCMCHandler::GetNumParams (C++ function)</a>
 </li>
       <li><a href="api/classAdaptiveMCMCHandler.html#_CPPv4NK19AdaptiveMCMCHandler14GetOutFileNameEv">AdaptiveMCMCHandler::GetOutFileName (C++ function)</a>
@@ -719,10 +723,10 @@
 </li>
       <li><a href="api/classBinnedSplineHandler.html#_CPPv4NK19BinnedSplineHandler18PrintSampleDetailsERKNSt6stringE">BinnedSplineHandler::PrintSampleDetails (C++ function)</a>
 </li>
-      <li><a href="api/classBinnedSplineHandler.html#_CPPv4NK19BinnedSplineHandler10RetPointerERK11SplineIndex">BinnedSplineHandler::RetPointer (C++ function)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/classBinnedSplineHandler.html#_CPPv4NK19BinnedSplineHandler10RetPointerERK11SplineIndex">BinnedSplineHandler::RetPointer (C++ function)</a>
+</li>
       <li><a href="api/classBinnedSplineHandler.html#_CPPv4N19BinnedSplineHandler11SampleNamesE">BinnedSplineHandler::SampleNames (C++ member)</a>
 </li>
       <li><a href="api/classBinnedSplineHandler.html#_CPPv4N19BinnedSplineHandler12SampleTitlesE">BinnedSplineHandler::SampleTitles (C++ member)</a>
@@ -795,8 +799,6 @@
 </li>
       <li><a href="api/classBinningHandler.html#_CPPv4N14BinningHandlerD0Ev">BinningHandler::~BinningHandler (C++ function)</a>
 </li>
-      <li><a href="api/function_HistogramUtils_8h_1a6c4c2882fee9455d66c2d8a4b0f6b302.html#_CPPv418BinRangeToBinEdgesRKN4YAML4NodeE">BinRangeToBinEdges (C++ function)</a>
-</li>
       <li><a href="api/structBinShiftLookup.html#_CPPv414BinShiftLookup">BinShiftLookup (C++ struct)</a>
 </li>
       <li><a href="api/structBinShiftLookup.html#_CPPv4N14BinShiftLookup13lower_binedgeE">BinShiftLookup::lower_binedge (C++ member)</a>
@@ -807,8 +809,6 @@
 </li>
       <li><a href="api/structBinShiftLookup.html#_CPPv4N14BinShiftLookup19upper_upper_binedgeE">BinShiftLookup::upper_upper_binedge (C++ member)</a>
 </li>
-      <li><a href="api/function_HistogramUtils_8h_1a96467b3e8e70454c7718d92387e87937.html#_CPPv421BuildBinEdgesFromNodeRKN4YAML4NodeERb">BuildBinEdgesFromNode (C++ function)</a>
-</li>
   </ul></td>
 </tr></table>
 
@@ -817,13 +817,7 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pymach3/parameters.html#pyMaCh3._pyMaCh3.parameters.ParameterHandlerBase.calculate_likelihood">calculate_likelihood() (pyMaCh3._pyMaCh3.parameters.ParameterHandlerBase method)</a>
 </li>
-      <li><a href="api/function_HistogramUtils_8h_1a2dce7c8dec7d4d7f9c61346893973421.html#_CPPv412CalculateEnudddb">CalculateEnu (C++ function)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1a060e41fa0e5f91ce4fcbb6a4cafeaf13.html#_CPPv411CalculateQ2dddd">CalculateQ2 (C++ function)</a>
-</li>
       <li><a href="pymach3/fitters.html#pyMaCh3._pyMaCh3.fitters.LikelihoodFit.caluclate_chi2">caluclate_chi2() (pyMaCh3._pyMaCh3.fitters.LikelihoodFit method)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1ace84e2d09b85a95e50fe24e4309370bb.html#_CPPv4I00E10CastVectorNSt6vectorINSt10unique_ptrI4BaseEEEERRNSt6vectorINSt10unique_ptrI7DerivedEEEE">CastVector (C++ function)</a>
 </li>
       <li><a href="api/function_StatisticalUtils_8h_1adba5abb16555092305a8b459f94a24c1.html#_CPPv429CheckBonferoniCorrectedpValueRKNSt6vectorINSt6stringEEERKNSt6vectorIdEEKd">CheckBonferoniCorrectedpValue (C++ function)</a>
 </li>
@@ -831,23 +825,17 @@
 </li>
       <li><a href="api/function_YamlHelper_8h_1a2ec5eac7a7a860300203a9c418e802ee.html#_CPPv4I0E21CheckNodeExistsHelperbRK1T">CheckNodeExistsHelper (C++ function)</a>, <a href="api/function_YamlHelper_8h_1a5809a38cdc84e79f861c6de8f84ae83e.html#_CPPv4I0DpE21CheckNodeExistsHelperbRK1TRKNSt6stringEDp4Args">[1]</a>
 </li>
-      <li><a href="api/function_HistogramUtils_8h_1a1aa25e8399ca7a229b8aa77c25407832.html#_CPPv423CheckTH2PolyFileVersionP5TFile">CheckTH2PolyFileVersion (C++ function)</a>
-</li>
       <li><a href="api/function_ParameterStructs_8h_1a569a3f763b3cca77ecc85e5a685b182c.html#_CPPv4I0E14CleanContainervR1T">CleanContainer (C++ function)</a>, <a href="api/function_ParameterStructs_8h_1aada74c1e7e4ede3e8e9ab32f32791814.html#_CPPv4I0E14CleanContainervRNSt6vectorI1TEE">[1]</a>, <a href="api/function_ParameterStructs_8h_1abedaa13aad6e56de295bd5a0879c9f55.html#_CPPv4I0E14CleanContainervRP1T">[2]</a>
+</li>
+      <li><a href="api/function_ParameterStructs_8h_1a1af8b6ffd2afc4dd39b00663baef8989.html#_CPPv4I0E11CleanVectorvRNSt6vectorI1TEE">CleanVector (C++ function)</a>, <a href="api/function_ParameterStructs_8h_1ad0ad271345b43361a90efe977486167b.html#_CPPv4I0E11CleanVectorvR1T">[1]</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/function_ParameterStructs_8h_1a1af8b6ffd2afc4dd39b00663baef8989.html#_CPPv4I0E11CleanVectorvRNSt6vectorI1TEE">CleanVector (C++ function)</a>, <a href="api/function_ParameterStructs_8h_1ad0ad271345b43361a90efe977486167b.html#_CPPv4I0E11CleanVectorvR1T">[1]</a>
-</li>
       <li><a href="api/function_YamlHelper_8h_1a30fc1dad7dde70247024fbb1c8f89bdc.html#_CPPv45CnodeRKN4YAML4NodeE">Cnode (C++ function)</a>
 </li>
       <li><a href="api/function_YamlHelper_8h_1ac79360f33b9ee8b7ecf11cc7429ffd0c.html#_CPPv416compareYAMLNodesRKN4YAML4NodeERKN4YAML4NodeEb">compareYAMLNodes (C++ function)</a>
 </li>
       <li><a href="api/function_StatisticalUtils_8h_1a13aa52c404712954271d7c7faa728334.html#_CPPv419ComputeKLDivergenceP7TH2PolyP7TH2Poly">ComputeKLDivergence (C++ function)</a>, <a href="api/function_StatisticalUtils_8h_1a24346722df353ed84efd3fcf0b886587.html#_CPPv419ComputeKLDivergenceRKNSt6vectorIdEERKNSt6vectorIdEE">[1]</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1aa9cbcbd12e52cadbc498db3b78784104.html#_CPPv420ConvertTH2DtoTH2PolyP4TH2D">ConvertTH2DtoTH2Poly (C++ function)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1af532e371f45a26f2b180d96b82b7d496.html#_CPPv420ConvertTH2PolyToTH2DP7TH2PolyP4TH2D">ConvertTH2PolyToTH2D (C++ function)</a>
 </li>
       <li><a href="api/function_SplineStructs_8h_1ab2c8d72ae04d6efb77876248cb67a338.html#_CPPv422CreateResponseFunctionRP6TGraphK12RespFuncTypeK19SplineInterpolationRKNSt6stringE">CreateResponseFunction (C++ function)</a>
 </li>
@@ -975,10 +963,6 @@
 </li>
       <li><a href="api/structFastSplineInfo.html#_CPPv4N14FastSplineInfoD0Ev">FastSplineInfo::~FastSplineInfo (C++ function)</a>
 </li>
-      <li><a href="api/function_HistogramUtils_8h_1a5057e3deaf657180213e52d3f5bc41cc.html#_CPPv414FastViolinFillP4TH2DP4TH1D">FastViolinFill (C++ function)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1afbf5ccf44bc187caa268d4d158f4e5f6.html#_CPPv411file_existsNSt6stringE">file_exists (C++ function)</a>
-</li>
       <li><a href="pymach3/splines.html#pyMaCh3._pyMaCh3.splines.ResponseFunction.find_segment">find_segment() (pyMaCh3._pyMaCh3.splines.ResponseFunction method)</a>
 </li>
       <li><a href="api/function_YamlHelper_8h_1a2a8231c2076b91564e31e55567018f00.html#_CPPv4I0DpE15FindFromManager1TRKN4YAML4NodeEDp4Args">FindFromManager (C++ function)</a>
@@ -1043,10 +1027,10 @@
 </li>
       <li><a href="api/classFitterBase.html#_CPPv4N10FitterBase14OutputPreparedE">FitterBase::OutputPrepared (C++ member)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/classFitterBase.html#_CPPv4N10FitterBase7outTreeE">FitterBase::outTree (C++ member)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/classFitterBase.html#_CPPv4N10FitterBase13PrepareOutputEv">FitterBase::PrepareOutput (C++ function)</a>
 </li>
       <li><a href="api/classFitterBase.html#_CPPv4N10FitterBase11ProcessMCMCEv">FitterBase::ProcessMCMC (C++ function)</a>
@@ -1307,9 +1291,9 @@
 </li>
       <li><a href="api/function_SampleInfo_8h_1afc52c63bc2b15ae30444755579f5beb4.html#_CPPv413GetOscChannelRKNSt6vectorI14OscChannelInfoEEKiKi">GetOscChannel (C++ function)</a>
 </li>
-      <li><a href="api/function_StatisticalUtils_8h_1a51c1b8d697008fa6e02849b8f1334abb.html#_CPPv419GetPValueFromZScoreKd">GetPValueFromZScore (C++ function)</a>
+      <li><a href="api/classGetPostFitParamModule.html#_CPPv421GetPostFitParamModule">GetPostFitParamModule (C++ class)</a>
 </li>
-      <li><a href="api/function_HistogramUtils_8h_1a154b384372cf349df645df390b285620.html#_CPPv414GetRandomPoly2PK7TH2Poly">GetRandomPoly2 (C++ function)</a>
+      <li><a href="api/function_StatisticalUtils_8h_1a51c1b8d697008fa6e02849b8f1334abb.html#_CPPv419GetPValueFromZScoreKd">GetPValueFromZScore (C++ function)</a>
 </li>
       <li><a href="api/function_SampleStructs_8h_1a4a3cb7a9d73e72bb8144bed28ed5855d.html#_CPPv422GetSampleFromGlobalBinRKNSt6vectorI17SampleBinningInfoEEKi">GetSampleFromGlobalBin (C++ function)</a>
 </li>
@@ -1443,9 +1427,31 @@
 </li>
       <li><a href="api/function_namespaceM3_1a6a398d9cc5c005959286835d630b0092.html#_CPPv4N2M318CaseInsentiveMatchENSt6stringENSt6stringE">M3::CaseInsentiveMatch (C++ function)</a>
 </li>
-      <li><a href="api/function_namespaceM3_1a17d30caa6b00bcf8c43b7834bcd031d9.html#_CPPv4N2M317CheckBinningMatchEPK4TH1DPK4TH1DRKNSt6stringEKi">M3::CheckBinningMatch (C++ function)</a>, <a href="api/function_namespaceM3_1a5dc2b96f9e1931503d9413941a951249.html#_CPPv4N2M317CheckBinningMatchEP7TH2PolyP7TH2PolyRKNSt6stringEKi">[1]</a>, <a href="api/function_namespaceM3_1a763e2ffed22d70815be09edb9c932690.html#_CPPv4N2M317CheckBinningMatchEPK4TH2DPK4TH2DRKNSt6stringEKi">[2]</a>
+      <li><a href="api/classM3_1_1CombineModule.html#_CPPv4N2M313CombineModuleE">M3::CombineModule (C++ class)</a>
 </li>
-      <li><a href="api/function_namespaceM3_1aa374c88684482cdd66297f6ae828372d.html#_CPPv4I0EN2M35CloneENSt10unique_ptrI10ObjectTypeEEPK10ObjectTypeRKNSt6stringE">M3::Clone (C++ function)</a>
+      <li><a href="api/classM3_1_1CombineModule.html#_CPPv4N2M313CombineModule11CheckFolderEP5TFileP5TFileRKNSt6stringERKNSt6vectorINSt6stringEEE">M3::CombineModule::CheckFolder (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1CombineModule.html#_CPPv4N2M313CombineModule21checkSoftwareVersionsEP5TFileP5TFileRKNSt6stringERKNSt6vectorINSt6stringEEE">M3::CombineModule::checkSoftwareVersions (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1CombineModule.html#_CPPv4N2M313CombineModule12CombineChainEv">M3::CombineModule::CombineChain (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1CombineModule.html#_CPPv4N2M313CombineModule17CompareHistogramsEPK3TH1PK3TH1RKNSt6stringERKNSt6stringE">M3::CombineModule::CompareHistograms (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1CombineModule.html#_CPPv4N2M313CombineModule17CompareTwoConfigsERKNSt6stringERKNSt6stringERKNSt6vectorINSt6stringEEE">M3::CombineModule::CompareTwoConfigs (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1CombineModule.html#_CPPv4N2M313CombineModule7CopyDirEP10TDirectory">M3::CombineModule::CopyDir (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1CombineModule.html#_CPPv4N2M313CombineModule15FastMergeTTreesERKNSt6vectorINSt6stringEEERKNSt6stringERKNSt6stringE">M3::CombineModule::FastMergeTTrees (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1CombineModule.html#_CPPv4N2M313CombineModule10get_parserEv">M3::CombineModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1CombineModule.html#_CPPv4N2M313CombineModule3RunEv">M3::CombineModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1CombineModule.html#_CPPv4N2M313CombineModule14ShouldSkipLineERKNSt6stringERKNSt6vectorINSt6stringEEE">M3::CombineModule::ShouldSkipLine (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1CombineModule.html#_CPPv4N2M313CombineModuleD0Ev">M3::CombineModule::~CombineModule (C++ function)</a>
+</li>
+      <li><a href="api/variable_namespaceM3_1ad1a26ed9c2b623a890f5929a2b7abe0c.html#_CPPv4N2M310debug_modeE">M3::debug_mode (C++ member)</a>
 </li>
       <li><a href="api/function_namespaceM3_1af4a9244946bbdae4b7bfcdf38feda9fb.html#_CPPv4N2M38DebugPCAEKdRK8TMatrixDRK8TMatrixDRK8TVectorDRK8TMatrixDRK8TMatrixDKiKiKiKiKd">M3::DebugPCA (C++ function)</a>
 </li>
@@ -1460,6 +1466,22 @@
       <li><a href="api/classM3_1_1DiagMCMCModule.html#_CPPv4N2M314DiagMCMCModule3RunEv">M3::DiagMCMCModule::Run (C++ function)</a>
 </li>
       <li><a href="api/classM3_1_1DiagMCMCModule.html#_CPPv4N2M314DiagMCMCModuleD0Ev">M3::DiagMCMCModule::~DiagMCMCModule (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1DiagMCMCPlotModule.html#_CPPv4N2M318DiagMCMCPlotModuleE">M3::DiagMCMCPlotModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1DiagMCMCPlotModule.html#_CPPv4N2M318DiagMCMCPlotModule10get_parserEv">M3::DiagMCMCPlotModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1DiagMCMCPlotModule.html#_CPPv4N2M318DiagMCMCPlotModule3RunEv">M3::DiagMCMCPlotModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1DiagMCMCPlotModule.html#_CPPv4N2M318DiagMCMCPlotModuleD0Ev">M3::DiagMCMCPlotModule::~DiagMCMCPlotModule (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1DiagModule.html#_CPPv4N2M310DiagModuleE">M3::DiagModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1DiagModule.html#_CPPv4N2M310DiagModule10get_parserEv">M3::DiagModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1DiagModule.html#_CPPv4N2M310DiagModule3RunEv">M3::DiagModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1DiagModule.html#_CPPv4N2M310DiagModuleD0Ev">M3::DiagModule::~DiagModule (C++ function)</a>
 </li>
       <li><a href="api/function_namespaceM3_1a6ef8b24b80901a8c67e4edbfc6fb8229.html#_CPPv4N2M322DumpParamHandlerToFileEKiRKNSt6vectorIdEERKNSt6vectorIdEERKNSt6vectorIdEERKNSt6vectorIdEERKNSt6vectorIdEERKNSt6vectorINSt6stringEEERKNSt6vectorIbEERKNSt6vectorI15SplineParameterEEP11TMatrixDSymP4TH2DRKNSt6stringE">M3::DumpParamHandlerToFile (C++ function)</a>
 </li>
@@ -1525,15 +1547,53 @@
 </li>
       <li><a href="api/enum_namespaceM3_1a007e5ed320c3672a3faf79da0a38fb7a.html#_CPPv4N2M38kInfCrit5kWAICE">M3::kInfCrit::kWAIC (C++ enumerator)</a>
 </li>
+      <li><a href="api/enum_namespaceM3_1afee9f50ad950e4e28ec5863bd2d18f89.html#_CPPv4N2M313kReweightTypeE">M3::kReweightType (C++ enum)</a>
+</li>
+      <li><a href="api/enum_namespaceM3_1afee9f50ad950e4e28ec5863bd2d18f89.html#_CPPv4N2M313kReweightType9kGaussianE">M3::kReweightType::kGaussian (C++ enumerator)</a>
+</li>
+      <li><a href="api/enum_namespaceM3_1afee9f50ad950e4e28ec5863bd2d18f89.html#_CPPv4N2M313kReweightType14kReweightTypesE">M3::kReweightType::kReweightTypes (C++ enumerator)</a>
+</li>
+      <li><a href="api/enum_namespaceM3_1afee9f50ad950e4e28ec5863bd2d18f89.html#_CPPv4N2M313kReweightType7kTGraphE">M3::kReweightType::kTGraph (C++ enumerator)</a>
+</li>
+      <li><a href="api/enum_namespaceM3_1afee9f50ad950e4e28ec5863bd2d18f89.html#_CPPv4N2M313kReweightType9kTGraph2DE">M3::kReweightType::kTGraph2D (C++ enumerator)</a>
+</li>
+      <li><a href="api/classM3_1_1LLHMapModule.html#_CPPv4N2M312LLHMapModuleE">M3::LLHMapModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1LLHMapModule.html#_CPPv4N2M312LLHMapModule14ExtractBinningENSt6stringEN4YAML4NodeEN4ROOT10RDataFrameE">M3::LLHMapModule::ExtractBinning (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1LLHMapModule.html#_CPPv4N2M312LLHMapModule10get_parserEv">M3::LLHMapModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1LLHMapModule.html#_CPPv4N2M312LLHMapModule9GetParamsERNSt6vectorINSt6stringEEEN4ROOT10RDataFrameE">M3::LLHMapModule::GetParams (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1LLHMapModule.html#_CPPv4N2M312LLHMapModule3RunEv">M3::LLHMapModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1LLHMapModule.html#_CPPv4N2M312LLHMapModuleD0Ev">M3::LLHMapModule::~LLHMapModule (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1LLHModule.html#_CPPv4N2M39LLHModuleE">M3::LLHModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1LLHModule.html#_CPPv4N2M39LLHModule10get_parserEv">M3::LLHModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1LLHModule.html#_CPPv4N2M39LLHModule3RunEv">M3::LLHModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1LLHModule.html#_CPPv4N2M39LLHModuleD0Ev">M3::LLHModule::~LLHModule (C++ function)</a>
+</li>
       <li><a href="api/classM3_1_1MaCh3ArgumentParser.html#_CPPv4N2M319MaCh3ArgumentParserE">M3::MaCh3ArgumentParser (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1MaCh3ArgumentParser.html#_CPPv4NK2M319MaCh3ArgumentParser11descriptionEv">M3::MaCh3ArgumentParser::description (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1MaCh3ArgumentParser.html#_CPPv4NK2M319MaCh3ArgumentParser15get_completionsERKNSt6stringERKNSt6vectorINSt6stringEEE">M3::MaCh3ArgumentParser::get_completions (C++ function)</a>
 </li>
       <li><a href="api/classM3_1_1MaCh3ArgumentParser.html#_CPPv4NK2M319MaCh3ArgumentParser21get_long_option_namesEv">M3::MaCh3ArgumentParser::get_long_option_names (C++ function)</a>
 </li>
       <li><a href="api/classM3_1_1MaCh3ArgumentParser.html#_CPPv4NK2M319MaCh3ArgumentParser19get_subcommand_usedEv">M3::MaCh3ArgumentParser::get_subcommand_used (C++ function)</a>
 </li>
+      <li><a href="api/classM3_1_1MaCh3ArgumentParser.html#_CPPv4NK2M319MaCh3ArgumentParser26insert_default_subcommandsERNSt6vectorINSt6stringEEENSt6size_tE">M3::MaCh3ArgumentParser::insert_default_subcommands (C++ function)</a>
+</li>
       <li><a href="api/classM3_1_1MaCh3ArgumentParser.html#_CPPv4NK2M319MaCh3ArgumentParser4nameEv">M3::MaCh3ArgumentParser::name (C++ function)</a>
 </li>
       <li><a href="api/classM3_1_1MaCh3ArgumentParser.html#_CPPv4NK2M319MaCh3ArgumentParser18option_takes_valueERKNSt6stringE">M3::MaCh3ArgumentParser::option_takes_value (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1MaCh3ArgumentParser.html#_CPPv4N2M319MaCh3ArgumentParser22set_default_subcommandERKNSt6stringE">M3::MaCh3ArgumentParser::set_default_subcommand (C++ function)</a>
 </li>
       <li><a href="api/classM3_1_1MaCh3ArgumentParser.html#_CPPv4NK2M319MaCh3ArgumentParser10subparsersEv">M3::MaCh3ArgumentParser::subparsers (C++ function)</a>
 </li>
@@ -1549,6 +1609,8 @@
 </li>
       <li><a href="api/classM3_1_1MaCh3Program.html#_CPPv4N2M312MaCh3Program20load_dynamic_pluginsEv">M3::MaCh3Program::load_dynamic_plugins (C++ function)</a>
 </li>
+      <li><a href="api/classM3_1_1MaCh3Program.html#_CPPv4N2M312MaCh3Program10parse_argsEiA_PCKc">M3::MaCh3Program::parse_args (C++ function)</a>
+</li>
       <li><a href="api/classM3_1_1MaCh3Program.html#_CPPv4N2M312MaCh3Program3RunEv">M3::MaCh3Program::Run (C++ function)</a>
 </li>
       <li><a href="api/classM3_1_1MaCh3Program.html#_CPPv4N2M312MaCh3Program22unload_dynamic_pluginsEv">M3::MaCh3Program::unload_dynamic_plugins (C++ function)</a>
@@ -1559,15 +1621,29 @@
 </li>
       <li><a href="api/function_namespaceM3_1aabe4fc7b71432d95a1ffb0ee733804e0.html#_CPPv4N2M316MakeMatrixPosDefEP11TMatrixDSym">M3::MakeMatrixPosDef (C++ function)</a>
 </li>
+      <li><a href="api/classM3_1_1MatrixModule.html#_CPPv4N2M312MatrixModuleE">M3::MatrixModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1MatrixModule.html#_CPPv4N2M312MatrixModule10get_parserEv">M3::MatrixModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1MatrixModule.html#_CPPv4N2M312MatrixModule3RunEv">M3::MatrixModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1MatrixModule.html#_CPPv4N2M312MatrixModuleD0Ev">M3::MatrixModule::~MatrixModule (C++ function)</a>
+</li>
       <li><a href="api/function_namespaceM3_1aa4b0eaa854abea094a8340f46e3d3d9c.html#_CPPv4N2M310MatrixMultE8TMatrixD8TMatrixD">M3::MatrixMult (C++ function)</a>, <a href="api/function_namespaceM3_1ae577be53e3bb2051d10f34fd054c3e5d.html#_CPPv4N2M310MatrixMultEPdPdi">[1]</a>, <a href="api/function_namespaceM3_1af8413af64315ec1b23ac543fce4a93f1.html#_CPPv4N2M310MatrixMultEPPdPPdi">[2]</a>
 </li>
       <li><a href="api/function_namespaceM3_1a82ba8e241659427d252c3ad13c6c25c5.html#_CPPv4N2M317MatrixVectorMultiEPdPPdPKdKi">M3::MatrixVectorMulti (C++ function)</a>
 </li>
       <li><a href="api/function_namespaceM3_1a2be9f8c591f38f815bcf8b6b60c61653.html#_CPPv4N2M323MatrixVectorMultiSingleEPPdPKdKiKi">M3::MatrixVectorMultiSingle (C++ function)</a>
 </li>
-      <li><a href="api/function_namespaceM3_1a87841bdbf0e0a2a733d9e4ca499f820d.html#_CPPv4N2M34OpenERKNSt6stringERKNSt6stringERKNSt6stringEKi">M3::Open (C++ function)</a>
-</li>
       <li><a href="api/function_namespaceM3_1a116e94960ba2df3ac2ec3ebe499307ae.html#_CPPv4N2M317ParseBiasFunctionERKNSt6stringE">M3::ParseBiasFunction (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1PlotModule.html#_CPPv4N2M310PlotModuleE">M3::PlotModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1PlotModule.html#_CPPv4N2M310PlotModule10get_parserEv">M3::PlotModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1PlotModule.html#_CPPv4N2M310PlotModule3RunEv">M3::PlotModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1PlotModule.html#_CPPv4N2M310PlotModuleD0Ev">M3::PlotModule::~PlotModule (C++ function)</a>
 </li>
       <li><a href="api/enum_namespaceM3_1_1Plotting_1a62d6a732804190bc7a907c3a9e1babdd.html#_CPPv4N2M38Plotting12fileTypeEnumE">M3::Plotting::fileTypeEnum (C++ enum)</a>
 </li>
@@ -1811,7 +1887,21 @@
 </li>
       <li><a href="api/classM3_1_1PluginBase.html#_CPPv4N2M310PluginBaseD0Ev">M3::PluginBase::~PluginBase (C++ function)</a>
 </li>
-      <li><a href="api/function_namespaceM3_1aeec45eef77225e7b06efc9d557d08321.html#_CPPv4N2M310PolyToYamlEP7TH2PolyRKNSt6stringERKNSt6stringEKi">M3::PolyToYaml (C++ function)</a>
+      <li><a href="api/classM3_1_1PostFitParamModule.html#_CPPv4N2M318PostFitParamModuleE">M3::PostFitParamModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1PostFitParamModule.html#_CPPv4N2M318PostFitParamModule10get_parserEv">M3::PostFitParamModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1PostFitParamModule.html#_CPPv4N2M318PostFitParamModule3RunEv">M3::PostFitParamModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1PostFitParamModule.html#_CPPv4N2M318PostFitParamModuleD0Ev">M3::PostFitParamModule::~PostFitParamModule (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1PredictiveModule.html#_CPPv4N2M316PredictiveModuleE">M3::PredictiveModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1PredictiveModule.html#_CPPv4N2M316PredictiveModule10get_parserEv">M3::PredictiveModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1PredictiveModule.html#_CPPv4N2M316PredictiveModule3RunEv">M3::PredictiveModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1PredictiveModule.html#_CPPv4N2M316PredictiveModuleD0Ev">M3::PredictiveModule::~PredictiveModule (C++ function)</a>
 </li>
       <li><a href="api/classM3_1_1ProcessMCMCModule.html#_CPPv4N2M317ProcessMCMCModuleE">M3::ProcessMCMCModule (C++ class)</a>
 </li>
@@ -1853,11 +1943,129 @@
 </li>
       <li><a href="api/function_namespaceM3_1_1rand_1a96803596701c1694fbf4b57bc2b2140e.html#_CPPv4N2M34rand10UniformIntEKiKi">M3::rand::UniformInt (C++ function)</a>
 </li>
-      <li><a href="api/function_namespaceM3_1a75bda934f7f63fc70bf57eac209dfdfe.html#_CPPv4N2M314ScaleHistogramEP3TH1Kd">M3::ScaleHistogram (C++ function)</a>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfigE">M3::ReweightConfig (C++ struct)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig9dimensionE">M3::ReweightConfig::dimension (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig7enabledE">M3::ReweightConfig::enabled (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig8fileNameE">M3::ReweightConfig::fileName (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig9flatPriorE">M3::ReweightConfig::flatPrior (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig8graph_1DE">M3::ReweightConfig::graph_1D (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig8graph_IOE">M3::ReweightConfig::graph_IO (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig8graph_NOE">M3::ReweightConfig::graph_NO (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig9graphNameE">M3::ReweightConfig::graphName (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig13hierarchyTypeE">M3::ReweightConfig::hierarchyType (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig3keyE">M3::ReweightConfig::key (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig4nameE">M3::ReweightConfig::name (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig14newPriorValuesE">M3::ReweightConfig::newPriorValues (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig14oldPriorValuesE">M3::ReweightConfig::oldPriorValues (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig10paramNamesE">M3::ReweightConfig::paramNames (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig4typeE">M3::ReweightConfig::type (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1ReweightConfig.html#_CPPv4N2M314ReweightConfig16weightBranchNameE">M3::ReweightConfig::weightBranchName (C++ member)</a>
+</li>
+      <li><a href="api/classM3_1_1ReweightModule.html#_CPPv4N2M314ReweightModuleE">M3::ReweightModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1ReweightModule.html#_CPPv4N2M314ReweightModule11Get1DWeightERK14ReweightConfigRKNSt3mapINSt6stringEdEE">M3::ReweightModule::Get1DWeight (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1ReweightModule.html#_CPPv4N2M314ReweightModule11Get2DWeightERK14ReweightConfigRKNSt3mapINSt6stringEdEE">M3::ReweightModule::Get2DWeight (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1ReweightModule.html#_CPPv4N2M314ReweightModule10get_parserEv">M3::ReweightModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1ReweightModule.html#_CPPv4N2M314ReweightModule16GetParameterInfoEP13MCMCProcessorRKNSt6stringERdRdRb">M3::ReweightModule::GetParameterInfo (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1ReweightModule.html#_CPPv4N2M314ReweightModule19Graph_interpolate1DEP6TGraphd">M3::ReweightModule::Graph_interpolate1D (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1ReweightModule.html#_CPPv4N2M314ReweightModule19Graph_interpolateIOEP8TGraph2Ddd">M3::ReweightModule::Graph_interpolateIO (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1ReweightModule.html#_CPPv4N2M314ReweightModule19Graph_interpolateNOEP8TGraph2Ddd">M3::ReweightModule::Graph_interpolateNO (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1ReweightModule.html#_CPPv4N2M314ReweightModule23LoadReweightingSettingsERNSt6vectorI14ReweightConfigEERKN4YAML4NodeE">M3::ReweightModule::LoadReweightingSettings (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1ReweightModule.html#_CPPv4N2M314ReweightModule12ReweightMCMCERKNSt6stringERKNSt6stringE">M3::ReweightModule::ReweightMCMC (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1ReweightModule.html#_CPPv4N2M314ReweightModule3RunEv">M3::ReweightModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1ReweightModule.html#_CPPv4N2M314ReweightModuleD0Ev">M3::ReweightModule::~ReweightModule (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1RHatModule.html#_CPPv4N2M310RHatModuleE">M3::RHatModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1RHatModule.html#_CPPv4N2M310RHatModule10get_parserEv">M3::RHatModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1RHatModule.html#_CPPv4N2M310RHatModule3RunEv">M3::RHatModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1RHatModule.html#_CPPv4N2M310RHatModuleD0Ev">M3::RHatModule::~RHatModule (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1SigmaVariationModule.html#_CPPv4N2M320SigmaVariationModuleE">M3::SigmaVariationModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1SigmaVariationModule.html#_CPPv4N2M320SigmaVariationModule10get_parserEv">M3::SigmaVariationModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1SigmaVariationModule.html#_CPPv4N2M320SigmaVariationModule3RunEv">M3::SigmaVariationModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1SigmaVariationModule.html#_CPPv4N2M320SigmaVariationModuleD0Ev">M3::SigmaVariationModule::~SigmaVariationModule (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1SmearModule.html#_CPPv4N2M311SmearModuleE">M3::SmearModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1SmearModule.html#_CPPv4N2M311SmearModule10get_parserEv">M3::SmearModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1SmearModule.html#_CPPv4N2M311SmearModule3RunEv">M3::SmearModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1SmearModule.html#_CPPv4N2M311SmearModule10SmearChainERKNSt6stringERKNSt6stringE">M3::SmearModule::SmearChain (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1SmearModule.html#_CPPv4N2M311SmearModuleD0Ev">M3::SmearModule::~SmearModule (C++ function)</a>
 </li>
       <li><a href="api/typedef_namespaceM3_1a08723e82326f079864a8672505dd5741.html#_CPPv4N2M36uint_tE">M3::uint_t (C++ type)</a>
 </li>
+      <li><a href="api/structM3_1_1UmbrellaConfig.html#_CPPv4N2M314UmbrellaConfigE">M3::UmbrellaConfig (C++ struct)</a>
+</li>
+      <li><a href="api/structM3_1_1UmbrellaConfig.html#_CPPv4N2M314UmbrellaConfig13dynamic_filesE">M3::UmbrellaConfig::dynamic_files (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1UmbrellaConfig.html#_CPPv4N2M314UmbrellaConfig17dynamic_n_windowsE">M3::UmbrellaConfig::dynamic_n_windows (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1UmbrellaConfig.html#_CPPv4N2M314UmbrellaConfig15dynamic_patternE">M3::UmbrellaConfig::dynamic_pattern (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1UmbrellaConfig.html#_CPPv4N2M314UmbrellaConfig14max_iterationsE">M3::UmbrellaConfig::max_iterations (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1UmbrellaConfig.html#_CPPv4N2M314UmbrellaConfig11output_fileE">M3::UmbrellaConfig::output_file (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1UmbrellaConfig.html#_CPPv4N2M314UmbrellaConfig15print_frequencyE">M3::UmbrellaConfig::print_frequency (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1UmbrellaConfig.html#_CPPv4N2M314UmbrellaConfig9toleranceE">M3::UmbrellaConfig::tolerance (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1UmbrellaConfig.html#_CPPv4N2M314UmbrellaConfig20variable_of_interestE">M3::UmbrellaConfig::variable_of_interest (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1UmbrellaConfig.html#_CPPv4N2M314UmbrellaConfig7windowsE">M3::UmbrellaConfig::windows (C++ member)</a>
+</li>
       <li><a href="api/variable_namespaceM3_1aeb787f15a88d520047578ed3f63fc345.html#_CPPv4N2M326UmbrellaGaussianNormFactorE">M3::UmbrellaGaussianNormFactor (C++ member)</a>
+</li>
+      <li><a href="api/classM3_1_1UmbrellaModule.html#_CPPv4N2M314UmbrellaModuleE">M3::UmbrellaModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1UmbrellaModule.html#_CPPv4N2M314UmbrellaModule10get_parserEv">M3::UmbrellaModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1UmbrellaModule.html#_CPPv4N2M314UmbrellaModule3RunEv">M3::UmbrellaModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1UmbrellaModule.html#_CPPv4N2M314UmbrellaModuleD0Ev">M3::UmbrellaModule::~UmbrellaModule (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1UmbrellaPlotModule.html#_CPPv4N2M318UmbrellaPlotModuleE">M3::UmbrellaPlotModule (C++ class)</a>
+</li>
+      <li><a href="api/classM3_1_1UmbrellaPlotModule.html#_CPPv4N2M318UmbrellaPlotModule10get_parserEv">M3::UmbrellaPlotModule::get_parser (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1UmbrellaPlotModule.html#_CPPv4N2M318UmbrellaPlotModule3RunEv">M3::UmbrellaPlotModule::Run (C++ function)</a>
+</li>
+      <li><a href="api/classM3_1_1UmbrellaPlotModule.html#_CPPv4N2M318UmbrellaPlotModuleD0Ev">M3::UmbrellaPlotModule::~UmbrellaPlotModule (C++ function)</a>
 </li>
       <li><a href="api/variable_namespaceM3_1a016e9a04de587fed0e52a2ff7af57393.html#_CPPv4N2M316UnderOverFlowBinE">M3::UnderOverFlowBin (C++ member)</a>
 </li>
@@ -1887,6 +2095,8 @@
 </li>
       <li><a href="api/structM3_1_1Utils_1_1ColumnSpec.html#_CPPv4N2M35Utils10ColumnSpec4nameE">M3::Utils::ColumnSpec::name (C++ member)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/function_namespaceM3_1_1Utils_1a45c1b264497aabdcceff3707d6f0fa10.html#_CPPv4N2M35Utils24EstimateDataTransferRateEP6TChainK8Long64_t">M3::Utils::EstimateDataTransferRate (C++ function)</a>
 </li>
       <li><a href="api/function_namespaceM3_1_1Utils_1a9c1c1d6d38585550e356e7d36bfdb704.html#_CPPv4N2M35Utils12FormatDoubleEKdKi">M3::Utils::FormatDouble (C++ function)</a>
@@ -1898,8 +2108,6 @@
       <li><a href="api/function_namespaceM3_1_1Utils_1a1ee28e60049e882dbfa0ed808a140aaa.html#_CPPv4N2M35Utils10GetGPUInfoEv">M3::Utils::GetGPUInfo (C++ function)</a>
 </li>
       <li><a href="api/function_namespaceM3_1_1Utils_1afb4213a30e5bfd7ca3e9e5d27beefe9e.html#_CPPv4N2M35Utils15GetMaCh3VersionEv">M3::Utils::GetMaCh3Version (C++ function)</a>
-</li>
-      <li><a href="api/function_namespaceM3_1_1Utils_1a0b01bdf0cb6a60b9447fcf7bea9ce472.html#_CPPv4N2M35Utils14GetMassFromPDGEKi">M3::Utils::GetMassFromPDG (C++ function)</a>
 </li>
       <li><a href="api/function_namespaceM3_1_1Utils_1ad796df2f1b4323201c86682a96fa9c23.html#_CPPv4N2M35Utils9GetOSInfoEv">M3::Utils::GetOSInfo (C++ function)</a>
 </li>
@@ -1932,6 +2140,22 @@
       <li><a href="api/classM3_1_1Utils_1_1TablePrinter.html#_CPPv4N2M35Utils12TablePrinter12TablePrinterENSt6vectorI10ColumnSpecEE">M3::Utils::TablePrinter::TablePrinter (C++ function)</a>
 </li>
       <li><a href="api/function_namespaceM3_1_1Utils_1adb1ec2c447be60dc963ab75230417d5d.html#_CPPv4N2M35Utils16TerminalToStringENSt6stringE">M3::Utils::TerminalToString (C++ function)</a>
+</li>
+      <li><a href="api/structM3_1_1WindowConfig.html#_CPPv4N2M312WindowConfigE">M3::WindowConfig (C++ struct)</a>
+</li>
+      <li><a href="api/structM3_1_1WindowConfig.html#_CPPv4N2M312WindowConfig6centerE">M3::WindowConfig::center (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1WindowConfig.html#_CPPv4N2M312WindowConfig10input_fileE">M3::WindowConfig::input_file (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1WindowConfig.html#_CPPv4N2M312WindowConfig19multicanonical_betaE">M3::WindowConfig::multicanonical_beta (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1WindowConfig.html#_CPPv4N2M312WindowConfig4nameE">M3::WindowConfig::name (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1WindowConfig.html#_CPPv4N2M312WindowConfig20umbrellaBiasFunctionE">M3::WindowConfig::umbrellaBiasFunction (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1WindowConfig.html#_CPPv4N2M312WindowConfig14vonMises_kappaE">M3::WindowConfig::vonMises_kappa (C++ member)</a>
+</li>
+      <li><a href="api/structM3_1_1WindowConfig.html#_CPPv4N2M312WindowConfig5widthE">M3::WindowConfig::width (C++ member)</a>
 </li>
       <li><a href="api/variable_namespaceM3_1aa45c9a847fa5c777ff86ee3f22b8206c.html#_CPPv4N2M34ZeroE">M3::Zero (C++ member)</a>
 </li>
@@ -1995,8 +2219,6 @@
 </li>
       <li><a href="api/classMaCh3Modes.html#_CPPv4NK10MaCh3Modes20GetModeFromGeneratorEKi">MaCh3Modes::GetModeFromGenerator (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/classMaCh3Modes.html#_CPPv4NK10MaCh3Modes7GetNameEv">MaCh3Modes::GetName (C++ function)</a>
 </li>
       <li><a href="api/classMaCh3Modes.html#_CPPv4NK10MaCh3Modes11GetNCCModesEv">MaCh3Modes::GetNCCModes (C++ function)</a>
@@ -2016,14 +2238,6 @@
       <li><a href="api/typedef_MaCh3Modes_8h_1adf43f6c73c9598abc381855d31ef5682.html#_CPPv412MaCh3Modes_t">MaCh3Modes_t (C++ type)</a>
 </li>
       <li><a href="api/function_MaCh3Factory_8h_1a790d0802b36a03be651d830ae33ed8e6.html#_CPPv4I0E25MaCh3SampleHandlerFactoryNSt6vectorIP10SampleTypeEERKNSt6vectorINSt6stringEEEP23ParameterHandlerGeneric">MaCh3SampleHandlerFactory (C++ function)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1a84d9f672d5b59d6a5c998147f4c9714f.html#_CPPv434MakeFluctuatedHistogramAlternativeP7TH2PolyP7TH2Poly">MakeFluctuatedHistogramAlternative (C++ function)</a>, <a href="api/function_HistogramUtils_8h_1aa4a6c663b339c664ba7dc8e8f135b95f.html#_CPPv434MakeFluctuatedHistogramAlternativeP4TH2DP4TH2D">[1]</a>, <a href="api/function_HistogramUtils_8h_1af7d8eb5185577656e9c7fae371c56a35.html#_CPPv434MakeFluctuatedHistogramAlternativeP4TH1DP4TH1D">[2]</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1a1f7d3fee3ea9db203af9801b26a6d982.html#_CPPv431MakeFluctuatedHistogramStandardP4TH1DP4TH1D">MakeFluctuatedHistogramStandard (C++ function)</a>, <a href="api/function_HistogramUtils_8h_1a8c35fd0f4c254f680f40cc47190335ae.html#_CPPv431MakeFluctuatedHistogramStandardP4TH2DP4TH2D">[1]</a>, <a href="api/function_HistogramUtils_8h_1a9d457c3fcee7d9a0cdd298a3a0cc47fc.html#_CPPv431MakeFluctuatedHistogramStandardP7TH2PolyP7TH2Poly">[2]</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1a9372bd8295f0ce1759ebf5a35106f4af.html#_CPPv412MakePolyHistRKNSt6stringERKNSt6vectorIdEERKNSt6vectorIdEE">MakePolyHist (C++ function)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1a024915739289279f900551723366cb02.html#_CPPv422MakeSummaryFromSpectraPK4TH2DRKNSt6stringE">MakeSummaryFromSpectra (C++ function)</a>
 </li>
       <li><a href="api/classManager.html#_CPPv47Manager">Manager (C++ class)</a>
 
@@ -2612,13 +2826,7 @@
       </ul></li>
       <li><a href="pymach3/manager.html#pyMaCh3._pyMaCh3.manager.NodeType">NodeType (class in pyMaCh3._pyMaCh3.manager)</a>
 </li>
-      <li><a href="api/function_HistogramUtils_8h_1ab18c6b2408d7b9021bad06d47a06ee8d.html#_CPPv418NoOverflowIntegralP7TH2Poly">NoOverflowIntegral (C++ function)</a>
-</li>
       <li><a href="pymach3/parameters.html#pyMaCh3._pyMaCh3.parameters.SystematicType.Normalisation">Normalisation (pyMaCh3._pyMaCh3.parameters.SystematicType attribute)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1ae28c217f8e8591248bfa54e95fdd7741.html#_CPPv413NormalisePolyP7TH2Poly">NormalisePoly (C++ function)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1a2fc5d92fb039ba3c886404100876a511.html#_CPPv416NormaliseTH2PolyP7TH2Poly">NormaliseTH2Poly (C++ function)</a>
 </li>
       <li><a href="api/structNormParameter.html#_CPPv413NormParameter">NormParameter (C++ struct)</a>
 </li>
@@ -2638,12 +2846,12 @@
 </li>
       <li><a href="api/classNuDockServerBase.html#_CPPv4N16NuDockServerBase13add_prior_llhE">NuDockServerBase::add_prior_llh (C++ member)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/classNuDockServerBase.html#_CPPv4N16NuDockServerBase7get2NLLERKN8nlohmann4jsonE">NuDockServerBase::get2NLL (C++ function)</a>
 </li>
       <li><a href="api/classNuDockServerBase.html#_CPPv4N16NuDockServerBase15getDataSpectrumERKN8nlohmann4jsonE">NuDockServerBase::getDataSpectrum (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/classNuDockServerBase.html#_CPPv4N16NuDockServerBase16getLogLikelihoodEv">NuDockServerBase::getLogLikelihood (C++ function)</a>
 </li>
       <li><a href="api/classNuDockServerBase.html#_CPPv4N16NuDockServerBase13getMCSpectrumERKN8nlohmann4jsonE">NuDockServerBase::getMCSpectrum (C++ function)</a>
@@ -2732,10 +2940,10 @@
 </li>
       <li><a href="api/classOscProcessor.html#_CPPv4N12OscProcessor12DeltaCPIndexE">OscProcessor::DeltaCPIndex (C++ member)</a>
 </li>
-      <li><a href="api/classOscProcessor.html#_CPPv4N12OscProcessor11DeltaCPNameE">OscProcessor::DeltaCPName (C++ member)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api/classOscProcessor.html#_CPPv4N12OscProcessor11DeltaCPNameE">OscProcessor::DeltaCPName (C++ member)</a>
+</li>
       <li><a href="api/classOscProcessor.html#_CPPv4N12OscProcessor15DeltaM2_23IndexE">OscProcessor::DeltaM2_23Index (C++ member)</a>
 </li>
       <li><a href="api/classOscProcessor.html#_CPPv4N12OscProcessor14DeltaM2_23NameE">OscProcessor::DeltaM2_23Name (C++ member)</a>
@@ -2775,8 +2983,6 @@
       <li><a href="api/classOscProcessor.html#_CPPv4N12OscProcessor15Sin2Theta23NameE">OscProcessor::Sin2Theta23Name (C++ member)</a>
 </li>
       <li><a href="api/classOscProcessor.html#_CPPv4N12OscProcessorD0Ev">OscProcessor::~OscProcessor (C++ function)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1a34345b88bcd0e45db5612d58a972a154.html#_CPPv416OverflowIntegralP7TH2Poly">OverflowIntegral (C++ function)</a>
 </li>
       <li><a href="api/function_YamlHelper_8h_1a269e230f4f26b824c65a4c7a1472e07b.html#_CPPv4I0E14OverrideConfigvN4YAML4NodeERKNSt6stringE6TValue">OverrideConfig (C++ function)</a>, <a href="api/function_YamlHelper_8h_1a55f0b8c6b5d52b5c269ce26c7d3853f5.html#_CPPv4IDpE14OverrideConfigvN4YAML4NodeERKNSt6stringEDp4Args">[1]</a>
 </li>
@@ -3094,12 +3300,12 @@
 </li>
       <li><a href="api/classParameterHandlerGeneric.html#_CPPv4NK23ParameterHandlerGeneric18GetNumParFromGroupERKNSt6stringE">ParameterHandlerGeneric::GetNumParFromGroup (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/classParameterHandlerGeneric.html#_CPPv4NK23ParameterHandlerGeneric24GetOscillationParametersERKN4YAML4NodeEKi">ParameterHandlerGeneric::GetOscillationParameters (C++ function)</a>
 </li>
       <li><a href="api/classParameterHandlerGeneric.html#_CPPv4NK23ParameterHandlerGeneric24GetOscParsFromSampleNameERKNSt6stringE">ParameterHandlerGeneric::GetOscParsFromSampleName (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/classParameterHandlerGeneric.html#_CPPv4NK23ParameterHandlerGeneric13GetParamGroupEKi">ParameterHandlerGeneric::GetParamGroup (C++ function)</a>
 </li>
       <li><a href="api/classParameterHandlerGeneric.html#_CPPv4NK23ParameterHandlerGeneric12GetParamTypeEKi">ParameterHandlerGeneric::GetParamType (C++ function)</a>
@@ -3300,14 +3506,6 @@
 </li>
       <li><a href="api/function_StatisticalUtils_8h_1ac37b51459c20e314d2da409d57a5fa31.html#_CPPv418PoissonGraphScaledPK4TH1Ddd">PoissonGraphScaled (C++ function)</a>
 </li>
-      <li><a href="api/function_HistogramUtils_8h_1a8bab8af5f0339c6ec0310ff5ea87f26d.html#_CPPv417PolyIntegralWidthP7TH2Poly">PolyIntegralWidth (C++ function)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1a22894be570e3fff70a0a353bede6b5e6.html#_CPPv415PolyProjectionXP7TObjectRKNSt6stringERKNSt6vectorIdEEKb">PolyProjectionX (C++ function)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1acb5af17298de3e1a3080f25c4d7aa271.html#_CPPv415PolyProjectionYP7TObjectRKNSt6stringERKNSt6vectorIdEEKb">PolyProjectionY (C++ function)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1a61d8f295d13a5fe82a552c08d42c8bfa.html#_CPPv414PolyScaleWidthP7TH2Polyd">PolyScaleWidth (C++ function)</a>
-</li>
       <li><a href="api/structPredictiveSample.html#_CPPv416PredictiveSample">PredictiveSample (C++ struct)</a>
 </li>
       <li><a href="api/structPredictiveSample.html#_CPPv4N16PredictiveSample10DimenstionE">PredictiveSample::Dimenstion (C++ member)</a>
@@ -3436,17 +3634,11 @@
 <h2 id="R">R</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/function_HistogramUtils_8h_1a84f9597f629eac6a951b455001d034d4.html#_CPPv4I0E10RatioHistsP8HistTypeP8HistTypeP8HistType">RatioHists (C++ function)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1a105593155519e6b3bd302f8d04769280.html#_CPPv410RatioPolysP7TH2PolyP7TH2Poly">RatioPolys (C++ function)</a>
-</li>
       <li><a href="pymach3/manager.html#pyMaCh3._pyMaCh3.manager.Manager.raw">raw() (pyMaCh3._pyMaCh3.manager.Manager method)</a>
 </li>
       <li><a href="api/function_SplineStructs_8h_1adb758df8e7abdf29f474bf643da0efd2.html#_CPPv49ReduceTF1RNSt6vectorINSt6vectorIP3TF1EEEE">ReduceTF1 (C++ function)</a>
 </li>
       <li><a href="api/function_SplineStructs_8h_1a02798d50f282b82a68b58d672dcb2472.html#_CPPv414ReduceTSpline3RNSt6vectorINSt6vectorIP8TSpline3EEEE">ReduceTSpline3 (C++ function)</a>
-</li>
-      <li><a href="api/function_HistogramUtils_8h_1a85463c0c6943e3d544d5fcb3f96bf18a.html#_CPPv412RemoveFitterP4TH1DRKNSt6stringE">RemoveFitter (C++ function)</a>
 </li>
       <li><a href="api/enum_ParameterStructs_8h_1a6a73aa1ad819973a9c421c17c2a7f36d.html#_CPPv412RespFuncType">RespFuncType (C++ enum)</a>
 </li>
@@ -3456,12 +3648,10 @@
 </li>
       <li><a href="api/enum_ParameterStructs_8h_1a6a73aa1ad819973a9c421c17c2a7f36d.html#_CPPv4N12RespFuncType13kTSpline3_redE">RespFuncType::kTSpline3_red (C++ enumerator)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pymach3/splines.html#pyMaCh3._pyMaCh3.splines.ResponseFunction">ResponseFunction (class in pyMaCh3._pyMaCh3.splines)</a>
 </li>
-      <li><a href="api/function_HistogramUtils_8h_1a316ab25b5952ddda4b14167b858e2a90.html#_CPPv432returnCherenkovThresholdMomentumKi">returnCherenkovThresholdMomentum (C++ function)</a>
-</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="pymach3/samples.html#pyMaCh3._pyMaCh3.samples.SampleHandlerInterface.reweight">reweight() (pyMaCh3._pyMaCh3.samples.SampleHandlerInterface method)</a>
 </li>
       <li><a href="api/classRHatCalculator.html#_CPPv414RHatCalculator">RHatCalculator (C++ class)</a>

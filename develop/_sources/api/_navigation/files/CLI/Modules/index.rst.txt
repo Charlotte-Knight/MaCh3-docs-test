@@ -4,7 +4,16 @@ Modules
 .. toctree::
    :maxdepth: 1
 
+   Plot/index.rst
    ../../../../dir_CLI_Modules.rst
+   ../../../../file_CLI_Modules_CombineModule.hpp.rst
    ../../../../file_CLI_Modules_DiagMCMCModule.hpp.rst
+   ../../../../file_CLI_Modules_DiagModule.hpp.rst
    ../../../../file_CLI_Modules_GetPenaltyTermModule.hpp.rst
+   ../../../../file_CLI_Modules_LLHMapModule.hpp.rst
    ../../../../file_CLI_Modules_ProcessMCMCModule.hpp.rst
+   ../../../../file_CLI_Modules_ReweightModule.hpp.rst
+   ../../../../file_CLI_Modules_RHatModule.hpp.rst
+   ../../../../file_CLI_Modules_SmearModule.hpp.rst
+   ../../../../file_CLI_Modules_UmbrellaModule.hpp.rst
+   ../../../../file_CLI_Modules_UmbrellaPlotModule.hpp.rst

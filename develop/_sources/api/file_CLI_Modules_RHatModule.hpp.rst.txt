@@ -1,0 +1,57 @@
+
+.. _file_CLI_Modules_RHatModule.hpp:
+
+File RHatModule.hpp
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI_Modules>` (``CLI/Modules``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Module for computing the R-hat diagnostic for MCMC chains. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``CLI/Modules/RHatModule.hpp``)
+-------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_CLI_Modules_RHatModule.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``CLI/API/plugin.hpp`` (:ref:`file_CLI_API_plugin.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classM3_1_1RHatModule`
+

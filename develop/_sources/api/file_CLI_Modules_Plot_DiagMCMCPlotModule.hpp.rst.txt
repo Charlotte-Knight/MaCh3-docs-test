@@ -1,0 +1,97 @@
+
+.. _file_CLI_Modules_Plot_DiagMCMCPlotModule.hpp:
+
+File DiagMCMCPlotModule.hpp
+===========================
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI_Modules_Plot>` (``CLI/Modules/Plot``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+KS: This script is used to analyse output form DiagMCMC. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``CLI/Modules/Plot/DiagMCMCPlotModule.hpp``)
+--------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_CLI_Modules_Plot_DiagMCMCPlotModule.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+This script support comparing up to 4 files, there is easy way to expand it up to five or six, 
+
+
+
+Henry Wallace 
+
+Kamil Skwarczynski 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``CLI/API/plugin.hpp`` (:ref:`file_CLI_API_plugin.hpp`)
+
+- ``Manager/Core.h`` (:ref:`file_Manager_Core.h`)
+
+- ``TDirectoryFile.h``
+
+- ``TGraph.h``
+
+- ``TGraphAsymmErrors.h``
+
+- ``TH1D.h``
+
+- ``TString.h``
+
+- ``TSystem.h``
+
+- ``memory``
+
+- ``utility``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_CLI_Modules_Plot_PlotModule.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classM3_1_1DiagMCMCPlotModule`
+

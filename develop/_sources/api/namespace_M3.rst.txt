@@ -35,7 +35,19 @@ Classes
 -------
 
 
+- :ref:`exhale_struct_structM3_1_1ReweightConfig`
+
+- :ref:`exhale_struct_structM3_1_1UmbrellaConfig`
+
+- :ref:`exhale_struct_structM3_1_1WindowConfig`
+
+- :ref:`exhale_class_classM3_1_1CombineModule`
+
 - :ref:`exhale_class_classM3_1_1DiagMCMCModule`
+
+- :ref:`exhale_class_classM3_1_1DiagMCMCPlotModule`
+
+- :ref:`exhale_class_classM3_1_1DiagModule`
 
 - :ref:`exhale_class_classM3_1_1DynamicPlugin`
 
@@ -43,13 +55,37 @@ Classes
 
 - :ref:`exhale_class_classM3_1_1IPlugin`
 
+- :ref:`exhale_class_classM3_1_1LLHMapModule`
+
+- :ref:`exhale_class_classM3_1_1LLHModule`
+
 - :ref:`exhale_class_classM3_1_1MaCh3ArgumentParser`
 
 - :ref:`exhale_class_classM3_1_1MaCh3Program`
 
+- :ref:`exhale_class_classM3_1_1MatrixModule`
+
+- :ref:`exhale_class_classM3_1_1PlotModule`
+
 - :ref:`exhale_class_classM3_1_1PluginBase`
 
+- :ref:`exhale_class_classM3_1_1PostFitParamModule`
+
+- :ref:`exhale_class_classM3_1_1PredictiveModule`
+
 - :ref:`exhale_class_classM3_1_1ProcessMCMCModule`
+
+- :ref:`exhale_class_classM3_1_1ReweightModule`
+
+- :ref:`exhale_class_classM3_1_1RHatModule`
+
+- :ref:`exhale_class_classM3_1_1SigmaVariationModule`
+
+- :ref:`exhale_class_classM3_1_1SmearModule`
+
+- :ref:`exhale_class_classM3_1_1UmbrellaModule`
+
+- :ref:`exhale_class_classM3_1_1UmbrellaPlotModule`
 
 
 Enums
@@ -59,6 +95,8 @@ Enums
 - :ref:`exhale_enum_namespaceM3_1aac995ad2de0eca11488028f2d4a964e7`
 
 - :ref:`exhale_enum_namespaceM3_1a007e5ed320c3672a3faf79da0a38fb7a`
+
+- :ref:`exhale_enum_namespaceM3_1afee9f50ad950e4e28ec5863bd2d18f89`
 
 
 Functions
@@ -76,14 +114,6 @@ Functions
 - :ref:`exhale_function_namespaceM3_1ae6db8e17b4a71c38cc8d9be16ac443d6`
 
 - :ref:`exhale_function_namespaceM3_1a6a398d9cc5c005959286835d630b0092`
-
-- :ref:`exhale_function_namespaceM3_1a17d30caa6b00bcf8c43b7834bcd031d9`
-
-- :ref:`exhale_function_namespaceM3_1a763e2ffed22d70815be09edb9c932690`
-
-- :ref:`exhale_function_namespaceM3_1a5dc2b96f9e1931503d9413941a951249`
-
-- :ref:`exhale_function_namespaceM3_1aa374c88684482cdd66297f6ae828372d`
 
 - :ref:`exhale_function_namespaceM3_1af4a9244946bbdae4b7bfcdf38feda9fb`
 
@@ -115,13 +145,7 @@ Functions
 
 - :ref:`exhale_function_namespaceM3_1a2be9f8c591f38f815bcf8b6b60c61653`
 
-- :ref:`exhale_function_namespaceM3_1a87841bdbf0e0a2a733d9e4ca499f820d`
-
 - :ref:`exhale_function_namespaceM3_1a116e94960ba2df3ac2ec3ebe499307ae`
-
-- :ref:`exhale_function_namespaceM3_1aeec45eef77225e7b06efc9d557d08321`
-
-- :ref:`exhale_function_namespaceM3_1a75bda934f7f63fc70bf57eac209dfdfe`
 
 
 Typedefs
@@ -152,6 +176,8 @@ Variables
 - :ref:`exhale_variable_namespaceM3_1aaf4ba720c8ab2982beaa3c243aee1b98`
 
 - :ref:`exhale_variable_namespaceM3_1a88e0a86bf059e7ced9ec9717dd9da133`
+
+- :ref:`exhale_variable_namespaceM3_1ad1a26ed9c2b623a890f5929a2b7abe0c`
 
 - :ref:`exhale_variable_namespaceM3_1a1aeda1bb6057e3f765d6d919246376e0`
 

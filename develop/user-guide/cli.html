@@ -41,6 +41,8 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
 
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -569,7 +571,7 @@ their argument descriptions and defaults come directly from the C++ parsers.
 Only help commands are executed, not analyses.</p>
 <section id="mach3">
 <h3>mach3<a class="headerlink" href="#mach3" title="Link to this heading">#</a></h3>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 [--help] [--version] [--install-completions] {diag,penterm,process}
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 [--help] [--version] [--install-completions] {combine,diagnostics,penaltyterm,plot,process,reweight,rhat,smear,umbrellasolver}
 
 Optional arguments:
   -h, --help             shows help message and exits 
@@ -577,40 +579,214 @@ Optional arguments:
   --install-completions  
 
 Subcommands:
-  diag                  Tool for MCMC diagnostic like autocorrelations.
-  penterm               Calculate penalty term for selected parameters, for every step
+  combine               Tool for combining multiple chains or ROOT files into a single output.
+  diagnostics           MCMC diagnostics subcommand.
+  penaltyterm           Calculate penalty term for selected parameters, for every step
+  plot                  Plotting subcommand.
   process               Main executable responsible for different types of MCMC processing like drawing posteriors, triangle plots etc.
+  reweight              Tool for MCMC reweighting.
+  rhat                  Tool for computing the R-hat diagnostic for MCMC chains.
+  smear                 Tool for smearing MCMC chains.
+  umbrellasolver        Tool for Umbrella Sampling.
 </pre></div>
 </div>
-<section id="mach3-diag">
-<h4>mach3 diag<a class="headerlink" href="#mach3-diag" title="Link to this heading">#</a></h4>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 diag [--help] MCMC_CHAIN CONFIG
+<section id="mach3-combine">
+<h4>mach3 combine<a class="headerlink" href="#mach3-combine" title="Link to this heading">#</a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 combine [--help] [--output OUTPUT_FILE] [--compression-level COMPRESSION_LEVEL] [--force] [--merge-mode] INPUT...
 
-Tool for MCMC diagnostic like autocorrelations.
+Tool for combining multiple chains or ROOT files into a single output.
 
 Positional arguments:
-  MCMC_CHAIN  MCMC chain root file. [required]
+  INPUT                     Input ROOT files. [nargs: 1 or more] [required]
+
+Optional arguments:
+  -h, --help                shows help message and exits 
+  -o, --output OUTPUT_FILE  Output ROOT file. 
+  -c, --compression-level   Compression level for the output ROOT file. [nargs=0..1] [default: 1]
+  -f, --force               Force overwrite of the output file if it exists. 
+  -m, --merge-mode          Merge files in-spite of differences
+</pre></div>
+</div>
+</section>
+<section id="mach3-diagnostics">
+<h4>mach3 diagnostics<a class="headerlink" href="#mach3-diagnostics" title="Link to this heading">#</a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 diagnostics [--help] {llhmap,mcmc}
+
+MCMC diagnostics subcommand.
+
+Optional arguments:
+  -h, --help  shows help message and exits 
+
+Subcommands:
+  llhmap     Process LLHMap outputs and generate 1D and 2D profiled likelihoods as defined in the config
+  mcmc       Tool for MCMC diagnostic like autocorrelations.
+</pre></div>
+</div>
+<section id="mach3-diagnostics-llhmap">
+<h5>mach3 diagnostics llhmap<a class="headerlink" href="#mach3-diagnostics-llhmap" title="Link to this heading">#</a></h5>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 diagnostics llhmap [--help] CONFIG INPUTFILE...
+
+Process LLHMap outputs and generate 1D and 2D profiled likelihoods as defined in the config
+
+Positional arguments:
   CONFIG      Config file. [required]
+  INPUTFILE   LLHMap outputs root files to process [nargs: 1 or more] [required]
 
 Optional arguments:
   -h, --help  shows help message and exits
 </pre></div>
 </div>
 </section>
-<section id="mach3-penterm">
-<h4>mach3 penterm<a class="headerlink" href="#mach3-penterm" title="Link to this heading">#</a></h4>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 penterm [--help] INPUTFILE CONFIG
+<section id="mach3-diagnostics-mcmc">
+<h5>mach3 diagnostics mcmc<a class="headerlink" href="#mach3-diagnostics-mcmc" title="Link to this heading">#</a></h5>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 diagnostics mcmc [--help] CONFIG MCMC_CHAIN
 
-Calculate penalty term for selected parameters, for every step
+Tool for MCMC diagnostic like autocorrelations.
 
 Positional arguments:
-  INPUTFILE   Root file to analyse. [required]
   CONFIG      Config file. [required]
+  MCMC_CHAIN  MCMC chain root file. [required]
 
 Optional arguments:
   -h, --help  shows help message and exits
 </pre></div>
 </div>
+</section>
+</section>
+<section id="mach3-penaltyterm">
+<h4>mach3 penaltyterm<a class="headerlink" href="#mach3-penaltyterm" title="Link to this heading">#</a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 penaltyterm [--help] CONFIG INPUTFILE
+
+Calculate penalty term for selected parameters, for every step
+
+Positional arguments:
+  CONFIG      Config file. [required]
+  INPUTFILE   Root file to analyse. [required]
+
+Optional arguments:
+  -h, --help  shows help message and exits
+</pre></div>
+</div>
+</section>
+<section id="mach3-plot">
+<h4>mach3 plot<a class="headerlink" href="#mach3-plot" title="Link to this heading">#</a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 plot [--help] {diagmcmc,llhscan,matrix,postfitparam,predictive,sigmavar}
+
+Plotting subcommand.
+
+Optional arguments:
+  -h, --help  shows help message and exits 
+
+Subcommands:
+  diagmcmc   Tool for plotting MCMC diagnostic like autocorrelations.
+  llhscan    new version of the old PlotLLH binary.
+  matrix     Module for plotting and analyzing matrices.
+  postfitparam new version of the old GetPlotPostFitParam binary.
+  predictive Module for predictive plotting and analysis.
+  sigmavar   Module for plotting and analyzing sigma variation outputs.
+</pre></div>
+</div>
+<section id="mach3-plot-diagmcmc">
+<h5>mach3 plot diagmcmc<a class="headerlink" href="#mach3-plot-diagmcmc" title="Link to this heading">#</a></h5>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 plot diagmcmc [--help] DIAG_OUTPUT1 TITLE1 [DIAG_OUTPUT2 TITLE2 [DIAG_OUTPUT3 TITLE3 [...]]]...
+
+Tool for plotting MCMC diagnostic like autocorrelations.
+
+Positional arguments:
+  DIAG_OUTPUT1 TITLE1 [DIAG_OUTPUT2 TITLE2 [DIAG_OUTPUT3 TITLE3 [...]]]  DiagMCMC root files and titles. [nargs: 1 or more] [required]
+
+Optional arguments:
+  -h, --help                                                             shows help message and exits
+</pre></div>
+</div>
+</section>
+<section id="mach3-plot-llhscan">
+<h5>mach3 plot llhscan<a class="headerlink" href="#mach3-plot-llhscan" title="Link to this heading">#</a></h5>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 plot llhscan [--help] [--outputfile OUTPUTFILE] [--config CONFIG] [--labels LABELS] [--drawopts DRAWOPTS] [--split] [--ratio] [--grid] INPUTFILES...
+
+new version of the old PlotLLH binary.
+
+Positional arguments:
+  INPUTFILES                   LLHMap outputs root files to process [nargs: 1 or more] [required]
+
+Optional arguments:
+  -h, --help                   shows help message and exits 
+  -o, --outputfile OUTPUTFILE  Output file. 
+  -c, --config CONFIG          Config file. 
+  -l, --labels LABELS          string of labels for each file in the format Label1;Label2;... to be parsed by parseFileLabels(), number of labels should match exactly the number of files. 
+  -d, --drawopts DRAWOPTS      Draw options for the plots. 
+  -s, --split                  where possible, will try to split plots made by sample. 
+  -r, --ratio                  where possible, make ratio plots comparing the different input files. 
+  -g, --grid                   where possible, draw a grid on the produced plots for improved readability.
+</pre></div>
+</div>
+</section>
+<section id="mach3-plot-matrix">
+<h5>mach3 plot matrix<a class="headerlink" href="#mach3-plot-matrix" title="Link to this heading">#</a></h5>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 plot matrix [--help] CONFIG MCMC_OUTPUT...
+
+Module for plotting and analyzing matrices.
+
+Positional arguments:
+  CONFIG       Config file. [required]
+  MCMC_OUTPUT  MCMC processor output root file. [nargs: 1 or more] [required]
+
+Optional arguments:
+  -h, --help   shows help message and exits
+</pre></div>
+</div>
+</section>
+<section id="mach3-plot-postfitparam">
+<h5>mach3 plot postfitparam<a class="headerlink" href="#mach3-plot-postfitparam" title="Link to this heading">#</a></h5>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 plot postfitparam [--help] [--outputfile OUTPUTFILE] [--config CONFIG] [--labels LABELS] [--drawopts DRAWOPTS] [--split] [--ratio] [--grid] INPUTFILES...
+
+new version of the old GetPlotPostFitParam binary.
+
+Positional arguments:
+  INPUTFILES                   LLHMap outputs root files to process [nargs: 1 or more] [required]
+
+Optional arguments:
+  -h, --help                   shows help message and exits 
+  -o, --outputfile OUTPUTFILE  Output file. If omitted, use the plotting manager's default output name. 
+  -c, --config CONFIG          Config file. If omitted, use the plotting manager's default configuration. 
+  -l, --labels LABELS          Labels in the format Label1;Label2;...; provide one per input file. If omitted, use the input file names. 
+  -d, --drawopts DRAWOPTS      Extra draw options for the plots. If omitted, use no extra draw options. 
+  -s, --split                  where possible, will try to split plots made by sample. 
+  -r, --ratio                  where possible, make ratio plots comparing the different input files. 
+  -g, --grid                   where possible, draw a grid on the produced plots for improved readability.
+</pre></div>
+</div>
+</section>
+<section id="mach3-plot-predictive">
+<h5>mach3 plot predictive<a class="headerlink" href="#mach3-plot-predictive" title="Link to this heading">#</a></h5>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 plot predictive [--help] CONFIG ROOT_FILES...
+
+Module for predictive plotting and analysis.
+
+Positional arguments:
+  CONFIG      Config file. [required]
+  ROOT_FILES  Prior/Post_PredOutput root file. [nargs: 1 or more] [required]
+
+Optional arguments:
+  -h, --help  shows help message and exits
+</pre></div>
+</div>
+</section>
+<section id="mach3-plot-sigmavar">
+<h5>mach3 plot sigmavar<a class="headerlink" href="#mach3-plot-sigmavar" title="Link to this heading">#</a></h5>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 plot sigmavar [--help] SIGMAVAR_OUTPUT CONFIG
+
+Module for plotting and analyzing sigma variation outputs.
+
+Positional arguments:
+  SIGMAVAR_OUTPUT  Sigma variation output root file. [required]
+  CONFIG           Config file. [required]
+
+Optional arguments:
+  -h, --help       shows help message and exits
+</pre></div>
+</div>
+</section>
 </section>
 <section id="mach3-process">
 <h4>mach3 process<a class="headerlink" href="#mach3-process" title="Link to this heading">#</a></h4>
@@ -645,6 +821,67 @@ Optional arguments:
     Calculation of Bayes factors with significance based on the Jeffreys scale
     Triangle plots
     Study of covariance matrix stability
+</pre></div>
+</div>
+</section>
+<section id="mach3-reweight">
+<h4>mach3 reweight<a class="headerlink" href="#mach3-reweight" title="Link to this heading">#</a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 reweight [--help] CONFIG MCMC_CHAIN
+
+Tool for MCMC reweighting.
+
+Positional arguments:
+  CONFIG      Config file. [required]
+  MCMC_CHAIN  MCMC chain root file. [required]
+
+Optional arguments:
+  -h, --help  shows help message and exits
+</pre></div>
+</div>
+</section>
+<section id="mach3-rhat">
+<h4>mach3 rhat<a class="headerlink" href="#mach3-rhat" title="Link to this heading">#</a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 rhat [--help] [--high-mem] NTHINTOYS MCMC_CHAIN1 [MCMC_CHAIN2 [...]]...
+
+Tool for computing the R-hat diagnostic for MCMC chains.
+
+Positional arguments:
+  NTHINTOYS                        if in high mem mode this is number of toys per chain, for low mem thinning setting [required]
+  MCMC_CHAIN1 [MCMC_CHAIN2 [...]]  MCMC chain root files [nargs: 1 or more] [required]
+
+Optional arguments:
+  -h, --help                       shows help message and exits 
+  --high-mem                       Enable high memory mode.
+</pre></div>
+</div>
+</section>
+<section id="mach3-smear">
+<h4>mach3 smear<a class="headerlink" href="#mach3-smear" title="Link to this heading">#</a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 smear [--help] MCMC_CHAIN CONFIG
+
+Tool for smearing MCMC chains.
+
+Positional arguments:
+  MCMC_CHAIN  MCMC chain root file. [required]
+  CONFIG      Config file. [required]
+
+Optional arguments:
+  -h, --help  shows help message and exits
+</pre></div>
+</div>
+</section>
+<section id="mach3-umbrellasolver">
+<h4>mach3 umbrellasolver<a class="headerlink" href="#mach3-umbrellasolver" title="Link to this heading">#</a></h4>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Usage: mach3 umbrellasolver [--help] CONFIG
+
+Positional arguments:
+  CONFIG      Config file. [nargs=0..1] [default: "umbrella_config.yaml"]
+
+Optional arguments:
+  -h, --help  shows help message and exits 
+
+Optional subcommands:
+  plot        Tool for plotting MCMC diagnostic like autocorrelations.
 </pre></div>
 </div>
 </section>
@@ -703,9 +940,27 @@ Optional arguments:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plugins">Plugins</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generated-command-reference">Generated command reference</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3">mach3</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-diag">mach3 diag</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-penterm">mach3 penterm</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-combine">mach3 combine</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-diagnostics">mach3 diagnostics</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-diagnostics-llhmap">mach3 diagnostics llhmap</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-diagnostics-mcmc">mach3 diagnostics mcmc</a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-penaltyterm">mach3 penaltyterm</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-plot">mach3 plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-plot-diagmcmc">mach3 plot diagmcmc</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-plot-llhscan">mach3 plot llhscan</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-plot-matrix">mach3 plot matrix</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-plot-postfitparam">mach3 plot postfitparam</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-plot-predictive">mach3 plot predictive</a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-plot-sigmavar">mach3 plot sigmavar</a></li>
+</ul>
+</li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-process">mach3 process</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-reweight">mach3 reweight</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-rhat">mach3 rhat</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-smear">mach3 smear</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mach3-umbrellasolver">mach3 umbrellasolver</a></li>
 </ul>
 </li>
 </ul>

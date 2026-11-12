@@ -1,0 +1,73 @@
+
+.. _file_CLI_Modules_UmbrellaPlotModule.hpp:
+
+File UmbrellaPlotModule.hpp
+===========================
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI_Modules>` (``CLI/Modules``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Module for Umbrella sampling plot analysis. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``CLI/Modules/UmbrellaPlotModule.hpp``)
+---------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_CLI_Modules_UmbrellaPlotModule.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+David Riley 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``CLI/API/plugin.hpp`` (:ref:`file_CLI_API_plugin.hpp`)
+
+- ``string``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_CLI_Modules_UmbrellaModule.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classM3_1_1UmbrellaPlotModule`
+

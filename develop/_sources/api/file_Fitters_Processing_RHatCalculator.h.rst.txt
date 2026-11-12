@@ -30,11 +30,13 @@ Includes
 --------
 
 
+- ``Fitters/Processing/StatisticalUtils.h`` (:ref:`file_Fitters_Processing_StatisticalUtils.h`)
+
 - ``Parameters/ParameterHandlerUtils.h`` (:ref:`file_Parameters_ParameterHandlerUtils.h`)
 
-- ``Processing/StatisticalUtils.h`` (:ref:`file_Fitters_Processing_StatisticalUtils.h`)
+- ``Utils/HistogramUtils.h``
 
-- ``Samples/HistogramUtils.h`` (:ref:`file_Samples_HistogramUtils.h`)
+- ``Utils/IOUtils.h``
 
 
 

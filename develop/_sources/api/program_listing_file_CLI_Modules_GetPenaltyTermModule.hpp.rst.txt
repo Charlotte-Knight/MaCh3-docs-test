@@ -17,32 +17,29 @@ Program Listing for File GetPenaltyTermModule.hpp
    #include "CLI/API/plugin.hpp"
    
    namespace M3{
+   class GetPenaltyTermModule: public IModuleBase{
+    public:
+     virtual ~GetPenaltyTermModule();
    
-     class GetPenaltyTermModule: public IModuleBase{
+     MaCh3ArgumentParser* get_parser() override;
    
-       public:
-         virtual ~GetPenaltyTermModule();
+     int Run() override;
    
-         MaCh3ArgumentParser* get_parser() override;
+    private:
+     void ReadCovFile(const std::string& inputFile,
+                       std::vector <double>& Prior,
+                       std::vector <bool>& isFlat,
+                       std::vector<std::string>& ParamNames,
+                       std::vector<std::vector<double>>& invCovMatrix,
+                       int& nParams);
    
-         int Run() override;
+     void LoadSettings(YAML::Node& Settings,
+                       std::vector<std::string>& SetsNames,
+                       std::vector<std::string>& FancyTitle,
+                       std::vector<std::vector<bool>>& isRelevantParam,
+                       const std::vector<std::string>& ParamNames,
+                       const int nParams);
    
-       private:
-         void ReadCovFile(const std::string& inputFile,
-                          std::vector <double>& Prior,
-                          std::vector <bool>& isFlat,
-                          std::vector<std::string>& ParamNames,
-                          std::vector<std::vector<double>>& invCovMatrix,
-                          int& nParams);
-   
-         void LoadSettings(YAML::Node& Settings,
-                           std::vector<std::string>& SetsNames,
-                           std::vector<std::string>& FancyTitle,
-                           std::vector<std::vector<bool>>& isRelevantParam,
-                           const std::vector<std::string>& ParamNames,
-                           const int nParams);
-   
-         void GetPenaltyTerm(const std::string& inputFile, const std::string& configFile);
-   
-     };
+     void GetPenaltyTerm(const std::string& inputFile, const std::string& configFile);
+   };
    }

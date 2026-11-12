@@ -12,7 +12,7 @@ Program Listing for File MR2T2.h
 
    #pragma once
    
-   #include "Algorithms/MCMCBase.h"
+   #include "Fitters/Algorithms/MCMCBase.h"
    
    class MR2T2 : public MCMCBase {
     public:

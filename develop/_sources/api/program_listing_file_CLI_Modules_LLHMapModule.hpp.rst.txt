@@ -1,0 +1,40 @@
+
+.. _program_listing_file_CLI_Modules_LLHMapModule.hpp:
+
+Program Listing for File LLHMapModule.hpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_Modules_LLHMapModule.hpp>` (``CLI/Modules/LLHMapModule.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   
+   #pragma once
+   #include "CLI/API/plugin.hpp"
+   #include "Manager/Core.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   // yaml Includes
+   #include "yaml-cpp/yaml.h"
+   // ROOT includes
+   #include <ROOT/RDataFrame.hxx>
+   _MaCh3_Safe_Include_End_ //}
+   
+   namespace M3{
+   
+   class LLHMapModule: public IModuleBase{
+    public:
+     virtual ~LLHMapModule();
+   
+     MaCh3ArgumentParser* get_parser() override;
+   
+     int Run() override;
+   
+     std::vector<std::string> GetParams(std::vector<std::string> &PoIs, ROOT::RDataFrame Map);
+   
+     std::pair<bool,std::vector<double>> ExtractBinning(std::string param, YAML::Node Settings, ROOT::RDataFrame Map);
+   };
+   }

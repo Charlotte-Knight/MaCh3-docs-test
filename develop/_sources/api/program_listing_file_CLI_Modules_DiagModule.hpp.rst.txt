@@ -1,0 +1,31 @@
+
+.. _program_listing_file_CLI_Modules_DiagModule.hpp:
+
+Program Listing for File DiagModule.hpp
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_Modules_DiagModule.hpp>` (``CLI/Modules/DiagModule.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include "CLI/API/plugin.hpp"
+   #include "CLI/Modules/DiagMCMCModule.hpp"
+   #include "CLI/Modules/LLHMapModule.hpp"
+   
+   
+   namespace M3{
+   class DiagModule: public IModuleBase{
+    public:
+     virtual ~DiagModule();
+   
+     MaCh3ArgumentParser* get_parser() override;
+   
+     int Run() override;
+    private:
+     LLHMapModule m_llhMapModule;
+     DiagMCMCModule m_diagMCMCModule;
+   };
+   }

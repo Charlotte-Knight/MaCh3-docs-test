@@ -27,9 +27,11 @@ Program Listing for File MaCh3Program.hpp
        class MaCh3Program: public MaCh3ArgumentParser{
            public:
                using MaCh3ArgumentParser::MaCh3ArgumentParser;
+               using MaCh3ArgumentParser::parse_args;
+   
+               void parse_args(int argc, const char *const argv[]);
    
                virtual ~MaCh3Program(){
-                   //std::cout<<"UNLOADED"<< std::endl;
                    this->unload_dynamic_plugins();
                }
    
@@ -53,7 +55,6 @@ Program Listing for File MaCh3Program.hpp
                std::vector<std::string> expand_plugin_path(const std::string& path) const;
    
            private:
-               std::vector<std::string> m_subcommands;                                     
                std::map<const MaCh3ArgumentParser*, IModule*> m_module_map;                
                std::map<const MaCh3ArgumentParser*, std::unique_ptr<DynamicPlugin>> m_dynamic_plugin_map;  
    

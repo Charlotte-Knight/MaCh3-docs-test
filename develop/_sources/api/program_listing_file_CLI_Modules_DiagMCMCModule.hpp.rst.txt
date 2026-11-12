@@ -17,13 +17,12 @@ Program Listing for File DiagMCMCModule.hpp
    
    namespace M3{
    
-     class DiagMCMCModule: public IModuleBase{
+   class DiagMCMCModule: public IModuleBase{
+    public:
+     virtual ~DiagMCMCModule();
    
-       public:
-         virtual ~DiagMCMCModule();
+     MaCh3ArgumentParser* get_parser() override;
    
-         MaCh3ArgumentParser* get_parser() override;
-   
-         int Run() override;
-     };
+     int Run() override;
+   };
    }

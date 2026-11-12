@@ -1,0 +1,92 @@
+
+.. _file_CLI_Modules_ReweightModule.hpp:
+
+File ReweightModule.hpp
+=======================
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI_Modules>` (``CLI/Modules``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Module for MCMC reweighting analysis. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``CLI/Modules/ReweightModule.hpp``)
+-----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_CLI_Modules_ReweightModule.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``CLI/API/plugin.hpp`` (:ref:`file_CLI_API_plugin.hpp`)
+
+- ``Fitters/Processing/MCMCProcessor.h`` (:ref:`file_Fitters_Processing_MCMCProcessor.h`)
+
+- ``TChain.h``
+
+- ``TFile.h``
+
+- ``TGraph.h``
+
+- ``TGraph2D.h``
+
+- ``TMath.h``
+
+- ``TTree.h``
+
+- ``cmath``
+
+- ``fstream``
+
+- ``map``
+
+- ``memory``
+
+- ``string``
+
+- ``vector``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structM3_1_1ReweightConfig`
+
+- :ref:`exhale_class_classM3_1_1ReweightModule`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespaceM3_1afee9f50ad950e4e28ec5863bd2d18f89`
+

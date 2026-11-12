@@ -30,11 +30,9 @@ Includes
 --------
 
 
+- ``Fitters/Processing/StatisticalUtils.h`` (:ref:`file_Fitters_Processing_StatisticalUtils.h`)
+
 - ``Parameters/ParameterHandlerUtils.h`` (:ref:`file_Parameters_ParameterHandlerUtils.h`)
-
-- ``Processing/StatisticalUtils.h`` (:ref:`file_Fitters_Processing_StatisticalUtils.h`)
-
-- ``Samples/HistogramUtils.h`` (:ref:`file_Samples_HistogramUtils.h`)
 
 - ``TBranch.h``
 
@@ -76,6 +74,10 @@ Includes
 
 - ``TVectorD.h``
 
+- ``Utils/HistogramUtils.h``
+
+- ``Utils/IOUtils.h``
+
 - ``complex``
 
 - ``cstdio``
@@ -87,6 +89,8 @@ Included By
 
 
 - :ref:`file_CLI_Modules_ProcessMCMCModule.hpp`
+
+- :ref:`file_CLI_Modules_ReweightModule.hpp`
 
 - :ref:`file_Fitters_Algorithms_FitterBase.h`
 

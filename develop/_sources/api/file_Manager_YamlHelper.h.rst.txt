@@ -83,8 +83,6 @@ Included By
 
 - :ref:`file_Manager_Monitor.h`
 
-- :ref:`file_Samples_HistogramUtils.h`
-
 - :ref:`file_Utils_Plotting_InputManager.h`
 
 - :ref:`file_Utils_Plotting_PlottingManager.h`

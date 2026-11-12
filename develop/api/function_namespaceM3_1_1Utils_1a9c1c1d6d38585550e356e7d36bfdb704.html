@@ -41,6 +41,8 @@
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
 
+    <script src="../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../_static/doctools.js?v=9bcbadda"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -54,8 +56,8 @@
     <link rel="icon" href="../_static/mach3logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Function M3::Utils::GetMassFromPDG" href="function_namespaceM3_1_1Utils_1a0b01bdf0cb6a60b9447fcf7bea9ce472.html" />
-    <link rel="prev" title="Function M3::ScaleHistogram" href="function_namespaceM3_1a75bda934f7f63fc70bf57eac209dfdfe.html" />
+    <link rel="next" title="Function M3::Utils::PDGToNuOscillatorFlavour" href="function_namespaceM3_1_1Utils_1a186a7214d984c1917cf6c615ba4bb2c9.html" />
+    <link rel="prev" title="Function GetSampleFromGlobalBin" href="function_SampleStructs_8h_1a4a3cb7a9d73e72bb8144bed28ed5855d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
@@ -453,9 +455,33 @@
 </ul>
 </details></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="_navigation/symbols/CLI/Modules/index.html">Modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="_navigation/symbols/CLI/Modules/Plot/index.html">Plot</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="classGetPostFitParamModule.html">Class GetPostFitParamModule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classM3_1_1DiagMCMCPlotModule.html">Class DiagMCMCPlotModule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classM3_1_1LLHModule.html">Class LLHModule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classM3_1_1MatrixModule.html">Class MatrixModule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classM3_1_1PlotModule.html">Class PlotModule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classM3_1_1PostFitParamModule.html">Class PostFitParamModule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classM3_1_1PredictiveModule.html">Class PredictiveModule</a></li>
+<li class="toctree-l4"><a class="reference internal" href="classM3_1_1SigmaVariationModule.html">Class SigmaVariationModule</a></li>
+</ul>
+</details></li>
+<li class="toctree-l3"><a class="reference internal" href="classM3_1_1CombineModule.html">Class CombineModule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="classM3_1_1DiagMCMCModule.html">Class DiagMCMCModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classM3_1_1DiagModule.html">Class DiagModule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="classM3_1_1GetPenaltyTermModule.html">Class GetPenaltyTermModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classM3_1_1LLHMapModule.html">Class LLHMapModule</a></li>
 <li class="toctree-l3"><a class="reference internal" href="classM3_1_1ProcessMCMCModule.html">Class ProcessMCMCModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classM3_1_1ReweightModule.html">Class ReweightModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classM3_1_1RHatModule.html">Class RHatModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classM3_1_1SmearModule.html">Class SmearModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classM3_1_1UmbrellaModule.html">Class UmbrellaModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="classM3_1_1UmbrellaPlotModule.html">Class UmbrellaPlotModule</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structM3_1_1ReweightConfig.html">Struct ReweightConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structM3_1_1UmbrellaConfig.html">Struct UmbrellaConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="structM3_1_1WindowConfig.html">Struct WindowConfig</a></li>
+<li class="toctree-l3"><a class="reference internal" href="enum_namespaceM3_1afee9f50ad950e4e28ec5863bd2d18f89.html">Enum kReweightType</a></li>
+<li class="toctree-l3"><a class="reference internal" href="variable_namespaceM3_1ad1a26ed9c2b623a890f5929a2b7abe0c.html">Variable M3::debug_mode</a></li>
 </ul>
 </details></li>
 <li class="toctree-l2"><a class="reference internal" href="classM3_1_1DynamicPlugin.html">Class DynamicPlugin</a></li>
@@ -693,50 +719,11 @@
 <li class="toctree-l2"><a class="reference internal" href="enum_SampleHandlerBase_8h_1acd80f4d29c8405ff6fa2dd89ff4e9365.html">Enum SamplePlotType</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enum_SampleStructs_8h_1a706416000041de040e97d5dbe0bdb580.html">Enum TargetMat</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enum_SampleStructs_8h_1a960da89e33ac45a56f7bbfac3068dc67.html">Enum TestStatistic</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a6c4c2882fee9455d66c2d8a4b0f6b302.html">Function BinRangeToBinEdges</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a96467b3e8e70454c7718d92387e87937.html">Function BuildBinEdgesFromNode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a2dce7c8dec7d4d7f9c61346893973421.html">Function CalculateEnu</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a060e41fa0e5f91ce4fcbb6a4cafeaf13.html">Function CalculateQ2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1ace84e2d09b85a95e50fe24e4309370bb.html">Template Function CastVector</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a1aa25e8399ca7a229b8aa77c25407832.html">Function CheckTH2PolyFileVersion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1aa9cbcbd12e52cadbc498db3b78784104.html">Function ConvertTH2DtoTH2Poly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1af532e371f45a26f2b180d96b82b7d496.html">Function ConvertTH2PolyToTH2D</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a5057e3deaf657180213e52d3f5bc41cc.html">Function FastViolinFill</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1afbf5ccf44bc187caa268d4d158f4e5f6.html">Function file_exists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_SampleStructs_8h_1af4afb01e9e8a6b9fa2bf0ece1b4e0859.html">Function GetLocalBinFromGlobalBin</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_SampleInfo_8h_1afc52c63bc2b15ae30444755579f5beb4.html">Function GetOscChannel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a154b384372cf349df645df390b285620.html">Function GetRandomPoly2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_SampleStructs_8h_1a4a3cb7a9d73e72bb8144bed28ed5855d.html">Function GetSampleFromGlobalBin</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_namespaceM3_1a17d30caa6b00bcf8c43b7834bcd031d9.html">Function M3::CheckBinningMatch(const TH1D *, const TH1D *, const std::string&amp;, const int)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_namespaceM3_1a5dc2b96f9e1931503d9413941a951249.html">Function M3::CheckBinningMatch(TH2Poly *, TH2Poly *, const std::string&amp;, const int)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_namespaceM3_1a763e2ffed22d70815be09edb9c932690.html">Function M3::CheckBinningMatch(const TH2D *, const TH2D *, const std::string&amp;, const int)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_namespaceM3_1aa374c88684482cdd66297f6ae828372d.html">Template Function M3::Clone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_namespaceM3_1a87841bdbf0e0a2a733d9e4ca499f820d.html">Function M3::Open</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_namespaceM3_1aeec45eef77225e7b06efc9d557d08321.html">Function M3::PolyToYaml</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_namespaceM3_1a75bda934f7f63fc70bf57eac209dfdfe.html">Function M3::ScaleHistogram</a></li>
 <li class="toctree-l2 current active"><a aria-current="page" class="current reference internal" href="#">Function M3::Utils::FormatDouble</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_namespaceM3_1_1Utils_1a0b01bdf0cb6a60b9447fcf7bea9ce472.html">Function M3::Utils::GetMassFromPDG</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_namespaceM3_1_1Utils_1a186a7214d984c1917cf6c615ba4bb2c9.html">Function M3::Utils::PDGToNuOscillatorFlavour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a84d9f672d5b59d6a5c998147f4c9714f.html">Function MakeFluctuatedHistogramAlternative(TH2Poly *, TH2Poly *)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1aa4a6c663b339c664ba7dc8e8f135b95f.html">Function MakeFluctuatedHistogramAlternative(TH2D *, TH2D *)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1af7d8eb5185577656e9c7fae371c56a35.html">Function MakeFluctuatedHistogramAlternative(TH1D *, TH1D *)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a1f7d3fee3ea9db203af9801b26a6d982.html">Function MakeFluctuatedHistogramStandard(TH1D *, TH1D *)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a8c35fd0f4c254f680f40cc47190335ae.html">Function MakeFluctuatedHistogramStandard(TH2D *, TH2D *)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a9d457c3fcee7d9a0cdd298a3a0cc47fc.html">Function MakeFluctuatedHistogramStandard(TH2Poly *, TH2Poly *)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a9372bd8295f0ce1759ebf5a35106f4af.html">Function MakePolyHist</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a024915739289279f900551723366cb02.html">Function MakeSummaryFromSpectra</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1ab18c6b2408d7b9021bad06d47a06ee8d.html">Function NoOverflowIntegral</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1ae28c217f8e8591248bfa54e95fdd7741.html">Function NormalisePoly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a2fc5d92fb039ba3c886404100876a511.html">Function NormaliseTH2Poly</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a34345b88bcd0e45db5612d58a972a154.html">Function OverflowIntegral</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a8bab8af5f0339c6ec0310ff5ea87f26d.html">Function PolyIntegralWidth</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a22894be570e3fff70a0a353bede6b5e6.html">Function PolyProjectionX</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1acb5af17298de3e1a3080f25c4d7aa271.html">Function PolyProjectionY</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a61d8f295d13a5fe82a552c08d42c8bfa.html">Function PolyScaleWidth</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a84f9597f629eac6a951b455001d034d4.html">Template Function RatioHists</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a105593155519e6b3bd302f8d04769280.html">Function RatioPolys</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a85463c0c6943e3d544d5fcb3f96bf18a.html">Function RemoveFitter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="function_HistogramUtils_8h_1a316ab25b5952ddda4b14167b858e2a90.html">Function returnCherenkovThresholdMomentum</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_SampleStructs_8h_1a36b7eae1e9918d93ac6912d88c498a24.html">Function TargetMat_ToString</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_SampleStructs_8h_1a248e4c38d6c9db7fad8415643ee9b7a0.html">Function TestStatFromString</a></li>
 <li class="toctree-l2"><a class="reference internal" href="function_SampleStructs_8h_1a300e6cbc6c664b9ae8462c637732cf61.html">Function TestStatistic_ToString</a></li>
@@ -800,10 +787,19 @@
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="_navigation/files/CLI/Modules/index.html">Modules</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l4"><a class="reference internal" href="_navigation/files/CLI/Modules/Plot/index.html">Plot</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dir_CLI_Modules.html">Directory Modules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_CLI_Modules_CombineModule.hpp.html">File CombineModule.hpp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="file_CLI_Modules_DiagMCMCModule.hpp.html">File DiagMCMCModule.hpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_CLI_Modules_DiagModule.hpp.html">File DiagModule.hpp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="file_CLI_Modules_GetPenaltyTermModule.hpp.html">File GetPenaltyTermModule.hpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_CLI_Modules_LLHMapModule.hpp.html">File LLHMapModule.hpp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="file_CLI_Modules_ProcessMCMCModule.hpp.html">File ProcessMCMCModule.hpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_CLI_Modules_ReweightModule.hpp.html">File ReweightModule.hpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_CLI_Modules_RHatModule.hpp.html">File RHatModule.hpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_CLI_Modules_SmearModule.hpp.html">File SmearModule.hpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_CLI_Modules_UmbrellaModule.hpp.html">File UmbrellaModule.hpp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file_CLI_Modules_UmbrellaPlotModule.hpp.html">File UmbrellaPlotModule.hpp</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3"><a class="reference internal" href="dir_CLI.html">Directory CLI</a></li>
@@ -951,10 +947,6 @@
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="file_Samples_EventInfo.h.html">File EventInfo.h</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l4"><a class="reference internal" href="program_listing_file_Samples_EventInfo.h.html">Program Listing for File EventInfo.h</a></li>
-</ul>
-</details></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="file_Samples_HistogramUtils.h.html">File HistogramUtils.h</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l4"><a class="reference internal" href="program_listing_file_Samples_HistogramUtils.h.html">Program Listing for File HistogramUtils.h</a></li>
 </ul>
 </details></li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="file_Samples_OscillationHandler.h.html">File OscillationHandler.h</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -1116,20 +1108,20 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="function_namespaceM3_1a75bda934f7f63fc70bf57eac209dfdfe.html"
+       href="function_SampleStructs_8h_1a4a3cb7a9d73e72bb8144bed28ed5855d.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Function M3::ScaleHistogram</p>
+        <p class="prev-next-title">Function GetSampleFromGlobalBin</p>
       </div>
     </a>
     <a class="right-next"
-       href="function_namespaceM3_1_1Utils_1a0b01bdf0cb6a60b9447fcf7bea9ce472.html"
+       href="function_namespaceM3_1_1Utils_1a186a7214d984c1917cf6c615ba4bb2c9.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Function M3::Utils::GetMassFromPDG</p>
+        <p class="prev-next-title">Function M3::Utils::PDGToNuOscillatorFlavour</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -41,6 +41,8 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
 
+    <script src="../../_static/jquery.js?v=5d32c60e"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -571,7 +573,12 @@ documentation build. On macOS, if the executable cannot locate its libraries,
 also set <code class="docutils literal notranslate"><span class="pre">DYLD_LIBRARY_PATH</span></code> to the build’s <code class="docutils literal notranslate"><span class="pre">lib</span></code> directory.</p>
 <p>Exhale runs Doxygen during the Sphinx build and writes XML for Breathe to
 consume. The generated API pages are written to <code class="docutils literal notranslate"><span class="pre">docs/api/</span></code> and are not
-committed.</p>
+committed.
+After upstream moves or removes headers, delete the generated <code class="docutils literal notranslate"><span class="pre">docs/api/</span></code>
+directory before rebuilding to avoid retaining obsolete Exhale pages.
+Sphinx checks references strictly. External <code class="docutils literal notranslate"><span class="pre">std</span></code> and ROOT names are excluded
+from missing-reference warnings using full-match patterns; MaCh3 API references
+remain checked.</p>
 <p>Doxygen records class inheritance and collaboration relationships in the XML.
 Exhale adds Breathe’s graph option to every generated class and struct page,
 and Sphinx renders available diagrams with Graphviz. These diagrams are
@@ -584,7 +591,9 @@ The diagram canvas is transparent. <code class="docutils literal notranslate"><s
 boxes and labels using PyData’s active theme colours, updates them when the
 theme changes, and brightens dark relationship colours while preserving their
 distinctions. Default blue arrows become black in light mode and white in dark
-mode. Without JavaScript, the original Graphviz styling remains.</p>
+mode. Without JavaScript, the original Graphviz styling remains.
+Exhale’s collapsible API hierarchies use <code class="docutils literal notranslate"><span class="pre">sphinxcontrib-jquery</span></code> to supply
+their JavaScript dependency independently of the theme.</p>
 <section id="automatic-c-api-navigation">
 <h2>Automatic C++ API navigation<a class="headerlink" href="#automatic-c-api-navigation" title="Link to this heading">#</a></h2>
 <p>The C++ API landing page starts with <strong>By source directory</strong>, followed by
@@ -703,6 +712,9 @@ branch: it stores the release snapshots, not the seven-day review artifacts.
 The deployment job needs <code class="docutils literal notranslate"><span class="pre">contents:</span> <span class="pre">write</span></code> for this branch as well as Pages
 permissions; repository rules must permit the Actions bot to update <code class="docutils literal notranslate"><span class="pre">docs-site</span></code>.
 Deployments are serialized to prevent concurrent updates from losing versions.
+Inside that queue, superseded <code class="docutils literal notranslate"><span class="pre">develop</span></code> builds are skipped if their commit no
+longer matches the branch head, so a slower old build cannot replace newer docs.
+Tag snapshots are not skipped by this check.
 The deployment queue retains pending releases rather than replacing them with
 newer runs.</p>
 <p>For the first deployment in the upstream <code class="docutils literal notranslate"><span class="pre">mach3-software/MaCh3</span></code> repository, CI

@@ -1,0 +1,77 @@
+
+.. _file_CLI_Modules_UmbrellaModule.hpp:
+
+File UmbrellaModule.hpp
+=======================
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI_Modules>` (``CLI/Modules``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``CLI/Modules/UmbrellaModule.hpp``)
+-----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_CLI_Modules_UmbrellaModule.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``CLI/API/plugin.hpp`` (:ref:`file_CLI_API_plugin.hpp`)
+
+- ``CLI/Modules/UmbrellaPlotModule.hpp`` (:ref:`file_CLI_Modules_UmbrellaPlotModule.hpp`)
+
+- ``Fitters/Algorithms/MulticanonicalMCMCHandler.h`` (:ref:`file_Fitters_Algorithms_MulticanonicalMCMCHandler.h`)
+
+- ``TChain.h``
+
+- ``TSystem.h``
+
+- ``TSystemDirectory.h``
+
+- ``string``
+
+- ``vector``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structM3_1_1UmbrellaConfig`
+
+- :ref:`exhale_struct_structM3_1_1WindowConfig`
+
+- :ref:`exhale_class_classM3_1_1UmbrellaModule`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespaceM3_1ad1a26ed9c2b623a890f5929a2b7abe0c`
+

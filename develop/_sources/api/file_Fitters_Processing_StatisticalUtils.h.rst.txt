@@ -45,8 +45,6 @@ Includes
 
 - ``Manager/Manager.h`` (:ref:`file_Manager_Manager.h`)
 
-- ``Samples/HistogramUtils.h`` (:ref:`file_Samples_HistogramUtils.h`)
-
 - ``TCanvas.h``
 
 - ``TGraphAsymmErrors.h``
@@ -56,6 +54,10 @@ Includes
 - ``TROOT.h``
 
 - ``TStyle.h``
+
+- ``Utils/HistogramUtils.h``
+
+- ``Utils/IOUtils.h``
 
 - ``algorithm``
 

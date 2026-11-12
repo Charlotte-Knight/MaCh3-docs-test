@@ -71,6 +71,10 @@ Included By
 -----------
 
 
+- :ref:`file_CLI_Modules_LLHMapModule.hpp`
+
+- :ref:`file_CLI_Modules_Plot_DiagMCMCPlotModule.hpp`
+
 - :ref:`file_Manager_MaCh3Exception.h`
 
 - :ref:`file_Manager_MaCh3Logger.h`

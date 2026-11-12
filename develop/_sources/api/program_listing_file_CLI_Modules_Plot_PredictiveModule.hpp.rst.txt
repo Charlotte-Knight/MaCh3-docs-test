@@ -1,0 +1,73 @@
+
+.. _program_listing_file_CLI_Modules_Plot_PredictiveModule.hpp:
+
+Program Listing for File PredictiveModule.hpp
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_Modules_Plot_PredictiveModule.hpp>` (``CLI/Modules/Plot/PredictiveModule.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include "CLI/API/plugin.hpp"
+   
+   //MaCh3 Includes
+   #include "Utils/Plotting/PlottingUtils.h"
+   #include "Utils/Plotting/PlottingManager.h"
+   #include <numeric>
+   
+   //this file has lots of usage of the ROOT plotting interface that only takes floats, turn this warning off for this CU for now
+   #pragma GCC diagnostic ignored "-Wfloat-conversion"
+   #pragma GCC diagnostic ignored "-Wconversion"
+   
+   
+   
+   namespace M3{
+   class PredictiveModule: public IModuleBase{
+    public:
+     virtual ~PredictiveModule();
+   
+     MaCh3ArgumentParser* get_parser() override;
+   
+     int Run() override;
+    private:
+     std::vector<std::string> FindSamples(const std::string& File);
+     std::vector<int> FindDimensions(const std::string& File, const std::vector<std::string>& Samples);
+     std::vector<std::vector<std::string>> FindModes(const std::string& File,
+                                                     const std::vector<std::string>& SampleNames);
+     void PretifyHistogram(TH1* Hist, const std::string& SampleName);
+     double GetPValue(const TH2D* hist);
+     void PrintPosteriorPValue(const YAML::Node& Settings,
+                               const std::vector<TFile*>& InputFiles,
+                               const std::vector<std::string>& SampleNames);
+     void OverlayViolin(const YAML::Node& Settings,
+                         const std::vector<TFile*>& InputFiles,
+                         const std::vector<std::string>& SampleNames,
+                         const std::vector<int>& SampleDimension,
+                         const std::unique_ptr<TCanvas>& canv);
+     void OverlayPredicitve(const YAML::Node& Settings,
+                             const std::vector<TFile*>& InputFiles,
+                             const std::vector<std::string>& SampleNames,
+                             const std::vector<int>& SampleDimension,
+                             const std::unique_ptr<TCanvas>& canv);
+     void OverlayPredicitveByMode(const YAML::Node& Settings,
+                                   const std::vector<TFile*>& InputFiles,
+                                   const std::vector<std::string>& SampleNames,
+                                   const std::vector<int>& SampleDimension,
+                                   const std::vector<std::vector<std::string>>& Modes,
+                                   const std::unique_ptr<TCanvas>& canv);
+     void GetMeanError(TH1D* hist, double &Mean, double &Error);
+     void PrintPosteriorEventRates(const std::vector<TFile*>& InputFiles,
+                                   const std::vector<std::string>& SampleNames);
+     void PrintPosteriorFractionalUncertainties(const std::vector<TFile*>& InputFiles,
+                                                 const std::vector<std::string>& SampleNames);
+     double GetLLH(TH1* hist);
+     void PrintPredictiveLLH(const std::vector<TFile*>& InputFiles,
+                             const std::vector<std::string>& SampleNames);
+     void PredictivePlotting(const std::string& ConfigName,
+                             const std::vector<std::string>& FileNames);
+         Plotting::PlottingManager* PlotMan = nullptr;
+   };
+   }

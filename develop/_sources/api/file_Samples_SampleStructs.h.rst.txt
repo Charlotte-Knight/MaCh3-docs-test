@@ -70,6 +70,8 @@ Includes
 
 - ``TSpline.h``
 
+- ``Utils/PhysicsUtils.h``
+
 - ``list``
 
 - ``set``
@@ -82,6 +84,8 @@ Included By
 -----------
 
 
+- :ref:`file_CLI_Modules_CombineModule.hpp`
+
 - :ref:`file_Manager_Manager.h`
 
 - :ref:`file_Parameters_ParameterHandlerGeneric.h`
@@ -89,8 +93,6 @@ Included By
 - :ref:`file_Samples_BinningHandler.h`
 
 - :ref:`file_Samples_EventInfo.h`
-
-- :ref:`file_Samples_HistogramUtils.h`
 
 - :ref:`file_Samples_OscillationHandler.h`
 
@@ -145,8 +147,6 @@ Functions
 - :ref:`exhale_function_SampleStructs_8h_1a4a3cb7a9d73e72bb8144bed28ed5855d`
 
 - :ref:`exhale_function_namespaceM3_1_1Utils_1a9c1c1d6d38585550e356e7d36bfdb704`
-
-- :ref:`exhale_function_namespaceM3_1_1Utils_1a0b01bdf0cb6a60b9447fcf7bea9ce472`
 
 - :ref:`exhale_function_namespaceM3_1_1Utils_1a186a7214d984c1917cf6c615ba4bb2c9`
 

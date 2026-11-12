@@ -30,7 +30,7 @@ Includes
 --------
 
 
-- ``Algorithms/MCMCBase.h`` (:ref:`file_Fitters_Algorithms_MCMCBase.h`)
+- ``Fitters/Algorithms/MCMCBase.h`` (:ref:`file_Fitters_Algorithms_MCMCBase.h`)
 
 
 

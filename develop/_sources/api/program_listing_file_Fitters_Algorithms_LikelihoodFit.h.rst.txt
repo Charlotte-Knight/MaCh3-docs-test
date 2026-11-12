@@ -12,7 +12,7 @@ Program Listing for File LikelihoodFit.h
 
    #pragma once
    
-   #include "Algorithms/FitterBase.h"
+   #include "Fitters/Algorithms/FitterBase.h"
    
    class LikelihoodFit : public FitterBase {
     public:

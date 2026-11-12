@@ -1,0 +1,75 @@
+
+.. _program_listing_file_CLI_Modules_Plot_DiagMCMCPlotModule.hpp:
+
+Program Listing for File DiagMCMCPlotModule.hpp
+===============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_Modules_Plot_DiagMCMCPlotModule.hpp>` (``CLI/Modules/Plot/DiagMCMCPlotModule.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   #pragma once
+   #include <vector>
+   #include <memory>
+   #include <utility>
+   #include "CLI/API/plugin.hpp"
+   
+   // MaCh3 includes
+   #include "Manager/Core.h"
+   _MaCh3_Safe_Include_Start_ //{
+   #include "TH1D.h"
+   #include "TString.h"
+   #include "TGraph.h"
+   #include "TDirectoryFile.h"
+   #include "TGraphAsymmErrors.h"
+   #include <TSystem.h>
+   _MaCh3_Safe_Include_End_ //}
+   
+   
+   namespace M3{
+   class DiagMCMCPlotModule: public IModuleBase{
+    public:
+     virtual ~DiagMCMCPlotModule();
+   
+     MaCh3ArgumentParser* get_parser() override;
+   
+     int Run() override;
+    private:
+     double GetMinimumInRange(TH1D *hist, const double minRange, const double maxRange);
+     bool IsHistogramAllOnes(TH1D *hist, double tolerance = 0.001, int max_failures = 100);
+     void MakeDiagPlot(std::vector<TString> input_files, std::vector<TString> hist_labels);
+     void PlotAutoCorr(const std::vector<TString>& fname);
+     std::pair<std::unique_ptr<TGraph>, std::unique_ptr<TGraph>> CreateMinMaxBand(TH1D *hist, Color_t color);
+     std::unique_ptr<TGraphAsymmErrors> CalculateMinMaxBand(const std::vector<std::unique_ptr<TH1D>> &histograms,
+                                                             Color_t color);
+     void ProcessAutoCorrelationDirectory(TDirectoryFile *autocor_dir,
+                                           std::unique_ptr<TH1D>& average_hist,
+                                           int &parameter_count,
+                                           std::vector<std::unique_ptr<TH1D>> &histograms);
+   
+     void ProcessDiagnosticFile(const TString &file_path,
+                                 std::unique_ptr<TH1D>& average_hist,
+                                 int &parameter_count,
+                                 std::vector<std::unique_ptr<TH1D>> &histograms);
+     std::unique_ptr<TH1D> AutocorrProcessInputs(const TString &input_file,
+                                                 std::vector<std::unique_ptr<TH1D>> &histograms);
+   
+     void CompareAverageAC(const std::vector<std::vector<std::unique_ptr<TH1D>>> &histograms,
+                           const std::vector<std::unique_ptr<TH1D>> &averages,
+                           const std::vector<TString> &hist_labels,
+                           const TString &output_name,
+                           bool draw_min_max = true,
+                           bool draw_all = false,
+                           bool draw_errors = true);
+   
+     void PlotAverageACMult(std::vector<TString> input_files,
+                             std::vector<TString> hist_labels,
+                             const TString &output_name,
+                             bool draw_min_max = true,
+                             bool draw_all = false,
+                             bool draw_errors = true);
+   };
+   }

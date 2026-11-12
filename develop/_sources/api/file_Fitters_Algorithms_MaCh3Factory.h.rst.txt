@@ -43,15 +43,15 @@ Includes
 --------
 
 
-- ``Algorithms/DelayedMR2T2.h`` (:ref:`file_Fitters_Algorithms_DelayedMR2T2.h`)
+- ``Fitters/Algorithms/DelayedMR2T2.h`` (:ref:`file_Fitters_Algorithms_DelayedMR2T2.h`)
 
-- ``Algorithms/FitterBase.h`` (:ref:`file_Fitters_Algorithms_FitterBase.h`)
+- ``Fitters/Algorithms/FitterBase.h`` (:ref:`file_Fitters_Algorithms_FitterBase.h`)
 
-- ``Algorithms/LikelihoodFit.h`` (:ref:`file_Fitters_Algorithms_LikelihoodFit.h`)
+- ``Fitters/Algorithms/LikelihoodFit.h`` (:ref:`file_Fitters_Algorithms_LikelihoodFit.h`)
 
-- ``Algorithms/MR2T2.h`` (:ref:`file_Fitters_Algorithms_MR2T2.h`)
+- ``Fitters/Algorithms/MR2T2.h`` (:ref:`file_Fitters_Algorithms_MR2T2.h`)
 
-- ``Algorithms/PSO.h`` (:ref:`file_Fitters_Algorithms_PSO.h`)
+- ``Fitters/Algorithms/PSO.h`` (:ref:`file_Fitters_Algorithms_PSO.h`)
 
 - ``Parameters/ParameterHandlerGeneric.h`` (:ref:`file_Parameters_ParameterHandlerGeneric.h`)
 

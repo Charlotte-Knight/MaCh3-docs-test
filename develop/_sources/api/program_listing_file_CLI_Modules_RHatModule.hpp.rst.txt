@@ -1,0 +1,27 @@
+
+.. _program_listing_file_CLI_Modules_RHatModule.hpp:
+
+Program Listing for File RHatModule.hpp
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_Modules_RHatModule.hpp>` (``CLI/Modules/RHatModule.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   
+   #pragma once
+   #include "CLI/API/plugin.hpp"
+   
+   namespace M3{
+   class RHatModule: public IModuleBase{
+    public:
+     virtual ~RHatModule();
+   
+     MaCh3ArgumentParser* get_parser() override;
+   
+     int Run() override;
+   };
+   }

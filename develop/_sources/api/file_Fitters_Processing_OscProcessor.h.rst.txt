@@ -30,9 +30,7 @@ Includes
 --------
 
 
-- ``Processing/MCMCProcessor.h`` (:ref:`file_Fitters_Processing_MCMCProcessor.h`)
-
-- ``Samples/HistogramUtils.h`` (:ref:`file_Samples_HistogramUtils.h`)
+- ``Fitters/Processing/MCMCProcessor.h`` (:ref:`file_Fitters_Processing_MCMCProcessor.h`)
 
 - ``TComplex.h``
 

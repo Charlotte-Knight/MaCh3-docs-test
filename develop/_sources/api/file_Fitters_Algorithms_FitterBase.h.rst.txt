@@ -30,13 +30,13 @@ Includes
 --------
 
 
+- ``Fitters/Processing/MCMCProcessor.h`` (:ref:`file_Fitters_Processing_MCMCProcessor.h`)
+
 - ``Manager/Manager.h`` (:ref:`file_Manager_Manager.h`)
 
 - ``Parameters/ParameterHandlerBase.h`` (:ref:`file_Parameters_ParameterHandlerBase.h`)
 
 - ``Parameters/ParameterHandlerGeneric.h`` (:ref:`file_Parameters_ParameterHandlerGeneric.h`)
-
-- ``Processing/MCMCProcessor.h`` (:ref:`file_Fitters_Processing_MCMCProcessor.h`)
 
 - ``Samples/SampleHandlerInterface.h`` (:ref:`file_Samples_SampleHandlerInterface.h`)
 

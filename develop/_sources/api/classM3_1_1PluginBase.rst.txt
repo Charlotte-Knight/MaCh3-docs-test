@@ -18,9 +18,24 @@ Base Type
 Derived Types
 *************
 
+- ``public M3::CombineModule`` (:ref:`exhale_class_classM3_1_1CombineModule`)
 - ``public M3::DiagMCMCModule`` (:ref:`exhale_class_classM3_1_1DiagMCMCModule`)
+- ``public M3::DiagMCMCPlotModule`` (:ref:`exhale_class_classM3_1_1DiagMCMCPlotModule`)
+- ``public M3::DiagModule`` (:ref:`exhale_class_classM3_1_1DiagModule`)
 - ``public M3::GetPenaltyTermModule`` (:ref:`exhale_class_classM3_1_1GetPenaltyTermModule`)
+- ``public M3::LLHMapModule`` (:ref:`exhale_class_classM3_1_1LLHMapModule`)
+- ``public M3::LLHModule`` (:ref:`exhale_class_classM3_1_1LLHModule`)
+- ``public M3::MatrixModule`` (:ref:`exhale_class_classM3_1_1MatrixModule`)
+- ``public M3::PlotModule`` (:ref:`exhale_class_classM3_1_1PlotModule`)
+- ``public M3::PostFitParamModule`` (:ref:`exhale_class_classM3_1_1PostFitParamModule`)
+- ``public M3::PredictiveModule`` (:ref:`exhale_class_classM3_1_1PredictiveModule`)
 - ``public M3::ProcessMCMCModule`` (:ref:`exhale_class_classM3_1_1ProcessMCMCModule`)
+- ``public M3::RHatModule`` (:ref:`exhale_class_classM3_1_1RHatModule`)
+- ``public M3::ReweightModule`` (:ref:`exhale_class_classM3_1_1ReweightModule`)
+- ``public M3::SigmaVariationModule`` (:ref:`exhale_class_classM3_1_1SigmaVariationModule`)
+- ``public M3::SmearModule`` (:ref:`exhale_class_classM3_1_1SmearModule`)
+- ``public M3::UmbrellaModule`` (:ref:`exhale_class_classM3_1_1UmbrellaModule`)
+- ``public M3::UmbrellaPlotModule`` (:ref:`exhale_class_classM3_1_1UmbrellaPlotModule`)
 
 
 Class Documentation

@@ -1,0 +1,29 @@
+
+.. _program_listing_file_CLI_Modules_SmearModule.hpp:
+
+Program Listing for File SmearModule.hpp
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_Modules_SmearModule.hpp>` (``CLI/Modules/SmearModule.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   
+   #pragma once
+   #include "CLI/API/plugin.hpp"
+   
+   namespace M3{
+   class SmearModule: public IModuleBase{
+    public:
+     virtual ~SmearModule();
+   
+     MaCh3ArgumentParser* get_parser() override;
+   
+   
+     void SmearChain(const std::string& inputFile, const std::string& config);
+     int Run() override;
+   };
+   }

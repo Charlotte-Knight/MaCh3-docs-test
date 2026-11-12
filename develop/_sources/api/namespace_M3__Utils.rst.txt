@@ -52,8 +52,6 @@ Functions
 
 - :ref:`exhale_function_namespaceM3_1_1Utils_1afb4213a30e5bfd7ca3e9e5d27beefe9e`
 
-- :ref:`exhale_function_namespaceM3_1_1Utils_1a0b01bdf0cb6a60b9447fcf7bea9ce472`
-
 - :ref:`exhale_function_namespaceM3_1_1Utils_1ad796df2f1b4323201c86682a96fa9c23`
 
 - :ref:`exhale_function_namespaceM3_1_1Utils_1aa584cce13ec0c8ba9d7c4bbce66c5985`

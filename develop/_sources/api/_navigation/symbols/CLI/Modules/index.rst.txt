@@ -1,6 +1,10 @@
 Modules
 =======
 
+.. toctree::
+   :maxdepth: 1
+
+   Plot/index.rst
 
 Classes
 -------
@@ -8,6 +12,40 @@ Classes
 .. toctree::
    :maxdepth: 1
 
+   ../../../../classM3_1_1CombineModule.rst
    ../../../../classM3_1_1DiagMCMCModule.rst
+   ../../../../classM3_1_1DiagModule.rst
    ../../../../classM3_1_1GetPenaltyTermModule.rst
+   ../../../../classM3_1_1LLHMapModule.rst
    ../../../../classM3_1_1ProcessMCMCModule.rst
+   ../../../../classM3_1_1ReweightModule.rst
+   ../../../../classM3_1_1RHatModule.rst
+   ../../../../classM3_1_1SmearModule.rst
+   ../../../../classM3_1_1UmbrellaModule.rst
+   ../../../../classM3_1_1UmbrellaPlotModule.rst
+
+Structs
+-------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../structM3_1_1ReweightConfig.rst
+   ../../../../structM3_1_1UmbrellaConfig.rst
+   ../../../../structM3_1_1WindowConfig.rst
+
+Enums
+-----
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../enum_namespaceM3_1afee9f50ad950e4e28ec5863bd2d18f89.rst
+
+Variables
+---------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../variable_namespaceM3_1ad1a26ed9c2b623a890f5929a2b7abe0c.rst

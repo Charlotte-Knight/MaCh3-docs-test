@@ -30,7 +30,7 @@ Includes
 --------
 
 
-- ``Algorithms/MR2T2.h`` (:ref:`file_Fitters_Algorithms_MR2T2.h`)
+- ``Fitters/Algorithms/MR2T2.h`` (:ref:`file_Fitters_Algorithms_MR2T2.h`)
 
 
 

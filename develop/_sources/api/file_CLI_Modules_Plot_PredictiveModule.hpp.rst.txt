@@ -1,0 +1,77 @@
+
+.. _file_CLI_Modules_Plot_PredictiveModule.hpp:
+
+File PredictiveModule.hpp
+=========================
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI_Modules_Plot>` (``CLI/Modules/Plot``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Module for predictive plotting analysis. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``CLI/Modules/Plot/PredictiveModule.hpp``)
+------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_CLI_Modules_Plot_PredictiveModule.hpp.rst
+
+
+
+Detailed Description
+--------------------
+
+Kamil Skwarczynski 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``CLI/API/plugin.hpp`` (:ref:`file_CLI_API_plugin.hpp`)
+
+- ``Utils/Plotting/PlottingManager.h`` (:ref:`file_Utils_Plotting_PlottingManager.h`)
+
+- ``Utils/Plotting/PlottingUtils.h`` (:ref:`file_Utils_Plotting_PlottingUtils.h`)
+
+- ``numeric``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_CLI_Modules_Plot_PlotModule.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classM3_1_1PredictiveModule`
+

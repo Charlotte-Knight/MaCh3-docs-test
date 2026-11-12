@@ -85,8 +85,6 @@ Included By
 
 - :ref:`file_Parameters_ParameterHandlerUtils.h`
 
-- :ref:`file_Samples_HistogramUtils.h`
-
 - :ref:`file_Samples_SampleStructs.h`
 
 - :ref:`file_Splines_SplineStructs.h`

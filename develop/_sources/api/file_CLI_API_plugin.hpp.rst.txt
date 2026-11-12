@@ -49,11 +49,41 @@ Included By
 
 - :ref:`file_CLI_MaCh3Program.hpp`
 
+- :ref:`file_CLI_Modules_CombineModule.hpp`
+
 - :ref:`file_CLI_Modules_DiagMCMCModule.hpp`
+
+- :ref:`file_CLI_Modules_DiagModule.hpp`
 
 - :ref:`file_CLI_Modules_GetPenaltyTermModule.hpp`
 
+- :ref:`file_CLI_Modules_LLHMapModule.hpp`
+
+- :ref:`file_CLI_Modules_Plot_DiagMCMCPlotModule.hpp`
+
+- :ref:`file_CLI_Modules_Plot_LLHModule.hpp`
+
+- :ref:`file_CLI_Modules_Plot_MatrixModule.hpp`
+
+- :ref:`file_CLI_Modules_Plot_PlotModule.hpp`
+
+- :ref:`file_CLI_Modules_Plot_PostFitParamModule.hpp`
+
+- :ref:`file_CLI_Modules_Plot_PredictiveModule.hpp`
+
+- :ref:`file_CLI_Modules_Plot_SigmaVariationModule.hpp`
+
 - :ref:`file_CLI_Modules_ProcessMCMCModule.hpp`
+
+- :ref:`file_CLI_Modules_RHatModule.hpp`
+
+- :ref:`file_CLI_Modules_ReweightModule.hpp`
+
+- :ref:`file_CLI_Modules_SmearModule.hpp`
+
+- :ref:`file_CLI_Modules_UmbrellaModule.hpp`
+
+- :ref:`file_CLI_Modules_UmbrellaPlotModule.hpp`
 
 
 

@@ -48,8 +48,6 @@ Included By
 
 - :ref:`file_Manager_Manager.h`
 
-- :ref:`file_Samples_HistogramUtils.h`
-
 
 
 

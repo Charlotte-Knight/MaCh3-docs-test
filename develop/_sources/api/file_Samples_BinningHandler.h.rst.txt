@@ -32,11 +32,11 @@ Includes
 
 - ``Manager/Manager.h`` (:ref:`file_Manager_Manager.h`)
 
-- ``Samples/HistogramUtils.h`` (:ref:`file_Samples_HistogramUtils.h`)
-
 - ``Samples/SampleInfo.h`` (:ref:`file_Samples_SampleInfo.h`)
 
 - ``Samples/SampleStructs.h`` (:ref:`file_Samples_SampleStructs.h`)
+
+- ``Utils/BinningUtils.h``
 
 - ``string``
 

@@ -13,7 +13,6 @@ Files
 
 - :ref:`file_Samples_BinningHandler.h`
 - :ref:`file_Samples_EventInfo.h`
-- :ref:`file_Samples_HistogramUtils.h`
 - :ref:`file_Samples_OscillationHandler.h`
 - :ref:`file_Samples_SampleHandlerBase.h`
 - :ref:`file_Samples_SampleHandlerFunctional.h`

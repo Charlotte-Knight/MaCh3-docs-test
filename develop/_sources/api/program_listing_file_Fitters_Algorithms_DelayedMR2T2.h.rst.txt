@@ -12,7 +12,7 @@ Program Listing for File DelayedMR2T2.h
 
    #pragma once
    
-   #include "Algorithms/MR2T2.h"
+   #include "Fitters/Algorithms/MR2T2.h"
    
    class DelayedMR2T2 : public MR2T2 {
     public:

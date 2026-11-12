@@ -1,0 +1,98 @@
+
+.. _program_listing_file_CLI_Modules_ReweightModule.hpp:
+
+Program Listing for File ReweightModule.hpp
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_Modules_ReweightModule.hpp>` (``CLI/Modules/ReweightModule.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   
+   #pragma once
+   #include "Fitters/Processing/MCMCProcessor.h"
+   #include "CLI/API/plugin.hpp"
+   _MaCh3_Safe_Include_Start_ //{
+   // ROOT includes
+   #include "TFile.h"
+   #include "TTree.h"
+   #include "TChain.h"
+   #include "TMath.h"
+   #include "TGraph2D.h"
+   #include "TGraph.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   // C++ includes
+   #include <memory>
+   #include <vector>
+   #include <string>
+   #include <cmath>
+   #include <fstream>
+   #include <map>
+   
+   namespace M3{
+   
+   enum kReweightType {
+     kGaussian,     
+     kTGraph,       
+     kTGraph2D,     
+     kReweightTypes 
+   };
+   
+   struct ReweightConfig {
+     std::string key;       
+     std::string name;
+     M3::kReweightType type;  
+     int dimension;     
+     std::vector<std::string> paramNames; 
+     std::vector<std::vector<double>> newPriorValues; 
+     std::vector<std::vector<double>> oldPriorValues; 
+     std::vector<bool> flatPrior;
+   
+     std::string weightBranchName; 
+     bool enabled;
+   
+     // For TGraph 1D or 2D
+     std::string fileName;         
+     std::string graphName;        
+   
+     // For TGraph1D
+     std::unique_ptr<TGraph> graph_1D; 
+   
+     // For TGraph2D
+     std::string hierarchyType; 
+     std::unique_ptr<TGraph2D> graph_NO; 
+     std::unique_ptr<TGraph2D> graph_IO; 
+   };
+   
+   class ReweightModule: public IModuleBase{
+    public:
+     virtual ~ReweightModule();
+   
+     double Graph_interpolateNO(TGraph2D* graph, double theta13, double dm32);
+   
+     double Graph_interpolateIO(TGraph2D* graph, double theta13, double dm32);
+   
+     double Graph_interpolate1D(TGraph* graph, double theta13);
+   
+     bool GetParameterInfo(MCMCProcessor* processor, const std::string& paramName,
+                           double& mean, double& sigma, bool& isFlat);
+   
+     void LoadReweightingSettings(std::vector<ReweightConfig>& reweightConfigs, const YAML::Node& reweight_settings);
+   
+     [[nodiscard]] double Get1DWeight(const ReweightConfig& rwConfig,
+                                     const std::map<std::string, double>& paramValues);
+   
+     [[nodiscard]] double Get2DWeight(const ReweightConfig& rwConfig,
+                                     const std::map<std::string, double>& paramValues);
+   
+     void ReweightMCMC(const std::string& configFile, const std::string& inputFile);
+   
+     MaCh3ArgumentParser* get_parser() override;
+   
+     int Run() override;
+   };
+   }

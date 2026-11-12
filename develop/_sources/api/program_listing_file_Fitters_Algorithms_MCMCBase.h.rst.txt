@@ -12,8 +12,8 @@ Program Listing for File MCMCBase.h
 
    #pragma once
    
-   #include "Algorithms/FitterBase.h"
-   #include "Algorithms/MulticanonicalMCMCHandler.h"
+   #include "Fitters/Algorithms/FitterBase.h"
+   #include "Fitters/Algorithms/MulticanonicalMCMCHandler.h"
    class MCMCBase : public FitterBase {
     public:
        MCMCBase(Manager * const fitMan);

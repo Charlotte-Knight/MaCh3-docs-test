@@ -14,52 +14,49 @@ Program Listing for File ProcessMCMCModule.hpp
    
    //MaCh3 includes
    #pragma once
-   // yaml Includes
-   #include "yaml-cpp/yaml.h"
-   #include "Processing/MCMCProcessor.h"
+   #include "Fitters/Processing/MCMCProcessor.h"
    #include "CLI/API/plugin.hpp"
    
    namespace M3{
    
    
-     class ProcessMCMCModule: public IModuleBase{
+   class ProcessMCMCModule: public IModuleBase{
+    public:
+     virtual ~ProcessMCMCModule();
    
-       public:
-         virtual ~ProcessMCMCModule();
+     MaCh3ArgumentParser* get_parser() override;
    
-         MaCh3ArgumentParser* get_parser() override;
-   
-         int Run() override;
+     int Run() override;
    
    
-       private:
-         std::map<std::string, std::pair<double, double>> GetCustomBinning(const YAML::Node& Settings);
+    private:
+     std::map<std::string, std::pair<double, double>> GetCustomBinning(const YAML::Node& Settings);
    
-         void ProcessMCMC(const std::string& inputFile);
+     void ProcessMCMC(const std::string& inputFile);
    
-         void MultipleProcessMCMC();
+     void MultipleProcessMCMC();
    
-         void CalcBayesFactor(MCMCProcessor* Processor);
+     void CalcBayesFactor(MCMCProcessor* Processor);
    
-         void CalcSavageDickey(MCMCProcessor* Processor);
+     void CalcSavageDickey(MCMCProcessor* Processor);
    
-         void CalcParameterEvolution(MCMCProcessor* Processor);
+     void CalcParameterEvolution(MCMCProcessor* Processor);
    
-         void CalcBipolarPlot(MCMCProcessor* Processor);
+     void CalcBipolarPlot(MCMCProcessor* Processor);
    
-         void GetTrianglePlot(MCMCProcessor* Processor);
+     void GetTrianglePlot(MCMCProcessor* Processor);
    
-         void DiagnoseCovarianceMatrix(MCMCProcessor* Processor, const std::string& inputFile);
+     void DiagnoseCovarianceMatrix(MCMCProcessor* Processor, const std::string& inputFile);
    
-         TH2D* TMatrixIntoTH2D(TMatrixDSym* Matrix, const std::string& title);
+     TH2D* TMatrixIntoTH2D(TMatrixDSym* Matrix, const std::string& title);
    
-         void KolmogorovSmirnovTest(const std::vector<std::unique_ptr<MCMCProcessor>>& Processor,
-                                    const std::unique_ptr<TCanvas>& Posterior,
-                                    const TString& canvasname);
+     void KolmogorovSmirnovTest(const std::vector<std::unique_ptr<MCMCProcessor>>& Processor,
+                                 const std::unique_ptr<TCanvas>& Posterior,
+                                 const TString& canvasname);
    
-         int nFiles;                                
-         std::vector <std::string> FileNames;       
-         std::vector <std::string> TitleNames;      
-         std::string config;                        
-     };
+     int nFiles;                                
+     std::vector <std::string> FileNames;       
+     std::vector <std::string> TitleNames;      
+     std::string config;                        
+   };
    }

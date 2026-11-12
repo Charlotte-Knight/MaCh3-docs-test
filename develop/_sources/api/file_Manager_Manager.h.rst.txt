@@ -46,6 +46,8 @@ Included By
 -----------
 
 
+- :ref:`file_CLI_Modules_CombineModule.hpp`
+
 - :ref:`file_Fitters_Algorithms_FitterBase.h`
 
 - :ref:`file_Fitters_Algorithms_MulticanonicalMCMCHandler.h`

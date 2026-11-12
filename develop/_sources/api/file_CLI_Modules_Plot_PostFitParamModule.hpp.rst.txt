@@ -1,0 +1,104 @@
+
+.. _file_CLI_Modules_Plot_PostFitParamModule.hpp:
+
+File PostFitParamModule.hpp
+===========================
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI_Modules_Plot>` (``CLI/Modules/Plot``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``CLI/Modules/Plot/PostFitParamModule.hpp``)
+--------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_CLI_Modules_Plot_PostFitParamModule.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``CLI/API/plugin.hpp`` (:ref:`file_CLI_API_plugin.hpp`)
+
+- ``TCandle.h``
+
+- ``TCanvas.h``
+
+- ``TF1.h``
+
+- ``TFile.h``
+
+- ``TFrame.h``
+
+- ``TGaxis.h``
+
+- ``TGraphAsymmErrors.h``
+
+- ``TH1.h``
+
+- ``TH2.h``
+
+- ``TLegend.h``
+
+- ``TPad.h``
+
+- ``TROOT.h``
+
+- ``TString.h``
+
+- ``TStyle.h``
+
+- ``TTree.h``
+
+- ``TVectorD.h``
+
+- ``Utils/Plotting/PlottingManager.h`` (:ref:`file_Utils_Plotting_PlottingManager.h`)
+
+- ``Utils/Plotting/PlottingUtils.h`` (:ref:`file_Utils_Plotting_PlottingUtils.h`)
+
+- ``algorithm``
+
+- ``iomanip``
+
+- ``iostream``
+
+- ``sstream``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_CLI_Modules_Plot_PlotModule.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classGetPostFitParamModule`
+
+- :ref:`exhale_class_classM3_1_1PostFitParamModule`
+

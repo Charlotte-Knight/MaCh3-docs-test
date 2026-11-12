@@ -12,12 +12,25 @@ Directory Modules
 
 *Directory path:* ``CLI/Modules``
 
+Subdirectories
+--------------
+
+- :ref:`dir_CLI_Modules_Plot`
+
 
 Files
 -----
 
+- :ref:`file_CLI_Modules_CombineModule.hpp`
 - :ref:`file_CLI_Modules_DiagMCMCModule.hpp`
+- :ref:`file_CLI_Modules_DiagModule.hpp`
 - :ref:`file_CLI_Modules_GetPenaltyTermModule.hpp`
+- :ref:`file_CLI_Modules_LLHMapModule.hpp`
 - :ref:`file_CLI_Modules_ProcessMCMCModule.hpp`
+- :ref:`file_CLI_Modules_ReweightModule.hpp`
+- :ref:`file_CLI_Modules_RHatModule.hpp`
+- :ref:`file_CLI_Modules_SmearModule.hpp`
+- :ref:`file_CLI_Modules_UmbrellaModule.hpp`
+- :ref:`file_CLI_Modules_UmbrellaPlotModule.hpp`
 
 

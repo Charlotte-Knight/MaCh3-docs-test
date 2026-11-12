@@ -48,6 +48,8 @@ Included By
 -----------
 
 
+- :ref:`file_CLI_Modules_UmbrellaModule.hpp`
+
 - :ref:`file_Fitters_Algorithms_MCMCBase.h`
 
 

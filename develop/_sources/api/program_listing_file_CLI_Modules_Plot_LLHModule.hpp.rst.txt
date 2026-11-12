@@ -1,0 +1,63 @@
+
+.. _program_listing_file_CLI_Modules_Plot_LLHModule.hpp:
+
+Program Listing for File LLHModule.hpp
+======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_Modules_Plot_LLHModule.hpp>` (``CLI/Modules/Plot/LLHModule.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include "CLI/API/plugin.hpp"
+   
+   
+   
+   // MACH3 PLOTTING
+   #include "Utils/Plotting/PlottingManager.h"
+   
+   //this file has lots of usage of the ROOT plotting interface that only takes floats, turn this warning off for this CU for now
+   #pragma GCC diagnostic ignored "-Wfloat-conversion"
+   #pragma GCC diagnostic ignored "-Wconversion"
+   
+   
+   namespace M3{
+   class LLHModule: public IModuleBase{
+    public:
+     virtual ~LLHModule();
+   
+     MaCh3ArgumentParser* get_parser() override;
+   
+     int Run() override;
+   
+    private:
+     std::vector<std::string> rebuildCommandLine();
+   
+     void validateCommandLine();
+   
+     void SetTPads(TPad*& LLHPad, TPad*& ratioPad);
+   
+     void getSplitSampleStack(int fileIdx, const std::string& parameterName, const TH1D& LLH_allSams,
+                               std::vector<float> &cumSums, std::vector<bool> &drawLabel,
+                               THStack *sampleStack, TLegend *splitSamplesLegend,
+                               float baselineLLH_main = 0.00001);
+   
+     // handy dandy helper function for drawing and nicely formatting a stack of ratio plots
+     void drawRatioStack(THStack *ratioCompStack);
+   
+     void makeLLHScanComparisons(const std::string& paramName,
+                                 const std::string& LLHType,
+                                 const std::string& outputFileName,
+                                 const std::unique_ptr<TCanvas>& canv);
+   
+     void makeSplitSampleLLHScanComparisons(const std::string& paramName,
+                                       const std::string& outputFileName,
+                                       const std::unique_ptr<TCanvas>& canv);
+   
+     int PlotLLH();
+   
+     Plotting::PlottingManager *PlotMan;
+   };
+   }

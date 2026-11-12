@@ -1,0 +1,81 @@
+
+.. _file_CLI_Modules_CombineModule.hpp:
+
+File CombineModule.hpp
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI_Modules>` (``CLI/Modules``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Allows you to combine multiple chains or ROOT files into a single output. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``CLI/Modules/CombineModule.hpp``)
+----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_CLI_Modules_CombineModule.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``CLI/API/plugin.hpp`` (:ref:`file_CLI_API_plugin.hpp`)
+
+- ``Manager/Manager.h`` (:ref:`file_Manager_Manager.h`)
+
+- ``Samples/SampleStructs.h`` (:ref:`file_Samples_SampleStructs.h`)
+
+- ``TFile.h``
+
+- ``TFileMerger.h``
+
+- ``TKey.h``
+
+- ``TList.h``
+
+- ``TMD5.h``
+
+- ``TMacro.h``
+
+- ``TROOT.h``
+
+- ``TTree.h``
+
+- ``Utils/HistogramUtils.h``
+
+- ``unistd.h``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classM3_1_1CombineModule`
+

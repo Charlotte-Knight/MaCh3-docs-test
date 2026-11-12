@@ -34,8 +34,6 @@ Includes
 
 - ``Manager/Manager.h`` (:ref:`file_Manager_Manager.h`)
 
-- ``Samples/HistogramUtils.h`` (:ref:`file_Samples_HistogramUtils.h`)
-
 - ``Samples/SampleStructs.h`` (:ref:`file_Samples_SampleStructs.h`)
 
 - ``TFile.h``
@@ -51,6 +49,10 @@ Includes
 - ``TString.h``
 
 - ``TTree.h``
+
+- ``Utils/BinningUtils.h``
+
+- ``Utils/HistogramUtils.h``
 
 - ``assert.h``
 

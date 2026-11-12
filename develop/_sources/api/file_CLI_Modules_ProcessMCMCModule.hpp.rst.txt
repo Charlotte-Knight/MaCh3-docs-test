@@ -47,9 +47,7 @@ Includes
 
 - ``CLI/API/plugin.hpp`` (:ref:`file_CLI_API_plugin.hpp`)
 
-- ``Processing/MCMCProcessor.h`` (:ref:`file_Fitters_Processing_MCMCProcessor.h`)
-
-- ``yaml-cpp/yaml.h``
+- ``Fitters/Processing/MCMCProcessor.h`` (:ref:`file_Fitters_Processing_MCMCProcessor.h`)
 
 
 

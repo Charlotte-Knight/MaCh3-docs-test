@@ -30,7 +30,7 @@ Includes
 --------
 
 
-- ``Algorithms/FitterBase.h`` (:ref:`file_Fitters_Algorithms_FitterBase.h`)
+- ``Fitters/Algorithms/FitterBase.h`` (:ref:`file_Fitters_Algorithms_FitterBase.h`)
 
 
 

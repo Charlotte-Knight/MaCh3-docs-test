@@ -1,0 +1,18 @@
+.. _exhale_class_classGetPostFitParamModule:
+
+Class GetPostFitParamModule
+===========================
+
+- Defined in :ref:`file_CLI_Modules_Plot_PostFitParamModule.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: GetPostFitParamModule
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

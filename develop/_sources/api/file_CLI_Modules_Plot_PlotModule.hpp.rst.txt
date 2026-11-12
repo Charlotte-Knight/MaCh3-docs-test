@@ -1,0 +1,69 @@
+
+.. _file_CLI_Modules_Plot_PlotModule.hpp:
+
+File PlotModule.hpp
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI_Modules_Plot>` (``CLI/Modules/Plot``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Module for plotting MCMC results. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``CLI/Modules/Plot/PlotModule.hpp``)
+------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_CLI_Modules_Plot_PlotModule.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``CLI/API/plugin.hpp`` (:ref:`file_CLI_API_plugin.hpp`)
+
+- ``CLI/Modules/Plot/DiagMCMCPlotModule.hpp`` (:ref:`file_CLI_Modules_Plot_DiagMCMCPlotModule.hpp`)
+
+- ``CLI/Modules/Plot/LLHModule.hpp`` (:ref:`file_CLI_Modules_Plot_LLHModule.hpp`)
+
+- ``CLI/Modules/Plot/MatrixModule.hpp`` (:ref:`file_CLI_Modules_Plot_MatrixModule.hpp`)
+
+- ``CLI/Modules/Plot/PostFitParamModule.hpp`` (:ref:`file_CLI_Modules_Plot_PostFitParamModule.hpp`)
+
+- ``CLI/Modules/Plot/PredictiveModule.hpp`` (:ref:`file_CLI_Modules_Plot_PredictiveModule.hpp`)
+
+- ``CLI/Modules/Plot/SigmaVariationModule.hpp`` (:ref:`file_CLI_Modules_Plot_SigmaVariationModule.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classM3_1_1PlotModule`
+
