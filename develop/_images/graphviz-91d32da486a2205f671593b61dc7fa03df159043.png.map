@@ -1,0 +1,7 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="BinnedSplineHandler" alt="" coords="5,5,223,53"/>
+<area shape="rect" id="node2" title="SplineBase" alt="" coords="179,101,303,149"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="147,52,200,91,197,95,144,56"/>
+<area shape="rect" id="node3" title="UnbinnedSplineHandler" alt="" coords="247,5,490,53"/>
+<area shape="poly" id="edge2" title="public&#45;inheritance" alt="" coords="339,56,285,95,282,91,335,52"/>
+</map>

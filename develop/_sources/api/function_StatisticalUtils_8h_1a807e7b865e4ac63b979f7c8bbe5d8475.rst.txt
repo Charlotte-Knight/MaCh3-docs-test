@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a807e7b865e4ac63b979f7c8bbe5d8475:
+
+Function GetAndersonDarlingTestStat
+===================================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetAndersonDarlingTestStat(const double, const double, const double)
+   :project: MaCh3

@@ -1,0 +1,61 @@
+
+.. _file_Parameters_ParameterHandlerGeneric.h:
+
+File ParameterHandlerGeneric.h
+==============================
+
+|exhale_lsh| :ref:`Parent directory <dir_Parameters>` (``Parameters``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Parameters/ParameterHandlerGeneric.h``)
+-----------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Parameters_ParameterHandlerGeneric.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Parameters/ParameterHandlerBase.h`` (:ref:`file_Parameters_ParameterHandlerBase.h`)
+
+- ``Samples/SampleStructs.h`` (:ref:`file_Samples_SampleStructs.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Fitters_Algorithms_FitterBase.h`
+
+- :ref:`file_Fitters_Algorithms_MaCh3Factory.h`
+
+- :ref:`file_NuDock_SampleHandlerNuDockBase.h`
+
+- :ref:`file_Samples_SampleHandlerBase.h`
+
+- :ref:`file_Splines_SplineStructs.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classParameterHandlerGeneric`
+

@@ -1,0 +1,63 @@
+
+.. _program_listing_file_CLI_API_plugin.hpp:
+
+Program Listing for File plugin.hpp
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_API_plugin.hpp>` (``CLI/API/plugin.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+       // ... implementation
+   };
+   MACH3_REGISTER_PLUGIN(MyPlugin)
+   
+   
+   #pragma once
+   #include <memory>
+   #include "CLI/API/m3argparse.hpp"
+   
+   
+   namespace M3 {
+   
+       class IPlugin {
+           public:
+               virtual ~IPlugin() = default;
+   
+               virtual int Run() = 0;
+   
+               virtual MaCh3ArgumentParser* get_parser() = 0;
+       };
+   
+       typedef IPlugin IModule;
+   
+       class PluginBase : public IPlugin {
+           public:
+               virtual ~PluginBase() = default;
+   
+           protected:
+               std::unique_ptr<MaCh3ArgumentParser> m_parser;  
+       };
+   
+   
+   
+       typedef PluginBase IModuleBase;
+   
+   }
+   
+   extern "C" {
+       typedef M3::IPlugin* (*create_plugin_t)();
+   
+       typedef void (*destroy_plugin_t)(M3::IPlugin*);
+   }
+   
+   #define MACH3_REGISTER_PLUGIN(PluginClass)                     \
+   static_assert(std::is_base_of<M3::IPlugin, PluginClass>::value, "PluginClass must derive from M3::IPlugin");  \
+   extern "C" M3::IPlugin* create_plugin() {                   \
+       return new PluginClass();                                  \
+   }                                                              \
+   extern "C" void destroy_plugin(M3::IPlugin* p) {            \
+       delete p;                                                  \
+   }

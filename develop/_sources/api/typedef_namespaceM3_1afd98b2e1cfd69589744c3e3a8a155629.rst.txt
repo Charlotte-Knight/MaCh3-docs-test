@@ -1,0 +1,14 @@
+.. _exhale_typedef_namespaceM3_1afd98b2e1cfd69589744c3e3a8a155629:
+
+Typedef M3::IModuleBase
+=======================
+
+- Defined in :ref:`file_CLI_API_plugin.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: M3::IModuleBase
+   :project: MaCh3

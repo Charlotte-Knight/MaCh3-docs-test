@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a5f94558219eeb50331a4bf6abecbe3eb:
+
+Function GetZScore
+==================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetZScore(const double, const double, const double)
+   :project: MaCh3

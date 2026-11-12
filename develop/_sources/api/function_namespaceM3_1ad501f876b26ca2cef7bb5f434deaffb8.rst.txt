@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1ad501f876b26ca2cef7bb5f434deaffb8:
+
+Template Function M3::fmaf_t
+============================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::fmaf_t(T, T, T)
+   :project: MaCh3

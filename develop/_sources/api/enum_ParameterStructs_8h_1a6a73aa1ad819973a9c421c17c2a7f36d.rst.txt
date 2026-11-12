@@ -1,0 +1,14 @@
+.. _exhale_enum_ParameterStructs_8h_1a6a73aa1ad819973a9c421c17c2a7f36d:
+
+Enum RespFuncType
+=================
+
+- Defined in :ref:`file_Parameters_ParameterStructs.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: RespFuncType
+   :project: MaCh3

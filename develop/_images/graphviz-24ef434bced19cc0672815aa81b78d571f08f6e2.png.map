@@ -1,0 +1,7 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="IModuleBase" alt="" coords="72,101,212,149"/>
+<area shape="rect" id="node3" title="M3::IPlugin" alt="" coords="79,197,205,245"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="145,150,145,184,139,184,139,150"/>
+<area shape="rect" id="node2" title="M3::GetPenaltyTermModule" alt="" coords="5,5,279,53"/>
+<area shape="poly" id="edge2" title="public&#45;inheritance" alt="" coords="145,54,145,88,139,88,139,54"/>
+</map>

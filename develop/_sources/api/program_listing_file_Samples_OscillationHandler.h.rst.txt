@@ -1,0 +1,47 @@
+
+.. _program_listing_file_Samples_OscillationHandler.h:
+
+Program Listing for File OscillationHandler.h
+=============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Samples_OscillationHandler.h>` (``Samples/OscillationHandler.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   //MaCh3 includes
+   #include "Samples/SampleStructs.h"
+   
+   //forward declare so we don't bleed NuOscillator headers
+   class OscillatorBase;
+   
+   class OscillationHandler
+   {
+    public:
+     OscillationHandler(const std::string& ConfigFile, bool EqualBinningPerChannel,
+                        std::vector<const M3::float_t*> OscParams_, std::vector<std::string> NuOscOscNames_, const int SubChannels);
+     virtual ~OscillationHandler();
+   
+     void AddSample(const std::string& NuOscillatorConfigFile, const int SubChannels);
+   
+     bool isEqualBinningPerOscChannel() {return EqualBinningPerOscChannel;}
+     void Evaluate();
+     const M3::float_t* GetNuOscillatorPointers(const int Sample, const int Channel, const int InitFlav,
+                                                const int FinalFlav, const FLOAT_T TrueEnu, const FLOAT_T TrueCosZenith = -999);
+   
+     void SetOscillatorBinning(const int Sample, const int Channel, const std::vector<M3::float_t>& EnergyArray,
+                               const std::vector<M3::float_t>& CosineZArray);
+   
+     unsigned int GetOscParamsSize() const {return static_cast<unsigned int>(OscParams.size());};
+    private:
+     bool EqualBinningPerOscChannel;
+   
+     std::vector<std::vector<std::unique_ptr<OscillatorBase>>> NuOscProbCalcers;
+   
+     std::vector<const M3::float_t*> OscParams;
+     std::vector<FLOAT_T> OscParamsNuOsc;
+     std::vector<std::string> NuOscNames;
+   };

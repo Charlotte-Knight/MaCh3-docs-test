@@ -1,0 +1,35 @@
+.. _exhale_class_classM3_1_1PluginBase:
+
+Class PluginBase
+================
+
+- Defined in :ref:`file_CLI_API_plugin.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public M3::IPlugin`` (:ref:`exhale_class_classM3_1_1IPlugin`)
+
+
+Derived Types
+*************
+
+- ``public M3::DiagMCMCModule`` (:ref:`exhale_class_classM3_1_1DiagMCMCModule`)
+- ``public M3::GetPenaltyTermModule`` (:ref:`exhale_class_classM3_1_1GetPenaltyTermModule`)
+- ``public M3::ProcessMCMCModule`` (:ref:`exhale_class_classM3_1_1ProcessMCMCModule`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: M3::PluginBase
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

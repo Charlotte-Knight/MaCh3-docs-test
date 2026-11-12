@@ -1,0 +1,14 @@
+.. _exhale_function_MaCh3Factory_8h_1a790d0802b36a03be651d830ae33ed8e6:
+
+Template Function MaCh3SampleHandlerFactory
+===========================================
+
+- Defined in :ref:`file_Fitters_Algorithms_MaCh3Factory.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: MaCh3SampleHandlerFactory(const std::vector<std::string>&, ParameterHandlerGeneric *)
+   :project: MaCh3

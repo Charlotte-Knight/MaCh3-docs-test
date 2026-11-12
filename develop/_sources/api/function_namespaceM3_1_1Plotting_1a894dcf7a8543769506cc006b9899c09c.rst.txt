@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Plotting_1a894dcf7a8543769506cc006b9899c09c:
+
+Function M3::Plotting::TGraphToTH1D
+===================================
+
+- Defined in :ref:`file_Utils_Plotting_PlottingUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Plotting::TGraphToTH1D(const TGraph&, const std::string&, const std::string&)
+   :project: MaCh3

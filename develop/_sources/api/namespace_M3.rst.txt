@@ -1,0 +1,180 @@
+
+.. _namespace_M3:
+
+Namespace M3
+============
+
+
+Main namespace for MaCh3 software. 
+
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3__detail`
+
+- :ref:`namespace_M3__Plotting`
+
+- :ref:`namespace_M3__rand`
+
+- :ref:`namespace_M3__Utils`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classM3_1_1DiagMCMCModule`
+
+- :ref:`exhale_class_classM3_1_1DynamicPlugin`
+
+- :ref:`exhale_class_classM3_1_1GetPenaltyTermModule`
+
+- :ref:`exhale_class_classM3_1_1IPlugin`
+
+- :ref:`exhale_class_classM3_1_1MaCh3ArgumentParser`
+
+- :ref:`exhale_class_classM3_1_1MaCh3Program`
+
+- :ref:`exhale_class_classM3_1_1PluginBase`
+
+- :ref:`exhale_class_classM3_1_1ProcessMCMCModule`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespaceM3_1aac995ad2de0eca11488028f2d4a964e7`
+
+- :ref:`exhale_enum_namespaceM3_1a007e5ed320c3672a3faf79da0a38fb7a`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceM3_1ad7693a9e309503bd894b04443f163f3c`
+
+- :ref:`exhale_function_namespaceM3_1a98e6584f7ed16224a221a837551f2c1d`
+
+- :ref:`exhale_function_namespaceM3_1a6d1b944b696e99865fcaf038d828748d`
+
+- :ref:`exhale_function_namespaceM3_1acbacd39568f68bda67b301927b8ae22a`
+
+- :ref:`exhale_function_namespaceM3_1ae6db8e17b4a71c38cc8d9be16ac443d6`
+
+- :ref:`exhale_function_namespaceM3_1a6a398d9cc5c005959286835d630b0092`
+
+- :ref:`exhale_function_namespaceM3_1a17d30caa6b00bcf8c43b7834bcd031d9`
+
+- :ref:`exhale_function_namespaceM3_1a763e2ffed22d70815be09edb9c932690`
+
+- :ref:`exhale_function_namespaceM3_1a5dc2b96f9e1931503d9413941a951249`
+
+- :ref:`exhale_function_namespaceM3_1aa374c88684482cdd66297f6ae828372d`
+
+- :ref:`exhale_function_namespaceM3_1af4a9244946bbdae4b7bfcdf38feda9fb`
+
+- :ref:`exhale_function_namespaceM3_1a6ef8b24b80901a8c67e4edbfc6fb8229`
+
+- :ref:`exhale_function_namespaceM3_1a68ab9b6b3d413a94604c740208c7895d`
+
+- :ref:`exhale_function_namespaceM3_1ad501f876b26ca2cef7bb5f434deaffb8`
+
+- :ref:`exhale_function_namespaceM3_1a96f1a7786873c4d04e8a16d42d6c46a1`
+
+- :ref:`exhale_function_namespaceM3_1a1bb16de3a587023bbfa4b46aa214f7e1`
+
+- :ref:`exhale_function_namespaceM3_1aec8607d7c1f73af5e603af5ee7752c4b`
+
+- :ref:`exhale_function_namespaceM3_1ad1896bacf74c409a461dd1ea43f8bc99`
+
+- :ref:`exhale_function_namespaceM3_1a50bc6511eef3b80c8ef0a1cbb45a4eff`
+
+- :ref:`exhale_function_namespaceM3_1aabe4fc7b71432d95a1ffb0ee733804e0`
+
+- :ref:`exhale_function_namespaceM3_1ae577be53e3bb2051d10f34fd054c3e5d`
+
+- :ref:`exhale_function_namespaceM3_1aa4b0eaa854abea094a8340f46e3d3d9c`
+
+- :ref:`exhale_function_namespaceM3_1af8413af64315ec1b23ac543fce4a93f1`
+
+- :ref:`exhale_function_namespaceM3_1a82ba8e241659427d252c3ad13c6c25c5`
+
+- :ref:`exhale_function_namespaceM3_1a2be9f8c591f38f815bcf8b6b60c61653`
+
+- :ref:`exhale_function_namespaceM3_1a87841bdbf0e0a2a733d9e4ca499f820d`
+
+- :ref:`exhale_function_namespaceM3_1a116e94960ba2df3ac2ec3ebe499307ae`
+
+- :ref:`exhale_function_namespaceM3_1aeec45eef77225e7b06efc9d557d08321`
+
+- :ref:`exhale_function_namespaceM3_1a75bda934f7f63fc70bf57eac209dfdfe`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceM3_1a1f95274549f25fc19fe7db343c8a7a68`
+
+- :ref:`exhale_typedef_namespaceM3_1a5053b9d7dce6ad7a919acb6497a6686d`
+
+- :ref:`exhale_typedef_namespaceM3_1afd98b2e1cfd69589744c3e3a8a155629`
+
+- :ref:`exhale_typedef_namespaceM3_1adb59b8ecdc4e1b2d5d4c826a13aa7463`
+
+- :ref:`exhale_typedef_namespaceM3_1a08723e82326f079864a8672505dd5741`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespaceM3_1a32ef26a222f7341e03dcc42cdd2badd3`
+
+- :ref:`exhale_variable_namespaceM3_1aed6ca6561a78ba6c90a98ddfa22353aa`
+
+- :ref:`exhale_variable_namespaceM3_1a4fc5221346bd0dd85e3dadaf1ecdf502`
+
+- :ref:`exhale_variable_namespaceM3_1aaf4ba720c8ab2982beaa3c243aee1b98`
+
+- :ref:`exhale_variable_namespaceM3_1a88e0a86bf059e7ced9ec9717dd9da133`
+
+- :ref:`exhale_variable_namespaceM3_1a1aeda1bb6057e3f765d6d919246376e0`
+
+- :ref:`exhale_variable_namespaceM3_1a058de9d83e6afc416781469031c1aba5`
+
+- :ref:`exhale_variable_namespaceM3_1a1f7f36d023b8c549459b28521e002f6d`
+
+- :ref:`exhale_variable_namespaceM3_1a889843c4944ea4c89dd03ef2d1000a96`
+
+- :ref:`exhale_variable_namespaceM3_1ae55af9a5eb2878e4c5e4bbe5c2af029d`
+
+- :ref:`exhale_variable_namespaceM3_1aeb787f15a88d520047578ed3f63fc345`
+
+- :ref:`exhale_variable_namespaceM3_1a016e9a04de587fed0e52a2ff7af57393`
+
+- :ref:`exhale_variable_namespaceM3_1a71856d3b09903af6696008c3cb8386b0`
+
+- :ref:`exhale_variable_namespaceM3_1afade7c2e326a9ce1d3459559d54716e6`
+
+- :ref:`exhale_variable_namespaceM3_1a0888fc3177e4a0c3ddbed03a5bd358b0`
+
+- :ref:`exhale_variable_namespaceM3_1aa45c9a847fa5c777ff86ee3f22b8206c`
+
+- :ref:`exhale_variable_namespaceM3_1a931980122d8d6dd84058a055e247992b`
+
+- :ref:`exhale_variable_namespaceM3_1a2c65b735b4367784c25f7a02a75ec218`

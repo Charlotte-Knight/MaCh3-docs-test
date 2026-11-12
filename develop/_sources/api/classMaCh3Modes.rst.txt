@@ -1,0 +1,18 @@
+.. _exhale_class_classMaCh3Modes:
+
+Class MaCh3Modes
+================
+
+- Defined in :ref:`file_Manager_MaCh3Modes.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: MaCh3Modes
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

@@ -1,0 +1,14 @@
+.. _exhale_function_YamlHelper_8h_1a3ff1f2154c0a70ad5a145fcc5891e7ec:
+
+Function STRINGtoYAML
+=====================
+
+- Defined in :ref:`file_Manager_YamlHelper.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: STRINGtoYAML(const std::string&)
+   :project: MaCh3

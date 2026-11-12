@@ -1,0 +1,14 @@
+.. _exhale_variable_SplineCommon_8h_1ad6cacf3d45a37eeeeffe38ad24345d54:
+
+Variable _nTF1Coeff_
+====================
+
+- Defined in :ref:`file_Splines_SplineCommon.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: _nTF1Coeff_
+   :project: MaCh3

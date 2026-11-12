@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1a82ba8e241659427d252c3ad13c6c25c5:
+
+Function M3::MatrixVectorMulti
+==============================
+
+- Defined in :ref:`file_Parameters_ParameterHandlerUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::MatrixVectorMulti(double *, double **, const double *, const int)
+   :project: MaCh3

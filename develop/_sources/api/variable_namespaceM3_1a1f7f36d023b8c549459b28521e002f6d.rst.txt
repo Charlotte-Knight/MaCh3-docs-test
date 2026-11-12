@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceM3_1a1f7f36d023b8c549459b28521e002f6d:
+
+Variable M3::float_t_str_repr
+=============================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: M3::float_t_str_repr
+   :project: MaCh3

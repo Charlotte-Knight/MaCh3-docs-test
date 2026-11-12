@@ -1,0 +1,77 @@
+
+.. _file_Splines_SplineBase.h:
+
+File SplineBase.h
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir_Splines>` (``Splines``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Splines/SplineBase.h``)
+-------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Splines_SplineBase.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Splines/SplineCommon.h`` (:ref:`file_Splines_SplineCommon.h`)
+
+- ``Splines/SplineStructs.h`` (:ref:`file_Splines_SplineStructs.h`)
+
+- ``TCanvas.h``
+
+- ``TFile.h``
+
+- ``TH1F.h``
+
+- ``TIterator.h``
+
+- ``TKey.h``
+
+- ``TStopwatch.h``
+
+- ``TString.h``
+
+- ``TStyle.h``
+
+- ``TTree.h``
+
+- ``cstdlib``
+
+- ``iomanip``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Splines_BinnedSplineHandler.h`
+
+- :ref:`file_Splines_UnbinnedSplineHandler.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classSplineBase`
+

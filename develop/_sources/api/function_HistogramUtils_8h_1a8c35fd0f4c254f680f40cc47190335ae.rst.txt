@@ -1,0 +1,14 @@
+.. _exhale_function_HistogramUtils_8h_1a8c35fd0f4c254f680f40cc47190335ae:
+
+Function MakeFluctuatedHistogramStandard(TH2D \*, TH2D \*)
+==========================================================
+
+- Defined in :ref:`file_Samples_HistogramUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: MakeFluctuatedHistogramStandard(TH2D *, TH2D *)
+   :project: MaCh3

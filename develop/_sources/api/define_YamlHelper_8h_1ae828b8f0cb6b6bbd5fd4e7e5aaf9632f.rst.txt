@@ -1,0 +1,14 @@
+.. _exhale_define_YamlHelper_8h_1ae828b8f0cb6b6bbd5fd4e7e5aaf9632f:
+
+Define GetBounds
+================
+
+- Defined in :ref:`file_Manager_YamlHelper.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: GetBounds
+   :project: MaCh3

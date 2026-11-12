@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Utils_1ad796df2f1b4323201c86682a96fa9c23:
+
+Function M3::Utils::GetOSInfo
+=============================
+
+- Defined in :ref:`file_Manager_Monitor.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Utils::GetOSInfo()
+   :project: MaCh3

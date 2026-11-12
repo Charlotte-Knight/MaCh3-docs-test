@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1ae577be53e3bb2051d10f34fd054c3e5d:
+
+Function M3::MatrixMult(double \*, double \*, int)
+==================================================
+
+- Defined in :ref:`file_Parameters_ParameterHandlerUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::MatrixMult(double *, double *, int)
+   :project: MaCh3

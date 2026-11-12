@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a57771836d3d082d24170e24a2f04a4d6:
+
+Function Get2DBayesianpValue
+============================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Get2DBayesianpValue(TH2D *)
+   :project: MaCh3

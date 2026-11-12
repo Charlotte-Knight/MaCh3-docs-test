@@ -1,0 +1,9 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="ParameterHandlerBase" alt="" coords="19,197,253,245"/>
+<area shape="rect" id="node2" title="ParameterHandlerGeneric" alt="" coords="5,101,267,149"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="139,150,139,184,133,184,133,150"/>
+<area shape="rect" id="node3" title="SampleHandlerBase" alt="" coords="170,5,379,53"/>
+<area shape="poly" id="edge3" title="usage" alt="" coords="242,56,183,96,180,91,239,51"/>
+<area shape="rect" id="node4" title="SampleHandlerInterface" alt="" coords="291,101,538,149"/>
+<area shape="poly" id="edge2" title="public&#45;inheritance" alt="" coords="310,51,371,91,368,96,307,56"/>
+</map>

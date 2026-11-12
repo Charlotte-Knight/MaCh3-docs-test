@@ -1,0 +1,58 @@
+
+.. _file_Doc_MaCh3Web_Definitions.dox:
+
+File Definitions.dox
+====================
+
+|exhale_lsh| :ref:`Parent directory <dir_Doc_MaCh3Web>` (``Doc/MaCh3Web``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Stores definitions used throughout MaCh3 doxygen. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Doc/MaCh3Web/Definitions.dox``)
+---------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Doc_MaCh3Web_Definitions.dox.rst
+
+
+
+Detailed Description
+--------------------
+
+by having all core definitions here it allows to easily find necessary definition and avoid double defining them Kamil Skwarczynski 
+
+
+
+
+
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+- :ref:`namespace_M3__detail`
+
+- :ref:`namespace_M3__Plotting`
+
+- :ref:`namespace_M3__Utils`
+

@@ -1,0 +1,262 @@
+
+.. _program_listing_file_Parameters_ParameterStructs.h:
+
+Program Listing for File ParameterStructs.h
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Parameters_ParameterStructs.h>` (``Parameters/ParameterStructs.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // C++ includes
+   #include <set>
+   #include <list>
+   #include <unordered_map>
+   
+   // MaCh3 includes
+   #include "Manager/MaCh3Exception.h"
+   #include "Manager/MaCh3Logger.h"
+   #include "Manager/Core.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   // ROOT include
+   #include "TSpline.h"
+   #include "TObjString.h"
+   #include "TFile.h"
+   #include "TF1.h"
+   #include "TH2Poly.h"
+   #include "TH1.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   
+   // *******************
+   template< typename T, size_t N >
+   std::vector<T> MakeVector( const T (&data)[N] ) {
+   // *******************
+     return std::vector<T>(data, data+N);
+   }
+   
+   template <typename T>
+   void CleanVector(T&) {}
+   
+   // *******************
+   template <typename T>
+   void CleanVector(std::vector<T>& v) {
+   // *******************
+     for (auto& x : v)
+       CleanVector(x);
+   
+     v.clear();
+     v.shrink_to_fit();
+   }
+   
+   // *******************
+   template <typename T>
+   void CleanContainer(T&) {}
+   // *******************
+   
+   // *******************
+   template <typename T>
+   void CleanContainer(T*& ptr) {
+     // *******************
+     delete ptr;
+     ptr = nullptr;
+   }
+   
+   // *******************
+   template <typename T>
+   void CleanContainer(std::vector<T>& container) {
+     // *******************
+     for (auto& element : container)
+       CleanContainer(element);
+   
+     container.clear();
+     container.shrink_to_fit();
+   }
+   
+   // *******************
+   struct TypeParameterBase {
+   // *******************
+     std::string name;
+   
+     bool hasKinBounds = false;
+     std::vector< std::vector< std::vector<double> > > Selection;
+     std::vector< std::string > KinematicVarStr;
+   
+     int index = M3::_BAD_INT_;
+   };
+   
+   // *******************
+   struct NormParameter : public TypeParameterBase {
+     std::vector<int> modes;
+     std::vector<int> pdgs;
+     std::vector<int> preoscpdgs;
+     std::vector<int> targets;
+   };
+   
+   // *******************
+   struct FunctionalParameter : public TypeParameterBase {
+   // *******************
+     std::vector<int> modes;
+   };
+   
+   enum RespFuncType {
+     kTSpline3_red,  
+     kTF1_red,       
+     kRespFuncTypes  
+   };
+   
+   enum SplineInterpolation {
+     kTSpline3,
+     kLinear,
+     kMonotonic,
+     kAkima,
+     kKochanekBartels,
+     kLinearFunc,
+     kSplineInterpolations
+   };
+   
+   // **************************************************
+   inline std::string GetTF1(const SplineInterpolation i) {
+     // **************************************************
+     std::string Func = "";
+     switch(i) {
+       case SplineInterpolation::kLinearFunc:
+         Func = "([1]+[0]*x)";
+         break;
+       case SplineInterpolation::kTSpline3:
+       case SplineInterpolation::kLinear:
+       case SplineInterpolation::kMonotonic:
+       case SplineInterpolation::kAkima:
+       case SplineInterpolation::kKochanekBartels:
+       case SplineInterpolation::kSplineInterpolations:
+         MACH3LOG_ERROR("Interpolation type {} not supported for TF1!", static_cast<int>(i));
+         throw MaCh3Exception(__FILE__, __LINE__);
+       default:
+         MACH3LOG_ERROR("UNKNOWN SPLINE INTERPOLATION SPECIFIED!");
+         MACH3LOG_ERROR("You gave {}", static_cast<int>(i));
+         throw MaCh3Exception(__FILE__ , __LINE__ );
+     }
+     return Func;
+   }
+   
+   // **************************************************
+   inline RespFuncType SplineInterpolation_ToRespFuncType(const SplineInterpolation i) {
+   // **************************************************
+     RespFuncType Type = kRespFuncTypes;
+     switch(i) {
+       case SplineInterpolation::kTSpline3:
+       case SplineInterpolation::kLinear:
+       case SplineInterpolation::kMonotonic:
+       case SplineInterpolation::kAkima:
+       case SplineInterpolation::kKochanekBartels:
+         Type = RespFuncType::kTSpline3_red;
+         break;
+       case SplineInterpolation::kLinearFunc:
+         Type = RespFuncType::kTF1_red;
+         break;
+       case SplineInterpolation::kSplineInterpolations:
+         MACH3LOG_ERROR("kSplineInterpolations is not a valid interpolation type!");
+         throw MaCh3Exception(__FILE__, __LINE__);
+       default:
+         MACH3LOG_ERROR("UNKNOWN SPLINE INTERPOLATION SPECIFIED!");
+         MACH3LOG_ERROR("You gave {}", static_cast<int>(i));
+         throw MaCh3Exception(__FILE__, __LINE__);
+     }
+     return Type;
+   }
+   
+   // **************************************************
+   inline std::string SplineInterpolation_ToString(const SplineInterpolation i) {
+   // **************************************************
+     std::string name = "";
+     switch(i) {
+       //  TSpline3 (third order spline in ROOT)
+       case SplineInterpolation::kTSpline3:
+         name = "TSpline3";
+         break;
+       case SplineInterpolation::kLinear:
+         name = "Linear";
+         break;
+       case SplineInterpolation::kMonotonic:
+         name = "Monotonic";
+         break;
+       //  (Experimental) Akima_Spline (crd order spline which is allowed to be discontinuous in 2nd deriv)
+       case SplineInterpolation::kAkima:
+         name = "Akima";
+         break;
+       case SplineInterpolation::kKochanekBartels:
+         name = "KochanekBartels";
+         break;
+       case SplineInterpolation::kLinearFunc:
+         name = "LinearFunc";
+         break;
+       case SplineInterpolation::kSplineInterpolations:
+         MACH3LOG_ERROR("kSplineInterpolations is not a valid interpolation type!");
+         throw MaCh3Exception(__FILE__, __LINE__);
+       default:
+         MACH3LOG_ERROR("UNKNOWN SPLINE INTERPOLATION SPECIFIED!");
+         MACH3LOG_ERROR("You gave {}", static_cast<int>(i));
+         throw MaCh3Exception(__FILE__ , __LINE__ );
+     }
+     return name;
+   }
+   
+   enum SystType {
+     kNorm,      
+     kSpline,    
+     kFunc,      
+     kOsc,       
+     kSystTypes  
+   };
+   
+   // *******************
+   struct SplineParameter : public TypeParameterBase {
+   // *******************
+     SplineInterpolation _SplineInterpolationType;
+   
+     std::vector<int> _fSplineModes;
+   
+     std::string _fSplineNames;
+   
+     double _SplineKnotLowBound;
+     double _SplineKnotUpBound;
+   };
+   
+   // **************************************************
+   inline std::string SystType_ToString(const SystType i) {
+   // **************************************************
+     std::string name = "";
+     switch(i) {
+       case SystType::kNorm:
+         name = "Norm";
+         break;
+       case SystType::kSpline:
+         name = "Spline";
+         break;
+       case SystType::kFunc:
+         name = "Functional";
+         break;
+       case SystType::kOsc:
+         name = "Oscillation";
+         break;
+       case SystType::kSystTypes:
+         MACH3LOG_ERROR("kSystTypes is not a valid SystType!");
+         throw MaCh3Exception(__FILE__, __LINE__);
+       default:
+         MACH3LOG_ERROR("UNKNOWN SYST TYPE SPECIFIED!");
+         MACH3LOG_ERROR("You gave {}", static_cast<int>(i));
+         throw MaCh3Exception(__FILE__ , __LINE__ );
+     }
+     return name;
+   }
+   
+   // *******************
+   struct OscillationParameter : public TypeParameterBase {
+   // *******************
+     std::string NuOscName;
+   };

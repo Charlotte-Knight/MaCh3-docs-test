@@ -1,0 +1,29 @@
+
+.. _program_listing_file_CLI_Modules_DiagMCMCModule.hpp:
+
+Program Listing for File DiagMCMCModule.hpp
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_Modules_DiagMCMCModule.hpp>` (``CLI/Modules/DiagMCMCModule.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   
+   #pragma once
+   #include "CLI/API/plugin.hpp"
+   
+   namespace M3{
+   
+     class DiagMCMCModule: public IModuleBase{
+   
+       public:
+         virtual ~DiagMCMCModule();
+   
+         MaCh3ArgumentParser* get_parser() override;
+   
+         int Run() override;
+     };
+   }

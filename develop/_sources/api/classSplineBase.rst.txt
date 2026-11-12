@@ -1,0 +1,28 @@
+.. _exhale_class_classSplineBase:
+
+Class SplineBase
+================
+
+- Defined in :ref:`file_Splines_SplineBase.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public BinnedSplineHandler`` (:ref:`exhale_class_classBinnedSplineHandler`)
+- ``public UnbinnedSplineHandler`` (:ref:`exhale_class_classUnbinnedSplineHandler`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: SplineBase
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

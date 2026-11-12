@@ -1,0 +1,14 @@
+.. _exhale_function_HistogramUtils_8h_1a154b384372cf349df645df390b285620:
+
+Function GetRandomPoly2
+=======================
+
+- Defined in :ref:`file_Samples_HistogramUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetRandomPoly2(const TH2Poly *)
+   :project: MaCh3

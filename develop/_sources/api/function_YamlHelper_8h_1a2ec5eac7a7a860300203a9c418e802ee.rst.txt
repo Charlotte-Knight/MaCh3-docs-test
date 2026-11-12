@@ -1,0 +1,14 @@
+.. _exhale_function_YamlHelper_8h_1a2ec5eac7a7a860300203a9c418e802ee:
+
+Template Function CheckNodeExistsHelper(const T&)
+=================================================
+
+- Defined in :ref:`file_Manager_YamlHelper.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: CheckNodeExistsHelper(const T&)
+   :project: MaCh3

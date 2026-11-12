@@ -1,0 +1,40 @@
+
+.. _program_listing_file_Samples_EventInfo.h:
+
+Program Listing for File EventInfo.h
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Samples_EventInfo.h>` (``Samples/EventInfo.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include <vector>
+   #include <string>
+   
+   #include "Samples/SampleStructs.h"
+   
+   struct EventInfo {
+     EventInfo(){}
+     EventInfo(EventInfo const &other) = delete;
+     EventInfo(EventInfo &&other) = default;
+     EventInfo& operator=(EventInfo const &other) = delete;
+     EventInfo& operator=(EventInfo &&other) = delete;
+     ~EventInfo(){}
+   
+     std::vector<const M3::float_t*> total_weight_pointers;
+   
+     std::vector<const double*> KinVar;
+     std::vector<int> NomBin;
+   
+     int NominalSample = M3::_BAD_INT_;
+   
+     int nupdg  = M3::_BAD_INT_;
+     int nupdgUnosc = M3::_BAD_INT_;
+     bool isNC = false;
+   
+     double enu_true = M3::_BAD_DOUBLE_;
+     double coszenith_true = M3::_BAD_DOUBLE_;
+   };

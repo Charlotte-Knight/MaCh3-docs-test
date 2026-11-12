@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceM3_1a058de9d83e6afc416781469031c1aba5:
+
+Variable M3::DefSplineKnotUpBound
+=================================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: M3::DefSplineKnotUpBound
+   :project: MaCh3

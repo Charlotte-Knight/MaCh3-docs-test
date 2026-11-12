@@ -1,0 +1,14 @@
+.. _exhale_function_YamlHelper_8h_1a57276bf6624191db1d835a88b711e096:
+
+Function DemangleTypeName
+=========================
+
+- Defined in :ref:`file_Manager_YamlHelper.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: DemangleTypeName(const std::string&)
+   :project: MaCh3

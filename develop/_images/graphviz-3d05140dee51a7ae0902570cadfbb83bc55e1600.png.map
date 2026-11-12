@@ -1,0 +1,5 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="M3::DynamicPlugin" alt="" coords="5,5,205,53"/>
+<area shape="rect" id="node2" title="M3::IPlugin" alt="" coords="43,101,168,149"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="108,54,108,88,103,88,103,54"/>
+</map>

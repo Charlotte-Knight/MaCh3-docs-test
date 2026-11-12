@@ -1,0 +1,18 @@
+.. _exhale_struct_structSampleBinningInfo:
+
+Struct SampleBinningInfo
+========================
+
+- Defined in :ref:`file_Samples_SampleStructs.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: SampleBinningInfo
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

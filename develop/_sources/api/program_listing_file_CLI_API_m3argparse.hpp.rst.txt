@@ -1,0 +1,60 @@
+
+.. _program_listing_file_CLI_API_m3argparse.hpp:
+
+Program Listing for File m3argparse.hpp
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_API_m3argparse.hpp>` (``CLI/API/m3argparse.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   
+   #pragma once
+   #include <argparse/argparse.hpp>
+   
+   using argparse::ArgumentParser;
+   
+   namespace M3 {
+   
+       class MaCh3ArgumentParser: public ArgumentParser{
+           public:
+               using ArgumentParser::ArgumentParser;
+               virtual ~MaCh3ArgumentParser() = default;
+   
+               const std::string name() const{
+                   return this->m_program_name;
+               }
+   
+               const std::list<std::reference_wrapper<ArgumentParser>>& subparsers() const{
+                   return this->m_subparsers;
+               }
+   
+               const MaCh3ArgumentParser& get_subcommand_used() const{
+                   for (const std::reference_wrapper<ArgumentParser>& subparser : this->m_subparsers) {
+                       if (this->is_subcommand_used(subparser.get())) {
+                           return static_cast<MaCh3ArgumentParser*>(&(subparser.get()))->get_subcommand_used();
+                       }
+                   }
+                   return (*this);
+               }
+   
+               std::vector<std::string> get_long_option_names() const {
+                   std::vector<std::string> names;
+                   for (const auto& [name, _] : this->m_argument_map) {
+                       if (name.size() >= 2 && name[0] == '-' && name[1] == '-')
+                           names.push_back(name);
+                   }
+                   return names;
+               }
+   
+               bool option_takes_value(const std::string& name) const {
+                   auto it = this->m_argument_map.find(name);
+                   if (it == this->m_argument_map.end()) return false;
+                   // get_usage_full() appends a metavar when max nargs > 0
+                   return it->second->get_usage_full().find(' ') != std::string::npos;
+               }
+       };
+   }

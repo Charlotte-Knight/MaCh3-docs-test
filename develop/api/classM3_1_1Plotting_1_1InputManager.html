@@ -1,0 +1,1994 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Class InputManager &#8212; MaCh3 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/classM3_1_1Plotting_1_1InputManager';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/version-switcher.js?v=294b64cd"></script>
+    <link rel="icon" href="../_static/mach3logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class PlottingManager" href="classM3_1_1Plotting_1_1PlottingManager.html" />
+    <link rel="prev" title="Class MaCh3Program" href="classM3_1_1MaCh3Program.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/mach3logo.png" class="logo__image only-light" alt="MaCh3 documentation - Home"/>
+    <img src="../_static/mach3logo.png" class="logo__image only-dark pst-js-only" alt="MaCh3 documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item"><div class="pst-js-only">
+  <select class="form-select form-select-sm docs-version-switcher"
+          aria-label="Documentation version"
+          data-version="develop"
+          data-page="api/classM3_1_1Plotting_1_1InputManager.html"
+          data-manifest="https://charlotte-knight.github.io/MaCh3-docs-test/versions.json">
+    <option value="">develop</option>
+  </select>
+  <small class="docs-version-error" role="status" hidden></small>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="library_root.html">
+    C++ API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../pymach3/index.html">
+    pyMaCh3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://mach3-software.github.io/MaCh3/.Archive/v2.7.0/index.html">
+    Doxygen
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../user-guide/publications.html">
+    Results and Publications
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../user-guide/release-notes.html">
+    Release Notes
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../bibliography.html">
+    Bibliography
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mach3-software/MaCh3" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page" aria-expanded="false" aria-controls="pst-secondary-sidebar-modal">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="library_root.html">
+    C++ API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../pymach3/index.html">
+    pyMaCh3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://mach3-software.github.io/MaCh3/.Archive/v2.7.0/index.html">
+    Doxygen
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide/publications.html">
+    Results and Publications
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide/release-notes.html">
+    Release Notes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../bibliography.html">
+    Bibliography
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mach3-software/MaCh3" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="namespace_M3.html">Namespace M3</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="namespace_M3__detail.html">Namespace M3::detail</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="namespace_M3__Plotting.html">Namespace M3::Plotting</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="namespace_M3__rand.html">Namespace M3::rand</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="namespace_M3__Utils.html">Namespace M3::Utils</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="namespace_std.html">Namespace std</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structBinInfo.html">Struct BinInfo</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structBinShiftLookup.html">Struct BinShiftLookup</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structEventInfo.html">Struct EventInfo</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structFastSplineInfo.html">Struct FastSplineInfo</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structFlipGroup.html">Struct FlipGroup</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structFunctionalFlipProposal.html">Struct FunctionalFlipProposal</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structFunctionalParameter.html">Struct FunctionalParameter</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structKinematicCut.html">Struct KinematicCut</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structM3_1_1Plotting_1_1InputFile.html">Struct InputFile</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structM3_1_1Utils_1_1ColumnSpec.html">Struct ColumnSpec</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structMaCh3ModeInfo.html">Struct MaCh3ModeInfo</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structNormParameter.html">Struct NormParameter</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structOscChannelInfo.html">Struct OscChannelInfo</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structOscillationParameter.html">Struct OscillationParameter</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structPendingFunctionalFlipProposal.html">Struct PendingFunctionalFlipProposal</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structPredictiveSample.html">Struct PredictiveSample</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structSampleBinningInfo.html">Struct SampleBinningInfo</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structSampleInfo.html">Struct SampleInfo</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structSplineIndex.html">Struct SplineIndex</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structSplineMonoStruct.html">Struct SplineMonoStruct</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structSplineParameter.html">Struct SplineParameter</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="structTypeParameterBase.html">Struct TypeParameterBase</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classAdaptiveMCMCHandler.html">Class AdaptiveMCMCHandler</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classBinnedSplineHandler.html">Class BinnedSplineHandler</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classBinningHandler.html">Class BinningHandler</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classDelayedMR2T2.html">Class DelayedMR2T2</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classFitterBase.html">Class FitterBase</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classLikelihoodFit.html">Class LikelihoodFit</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classM3_1_1DiagMCMCModule.html">Class DiagMCMCModule</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classM3_1_1DynamicPlugin.html">Class DynamicPlugin</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classM3_1_1GetPenaltyTermModule.html">Class GetPenaltyTermModule</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classM3_1_1IPlugin.html">Class IPlugin</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classM3_1_1MaCh3ArgumentParser.html">Class MaCh3ArgumentParser</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classM3_1_1MaCh3Program.html">Class MaCh3Program</a></li>
+</ul>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Class InputManager</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classM3_1_1Plotting_1_1PlottingManager.html">Class PlottingManager</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classM3_1_1Plotting_1_1StyleManager.html">Class StyleManager</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classM3_1_1PluginBase.html">Class PluginBase</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classM3_1_1ProcessMCMCModule.html">Class ProcessMCMCModule</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classM3_1_1rand_1_1Random.html">Class Random</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classM3_1_1Utils_1_1TablePrinter.html">Class TablePrinter</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classMaCh3Exception.html">Class MaCh3Exception</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classMaCh3Modes.html">Class MaCh3Modes</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classManager.html">Class Manager</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classMCMCBase.html">Class MCMCBase</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classMCMCProcessor.html">Class MCMCProcessor</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classMinuitFit.html">Class MinuitFit</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classMR2T2.html">Class MR2T2</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classMulticanonicalMCMCHandler.html">Class MulticanonicalMCMCHandler</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classNuDockServerBase.html">Class NuDockServerBase</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classOscillationHandler.html">Class OscillationHandler</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classOscProcessor.html">Class OscProcessor</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classParameterHandlerBase.html">Class ParameterHandlerBase</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classParameterHandlerGeneric.html">Class ParameterHandlerGeneric</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classParameterTunes.html">Class ParameterTunes</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classparticle.html">Class particle</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classPCAHandler.html">Class PCAHandler</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classPredictiveThrower.html">Class PredictiveThrower</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classPSO.html">Class PSO</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classRHatCalculator.html">Class RHatCalculator</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classSampleHandlerBase.html">Class SampleHandlerBase</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classSampleHandlerInterface.html">Class SampleHandlerInterface</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classSampleHandlerNuDockBase.html">Class SampleHandlerNuDockBase</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classSplineBase.html">Class SplineBase</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classTF1__red.html">Class TF1_red</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classTResponseFunction__red.html">Class TResponseFunction_red</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classTSpline3__red.html">Class TSpline3_red</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="classUnbinnedSplineHandler.html">Class UnbinnedSplineHandler</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="enum_namespaceM3_1aac995ad2de0eca11488028f2d4a964e7.html">Enum BiasFunction</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="enum_namespaceM3_1a007e5ed320c3672a3faf79da0a38fb7a.html">Enum kInfCrit</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="enum_namespaceM3_1_1Plotting_1a62d6a732804190bc7a907c3a9e1babdd.html">Enum fileTypeEnum</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="enum_namespaceM3_1_1Utils_1afd16809dc4d7eef736cc3c3b32d9dfce.html">Enum Alignment</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="enum_SampleStructs_8h_1a0dfdd8cf84b8fa3495e9e5e520fe6cd2.html">Enum NuPDG</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="enum_MCMCProcessor_8h_1acd2848273413543fe14936252942c20b.html">Enum ParameterEnum</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="enum_ParameterStructs_8h_1a6a73aa1ad819973a9c421c17c2a7f36d.html">Enum RespFuncType</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="enum_SampleHandlerBase_8h_1acd80f4d29c8405ff6fa2dd89ff4e9365.html">Enum SamplePlotType</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="enum_ParameterStructs_8h_1a6720d732608767153550aebebcf8fbf4.html">Enum SplineInterpolation</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="enum_SplineCommon_8h_1aac6312c7a4c683e6d016d9fccdc7d7c0.html">Enum SplineSegmentCoeffs</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="enum_ParameterStructs_8h_1affc27d8b7b82d3713f45af17873fde2f.html">Enum SystType</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="enum_SampleStructs_8h_1a706416000041de040e97d5dbe0bdb580.html">Enum TargetMat</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="enum_SampleStructs_8h_1a960da89e33ac45a56f7bbfac3068dc67.html">Enum TestStatistic</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_SplineStructs_8h_1ad5cf65febeac6a16f6ef017567c50d26.html">Function ApplyKnotWeightCap</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_SplineStructs_8h_1ae3ff4629bf4f805e11a0f9b16f95fcde.html">Function ApplyKnotWeightCapTSpline3</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a6c4c2882fee9455d66c2d8a4b0f6b302.html">Function BinRangeToBinEdges</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a96467b3e8e70454c7718d92387e87937.html">Function BuildBinEdgesFromNode</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a2dce7c8dec7d4d7f9c61346893973421.html">Function CalculateEnu</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a060e41fa0e5f91ce4fcbb6a4cafeaf13.html">Function CalculateQ2</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1ace84e2d09b85a95e50fe24e4309370bb.html">Template Function CastVector</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1adba5abb16555092305a8b459f94a24c1.html">Function CheckBonferoniCorrectedpValue</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1ad2340a340fd6649a6d220abc16d4757b.html">Template Function CheckNodeExists</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a2ec5eac7a7a860300203a9c418e802ee.html">Template Function CheckNodeExistsHelper(const T&amp;)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a5809a38cdc84e79f861c6de8f84ae83e.html">Template Function CheckNodeExistsHelper(const T&amp;, const std::string&amp;, Args…)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a1aa25e8399ca7a229b8aa77c25407832.html">Function CheckTH2PolyFileVersion</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_ParameterStructs_8h_1a569a3f763b3cca77ecc85e5a685b182c.html">Template Function CleanContainer(T&amp;)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_ParameterStructs_8h_1abedaa13aad6e56de295bd5a0879c9f55.html">Template Function CleanContainer(T *&amp;)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_ParameterStructs_8h_1aada74c1e7e4ede3e8e9ab32f32791814.html">Template Function CleanContainer(std::vector&lt;T&gt;&amp;)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_ParameterStructs_8h_1ad0ad271345b43361a90efe977486167b.html">Template Function CleanVector(T&amp;)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_ParameterStructs_8h_1a1af8b6ffd2afc4dd39b00663baef8989.html">Template Function CleanVector(std::vector&lt;T&gt;&amp;)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a30fc1dad7dde70247024fbb1c8f89bdc.html">Function Cnode</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1ac79360f33b9ee8b7ecf11cc7429ffd0c.html">Function compareYAMLNodes</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a24346722df353ed84efd3fcf0b886587.html">Function ComputeKLDivergence(const std::vector&lt;double&gt;&amp;, const std::vector&lt;double&gt;&amp;)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a13aa52c404712954271d7c7faa728334.html">Function ComputeKLDivergence(TH2Poly *, TH2Poly *)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1aa9cbcbd12e52cadbc498db3b78784104.html">Function ConvertTH2DtoTH2Poly</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1af532e371f45a26f2b180d96b82b7d496.html">Function ConvertTH2PolyToTH2D</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_SplineStructs_8h_1ab2c8d72ae04d6efb77876248cb67a338.html">Function CreateResponseFunction</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a57276bf6624191db1d835a88b711e096.html">Function DemangleTypeName</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a5057e3deaf657180213e52d3f5bc41cc.html">Function FastViolinFill</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1afbf5ccf44bc187caa268d4d158f4e5f6.html">Function file_exists</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a2a8231c2076b91564e31e55567018f00.html">Template Function FindFromManager</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a296c2eab8cecbc8a278add0ea507da94.html">Template Function FindFromManagerHelper(const YAML::Node&amp;)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1ad047b94c4cdbbc6d7c73a75243b0a010.html">Template Function FindFromManagerHelper(const YAML::Node&amp;, const std::string&amp;, Args…)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a8ba1090ae92f61008a6576c45b4b3b7b.html">Function FisherCombinedPValue</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_NuDockFactory_8h_1a6ffe8e0a2f71d289c4b675ae5e413457.html">Function FormatOscParsForMaCh3</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_NuDockFactory_8h_1a7c5675ca35c3e4c966f5c3c94f6720f8.html">Function FormatOscParsForNuDock</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1ad1f8b65ec4424125518fb65ebff28f0e.html">Template Function Get</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a57771836d3d082d24170e24a2f04a4d6.html">Function Get2DBayesianpValue</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_MaCh3Logger_8h_1af60f058d76fca9889ca3c930a377c353.html">Function get_default_log_level</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a807e7b865e4ac63b979f7c8bbe5d8475.html">Function GetAndersonDarlingTestStat</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1ab4dc9e4455015e55031e2cc8a076349d.html">Function GetArithmetic</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1afecd84c56d6546271c4547192aae31af.html">Function GetBetaParameter</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a3dbcf2e503dd81c1c26f063a7e6b3362.html">Function GetBIC</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1ab910cfac66889e76e29d7f77dd4d4e93.html">Function GetCredibleInterval</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a2ab3766c7598cced99b8c6cf0dfedb9c.html">Function GetCredibleIntervalSig</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a3cc352ea65a5fbf8bfbd7a03991ee5bf.html">Function GetCredibleRegion</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a922147200154a79e91403d165d89ee6e.html">Function GetCredibleRegionSig</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a388e26369fa787bcca2be4cad536f9f1.html">Function GetDeltaChi2</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1acf403b05be9baa719893db7449e833c7.html">Function GetDunneKaboth</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a99b6a2259dcdf8e2875c807a793d7cd1.html">Template Function GetFromManager</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a7237fc819d10a341c286a5597f584a96.html">Function GetGaussian</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1aadbb121e8fc7db8e4e28d6b04d351460.html">Function GetHPD</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a94e492e3e9142db9e1cb1c4c027259f3.html">Function GetIQR</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1aac0e253784ed2f2a3258d68df22a2568.html">Function GetJeffreysScale</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_SampleStructs_8h_1af4afb01e9e8a6b9fa2bf0ece1b4e0859.html">Function GetLocalBinFromGlobalBin</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a805e612837e9c06375079dea641c3804.html">Function GetModeError</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1aaf02981e45bb7adc146cebb4d82c6f36.html">Function GetNeffective</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1ad58f0ddda31283c3598fc09f98046192.html">Function GetNumberOfRuns</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_SampleInfo_8h_1afc52c63bc2b15ae30444755579f5beb4.html">Function GetOscChannel</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a51c1b8d697008fa6e02849b8f1334abb.html">Function GetPValueFromZScore</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a154b384372cf349df645df390b285620.html">Function GetRandomPoly2</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_SampleStructs_8h_1a4a3cb7a9d73e72bb8144bed28ed5855d.html">Function GetSampleFromGlobalBin</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a04394b98587b44b98b003bd1226606ed.html">Function GetSigmaValue</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a34d5232bfb12e29ec9d63acaa8744b58.html">Function GetSubOptimality</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_ParameterStructs_8h_1a89a221272ded97bbcea052755f4dc43f.html">Function GetTF1</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a5f94558219eeb50331a4bf6abecbe3eb.html">Function GetZScore</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_NuDockFactory_8h_1aa8911aa3fd8204bb500862ba92608095.html">Function InitialiseNuDockObj</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_SplineStructs_8h_1aee66563def836e531cda07c5efa45d87.html">Function isFlat</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a7d9483510cc8dcf165dc9e13f85a7e3e.html">Function LoadYamlConfig</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_MaCh3Logger_8h_1ada930684d7c1ed8916f1fbe6d266ca77.html">Template Function LoggerPrint</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1ad7693a9e309503bd894b04443f163f3c.html">Function M3::AddPath</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a98e6584f7ed16224a221a837551f2c1d.html">Function M3::AddTuneValues</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a6d1b944b696e99865fcaf038d828748d.html">Function M3::BiasFunction_ToString</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1acbacd39568f68bda67b301927b8ae22a.html">Function M3::CanDecomposeMatrix</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1ae6db8e17b4a71c38cc8d9be16ac443d6.html">Function M3::CaseInsensitiveMatchAny</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a6a398d9cc5c005959286835d630b0092.html">Function M3::CaseInsentiveMatch</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a17d30caa6b00bcf8c43b7834bcd031d9.html">Function M3::CheckBinningMatch(const TH1D *, const TH1D *, const std::string&amp;, const int)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a763e2ffed22d70815be09edb9c932690.html">Function M3::CheckBinningMatch(const TH2D *, const TH2D *, const std::string&amp;, const int)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a5dc2b96f9e1931503d9413941a951249.html">Function M3::CheckBinningMatch(TH2Poly *, TH2Poly *, const std::string&amp;, const int)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1aa374c88684482cdd66297f6ae828372d.html">Template Function M3::Clone</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1af4a9244946bbdae4b7bfcdf38feda9fb.html">Function M3::DebugPCA</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a6ef8b24b80901a8c67e4edbfc6fb8229.html">Function M3::DumpParamHandlerToFile</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a68ab9b6b3d413a94604c740208c7895d.html">Function M3::FixSampleNamesQuotes</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1ad501f876b26ca2cef7bb5f434deaffb8.html">Template Function M3::fmaf_t</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a96f1a7786873c4d04e8a16d42d6c46a1.html">Function M3::GetCholeskyDecomposedMatrix</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a1bb16de3a587023bbfa4b46aa214f7e1.html">Function M3::GetConfigMacroFromChain</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1aec8607d7c1f73af5e603af5ee7752c4b.html">Function M3::GetCovMatrixFromChain</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1ad1896bacf74c409a461dd1ea43f8bc99.html">Function M3::GetNThreads</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a50bc6511eef3b80c8ef0a1cbb45a4eff.html">Function M3::MakeCorrelationMatrix</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1aabe4fc7b71432d95a1ffb0ee733804e0.html">Function M3::MakeMatrixPosDef</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1ae577be53e3bb2051d10f34fd054c3e5d.html">Function M3::MatrixMult(double *, double *, int)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1af8413af64315ec1b23ac543fce4a93f1.html">Function M3::MatrixMult(double **, double **, int)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1aa4b0eaa854abea094a8340f46e3d3d9c.html">Function M3::MatrixMult(TMatrixD, TMatrixD)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a82ba8e241659427d252c3ad13c6c25c5.html">Function M3::MatrixVectorMulti</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a2be9f8c591f38f815bcf8b6b60c61653.html">Function M3::MatrixVectorMultiSingle</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a87841bdbf0e0a2a733d9e4ca499f820d.html">Function M3::Open</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a116e94960ba2df3ac2ec3ebe499307ae.html">Function M3::ParseBiasFunction</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Plotting_1abdbd7458b10f2cdbe078d1b86dd9af34.html">Function M3::Plotting::SetSymmetricRatioRange</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Plotting_1a894dcf7a8543769506cc006b9899c09c.html">Function M3::Plotting::TGraphToTH1D</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Plotting_1a1185f525313b8e84842cd0688258b235.html">Function M3::Plotting::TGraphToVector(const TGraph&amp;)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Plotting_1a42c78cbe11e4b7244441b871f3ad3e45.html">Function M3::Plotting::TGraphToVector(const TGraph2D&amp;)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1aeec45eef77225e7b06efc9d557d08321.html">Function M3::PolyToYaml</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1rand_1a952155f291230e2818766fec0997d551.html">Function M3::rand::Gaus</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1rand_1a807fa6f99cbb325c6bb767fe1ba2e319.html">Function M3::rand::Poisson</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1rand_1a3ccb78158b4a7cbfa7b53ebddb6fd05c.html">Function M3::rand::PoissonD</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1rand_1a252a219eeef10133da127f6d2582dcf1.html">Function M3::rand::SetSeed</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1rand_1a3da28d5da445f3b96e00cf563a6bbcd7.html">Function M3::rand::Uniform</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1rand_1a96803596701c1694fbf4b57bc2b2140e.html">Function M3::rand::UniformInt</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1a75bda934f7f63fc70bf57eac209dfdfe.html">Function M3::ScaleHistogram</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1a40e73d1ded5f35067042285af5d70348.html">Template Function M3::Utils::Cell</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1a45c1b264497aabdcceff3707d6f0fa10.html">Function M3::Utils::EstimateDataTransferRate</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1a9c1c1d6d38585550e356e7d36bfdb704.html">Function M3::Utils::FormatDouble</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1aec1d76a89edfeeffb62ae3e0011e30df.html">Function M3::Utils::GetCPUInfo</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1a34224111b48a6bbdd04c22be13c19dd7.html">Function M3::Utils::GetDiskUsage</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1a1ee28e60049e882dbfa0ed808a140aaa.html">Function M3::Utils::GetGPUInfo</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1afb4213a30e5bfd7ca3e9e5d27beefe9e.html">Function M3::Utils::GetMaCh3Version</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1a0b01bdf0cb6a60b9447fcf7bea9ce472.html">Function M3::Utils::GetMassFromPDG</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1ad796df2f1b4323201c86682a96fa9c23.html">Function M3::Utils::GetOSInfo</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1aa584cce13ec0c8ba9d7c4bbce66c5985.html">Function M3::Utils::getValue</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1ae1851bb53770476caf14eb00e4b429a2.html">Template Function M3::Utils::join</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1ab9577b73681bd9048699f72a7df05451.html">Function M3::Utils::MaCh3Usage</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1ab292ea845a1776f3427789eb76141e8d.html">Function M3::Utils::MaCh3Welcome</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1a357e4fd9163d29d0cf9dfd3841786559.html">Function M3::Utils::NThreadsSanity</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1a4be30065aafa9370c2a6640c50f00b50.html">Function M3::Utils::parseLine</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1a186a7214d984c1917cf6c615ba4bb2c9.html">Function M3::Utils::PDGToNuOscillatorFlavour</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1ab6df30ddfffcd5b5c3a1a34826c14d41.html">Function M3::Utils::Print</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1a55dd0ac1201ba988a6293faade5003c1.html">Function M3::Utils::PrintConfig</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1ab021e008806b98e6c67713e2685c96b4.html">Function M3::Utils::PrintProgressBar</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_namespaceM3_1_1Utils_1adb1ec2c447be60dc963ab75230417d5d.html">Function M3::Utils::TerminalToString</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_MaCh3Factory_8h_1a648d2793b16eb62b088b8e9611a15ff1.html">Template Function MaCh3CovarianceFactory</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_MaCh3Factory_8h_1a67c9a07c72e9d3d441cd3181dafdb905.html">Function MaCh3ManagerFactory</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_MaCh3Factory_8h_1a790d0802b36a03be651d830ae33ed8e6.html">Template Function MaCh3SampleHandlerFactory</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1af7d8eb5185577656e9c7fae371c56a35.html">Function MakeFluctuatedHistogramAlternative(TH1D *, TH1D *)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1aa4a6c663b339c664ba7dc8e8f135b95f.html">Function MakeFluctuatedHistogramAlternative(TH2D *, TH2D *)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a84d9f672d5b59d6a5c998147f4c9714f.html">Function MakeFluctuatedHistogramAlternative(TH2Poly *, TH2Poly *)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a1f7d3fee3ea9db203af9801b26a6d982.html">Function MakeFluctuatedHistogramStandard(TH1D *, TH1D *)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a8c35fd0f4c254f680f40cc47190335ae.html">Function MakeFluctuatedHistogramStandard(TH2D *, TH2D *)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a9d457c3fcee7d9a0cdd298a3a0cc47fc.html">Function MakeFluctuatedHistogramStandard(TH2Poly *, TH2Poly *)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a9372bd8295f0ce1759ebf5a35106f4af.html">Function MakePolyHist</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a024915739289279f900551723366cb02.html">Function MakeSummaryFromSpectra</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1aa04e7b65c543d159d861e5d06d954369.html">Function MergeNodes</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1ab18c6b2408d7b9021bad06d47a06ee8d.html">Function NoOverflowIntegral</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1ae28c217f8e8591248bfa54e95fdd7741.html">Function NormalisePoly</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a2fc5d92fb039ba3c886404100876a511.html">Function NormaliseTH2Poly</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a34345b88bcd0e45db5612d58a972a154.html">Function OverflowIntegral</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a269e230f4f26b824c65a4c7a1472e07b.html">Template Function OverrideConfig(YAML::Node, std::string const&amp;, TValue)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a55f0b8c6b5d52b5c269ce26c7d3853f5.html">Template Function OverrideConfig(YAML::Node, std::string const&amp;, Args…)</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1af3f5457963c2e716d78f519b2a59d3c1.html">Function Parse2DBounds</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a3c6595806e439f4ff22e04c22bbe18f9.html">Function ParseBounds</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a9200ca12dfa35fbeedc9dff8d5b2d73a.html">Function PassErrorToRatioPlot</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1a50bab39868d6bf7f3a34beef30eeb9b9.html">Function PoissonGraph</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1ac37b51459c20e314d2da409d57a5fa31.html">Function PoissonGraphScaled</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a8bab8af5f0339c6ec0310ff5ea87f26d.html">Function PolyIntegralWidth</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a22894be570e3fff70a0a353bede6b5e6.html">Function PolyProjectionX</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1acb5af17298de3e1a3080f25c4d7aa271.html">Function PolyProjectionY</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a61d8f295d13a5fe82a552c08d42c8bfa.html">Function PolyScaleWidth</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a84f9597f629eac6a951b455001d034d4.html">Template Function RatioHists</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a105593155519e6b3bd302f8d04769280.html">Function RatioPolys</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_SplineStructs_8h_1adb758df8e7abdf29f474bf643da0efd2.html">Function ReduceTF1</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_SplineStructs_8h_1a02798d50f282b82a68b58d672dcb2472.html">Function ReduceTSpline3</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a85463c0c6943e3d544d5fcb3f96bf18a.html">Function RemoveFitter</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_HistogramUtils_8h_1a316ab25b5952ddda4b14167b858e2a90.html">Function returnCherenkovThresholdMomentum</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_MaCh3Logger_8h_1aa603c55ea73cd86d1994901227883e1e.html">Function SetMaCh3LoggerFormat</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_ParameterStructs_8h_1af1b80b5456f9b1cb847fb56ddcc3c1ab.html">Function SplineInterpolation_ToRespFuncType</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_ParameterStructs_8h_1a2d969ce667e41bd2492cff1775456837.html">Function SplineInterpolation_ToString</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a3ff1f2154c0a70ad5a145fcc5891e7ec.html">Function STRINGtoYAML</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_ParameterStructs_8h_1ad39c312dc44177340e2ebccd3d3f2d4c.html">Function SystType_ToString</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_SampleStructs_8h_1a36b7eae1e9918d93ac6912d88c498a24.html">Function TargetMat_ToString</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_SampleStructs_8h_1a248e4c38d6c9db7fad8415643ee9b7a0.html">Function TestStatFromString</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_SampleStructs_8h_1a300e6cbc6c664b9ae8462c637732cf61.html">Function TestStatistic_ToString</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_StatisticalUtils_8h_1aa6fd944e00fcda133cfef10782f08de0.html">Function ThinningMCMC</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a8f274e653fbd3e5451faf71549318c24.html">Function TMacroToString</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a7e0ade2fd295a927676c243c97d0aa64.html">Function TMacroToYAML</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1aae72fb06a391f1073add5eed6c6485dd.html">Function YAMLtoSTRING</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="function_YamlHelper_8h_1a2d4f3247b6e13ef8c127ff66e699d3cb.html">Function YAMLtoTMacro</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_SplineCommon_8h_1a790348db7c20fb9896e94403fbee52cf.html">Variable _nCoeff_</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_SplineCommon_8h_1ad6cacf3d45a37eeeeffe38ad24345d54.html">Variable _nTF1Coeff_</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1a32ef26a222f7341e03dcc42cdd2badd3.html">Variable M3::_BAD_DOUBLE_</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1aed6ca6561a78ba6c90a98ddfa22353aa.html">Variable M3::_BAD_INT_</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1a4fc5221346bd0dd85e3dadaf1ecdf502.html">Variable M3::_DEFAULT_RETURN_VAL_</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1aaf4ba720c8ab2982beaa3c243aee1b98.html">Variable M3::_LARGE_LOGL_</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1a88e0a86bf059e7ced9ec9717dd9da133.html">Variable M3::_LOW_MC_BOUND_</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1a1aeda1bb6057e3f765d6d919246376e0.html">Variable M3::DefSplineKnotLowBound</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1a058de9d83e6afc416781469031c1aba5.html">Variable M3::DefSplineKnotUpBound</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1a1f7f36d023b8c549459b28521e002f6d.html">Variable M3::float_t_str_repr</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1a889843c4944ea4c89dd03ef2d1000a96.html">Variable M3::KinematicLowBound</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1ae55af9a5eb2878e4c5e4bbe5c2af029d.html">Variable M3::KinematicUpBound</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1aeb787f15a88d520047578ed3f63fc345.html">Variable M3::UmbrellaGaussianNormFactor</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1a016e9a04de587fed0e52a2ff7af57393.html">Variable M3::UnderOverFlowBin</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1a71856d3b09903af6696008c3cb8386b0.html">Variable M3::Unity</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1afade7c2e326a9ce1d3459559d54716e6.html">Variable M3::Unity_D</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1a0888fc3177e4a0c3ddbed03a5bd358b0.html">Variable M3::Unity_F</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1aa45c9a847fa5c777ff86ee3f22b8206c.html">Variable M3::Zero</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1a931980122d8d6dd84058a055e247992b.html">Variable M3::Zero_D</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_namespaceM3_1a2c65b735b4367784c25f7a02a75ec218.html">Variable M3::Zero_F</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_NuDockFactory_8h_1a2a1885ece6bc262f3fb3387393343fd2.html">Variable NuDockOscNameMap</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="variable_NuDockFactory_8h_1a0fb3a5566e0f615cc546f78dea53d16c.html">Variable NuDockOscNameMap_r</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_Core_8h_1a91209a17295738b34b124b79faa68a1b.html">Define _MaCh3_Safe_Include_End_</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_Core_8h_1a46b8fa28114cf68de4549061568b5ade.html">Define _MaCh3_Safe_Include_Start_</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_Core_8h_1a2abc3d82639661d84964bed9e2df0e68.html">Define _noexcept_</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_Core_8h_1ab6a7e23420f0bcfb04f42f45f8283101.html">Define _restrict_</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_Core_8h_1aad677c4443c651001dc4c1f781aef6dc.html">Define _TH2PolyOverflowBins_</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_YamlHelper_8h_1a236f7db41b3514852c36138d94d8015e.html">Define Get2DBounds</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_YamlHelper_8h_1ae828b8f0cb6b6bbd5fd4e7e5aaf9632f.html">Define GetBounds</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_YamlHelper_8h_1ad802d5a5acdc16a796b21af74f6f5f59.html">Define M3OpenConfig</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_plugin_8hpp_1af4ee15ffb2d7160a1f03b5239d2c7ec8.html">Define MACH3_REGISTER_PLUGIN</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_MaCh3Logger_8h_1a07ff6d6a15b24f94afc88a1b89779beb.html">Define MACH3LOG_CRITICAL</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_MaCh3Logger_8h_1a4db4657acad5c79ac4bbb66a9d1c5905.html">Define MACH3LOG_DEBUG</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_MaCh3Logger_8h_1a61052119a625282d0ec6d4a97adf3ee2.html">Define MACH3LOG_ERROR</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_MaCh3Logger_8h_1a95fa4dffc648e4c5536c9292c2bdcac3.html">Define MACH3LOG_INFO</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_MaCh3Logger_8h_1afa930300ae979052e16935bee1397a95.html">Define MACH3LOG_OFF</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_MaCh3Logger_8h_1afc88f0aa23c7127b2ff6e5c7ca3fa892.html">Define MACH3LOG_TRACE</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="define_MaCh3Logger_8h_1ad5b2eb6377721e3ac95def22c2386bb1.html">Define MACH3LOG_WARN</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceM3_1a1f95274549f25fc19fe7db343c8a7a68.html">Typedef M3::float_t</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceM3_1a5053b9d7dce6ad7a919acb6497a6686d.html">Typedef M3::IModule</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceM3_1afd98b2e1cfd69589744c3e3a8a155629.html">Typedef M3::IModuleBase</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceM3_1adb59b8ecdc4e1b2d5d4c826a13aa7463.html">Typedef M3::int_t</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="typedef_namespaceM3_1a08723e82326f079864a8672505dd5741.html">Typedef M3::uint_t</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="typedef_MaCh3Modes_8h_1adf43f6c73c9598abc381855d31ef5682.html">Typedef MaCh3Modes_t</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="library_root.html" class="nav-link">C++ API</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Class InputManager</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="class-inputmanager">
+<span id="exhale-class-classm3-1-1plotting-1-1inputmanager"></span><h1>Class InputManager<a class="headerlink" href="#class-inputmanager" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_Utils_Plotting_InputManager.h.html#file-utils-plotting-inputmanager-h"><span class="std std-ref">File InputManager.h</span></a></p></li>
+</ul>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Link to this heading">#</a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4N2M38Plotting12InputManagerE">
+<span id="_CPPv3N2M38Plotting12InputManagerE"></span><span id="_CPPv2N2M38Plotting12InputManagerE"></span><span id="M3::Plotting::InputManager"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">InputManager</span></span></span><a class="headerlink" href="#_CPPv4N2M38Plotting12InputManagerE" title="Link to this definition">#</a><br /></dt>
+<dd><p>This guy talks to the input files and is intended to smooth over the fact that our OA fitters use such a beautiful and diverse range of output file structures. </p>
+<p>Intended use for this class is to be called from inside of a <a class="reference internal" href="classM3_1_1Plotting_1_1PlottingManager.html#classM3_1_1Plotting_1_1PlottingManager"><span class="std std-ref">PlottingManager</span></a> object which is what the user is intended to interact with, though in principle it should be strong and independent enough to be used all by itself. The interface to this object is intentionally pretty small as it is intended to deal with the complexities of the different input files pretty automatically. Usage should follow something like this: <div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">InputManager</span> <span class="n">man</span><span class="p">(</span><span class="n">translationConfig</span><span class="o">.</span><span class="n">yaml</span><span class="p">)</span> <span class="n">man</span><span class="o">.</span><span class="n">addFile</span><span class="p">(</span><span class="n">filename1</span><span class="p">)</span>
+<span class="n">man</span><span class="o">.</span><span class="n">addFile</span><span class="p">(</span><span class="n">filename2</span><span class="p">)</span>
+<span class="o">...</span>
+
+<span class="n">then</span> <span class="n">use</span> <span class="n">various</span> <span class="n">getter</span> <span class="n">functions</span> <span class="n">like</span> <span class="n">getLLHScan</span><span class="p">()</span> <span class="n">to</span> <span class="n">access</span> <span class="n">the</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">files</span> <span class="n">to</span> <span class="n">make</span>
+<span class="n">plots</span><span class="o">.</span>
+</pre></div>
+</div>
+</p>
+<p><dl class="simple">
+<dt><strong>Author</strong></dt><dd><p>Ewan Miller </p>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-general-getters">General Getters</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager18getKnownParametersEv">
+<span id="_CPPv3NK2M38Plotting12InputManager18getKnownParametersEv"></span><span id="_CPPv2NK2M38Plotting12InputManager18getKnownParametersEv"></span><span id="M3::Plotting::InputManager::getKnownParametersC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1ac4e86ab7c50a2fcf985fb7cd5270b762"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getKnownParameters</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager18getKnownParametersEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager15getKnownSamplesEv">
+<span id="_CPPv3NK2M38Plotting12InputManager15getKnownSamplesEv"></span><span id="_CPPv2NK2M38Plotting12InputManager15getKnownSamplesEv"></span><span id="M3::Plotting::InputManager::getKnownSamplesC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a8b4431386239e4278effdd265414bdaf"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getKnownSamples</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager15getKnownSamplesEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager14getNInputFilesEv">
+<span id="_CPPv3NK2M38Plotting12InputManager14getNInputFilesEv"></span><span id="_CPPv2NK2M38Plotting12InputManager14getNInputFilesEv"></span><span id="M3::Plotting::InputManager::getNInputFilesC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a7c81a93f3bcb5db12d822f4f2474c69a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">size_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getNInputFiles</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager14getNInputFilesEv" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager19getTaggedParametersERKNSt6vectorINSt6stringEEENSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager19getTaggedParametersERKNSt6vectorINSt6stringEEENSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager19getTaggedParametersERKNSt6vectorINSt6stringEEENSt6stringE"></span><span id="M3::Plotting::InputManager::getTaggedParameters__std::vector:ss:CR.ssC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a9e93b66c422f4df386dbffc24538d143"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTaggedParameters</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tags</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">checkType</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;all&quot;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager19getTaggedParametersERKNSt6vectorINSt6stringEEENSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get all parameters which have some set of tags. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tags</strong> – The tags to check for </p></li>
+<li><p><strong>checkType</strong> – The type of check to perform: checkType can be one of:<ul>
+<li><p>all: All parameters which have <em>all</em> of the specified tags will be returned</p></li>
+<li><p>any: All parameters which have <em>any</em> of the specified tags will be returned</p></li>
+<li><p>exact: All of the parameters which have <em>exactly</em> the specified tags will be returned </p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager16getTaggedSamplesERKNSt6vectorINSt6stringEEENSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager16getTaggedSamplesERKNSt6vectorINSt6stringEEENSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager16getTaggedSamplesERKNSt6vectorINSt6stringEEENSt6stringE"></span><span id="M3::Plotting::InputManager::getTaggedSamples__std::vector:ss:CR.ssC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a3fd3f1db1480dc12a501469d46a9b7fc"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getTaggedSamples</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">tags</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">checkType</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;all&quot;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager16getTaggedSamplesERKNSt6vectorINSt6stringEEENSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get all samples which have some set of tags. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tags</strong> – The tags to check for </p></li>
+<li><p><strong>checkType</strong> – The type of check to perform: checkType can be one of:<ul>
+<li><p>all: All samples which have <em>all</em> of the specified tags will be returned</p></li>
+<li><p>any: All samples which have <em>any</em> of the specified tags will be returned</p></li>
+<li><p>exact: All of the samples which have <em>exactly</em> the specified tags will be returned </p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-file-specific-getters">File Specific Getters</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager7getFileEi">
+<span id="_CPPv3NK2M38Plotting12InputManager7getFileEi"></span><span id="_CPPv2NK2M38Plotting12InputManager7getFileEi"></span><span id="M3::Plotting::InputManager::getFile__iC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a41da97c8481071375674f483c7897ef0"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="structM3_1_1Plotting_1_1InputFile.html#_CPPv4N2M38Plotting9InputFileE" title="M3::Plotting::InputFile"><span class="n"><span class="pre">InputFile</span></span></a><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getFile</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileId</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager7getFileEi" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager13translateNameEi12fileTypeEnumNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager13translateNameEi12fileTypeEnumNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager13translateNameEi12fileTypeEnumNSt6stringE"></span><span id="M3::Plotting::InputManager::translateName__i.fileTypeEnum.ssC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a08fd5d97370bb83fb18b817ddfc578f8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">translateName</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileId</span></span>, <a class="reference internal" href="enum_namespaceM3_1_1Plotting_1a62d6a732804190bc7a907c3a9e1babdd.html#_CPPv4N2M38Plotting12fileTypeEnumE" title="M3::Plotting::fileTypeEnum"><span class="n"><span class="pre">fileTypeEnum</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">fileType</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">paramName</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager13translateNameEi12fileTypeEnumNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager21getKnownLLHParametersEi">
+<span id="_CPPv3NK2M38Plotting12InputManager21getKnownLLHParametersEi"></span><span id="_CPPv2NK2M38Plotting12InputManager21getKnownLLHParametersEi"></span><span id="M3::Plotting::InputManager::getKnownLLHParameters__iC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a9a4f8ef9326c815ba674773aa87f47f7"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getKnownLLHParameters</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileId</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager21getKnownLLHParametersEi" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager18getKnownLLHSamplesEi">
+<span id="_CPPv3NK2M38Plotting12InputManager18getKnownLLHSamplesEi"></span><span id="_CPPv2NK2M38Plotting12InputManager18getKnownLLHSamplesEi"></span><span id="M3::Plotting::InputManager::getKnownLLHSamples__iC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a80dd2ead732e98eacf9b1f896e17ca50"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getKnownLLHSamples</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileId</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager18getKnownLLHSamplesEi" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager25getKnownPostFitParametersEi">
+<span id="_CPPv3NK2M38Plotting12InputManager25getKnownPostFitParametersEi"></span><span id="_CPPv2NK2M38Plotting12InputManager25getKnownPostFitParametersEi"></span><span id="M3::Plotting::InputManager::getKnownPostFitParameters__iC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1ab5bce35b70364252d4ea4b7ecad48c72"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getKnownPostFitParameters</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileId</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager25getKnownPostFitParametersEi" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager22getKnownMCMCParametersEi">
+<span id="_CPPv3NK2M38Plotting12InputManager22getKnownMCMCParametersEi"></span><span id="_CPPv2NK2M38Plotting12InputManager22getKnownMCMCParametersEi"></span><span id="M3::Plotting::InputManager::getKnownMCMCParameters__iC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a74ba2217e3b38f800fa133721999174a"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getKnownMCMCParameters</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileId</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager22getKnownMCMCParametersEi" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager29getKnown1dPosteriorParametersEi">
+<span id="_CPPv3NK2M38Plotting12InputManager29getKnown1dPosteriorParametersEi"></span><span id="_CPPv2NK2M38Plotting12InputManager29getKnown1dPosteriorParametersEi"></span><span id="M3::Plotting::InputManager::getKnown1dPosteriorParameters__iC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a95e61334158e569eebc40c93fdbb136c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">getKnown1dPosteriorParameters</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileId</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager29getKnown1dPosteriorParametersEi" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2M38Plotting12InputManager12InputManagerERKNSt6stringERKNSt6vectorINSt6stringEEE">
+<span id="_CPPv3N2M38Plotting12InputManager12InputManagerERKNSt6stringERKNSt6vectorINSt6stringEEE"></span><span id="_CPPv2N2M38Plotting12InputManager12InputManagerERKNSt6stringERKNSt6vectorINSt6stringEEE"></span><span id="M3::Plotting::InputManager::InputManager__ssCR.std::vector:ss:CR"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a83bebf2deda2ba8540666370be30a627"></span><span class="sig-name descname"><span class="n"><span class="pre">InputManager</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">translationConfigName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">_fileNames</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2M38Plotting12InputManager12InputManagerERKNSt6stringERKNSt6vectorINSt6stringEEE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Construct a new <a class="reference internal" href="#classM3_1_1Plotting_1_1InputManager"><span class="std std-ref">InputManager</span></a> using specified fitter translation config file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>translationConfigName</strong> – The config file defining the fitter file structures, fit parameter, and what the parameters are called in each fitter. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Constructed <a class="reference internal" href="#classM3_1_1Plotting_1_1InputManager"><span class="std std-ref">InputManager</span></a> instance. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2M38Plotting12InputManager7addFileERKNSt6stringE">
+<span id="_CPPv3N2M38Plotting12InputManager7addFileERKNSt6stringE"></span><span id="_CPPv2N2M38Plotting12InputManager7addFileERKNSt6stringE"></span><span id="M3::Plotting::InputManager::addFile__ssCR"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a16f44c27ebeaf92bb86820249d507cc6"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">addFile</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">fileName</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2M38Plotting12InputManager7addFileERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Add a new <a class="reference internal" href="structM3_1_1Plotting_1_1InputFile.html#structM3_1_1Plotting_1_1InputFile"><span class="std std-ref">InputFile</span></a> object to this input manager. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fileName</strong> – The name of the file to read. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2M38Plotting12InputManagerD0Ev">
+<span id="_CPPv3N2M38Plotting12InputManagerD0Ev"></span><span id="_CPPv2N2M38Plotting12InputManagerD0Ev"></span><span id="M3::Plotting::InputManager::~InputManager"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a4dfe76b3d6618c1be783ee8ea9e921e2"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">~InputManager</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2M38Plotting12InputManagerD0Ev" title="Link to this definition">#</a><br /></dt>
+<dd><p>Destructor. </p>
+<p>Close out all the files that the manager is responsible for </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2M38Plotting12InputManager12InputManagerERK12InputManager">
+<span id="_CPPv3N2M38Plotting12InputManager12InputManagerERK12InputManager"></span><span id="_CPPv2N2M38Plotting12InputManager12InputManagerERK12InputManager"></span><span id="M3::Plotting::InputManager::InputManager__InputManagerCR"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a4a81bc06faf77c680f337a1b7ee9b007"></span><span class="sig-name descname"><span class="n"><span class="pre">InputManager</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4N2M38Plotting12InputManager12InputManagerERK12InputManager" title="M3::Plotting::InputManager::InputManager"><span class="n"><span class="pre">InputManager</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">delete</span></span><a class="headerlink" href="#_CPPv4N2M38Plotting12InputManager12InputManagerERK12InputManager" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2M38Plotting12InputManager12InputManagerERR12InputManager">
+<span id="_CPPv3N2M38Plotting12InputManager12InputManagerERR12InputManager"></span><span id="_CPPv2N2M38Plotting12InputManager12InputManagerERR12InputManager"></span><span id="M3::Plotting::InputManager::InputManager__InputManagerRR"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1ac411934615d216639cdb1b2b4f4bf246"></span><span class="sig-name descname"><span class="n"><span class="pre">InputManager</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2M38Plotting12InputManager12InputManagerERR12InputManager" title="M3::Plotting::InputManager::InputManager"><span class="n"><span class="pre">InputManager</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N2M38Plotting12InputManager12InputManagerERR12InputManager" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager5printERKNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager5printERKNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager5printERKNSt6stringE"></span><span id="M3::Plotting::InputManager::print__ssCRC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a0166cb089e4b9bfb810113df4dbbe5ff"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">print</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">printLevel</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;summary&quot;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager5printERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Print out what this Inputmanager instance knows about. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>printLevel</strong> – The level of detail to go into in the summary printout: options are “summary”, and “dump”. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager10getLLHScanEKiRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager10getLLHScanEKiRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager10getLLHScanEKiRKNSt6stringERKNSt6stringE"></span><span id="M3::Plotting::InputManager::getLLHScan__iC.ssCR.ssCRC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a32c3cd230d937efa01df90534c9a8815"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getLLHScan</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">LLHType</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager10getLLHScanEKiRKNSt6stringERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the log likelihood scan data for a particular parameter from a particular input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileNum</strong> – The index of the file you want the data from. </p></li>
+<li><p><strong>paramName</strong> – The parameter you want the information about. </p></li>
+<li><p><strong>LLHType</strong> – The type of log likelihood scan you want (e.g. total, penalty, etc.) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A vector of vectors containing the LLH scan data. First entry is x axis, 2nd is y axis </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager12getMCMCentryEKiKi">
+<span id="_CPPv3NK2M38Plotting12InputManager12getMCMCentryEKiKi"></span><span id="_CPPv2NK2M38Plotting12InputManager12getMCMCentryEKiKi"></span><span id="M3::Plotting::InputManager::getMCMCentry__iC.iCC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a40e550001e49445af584ca201a67714b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMCMCentry</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">entry</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager12getMCMCentryEKiKi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the MCMC chain entry in an <a class="reference internal" href="structM3_1_1Plotting_1_1InputFile.html#structM3_1_1Plotting_1_1InputFile"><span class="std std-ref">InputFile</span></a>. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileNum</strong> – The index of the file you want the data from. </p></li>
+<li><p><strong>entry</strong> – The entry to get. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager12getMCMCvalueEiRKNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager12getMCMCvalueEiRKNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager12getMCMCvalueEiRKNSt6stringE"></span><span id="M3::Plotting::InputManager::getMCMCvalue__i.ssCRC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a6dd48397faf40cc21b76aadb437a0087"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getMCMCvalue</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager12getMCMCvalueEiRKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the parameter value for the current step for a particular parameter from a particular input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileNum</strong> – The index of the file you want the data from. </p></li>
+<li><p><strong>paramName</strong> – The parameter you want the value of. </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager14get1dPosteriorEKiRKNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager14get1dPosteriorEKiRKNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager14get1dPosteriorEKiRKNSt6stringE"></span><span id="M3::Plotting::InputManager::get1dPosterior__iC.ssCRC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a60765085c91a7914312c7608a20a4be4"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">get1dPosterior</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager14get1dPosteriorEKiRKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the 1d posterior particular parameter from a particular input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileNum</strong> – The index of the file you want the data from. </p></li>
+<li><p><strong>paramName</strong> – The parameter you want the information about. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A vector of vectors containing the posterior data. First entry is x axis (i.e. the parameter values), 2nd is y axis </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager15getnMCMCentriesEKi">
+<span id="_CPPv3NK2M38Plotting12InputManager15getnMCMCentriesEKi"></span><span id="_CPPv2NK2M38Plotting12InputManager15getnMCMCentriesEKi"></span><span id="M3::Plotting::InputManager::getnMCMCentries__iCC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a49812fba9c2c81763d88dcd4e9add41e"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getnMCMCentries</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager15getnMCMCentriesEKi" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the number of entries in the MCMC chain in a particular file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fileNum</strong> – The index of the file you want the number of steps from. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager17getLLHScan_TGraphEKiRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager17getLLHScan_TGraphEKiRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager17getLLHScan_TGraphEKiRKNSt6stringERKNSt6stringE"></span><span id="M3::Plotting::InputManager::getLLHScan_TGraph__iC.ssCR.ssCRC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1ad4b569ea10c376b439550d44cde64f72"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">TGraph</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getLLHScan_TGraph</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">LLHType</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager17getLLHScan_TGraphEKiRKNSt6stringERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the log likelihood scan for a particular parameter from a particular input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileNum</strong> – The index of the file that you would like to get the scan from. </p></li>
+<li><p><strong>paramName</strong> – The name of the parameter whose LLH scan you would like. </p></li>
+<li><p><strong>LLHType</strong> – The type of likelihood scan you would like, e.h. total, prior etc. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>T</strong> – The type you would like your scan returned as, currently only TGraph and TH1D are supported </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The graph of the likelihood scan. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager15getLLHScan_TH1DEKiRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager15getLLHScan_TH1DEKiRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager15getLLHScan_TH1DEKiRKNSt6stringERKNSt6stringE"></span><span id="M3::Plotting::InputManager::getLLHScan_TH1D__iC.ssCR.ssCRC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1acbaa69c6fb416e0bf24e6fad63cf57e8"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">TH1D</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getLLHScan_TH1D</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">LLHType</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager15getLLHScan_TH1DEKiRKNSt6stringERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager24getSampleSpecificLLHScanEKiRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager24getSampleSpecificLLHScanEKiRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager24getSampleSpecificLLHScanEKiRKNSt6stringERKNSt6stringE"></span><span id="M3::Plotting::InputManager::getSampleSpecificLLHScan__iC.ssCR.ssCRC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1ac67b23859749bb48a667169d1e785aec"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">vector</span></span><span class="p"><span class="pre">&lt;</span></span><span class="kt"><span class="pre">double</span></span><span class="p"><span class="pre">&gt;</span></span><span class="p"><span class="pre">&gt;</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSampleSpecificLLHScan</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sample</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager24getSampleSpecificLLHScanEKiRKNSt6stringERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the log likelihood scan for a particular parameter, for a specific sample, from a particular input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileNum</strong> – The index of the file that you would like to get the scan from. </p></li>
+<li><p><strong>paramName</strong> – The name of the parameter whose LLH scan you would like. </p></li>
+<li><p><strong>sample</strong> – The sample that you would like the LLH scan for. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A vector of vectors containing the LLH scan data. First entry is x axis, 2nd is y axis. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager31getSampleSpecificLLHScan_TGraphEKiRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager31getSampleSpecificLLHScan_TGraphEKiRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager31getSampleSpecificLLHScan_TGraphEKiRKNSt6stringERKNSt6stringE"></span><span id="M3::Plotting::InputManager::getSampleSpecificLLHScan_TGraph__iC.ssCR.ssCRC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a20f112a23654c99f9cdb532f78b32d50"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">TGraph</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSampleSpecificLLHScan_TGraph</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sample</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager31getSampleSpecificLLHScan_TGraphEKiRKNSt6stringERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager29getSampleSpecificLLHScan_TH1DEKiRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager29getSampleSpecificLLHScan_TH1DEKiRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager29getSampleSpecificLLHScan_TH1DEKiRKNSt6stringERKNSt6stringE"></span><span id="M3::Plotting::InputManager::getSampleSpecificLLHScan_TH1D__iC.ssCR.ssCRC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a7bbccd656d93a7e58b9f56c69f3bf0ef"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">TH1D</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getSampleSpecificLLHScan_TH1D</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sample</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager29getSampleSpecificLLHScan_TH1DEKiRKNSt6stringERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager13getEnabledLLHEKiRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager13getEnabledLLHEKiRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager13getEnabledLLHEKiRKNSt6stringERKNSt6stringE"></span><span id="M3::Plotting::InputManager::getEnabledLLH__iC.ssCR.ssCRC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1aa40a0c005b096bd27df3257beff2dbcd"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEnabledLLH</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">LLHType</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;total&quot;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager13getEnabledLLHEKiRKNSt6stringERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get whether or not a particular parameter has an LLH scan in a particular input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileNum</strong> – The index of the file that you would like to know about. </p></li>
+<li><p><strong>paramName</strong> – The name of the parameter whose LLH scan you would like to check for. </p></li>
+<li><p><strong>LLHType</strong> – The type of likelihood scan you would like to check for, e.h. total, prior etc. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if scan exists, false if not. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager21getEnabledLLHBySampleEKiRKNSt6stringERKNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager21getEnabledLLHBySampleEKiRKNSt6stringERKNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager21getEnabledLLHBySampleEKiRKNSt6stringERKNSt6stringE"></span><span id="M3::Plotting::InputManager::getEnabledLLHBySample__iC.ssCR.ssCRC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a45c59109f6a438469db18c2fad76cca3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEnabledLLHBySample</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">sample</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager21getEnabledLLHBySampleEKiRKNSt6stringERKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get whether or not a particular parameter has an LLH scan in a particular input file for a particular sample. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileNum</strong> – The index of the file that you would like to know about. </p></li>
+<li><p><strong>paramName</strong> – The name of the parameter whose LLH scan you would like to check for. </p></li>
+<li><p><strong>sample</strong> – The sample to check. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if scan exists, false if not. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager19getEnabledMCMCchainEKiRKNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager19getEnabledMCMCchainEKiRKNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager19getEnabledMCMCchainEKiRKNSt6stringE"></span><span id="M3::Plotting::InputManager::getEnabledMCMCchain__iC.ssCRC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a836d915089420c5eb6b1990c534f04ff"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEnabledMCMCchain</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager19getEnabledMCMCchainEKiRKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get whether or not a particular parameter has MCMC chain entries in a particular input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileNum</strong> – The index of the file that you would like to know about. </p></li>
+<li><p><strong>paramName</strong> – The name of the parameter whose LLH scan you would like to check for. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if scan exists, false if not. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager22getEnabled1dPosteriorsEKiRKNSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager22getEnabled1dPosteriorsEKiRKNSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager22getEnabled1dPosteriorsEKiRKNSt6stringE"></span><span id="M3::Plotting::InputManager::getEnabled1dPosteriors__iC.ssCRC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a3422f519334b58b1d9690c5956f5b8d5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">bool</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getEnabled1dPosteriors</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager22getEnabled1dPosteriorsEKiRKNSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get whether or not a particular parameter has 1d posteriors in a particular input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileNum</strong> – The index of the file that you would like to know about. </p></li>
+<li><p><strong>paramName</strong> – The name of the parameter whose 1d posterior you would like to check for. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>true if scan exists, false if not. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager15getPostFitErrorEKiRKNSt6stringENSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager15getPostFitErrorEKiRKNSt6stringENSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager15getPostFitErrorEKiRKNSt6stringENSt6stringE"></span><span id="M3::Plotting::InputManager::getPostFitError__iC.ssCR.ssC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a6d3e370b5948475c42059cc75a68bc54"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPostFitError</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">errorType</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager15getPostFitErrorEKiRKNSt6stringENSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the post fit error for a particular parameter from a particular input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileNum</strong> – The index of the file that you would like to get the value from. </p></li>
+<li><p><strong>paramName</strong> – The name of the parameter whose error you would like. </p></li>
+<li><p><strong>errorType</strong> – The type of error to return, usually “prior” will be defined, but other possible types will be fitter dependent, e.g. “gauss” or “hpd” for MaCh3. If not specified, will use the default one, as specified in the fitter definition config. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The error on the specified parameter. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK2M38Plotting12InputManager15getPostFitValueEKiRKNSt6stringENSt6stringE">
+<span id="_CPPv3NK2M38Plotting12InputManager15getPostFitValueEKiRKNSt6stringENSt6stringE"></span><span id="_CPPv2NK2M38Plotting12InputManager15getPostFitValueEKiRKNSt6stringENSt6stringE"></span><span id="M3::Plotting::InputManager::getPostFitValue__iC.ssCR.ssC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a3a0fca295318fb412804c1afa8356dad"></span><span class="kt"><span class="pre">double</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">getPostFitValue</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">fileNum</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">paramName</span></span>, <span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">errorType</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;&quot;</span></span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK2M38Plotting12InputManager15getPostFitValueEKiRKNSt6stringENSt6stringE" title="Link to this definition">#</a><br /></dt>
+<dd><p>Get the post fit value for a particular parameter from a particular input file. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fileNum</strong> – The index of the file that you would like to get the value from. </p></li>
+<li><p><strong>paramName</strong> – The name of the parameter whose value you would like. </p></li>
+<li><p><strong>errorType</strong> – The type of error to return, usually “prior” will be defined, but other possible types will be fitter dependent, e.g. “gauss” or “hpd” for MaCh3. If not specified, will use the default one, as specified in the fitter definition config. </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value of the specified parameter. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N2M38Plotting12InputManager13NOT_FOUND_STRE">
+<span id="_CPPv3N2M38Plotting12InputManager13NOT_FOUND_STRE"></span><span id="_CPPv2N2M38Plotting12InputManager13NOT_FOUND_STRE"></span><span id="M3::Plotting::InputManager::NOT_FOUND_STR__ssC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1ac90d3cea0b079d2867df5067e6038599"></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">NOT_FOUND_STR</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="s"><span class="pre">&quot;__PARAM_NAME_NOT_FOUND__&quot;</span></span><a class="headerlink" href="#_CPPv4N2M38Plotting12InputManager13NOT_FOUND_STRE" title="Link to this definition">#</a><br /></dt>
+<dd><p>the default string to return if something can’t be found </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-functions">Public Static Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2M38Plotting12InputManager20convertFileTypeNamesEK12fileTypeEnum">
+<span id="_CPPv3N2M38Plotting12InputManager20convertFileTypeNamesEK12fileTypeEnum"></span><span id="_CPPv2N2M38Plotting12InputManager20convertFileTypeNamesEK12fileTypeEnum"></span><span id="M3::Plotting::InputManager::convertFileTypeNames__fileTypeEnumC"></span><span class="target" id="classM3_1_1Plotting_1_1InputManager_1a1a76c03243400eca102d17a29ff8eeaa"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">convertFileTypeNames</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="enum_namespaceM3_1_1Plotting_1a62d6a732804190bc7a907c3a9e1babdd.html#_CPPv4N2M38Plotting12fileTypeEnumE" title="M3::Plotting::fileTypeEnum"><span class="n"><span class="pre">fileTypeEnum</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">fileType</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2M38Plotting12InputManager20convertFileTypeNamesEK12fileTypeEnum" title="Link to this definition">#</a><br /></dt>
+<dd><p>Convert from fileTypeEnum to the name of the file type. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>fileType</strong> – The file type ID to convert. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The name of the file type, or “UNKNOWN_FILE_TYPE” if the fileType does not match any known file type. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="classM3_1_1MaCh3Program.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Class MaCh3Program</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="classM3_1_1Plotting_1_1PlottingManager.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Class PlottingManager</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal" tabindex="-1"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#class-documentation">Class Documentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2M38Plotting12InputManagerE"><code class="docutils literal notranslate"><span class="pre">M3::Plotting::InputManager</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager18getKnownParametersEv"><code class="docutils literal notranslate"><span class="pre">getKnownParameters()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager15getKnownSamplesEv"><code class="docutils literal notranslate"><span class="pre">getKnownSamples()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager14getNInputFilesEv"><code class="docutils literal notranslate"><span class="pre">getNInputFiles()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager19getTaggedParametersERKNSt6vectorINSt6stringEEENSt6stringE"><code class="docutils literal notranslate"><span class="pre">getTaggedParameters()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager16getTaggedSamplesERKNSt6vectorINSt6stringEEENSt6stringE"><code class="docutils literal notranslate"><span class="pre">getTaggedSamples()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager7getFileEi"><code class="docutils literal notranslate"><span class="pre">getFile()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager13translateNameEi12fileTypeEnumNSt6stringE"><code class="docutils literal notranslate"><span class="pre">translateName()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager21getKnownLLHParametersEi"><code class="docutils literal notranslate"><span class="pre">getKnownLLHParameters()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager18getKnownLLHSamplesEi"><code class="docutils literal notranslate"><span class="pre">getKnownLLHSamples()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager25getKnownPostFitParametersEi"><code class="docutils literal notranslate"><span class="pre">getKnownPostFitParameters()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager22getKnownMCMCParametersEi"><code class="docutils literal notranslate"><span class="pre">getKnownMCMCParameters()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager29getKnown1dPosteriorParametersEi"><code class="docutils literal notranslate"><span class="pre">getKnown1dPosteriorParameters()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2M38Plotting12InputManager12InputManagerERKNSt6stringERKNSt6vectorINSt6stringEEE"><code class="docutils literal notranslate"><span class="pre">InputManager()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2M38Plotting12InputManager7addFileERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">addFile()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2M38Plotting12InputManagerD0Ev"><code class="docutils literal notranslate"><span class="pre">~InputManager()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2M38Plotting12InputManager12InputManagerERK12InputManager"><code class="docutils literal notranslate"><span class="pre">InputManager()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2M38Plotting12InputManager12InputManagerERR12InputManager"><code class="docutils literal notranslate"><span class="pre">InputManager()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager5printERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">print()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager10getLLHScanEKiRKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getLLHScan()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager12getMCMCentryEKiKi"><code class="docutils literal notranslate"><span class="pre">getMCMCentry()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager12getMCMCvalueEiRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getMCMCvalue()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager14get1dPosteriorEKiRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">get1dPosterior()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager15getnMCMCentriesEKi"><code class="docutils literal notranslate"><span class="pre">getnMCMCentries()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager17getLLHScan_TGraphEKiRKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getLLHScan_TGraph()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager15getLLHScan_TH1DEKiRKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getLLHScan_TH1D()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager24getSampleSpecificLLHScanEKiRKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getSampleSpecificLLHScan()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager31getSampleSpecificLLHScan_TGraphEKiRKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getSampleSpecificLLHScan_TGraph()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager29getSampleSpecificLLHScan_TH1DEKiRKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getSampleSpecificLLHScan_TH1D()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager13getEnabledLLHEKiRKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getEnabledLLH()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager21getEnabledLLHBySampleEKiRKNSt6stringERKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getEnabledLLHBySample()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager19getEnabledMCMCchainEKiRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getEnabledMCMCchain()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager22getEnabled1dPosteriorsEKiRKNSt6stringE"><code class="docutils literal notranslate"><span class="pre">getEnabled1dPosteriors()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager15getPostFitErrorEKiRKNSt6stringENSt6stringE"><code class="docutils literal notranslate"><span class="pre">getPostFitError()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4NK2M38Plotting12InputManager15getPostFitValueEKiRKNSt6stringENSt6stringE"><code class="docutils literal notranslate"><span class="pre">getPostFitValue()</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2M38Plotting12InputManager13NOT_FOUND_STRE"><code class="docutils literal notranslate"><span class="pre">NOT_FOUND_STR</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#_CPPv4N2M38Plotting12InputManager20convertFileTypeNamesEK12fileTypeEnum"><code class="docutils literal notranslate"><span class="pre">convertFileTypeNames()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/classM3_1_1Plotting_1_1InputManager.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright MaCh3 Collaboration.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.24.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

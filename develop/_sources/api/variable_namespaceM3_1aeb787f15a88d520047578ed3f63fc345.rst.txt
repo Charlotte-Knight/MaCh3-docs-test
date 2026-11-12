@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceM3_1aeb787f15a88d520047578ed3f63fc345:
+
+Variable M3::UmbrellaGaussianNormFactor
+=======================================
+
+- Defined in :ref:`file_Fitters_Algorithms_MulticanonicalMCMCHandler.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: M3::UmbrellaGaussianNormFactor
+   :project: MaCh3

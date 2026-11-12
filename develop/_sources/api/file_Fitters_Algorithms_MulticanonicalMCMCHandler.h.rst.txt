@@ -1,0 +1,91 @@
+
+.. _file_Fitters_Algorithms_MulticanonicalMCMCHandler.h:
+
+File MulticanonicalMCMCHandler.h
+================================
+
+|exhale_lsh| :ref:`Parent directory <dir_Fitters_Algorithms>` (``Fitters/Algorithms``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Fitters/Algorithms/MulticanonicalMCMCHandler.h``)
+---------------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Fitters_Algorithms_MulticanonicalMCMCHandler.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/Manager.h`` (:ref:`file_Manager_Manager.h`)
+
+- ``Parameters/ParameterHandlerBase.h`` (:ref:`file_Parameters_ParameterHandlerBase.h`)
+
+- ``TSpline.h``
+
+- ``ostream``
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Fitters_Algorithms_MCMCBase.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classMulticanonicalMCMCHandler`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespaceM3_1aac995ad2de0eca11488028f2d4a964e7`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceM3_1a6d1b944b696e99865fcaf038d828748d`
+
+- :ref:`exhale_function_namespaceM3_1a116e94960ba2df3ac2ec3ebe499307ae`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespaceM3_1aeb787f15a88d520047578ed3f63fc345`
+

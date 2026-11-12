@@ -1,0 +1,123 @@
+
+.. _program_listing_file_Fitters_Algorithms_FitterBase.h:
+
+Program Listing for File FitterBase.h
+=====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Fitters_Algorithms_FitterBase.h>` (``Fitters/Algorithms/FitterBase.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // C++ includes
+   #include <iostream>
+   #include <fstream>
+   #include <sstream>
+   
+   // MaCh3 Includes
+   #include "Samples/SampleHandlerInterface.h"
+   #include "Parameters/ParameterHandlerBase.h"
+   #include "Parameters/ParameterHandlerGeneric.h"
+   #include "Manager/Manager.h"
+   #include "Processing/MCMCProcessor.h"
+   
+   //KS: Joy of forward declaration https://gieseanw.wordpress.com/2018/02/25/the-joys-of-forward-declarations-results-from-the-real-world/
+   class TStopwatch;
+   class TTree;
+   class TGraphAsymmErrors;
+   class TDirectory;
+   
+   class FitterBase {
+    public:
+     FitterBase(Manager * const fitMan);
+     virtual ~FitterBase();
+   
+     void AddSampleHandler(SampleHandlerInterface* sample);
+   
+     void AddSystObj(ParameterHandlerBase* cov);
+   
+     virtual void RunMCMC() = 0;
+   
+     void DragRace(const int NLaps = 100);
+     
+     void RunLLHScan();
+   
+     void RunLLHMap();
+   
+     void GetStepScaleBasedOnLLHScan(const std::string& filename = "");
+   
+     void Run2DLLHScan();
+   
+     void RunSigmaVar();
+   
+     virtual void StartFromPreviousFit(const std::string& FitName);
+   
+     std::string GetName() const {return AlgorithmName;};
+     virtual std::string GetFancyName() const {return GetName();};
+   
+    protected:
+     void ProcessMCMC();
+   
+     void PrepareOutput();
+   
+     void SaveOutput();
+   
+     void SanitiseInputs();
+   
+     void SaveSettings();
+   
+     bool GetScanRange(std::map<std::string, std::vector<double>>& scanRanges) const;
+     void GetParameterScanRange(const ParameterHandlerBase* cov, const int i, double& CentralValue,
+                                double& lower, double& upper, const int n_points, const std::string& suffix = "") const;
+     bool CheckSkipParameter(const std::vector<std::string>& SkipVector, const std::string& ParamName) const;
+   
+     
+     void CustomRange(const std::string& ParName, const double sigma, double& ParamShiftValue) const;
+   
+     //Bin edges needed for logarithmic LLH scans
+     std::vector<double> CalculateBinEdges(double lowerlimit,double upperlimit, int n_points) const;
+     
+     Manager *fitMan;
+   
+     unsigned int step;
+     double logLCurr;
+     double logLProp;
+     double accProb;
+     int accCount;
+     unsigned int stepStart;
+   
+     std::vector<double> sample_llh;
+     std::vector<double> syst_llh;
+   
+     std::vector<SampleHandlerInterface*> samples;
+     unsigned int TotalNSamples;
+   
+     std::vector<ParameterHandlerBase*> systematics;
+   
+     std::unique_ptr<TStopwatch> clock;
+     std::unique_ptr<TStopwatch> stepClock;
+     double stepTime;
+   
+     TFile *outputFile;
+     TDirectory *CovFolder;
+     TDirectory *SampleFolder;
+     TTree *outTree;
+     int auto_save;
+   
+     bool fTestLikelihood;
+   
+     bool FileSaved;
+     bool SettingsSaved;
+     bool OutputPrepared;
+   
+     std::string AlgorithmName;
+   
+     #ifdef MACH3_DEBUG
+     bool debug;
+     std::ofstream debugFile;
+     #endif
+   };
+   

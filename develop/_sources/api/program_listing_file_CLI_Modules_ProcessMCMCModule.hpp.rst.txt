@@ -1,0 +1,65 @@
+
+.. _program_listing_file_CLI_Modules_ProcessMCMCModule.hpp:
+
+Program Listing for File ProcessMCMCModule.hpp
+==============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_Modules_ProcessMCMCModule.hpp>` (``CLI/Modules/ProcessMCMCModule.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   
+   //MaCh3 includes
+   #pragma once
+   // yaml Includes
+   #include "yaml-cpp/yaml.h"
+   #include "Processing/MCMCProcessor.h"
+   #include "CLI/API/plugin.hpp"
+   
+   namespace M3{
+   
+   
+     class ProcessMCMCModule: public IModuleBase{
+   
+       public:
+         virtual ~ProcessMCMCModule();
+   
+         MaCh3ArgumentParser* get_parser() override;
+   
+         int Run() override;
+   
+   
+       private:
+         std::map<std::string, std::pair<double, double>> GetCustomBinning(const YAML::Node& Settings);
+   
+         void ProcessMCMC(const std::string& inputFile);
+   
+         void MultipleProcessMCMC();
+   
+         void CalcBayesFactor(MCMCProcessor* Processor);
+   
+         void CalcSavageDickey(MCMCProcessor* Processor);
+   
+         void CalcParameterEvolution(MCMCProcessor* Processor);
+   
+         void CalcBipolarPlot(MCMCProcessor* Processor);
+   
+         void GetTrianglePlot(MCMCProcessor* Processor);
+   
+         void DiagnoseCovarianceMatrix(MCMCProcessor* Processor, const std::string& inputFile);
+   
+         TH2D* TMatrixIntoTH2D(TMatrixDSym* Matrix, const std::string& title);
+   
+         void KolmogorovSmirnovTest(const std::vector<std::unique_ptr<MCMCProcessor>>& Processor,
+                                    const std::unique_ptr<TCanvas>& Posterior,
+                                    const TString& canvasname);
+   
+         int nFiles;                                
+         std::vector <std::string> FileNames;       
+         std::vector <std::string> TitleNames;      
+         std::string config;                        
+     };
+   }

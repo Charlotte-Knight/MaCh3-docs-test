@@ -1,0 +1,77 @@
+
+.. _file_Samples_SampleHandlerInterface.h:
+
+File SampleHandlerInterface.h
+=============================
+
+|exhale_lsh| :ref:`Parent directory <dir_Samples>` (``Samples``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Samples/SampleHandlerInterface.h``)
+-------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Samples_SampleHandlerInterface.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/MaCh3Modes.h`` (:ref:`file_Manager_MaCh3Modes.h`)
+
+- ``Manager/Manager.h`` (:ref:`file_Manager_Manager.h`)
+
+- ``Samples/HistogramUtils.h`` (:ref:`file_Samples_HistogramUtils.h`)
+
+- ``Samples/SampleStructs.h`` (:ref:`file_Samples_SampleStructs.h`)
+
+- ``TFile.h``
+
+- ``TH1D.h``
+
+- ``TH2D.h``
+
+- ``TMath.h``
+
+- ``TROOT.h``
+
+- ``TString.h``
+
+- ``TTree.h``
+
+- ``assert.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Fitters_Algorithms_FitterBase.h`
+
+- :ref:`file_NuDock_SampleHandlerNuDockBase.h`
+
+- :ref:`file_Samples_SampleHandlerBase.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classSampleHandlerInterface`
+

@@ -1,0 +1,112 @@
+
+.. _file_Fitters_Processing_MCMCProcessor.h:
+
+File MCMCProcessor.h
+====================
+
+|exhale_lsh| :ref:`Parent directory <dir_Fitters_Processing>` (``Fitters/Processing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Fitters/Processing/MCMCProcessor.h``)
+---------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Fitters_Processing_MCMCProcessor.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Parameters/ParameterHandlerUtils.h`` (:ref:`file_Parameters_ParameterHandlerUtils.h`)
+
+- ``Processing/StatisticalUtils.h`` (:ref:`file_Fitters_Processing_StatisticalUtils.h`)
+
+- ``Samples/HistogramUtils.h`` (:ref:`file_Samples_HistogramUtils.h`)
+
+- ``TBranch.h``
+
+- ``TCandle.h``
+
+- ``TCanvas.h``
+
+- ``TColor.h``
+
+- ``TFile.h``
+
+- ``TGaxis.h``
+
+- ``TGraphErrors.h``
+
+- ``TGraphPolar.h``
+
+- ``TKey.h``
+
+- ``TLegend.h``
+
+- ``TLine.h``
+
+- ``TMath.h``
+
+- ``TMatrixDSymEigen.h``
+
+- ``TROOT.h``
+
+- ``TStopwatch.h``
+
+- ``TString.h``
+
+- ``TStyle.h``
+
+- ``TText.h``
+
+- ``TTree.h``
+
+- ``TVectorD.h``
+
+- ``complex``
+
+- ``cstdio``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_CLI_Modules_ProcessMCMCModule.hpp`
+
+- :ref:`file_Fitters_Algorithms_FitterBase.h`
+
+- :ref:`file_Fitters_Processing_OscProcessor.h`
+
+- :ref:`file_Utils_Plotting_InputManager.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classMCMCProcessor`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_MCMCProcessor_8h_1acd2848273413543fe14936252942c20b`
+

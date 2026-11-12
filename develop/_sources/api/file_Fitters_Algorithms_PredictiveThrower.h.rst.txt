@@ -1,0 +1,47 @@
+
+.. _file_Fitters_Algorithms_PredictiveThrower.h:
+
+File PredictiveThrower.h
+========================
+
+|exhale_lsh| :ref:`Parent directory <dir_Fitters_Algorithms>` (``Fitters/Algorithms``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Fitters/Algorithms/PredictiveThrower.h``)
+-------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Fitters_Algorithms_PredictiveThrower.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Algorithms/FitterBase.h`` (:ref:`file_Fitters_Algorithms_FitterBase.h`)
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structPredictiveSample`
+
+- :ref:`exhale_class_classPredictiveThrower`
+

@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a50bab39868d6bf7f3a34beef30eeb9b9:
+
+Function PoissonGraph
+=====================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: PoissonGraph(const TH1D *, double)
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceM3_1aa45c9a847fa5c777ff86ee3f22b8206c:
+
+Variable M3::Zero
+=================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: M3::Zero
+   :project: MaCh3

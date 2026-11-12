@@ -1,0 +1,53 @@
+
+.. _file_Splines_BinnedSplineHandler.h:
+
+File BinnedSplineHandler.h
+==========================
+
+|exhale_lsh| :ref:`Parent directory <dir_Splines>` (``Splines``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Splines/BinnedSplineHandler.h``)
+----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Splines_BinnedSplineHandler.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/MaCh3Modes.h`` (:ref:`file_Manager_MaCh3Modes.h`)
+
+- ``Splines/SplineBase.h`` (:ref:`file_Splines_SplineBase.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Samples_SampleHandlerBase.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classBinnedSplineHandler`
+

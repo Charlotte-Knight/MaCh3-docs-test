@@ -1,0 +1,14 @@
+.. _exhale_enum_namespaceM3_1a007e5ed320c3672a3faf79da0a38fb7a:
+
+Enum kInfCrit
+=============
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: M3::kInfCrit
+   :project: MaCh3

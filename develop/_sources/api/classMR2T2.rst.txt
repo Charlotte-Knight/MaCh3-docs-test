@@ -1,0 +1,33 @@
+.. _exhale_class_classMR2T2:
+
+Class MR2T2
+===========
+
+- Defined in :ref:`file_Fitters_Algorithms_MR2T2.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public MCMCBase`` (:ref:`exhale_class_classMCMCBase`)
+
+
+Derived Type
+************
+
+- ``public DelayedMR2T2`` (:ref:`exhale_class_classDelayedMR2T2`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: MR2T2
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

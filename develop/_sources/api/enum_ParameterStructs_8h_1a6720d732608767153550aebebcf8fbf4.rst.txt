@@ -1,0 +1,14 @@
+.. _exhale_enum_ParameterStructs_8h_1a6720d732608767153550aebebcf8fbf4:
+
+Enum SplineInterpolation
+========================
+
+- Defined in :ref:`file_Parameters_ParameterStructs.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: SplineInterpolation
+   :project: MaCh3

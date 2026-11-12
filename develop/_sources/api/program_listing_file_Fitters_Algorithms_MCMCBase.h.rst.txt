@@ -1,0 +1,65 @@
+
+.. _program_listing_file_Fitters_Algorithms_MCMCBase.h:
+
+Program Listing for File MCMCBase.h
+===================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Fitters_Algorithms_MCMCBase.h>` (``Fitters/Algorithms/MCMCBase.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include "Algorithms/FitterBase.h"
+   #include "Algorithms/MulticanonicalMCMCHandler.h"
+   class MCMCBase : public FitterBase {
+    public:
+       MCMCBase(Manager * const fitMan);
+       
+       virtual ~MCMCBase() = default;
+   
+       void RunMCMC() final;
+   
+       void StartFromPreviousFit(const std::string &FitName) final;
+   
+       virtual std::string GetFancyName() const final;
+   
+      void setChainLength(unsigned int L) { chainLength = L; };
+    protected:
+       void DoMCMCStep();
+   
+       virtual void ProposeStep()=0;
+   
+       void PreStepProcess();
+   
+       void PostStepProcess();
+   
+       virtual void DoStep()=0;
+   
+       virtual double AcceptanceProbability()=0;
+   
+       bool IsStepAccepted(const double acc_prob);
+   
+       void AcceptStep();
+   
+       void AdaptiveStep();
+   
+       void PrintProgress(const bool StepsPrint = true);
+   
+       void CheckAcceptanceRates();
+   
+       std::unique_ptr<MulticanonicalMCMCHandler> multicanonicalHandler;
+   
+       bool out_of_bounds;
+   
+       bool accept;
+   
+       unsigned int chainLength;
+   
+       bool anneal;
+       double AnnealTemp;
+   
+       bool multicanonical;
+   };

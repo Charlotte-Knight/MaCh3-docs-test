@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Utils_1a4be30065aafa9370c2a6640c50f00b50:
+
+Function M3::Utils::parseLine
+=============================
+
+- Defined in :ref:`file_Manager_Monitor.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Utils::parseLine(const std::string&)
+   :project: MaCh3

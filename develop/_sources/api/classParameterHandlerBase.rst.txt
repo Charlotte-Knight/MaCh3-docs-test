@@ -1,0 +1,27 @@
+.. _exhale_class_classParameterHandlerBase:
+
+Class ParameterHandlerBase
+==========================
+
+- Defined in :ref:`file_Parameters_ParameterHandlerBase.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Type
+************
+
+- ``public ParameterHandlerGeneric`` (:ref:`exhale_class_classParameterHandlerGeneric`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ParameterHandlerBase
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

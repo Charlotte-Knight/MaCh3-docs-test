@@ -1,0 +1,367 @@
+
+.. _program_listing_file_Fitters_Processing_MCMCProcessor.h:
+
+Program Listing for File MCMCProcessor.h
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Fitters_Processing_MCMCProcessor.h>` (``Fitters/Processing/MCMCProcessor.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // C++ includes
+   #include <complex>
+   #include <cstdio>
+   
+   // MaCh3 includes
+   #include "Processing/StatisticalUtils.h"
+   #include "Samples/HistogramUtils.h"
+   #include "Parameters/ParameterHandlerUtils.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   // ROOT includes
+   #include "TFile.h"
+   #include "TBranch.h"
+   #include "TCanvas.h"
+   #include "TLine.h"
+   #include "TLegend.h"
+   #include "TString.h"
+   #include "TGraphErrors.h"
+   #include "TVectorD.h"
+   #include "TColor.h"
+   #include "TStyle.h"
+   #include "TStopwatch.h"
+   #include "TText.h"
+   #include "TGaxis.h"
+   #include "TTree.h"
+   #include "TROOT.h"
+   #include "TKey.h"
+   #include "TGraphPolar.h"
+   #include "TCandle.h"
+   #include "TMath.h"
+   #include "TMatrixDSymEigen.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   
+   //KS: Joy of forward declaration https://gieseanw.wordpress.com/2018/02/25/the-joys-of-forward-declarations-results-from-the-real-world/
+   class TChain;
+   class TF1;
+   class MCMCProcessorGPU;
+   
+   enum ParameterEnum {
+     kXSecPar  = 0,
+     kNDPar    = 1,
+     kFDDetPar = 2,
+     
+     kNParameterEnum = 3 //KS: keep it at the end to keep track of all parameters
+   };
+   
+   class MCMCProcessor {
+     public:
+       MCMCProcessor(const std::string &InputFile);
+       virtual ~MCMCProcessor();
+   
+       void Initialise();
+       void MakePostfit(const std::map<std::string, std::pair<double, double>>& Edges = {});
+       void MakeCovariance();
+       void CacheSteps();
+       void MakeCovariance_MP(const bool Mute = false);
+       void MakeSubOptimality(const int NIntervals = 10);
+   
+       void Reset2DPosteriors();
+           
+       void DrawPostfit();
+       void MakeViolin();
+       void MakeCredibleIntervals(const std::vector<double>& CredibleIntervals = {0.99, 0.90, 0.68 },
+                                  const std::vector<Color_t>& CredibleIntervalsColours = {kCyan+4, kCyan-2, kCyan-10},
+                                  const bool CredibleInSigmas = false
+                                  );
+       void DrawCovariance();
+       void MakeCovarianceYAML(const std::string& OutputYAMLFile, const std::string& MeansMethod) const;
+       void MakeCredibleRegions(const std::vector<double>& CredibleRegions = {0.99, 0.90, 0.68},
+                                const std::vector<Style_t>& CredibleRegionStyle = {kDashed, kSolid, kDotted},
+                                const std::vector<Color_t>& CredibleRegionColor = {kGreen-3, kGreen-10, kGreen},
+                                const bool CredibleInSigmas = false,
+                                const bool Draw2DPosterior = true,
+                                const bool DrawBestFit = true
+                                );
+       void MakeTrianglePlot(const std::vector<std::string>& ParNames,
+                             // 1D
+                             const std::vector<double>& CredibleIntervals = {0.99, 0.90, 0.68 },
+                             const std::vector<Color_t>& CredibleIntervalsColours = {kCyan+4, kCyan-2, kCyan-10},
+                             //2D
+                             const std::vector<double>& CredibleRegions = {0.99, 0.90, 0.68},
+                             const std::vector<Style_t>& CredibleRegionStyle = {kDashed, kSolid, kDotted},
+                             const std::vector<Color_t>& CredibleRegionColor = {kGreen-3, kGreen-10, kGreen},
+                             // Other
+                             const bool CredibleInSigmas = false
+                             );
+   
+       void CheckCredibleIntervalsOrder(const std::vector<double>& CredibleIntervals, const std::vector<Color_t>& CredibleIntervalsColours) const;
+   
+       void CheckCredibleRegionsOrder(const std::vector<double>& CredibleRegions,
+                                      const std::vector<Style_t>& CredibleRegionStyle,
+                                      const std::vector<Color_t>& CredibleRegionColor);
+   
+       void GetPolarPlot(const std::vector<std::string>& ParNames);
+   
+       void GetBayesFactor(const std::vector<std::string>& ParName,
+                           const std::vector<std::vector<double>>& Model1Bounds,
+                           const std::vector<std::vector<double>>& Model2Bounds,
+                           const std::vector<std::vector<std::string>>& ModelNames);
+       void GetSavageDickey(const std::vector<std::string>& ParName,
+                            const std::vector<double>& EvaluationPoint,
+                            const std::vector<std::vector<double>>& Bounds);
+   
+       void SavageDickeyPlot(std::unique_ptr<TH1D>& PriorHist,
+                             std::unique_ptr<TH1D>& PosteriorHist,
+                             const std::string& Title,
+                             const double EvaluationPoint) const ;
+   
+       void ProduceChi2(const std::string& GroupName) const;
+   
+       void SmearChain(const std::vector<std::string>& Names,
+                       const std::vector<double>& Error,
+                       const bool& SaveBranch) const;
+   
+       void ParameterEvolution(const std::vector<std::string>& Names,
+                               const std::vector<int>& NIntervals);
+   
+       void ThinMCMC(const int ThinningCut) const { ThinningMCMC(MCMCFile+".root", ThinningCut); };
+   
+       void DiagMCMC();
+       
+       // Get the number of parameters
+       int GetNParams() const { return nDraw; };
+       int GetNXSec() const { return nParam[kXSecPar]; };
+       int GetNND() const { return nParam[kNDPar]; };
+       int GetNFD() const { return nParam[kFDDetPar]; };
+   
+       YAML::Node GetCovConfig(const int i) const {return CovConfig.at(i); }
+   
+       int GetGroup(const std::string& name) const;
+   
+       TH1D* GetHpost(const int i) const { return hpost[i]; };
+       TH2D* GetHpost2D(const int i, const int j) const { return hpost2D[i][j]; };
+       TH2D* GetViolin() const { return hviolin.get(); };
+       TH2D* GetViolinPrior() const { return hviolin_prior.get(); };
+   
+       //Covariance getters
+       std::vector<std::string> GetXSecCov()  const { return CovPos[kXSecPar]; };
+       std::string GetNDCov() const { return CovPos[kNDPar].back(); };
+       std::string GetFDCov() const { return CovPos[kFDDetPar].back(); };
+   
+       void GetPostfit(TVectorD *&Central, TVectorD *&Errors, TVectorD *&Central_Gauss, TVectorD *&Errors_Gauss, TVectorD *&Peaks);
+       void GetCovariance(TMatrixDSym *&Cov, TMatrixDSym *&Corr);
+       void GetPostfit_Ind(TVectorD *&Central, TVectorD *&Errors, TVectorD *&Peaks, ParameterEnum kParam);
+       
+       const std::vector<TString>& GetBranchNames() const { return BranchNames;};
+       const std::vector<TString>& GetSampleBranchNames() const { return SampleName_v;};
+       const std::vector<TString>& GetSystBranchNames() const { return SystName_v;};
+   
+       void GetNthParameter(const int param, double &Prior, double &PriorError, TString &Title) const;
+       int GetParamIndexFromName(const std::string& Name) const;
+       bool GetParamFlat(const int iParam) const;
+       Long64_t GetnEntries(){return nEntries;};
+       Long64_t GetnSteps(){return nSteps;};
+       void SetNBins(const int NewBins) {nBins = NewBins;};
+   
+       void SetEntries(const int NewEntries) {
+         if (NewEntries > nEntries) {
+           MACH3LOG_ERROR("Cannot increase entries from {} to {}. Only decreasing is allowed.", nEntries, NewEntries);
+           throw MaCh3Exception(__FILE__, __LINE__);
+         }
+         if (NewEntries <= 0) {
+           MACH3LOG_ERROR("Entries cannot be below 0, but {} was passed.", NewEntries);
+           throw MaCh3Exception(__FILE__, __LINE__);
+         }
+   
+         if (static_cast<int>(BurnInCut) > NewEntries) {
+             MACH3LOG_ERROR("BurnInCut ({}) is larger than NewEntries ({})", BurnInCut, NewEntries);
+             throw MaCh3Exception(__FILE__, __LINE__);
+         }
+   
+         MACH3LOG_INFO("Setting entries to {} from {}.", NewEntries, nEntries);
+         MACH3LOG_WARN("This may behave not as expected when using merged multiple chains");
+         nEntries = NewEntries;
+       }
+       void SetReweightNames(std::vector<std::string> NewName) { ReweightNames = NewName; }
+       void SetStepCut(const std::string& Cuts);
+       void SetStepCut(const int Cuts);
+       void CheckStepCut() const;
+   
+       void SetPlotRelativeToPrior(const bool PlotOrNot){plotRelativeToPrior = PlotOrNot; };
+       void SetPrintToPDF(const bool PlotOrNot){printToPDF = PlotOrNot; };
+       void SetPlotErrorForFlatPrior(const bool PlotOrNot){PlotFlatPrior = PlotOrNot; };
+       void SetPlotBinValue(const bool PlotOrNot){plotBinValue = PlotOrNot; };
+       void SetFancyNames(const bool PlotOrNot){FancyPlotNames = PlotOrNot; };
+       void SetSmoothing(const bool PlotOrNot){ApplySmoothing = PlotOrNot; };
+       void SetPost2DPlotThreshold(const double Threshold){Post2DPlotThreshold = Threshold; };
+       void SetUseFFTAutoCorrelation(const bool useFFT){useFFTAutoCorrelation = useFFT; };
+   
+       void SetExcludedTypes(std::vector<std::string> Name){ExcludedTypes = Name; };
+       void SetExcludedNames(std::vector<std::string> Name){ExcludedNames = Name; };
+       void SetExcludedGroups(std::vector<std::string> Name){ExcludedGroups = Name; };
+   
+       void SetnBatches(const int Batches){nBatches = Batches; };
+       void SetnLags(const int nLags){AutoCorrLag = nLags; };
+       
+       void SetOutputSuffix(const std::string Suffix){OutputSuffix = Suffix; };
+       void SetPosterior1DCut(const std::string Cut){Posterior1DCut = Cut; };
+   
+     protected:
+       std::unique_ptr<TH1D> MakePrefit();
+       void DrawPosterior(const int i, TDirectory* PostDir, TDirectory* PostHistDir);
+       void MakeOutputFile();
+       void DrawCorrelations1D();
+       void DrawCorrelationsGroup(const std::unique_ptr<TH2D>& CorrMatrix) const;
+       void ReadInputCov();
+       void ReadInputCovLegacy();
+       void FindInputFiles();
+       void FindInputFilesLegacy();
+       void ReadModelFile();
+       virtual void LoadAdditionalInfo() {};
+       void ReadNDFile();
+       void ReadFDFile();
+       void PrintInfo() const;
+   
+       void ScanInput();
+       void ScanParameterOrder();
+       void SetupOutput();
+   
+       // MCMC Diagnostic
+       void PrepareDiagMCMC();
+       std::vector <double> GetParameterSums();
+       void ParamTraces();
+       void AutoCorrelation();
+       void AutoCorrelation_FFT();
+       void CalculateESS(const int nLags, const std::vector<std::vector<double>>& LagL);
+       void BatchedAnalysis();
+       void BatchedMeans();
+       void GewekeDiagnostic();
+       void AcceptanceProbabilities();
+       void PowerSpectrumAnalysis();
+   
+       std::vector<double> GetMargins(const std::unique_ptr<TCanvas>& Canv) const;
+       void SetMargins(std::unique_ptr<TCanvas>& Canv, const std::vector<double>& margins);
+       void SetTLineStyle(TLine* Line, const Color_t Colour, const Width_t Width, const ELineStyle Style) const;
+       void SetLegendStyle(TLegend* Legend, const double size) const;
+       std::pair<double, double> GetHistRange(const int iParam) const;
+   
+       std::string MCMCFile;
+       std::string OutputSuffix;
+       std::vector<std::vector<std::string>> CovPos;
+       std::vector<std::string> CovNamePos;
+       std::vector<YAML::Node> CovConfig;
+   
+       TChain *Chain;
+       std::string StepCut;
+       std::string Posterior1DCut;
+       unsigned int UpperCut;
+       unsigned int BurnInCut;
+       int nBranches;
+       int nEntries;
+       int nSteps;
+       int nSampleHandlers;
+       int nParameterHandlers;
+       int nDraw;
+       
+       //Name of all branches as well as branches we don't want to include in the analysis
+       std::vector<TString> BranchNames;
+       std::vector<std::string> ExcludedTypes;
+       std::vector<std::string> ExcludedNames;
+       std::vector<std::string> ExcludedGroups;
+   
+       std::vector<bool> ParamVaried;
+       std::vector<std::vector<TString>> ParamNames;
+       std::vector<std::vector<double>>  ParamCentral;
+       std::vector<std::vector<double>>  ParamErrors;
+       std::vector<std::vector<bool>>    ParamFlat;
+       std::vector<std::vector<bool>>    ParamCircular;
+       std::vector<int> nParam;
+       std::vector<ParameterEnum> ParamType;
+       std::vector<int> ParamTypeStartPos;
+       // KS: For example flux or detector within matrix
+       std::vector<std::string> ParameterGroup;
+   
+       std::vector<TString> SampleName_v;
+       std::vector<TString> SystName_v;
+       
+       std::string OutputName;
+       TString CanvasName;
+   
+       bool PlotFlatPrior;
+       
+       //Even more flags
+       bool plotRelativeToPrior;
+       bool MadePostfit;
+       bool printToPDF;
+       bool FancyPlotNames;
+       bool plotBinValue;
+       bool ApplySmoothing;
+       double Post2DPlotThreshold;
+       bool useFFTAutoCorrelation;
+   
+       std::vector<int> NDSamplesBins;
+       std::vector<std::string> NDSamplesNames;
+   
+       std::unique_ptr<TF1> Gauss;
+   
+       TFile *OutputFile;
+       
+       std::unique_ptr<TCanvas> Posterior;
+   
+       //Vector of best fit points and errors obtained with different methods
+       TVectorD *Central_Value;
+       TVectorD *Means;
+       TVectorD *Errors;
+       TVectorD *Means_Gauss;
+       TVectorD *Errors_Gauss;
+       TVectorD *Means_HPD;
+       TVectorD *Errors_HPD;
+       TVectorD *Errors_HPD_Positive;
+       TVectorD *Errors_HPD_Negative;
+   
+       TMatrixDSym *Covariance;
+       TMatrixDSym *Correlation;
+   
+       std::vector<TH1D*> hpost;
+       std::vector<std::vector<TH2D*>> hpost2D;
+       std::unique_ptr<TH2D> hviolin;
+       std::unique_ptr<TH2D> hviolin_prior;
+   
+       M3::float_t** ParStep;
+       unsigned int* StepNumber;
+   
+       int nBins;
+       double DrawRange;
+       
+       bool CacheMCMC;
+       bool doDiagMCMC;
+       
+       //Number of batches and LagL used in MCMC diagnostic
+       int nBatches;
+       int AutoCorrLag;
+       
+       double **BatchedAverages;
+   
+       double **SampleValues;
+       double **SystValues;
+   
+       double *AccProbValues;
+       double *AccProbBatchedAverages;
+       
+       bool ReweightPosterior;
+       std::vector<std::string> ReweightNames;
+       double* WeightValue;
+   
+     //Only if GPU is enabled
+     #ifdef MaCh3_CUDA
+       void PrepareGPU_AutoCorr(const int nLags, const std::vector<double>& ParamSums, float*& ParStep_cpu,
+                                float*& NumeratorSum_cpu, float*& ParamSums_cpu, float*& DenomSum_cpu);
+       std::unique_ptr<MCMCProcessorGPU> GPUProcessor;
+     #endif
+   };

@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1a17d30caa6b00bcf8c43b7834bcd031d9:
+
+Function M3::CheckBinningMatch(const TH1D \*, const TH1D \*, const std::string&, const int)
+===========================================================================================
+
+- Defined in :ref:`file_Samples_HistogramUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::CheckBinningMatch(const TH1D *, const TH1D *, const std::string&, const int)
+   :project: MaCh3

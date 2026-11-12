@@ -1,0 +1,14 @@
+.. _exhale_function_MaCh3Factory_8h_1a67c9a07c72e9d3d441cd3181dafdb905:
+
+Function MaCh3ManagerFactory
+============================
+
+- Defined in :ref:`file_Fitters_Algorithms_MaCh3Factory.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: MaCh3ManagerFactory(int, char **)
+   :project: MaCh3

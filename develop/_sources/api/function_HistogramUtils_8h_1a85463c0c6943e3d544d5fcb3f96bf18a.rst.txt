@@ -1,0 +1,14 @@
+.. _exhale_function_HistogramUtils_8h_1a85463c0c6943e3d544d5fcb3f96bf18a:
+
+Function RemoveFitter
+=====================
+
+- Defined in :ref:`file_Samples_HistogramUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: RemoveFitter(TH1D *, const std::string&)
+   :project: MaCh3

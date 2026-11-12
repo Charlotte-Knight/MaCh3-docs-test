@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1aaf02981e45bb7adc146cebb4d82c6f36:
+
+Function GetNeffective
+======================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetNeffective(const int, const int)
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_define_MaCh3Logger_8h_1a07ff6d6a15b24f94afc88a1b89779beb:
+
+Define MACH3LOG_CRITICAL
+========================
+
+- Defined in :ref:`file_Manager_MaCh3Logger.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MACH3LOG_CRITICAL
+   :project: MaCh3

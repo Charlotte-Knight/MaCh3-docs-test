@@ -1,0 +1,14 @@
+.. _exhale_define_Core_8h_1a2abc3d82639661d84964bed9e2df0e68:
+
+Define _noexcept_
+=================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: _noexcept_
+   :project: MaCh3

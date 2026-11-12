@@ -1,0 +1,7 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="FitterBase" alt="" coords="15,101,130,149"/>
+<area shape="rect" id="node3" title="Manager" alt="" coords="21,197,124,245"/>
+<area shape="poly" id="edge1" title="usage" alt="" coords="75,150,75,184,70,184,70,150"/>
+<area shape="rect" id="node2" title="LikelihoodFit" alt="" coords="5,5,140,53"/>
+<area shape="poly" id="edge2" title="public&#45;inheritance" alt="" coords="75,54,75,88,70,88,70,54"/>
+</map>

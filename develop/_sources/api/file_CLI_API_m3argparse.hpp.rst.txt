@@ -1,0 +1,63 @@
+
+.. _file_CLI_API_m3argparse.hpp:
+
+File m3argparse.hpp
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI_API>` (``CLI/API``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+MaCh3 wrapper for argparse library with additional functionality. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``CLI/API/m3argparse.hpp``)
+---------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_CLI_API_m3argparse.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``argparse/argparse.hpp``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_CLI_API_plugin.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classM3_1_1MaCh3ArgumentParser`
+

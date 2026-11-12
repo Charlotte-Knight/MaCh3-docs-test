@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1ad1896bacf74c409a461dd1ea43f8bc99:
+
+Function M3::GetNThreads
+========================
+
+- Defined in :ref:`file_Manager_Monitor.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::GetNThreads()
+   :project: MaCh3

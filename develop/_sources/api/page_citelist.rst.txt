@@ -1,0 +1,7 @@
+.. _page_citelist:
+
+Bibliography
+============
+
+.. doxygenpage:: citelist
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_function_SampleStructs_8h_1a4a3cb7a9d73e72bb8144bed28ed5855d:
+
+Function GetSampleFromGlobalBin
+===============================
+
+- Defined in :ref:`file_Samples_SampleStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetSampleFromGlobalBin(const std::vector<SampleBinningInfo>&, const int)
+   :project: MaCh3

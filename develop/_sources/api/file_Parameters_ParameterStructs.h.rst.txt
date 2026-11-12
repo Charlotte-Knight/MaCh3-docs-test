@@ -1,0 +1,144 @@
+
+.. _file_Parameters_ParameterStructs.h:
+
+File ParameterStructs.h
+=======================
+
+|exhale_lsh| :ref:`Parent directory <dir_Parameters>` (``Parameters``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Definitions of generic parameter structs and utility templates for MaCh3. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Parameters/ParameterStructs.h``)
+----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Parameters_ParameterStructs.h.rst
+
+
+
+Detailed Description
+--------------------
+
+Asher Kaboth 
+
+Clarence Wret 
+
+Patrick Dunne 
+
+Dan Barrow 
+
+Ed Atkin 
+
+Kamil Skwarczynski 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/Core.h`` (:ref:`file_Manager_Core.h`)
+
+- ``Manager/MaCh3Exception.h`` (:ref:`file_Manager_MaCh3Exception.h`)
+
+- ``Manager/MaCh3Logger.h`` (:ref:`file_Manager_MaCh3Logger.h`)
+
+- ``TF1.h``
+
+- ``TFile.h``
+
+- ``TH1.h``
+
+- ``TH2Poly.h``
+
+- ``TObjString.h``
+
+- ``TSpline.h``
+
+- ``list``
+
+- ``set``
+
+- ``unordered_map``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Parameters_ParameterHandlerUtils.h`
+
+- :ref:`file_Samples_HistogramUtils.h`
+
+- :ref:`file_Samples_SampleStructs.h`
+
+- :ref:`file_Splines_SplineStructs.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structFunctionalParameter`
+
+- :ref:`exhale_struct_structNormParameter`
+
+- :ref:`exhale_struct_structOscillationParameter`
+
+- :ref:`exhale_struct_structSplineParameter`
+
+- :ref:`exhale_struct_structTypeParameterBase`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_ParameterStructs_8h_1a6a73aa1ad819973a9c421c17c2a7f36d`
+
+- :ref:`exhale_enum_ParameterStructs_8h_1a6720d732608767153550aebebcf8fbf4`
+
+- :ref:`exhale_enum_ParameterStructs_8h_1affc27d8b7b82d3713f45af17873fde2f`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_ParameterStructs_8h_1a569a3f763b3cca77ecc85e5a685b182c`
+
+- :ref:`exhale_function_ParameterStructs_8h_1abedaa13aad6e56de295bd5a0879c9f55`
+
+- :ref:`exhale_function_ParameterStructs_8h_1aada74c1e7e4ede3e8e9ab32f32791814`
+
+- :ref:`exhale_function_ParameterStructs_8h_1ad0ad271345b43361a90efe977486167b`
+
+- :ref:`exhale_function_ParameterStructs_8h_1a1af8b6ffd2afc4dd39b00663baef8989`
+
+- :ref:`exhale_function_ParameterStructs_8h_1a89a221272ded97bbcea052755f4dc43f`
+
+- :ref:`exhale_function_ParameterStructs_8h_1af1b80b5456f9b1cb847fb56ddcc3c1ab`
+
+- :ref:`exhale_function_ParameterStructs_8h_1a2d969ce667e41bd2492cff1775456837`
+
+- :ref:`exhale_function_ParameterStructs_8h_1ad39c312dc44177340e2ebccd3d3f2d4c`
+

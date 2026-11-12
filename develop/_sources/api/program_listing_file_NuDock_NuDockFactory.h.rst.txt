@@ -1,0 +1,28 @@
+
+.. _program_listing_file_NuDock_NuDockFactory.h:
+
+Program Listing for File NuDockFactory.h
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_NuDock_NuDockFactory.h>` (``NuDock/NuDockFactory.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   
+   #include "Manager/Manager.h"
+   _MaCh3_Safe_Include_Start_ //{
+   #include "nudock.hpp"
+   _MaCh3_Safe_Include_End_ //}
+   void InitialiseNuDockObj(Manager *man, std::unique_ptr<NuDock> &nudock_ptr);
+   
+   void FormatOscParsForNuDock(const std::string &param_name, double &param_value);
+   
+   void FormatOscParsForMaCh3(const std::string &param_name, double &param_value);
+   
+   extern const std::unordered_map<std::string, std::string> NuDockOscNameMap;
+   
+   extern const std::unordered_map<std::string, std::string> NuDockOscNameMap_r;

@@ -1,0 +1,33 @@
+.. _exhale_class_classMCMCBase:
+
+Class MCMCBase
+==============
+
+- Defined in :ref:`file_Fitters_Algorithms_MCMCBase.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public FitterBase`` (:ref:`exhale_class_classFitterBase`)
+
+
+Derived Type
+************
+
+- ``public MR2T2`` (:ref:`exhale_class_classMR2T2`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: MCMCBase
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

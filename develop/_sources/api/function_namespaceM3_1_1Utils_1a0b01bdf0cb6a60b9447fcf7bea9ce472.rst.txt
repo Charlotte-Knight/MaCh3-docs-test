@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Utils_1a0b01bdf0cb6a60b9447fcf7bea9ce472:
+
+Function M3::Utils::GetMassFromPDG
+==================================
+
+- Defined in :ref:`file_Samples_SampleStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Utils::GetMassFromPDG(const int)
+   :project: MaCh3

@@ -1,0 +1,52 @@
+
+.. _program_listing_file_Fitters_Algorithms_DelayedMR2T2.h:
+
+Program Listing for File DelayedMR2T2.h
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Fitters_Algorithms_DelayedMR2T2.h>` (``Fitters/Algorithms/DelayedMR2T2.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include "Algorithms/MR2T2.h"
+   
+   class DelayedMR2T2 : public MR2T2 {
+    public:
+       DelayedMR2T2(Manager * const fitMan);
+   
+       virtual ~DelayedMR2T2() = default;
+   
+    protected:
+       double AcceptanceProbability() final;
+   
+       void DoStep() final;
+   
+       void StoreCurrentStep();
+   
+       void PrepareOutput();
+   
+       void ResetSystScale();
+   
+       void ScaleSystematics(const double scale);
+   
+       bool ProbabilisticDelay() const;
+   
+       std::vector<std::vector<double>> current_step_vals;
+   
+       std::vector<double> start_step_scale;
+   
+       double initial_scale;
+       double decay_rate;
+       int max_rejections;
+   
+       double MinLogLikelihood; // Max Likelihood
+   
+       bool accepted_delayed;
+   
+       bool delay_on_oob_only;
+       double delay_probability;
+   };

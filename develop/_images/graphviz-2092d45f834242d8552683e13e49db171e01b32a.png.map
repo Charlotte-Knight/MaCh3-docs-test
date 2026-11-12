@@ -1,0 +1,11 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="M3::DiagMCMCModule" alt="" coords="5,5,235,53"/>
+<area shape="rect" id="node4" title="M3::PluginBase" alt="" coords="314,101,478,149"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="188,51,316,94,315,99,186,56"/>
+<area shape="rect" id="node2" title="M3::GetPenaltyTermModule" alt="" coords="259,5,533,53"/>
+<area shape="poly" id="edge2" title="public&#45;inheritance" alt="" coords="399,54,399,88,393,88,393,54"/>
+<area shape="rect" id="node3" title="M3::IPlugin" alt="" coords="333,197,459,245"/>
+<area shape="poly" id="edge3" title="public&#45;inheritance" alt="" coords="399,150,399,184,393,184,393,150"/>
+<area shape="rect" id="node5" title="M3::ProcessMCMCModule" alt="" coords="557,5,814,53"/>
+<area shape="poly" id="edge4" title="public&#45;inheritance" alt="" coords="616,56,481,100,479,94,614,51"/>
+</map>

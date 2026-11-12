@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1rand_1a96803596701c1694fbf4b57bc2b2140e:
+
+Function M3::rand::UniformInt
+=============================
+
+- Defined in :ref:`file_Manager_Random.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::rand::UniformInt(const int, const int)
+   :project: MaCh3

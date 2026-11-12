@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1af4a9244946bbdae4b7bfcdf38feda9fb:
+
+Function M3::DebugPCA
+=====================
+
+- Defined in :ref:`file_Parameters_ParameterHandlerUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::DebugPCA(const double, const TMatrixD&, const TMatrixD&, const TVectorD&, const TMatrixD&, const TMatrixD&, const int, const int, const int, const int, const double)
+   :project: MaCh3

@@ -1,0 +1,18 @@
+
+.. _namespace_M3__detail:
+
+Namespace M3::detail
+====================
+
+
+Implementation details only for experts. 
+
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+

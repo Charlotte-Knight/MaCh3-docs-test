@@ -1,0 +1,14 @@
+.. _exhale_typedef_namespaceM3_1a08723e82326f079864a8672505dd5741:
+
+Typedef M3::uint_t
+==================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: M3::uint_t
+   :project: MaCh3

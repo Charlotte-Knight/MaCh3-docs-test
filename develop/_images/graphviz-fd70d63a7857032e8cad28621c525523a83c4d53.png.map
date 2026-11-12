@@ -1,0 +1,5 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="FitterBase" alt="" coords="5,5,120,53"/>
+<area shape="rect" id="node2" title="Manager" alt="" coords="11,101,114,149"/>
+<area shape="poly" id="edge1" title="usage" alt="" coords="65,54,65,88,60,88,60,54"/>
+</map>

@@ -1,0 +1,14 @@
+.. _exhale_function_HistogramUtils_8h_1afbf5ccf44bc187caa268d4d158f4e5f6:
+
+Function file_exists
+====================
+
+- Defined in :ref:`file_Samples_HistogramUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: file_exists(std::string)
+   :project: MaCh3

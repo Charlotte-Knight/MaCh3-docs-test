@@ -1,0 +1,27 @@
+.. _exhale_class_classPredictiveThrower:
+
+Class PredictiveThrower
+=======================
+
+- Defined in :ref:`file_Fitters_Algorithms_PredictiveThrower.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public FitterBase`` (:ref:`exhale_class_classFitterBase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: PredictiveThrower
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

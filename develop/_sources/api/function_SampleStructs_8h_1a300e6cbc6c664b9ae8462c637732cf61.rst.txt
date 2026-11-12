@@ -1,0 +1,14 @@
+.. _exhale_function_SampleStructs_8h_1a300e6cbc6c664b9ae8462c637732cf61:
+
+Function TestStatistic_ToString
+===============================
+
+- Defined in :ref:`file_Samples_SampleStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: TestStatistic_ToString(const TestStatistic)
+   :project: MaCh3

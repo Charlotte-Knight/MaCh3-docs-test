@@ -1,0 +1,141 @@
+
+.. _program_listing_file_Parameters_PCAHandler.h:
+
+Program Listing for File PCAHandler.h
+=====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Parameters_PCAHandler.h>` (``Parameters/PCAHandler.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // MaCh3 Includes
+   #include "Manager/Manager.h"
+   #include "Parameters/ParameterHandlerUtils.h"
+   
+   class PCAHandler{
+    public:
+     PCAHandler();
+   
+     virtual ~PCAHandler();
+   
+     void Print() const;
+     int GetNumberPCAedParameters() const { return NumParPCA; }
+   
+     void SetupPointers(std::vector<double>* fCurr_Val,
+                        std::vector<M3::float_t>* fProp_Val);
+   
+     void ConstructPCA(TMatrixDSym * CovMatrix, const int firstPCAd, const int lastPCAd,
+                       const double eigen_thresh, const int _fNumPar);
+   
+     void TransferToPCA();
+     void TransferToParam();
+   
+     void ThrowParameters(double** throwMatrixCholDecomp,
+                          double* randParams,
+                          double* corr_throw,
+                          const std::vector<double>& fPreFitValue,
+                          const std::vector<double>& fLowBound,
+                          const std::vector<double>& fUpBound,
+                          int _fNumPar);
+   
+     void AcceptStep() _noexcept_;
+     void CorrelateSteps(const std::vector<double>& IndivStepScale,
+                         const double GlobalStepScale,
+                         const double* _restrict_ randParams,
+                         const double* _restrict_ corr_throw) _noexcept_;
+   
+     void SetInitialParameters();
+     void SetBranches(TTree &tree, const bool SaveProposal, const std::vector<std::string>& Names);
+     void ToggleFixAllParameters(const std::vector<std::string>& Names);
+     void ToggleFixParameter(const int i, const std::vector<std::string>& Names);
+   
+     void SetParametersPCA(const std::vector<double> &pars) {
+       if (int(pars.size()) != NumParPCA) {
+         MACH3LOG_ERROR("Parameter arrays of incompatible size! Not changing parameters! has size {} but was expecting {}", pars.size(), NumParPCA);
+         throw MaCh3Exception(__FILE__ , __LINE__ );
+       }
+       int parsSize = int(pars.size());
+       for (int i = 0; i < parsSize; i++) {
+         _fParPropPCA(i) = pars[i];
+       }
+       //KS: Transfer to normal base
+       TransferToParam();
+     }
+   
+     bool IsParameterFixedPCA(const int i) const {
+       if (_fErrorPCA[i] < 0) { return true;  }
+       else                   { return false; }
+     }
+   
+     const TMatrixD GetEigenVectors() const {
+       return eigen_vectors;
+     }
+   
+     void SetParPropPCA(const int i, const double value) {
+       _fParPropPCA(i) = value;
+       // And then transfer back to the parameter basis
+       TransferToParam();
+     }
+     void SetParCurrPCA(const int i, const double value) {
+       _fParCurrPCA(i) = value;
+       // And then transfer back to the parameter basis
+       TransferToParam();
+     }
+   
+     double GetParPropPCA(const int i) const {
+       return _fParPropPCA(i);
+     }
+   
+     double GetPreFitValuePCA(const int i) const {
+       return _fPreFitValuePCA[i];
+     }
+   
+     double GetParCurrPCA(const int i) const {
+       return _fParCurrPCA(i);
+     }
+   
+     const TMatrixD GetTransferMatrix() const {
+       return TransferMat;
+     }
+   
+     const TVectorD GetEigenValues() const {
+       return eigen_values;
+     }
+     const std::vector<double> GetEigenValuesMaster() const {
+       return eigen_values_master;
+     }
+   
+     bool IsParameterDecomposed(const int i) const {
+       if(isDecomposedPCA[i] >= 0) return false;
+       else return true;
+     }
+   
+    private:
+     void SanitisePCA(TMatrixDSym* CovMatrix);
+   
+     std::vector<double> _fPreFitValuePCA;
+     TVectorD _fParPropPCA;
+     TVectorD _fParCurrPCA;
+     std::vector<double> _fErrorPCA;
+     std::vector<int> isDecomposedPCA;
+     int NumParPCA;
+   
+     TMatrixD TransferMat;
+     TMatrixD TransferMatT;
+     TVectorD eigen_values;
+     TMatrixD eigen_vectors;
+     std::vector<double> eigen_values_master;
+   
+     int nKeptPCApars;
+     int FirstPCAdpar;
+     int LastPCAdpar;
+     double eigen_threshold;
+   
+     std::vector<double>* _pCurrVal;
+     std::vector<M3::float_t>* _pPropVal;
+   };
+   

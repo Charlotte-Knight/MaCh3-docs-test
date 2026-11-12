@@ -1,0 +1,27 @@
+.. _exhale_class_classNuDockServerBase:
+
+Class NuDockServerBase
+======================
+
+- Defined in :ref:`file_NuDock_NuDockServerBase.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public FitterBase`` (:ref:`exhale_class_classFitterBase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: NuDockServerBase
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

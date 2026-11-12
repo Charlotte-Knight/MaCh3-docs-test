@@ -1,0 +1,14 @@
+.. _exhale_function_YamlHelper_8h_1a269e230f4f26b824c65a4c7a1472e07b:
+
+Template Function OverrideConfig(YAML::Node, std::string const&, TValue)
+========================================================================
+
+- Defined in :ref:`file_Manager_YamlHelper.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: OverrideConfig(YAML::Node, std::string const&, TValue)
+   :project: MaCh3

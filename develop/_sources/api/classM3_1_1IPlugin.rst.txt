@@ -1,0 +1,28 @@
+.. _exhale_class_classM3_1_1IPlugin:
+
+Class IPlugin
+=============
+
+- Defined in :ref:`file_CLI_API_plugin.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public M3::DynamicPlugin`` (:ref:`exhale_class_classM3_1_1DynamicPlugin`)
+- ``public M3::PluginBase`` (:ref:`exhale_class_classM3_1_1PluginBase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: M3::IPlugin
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

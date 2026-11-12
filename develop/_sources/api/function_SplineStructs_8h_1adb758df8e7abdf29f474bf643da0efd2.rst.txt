@@ -1,0 +1,14 @@
+.. _exhale_function_SplineStructs_8h_1adb758df8e7abdf29f474bf643da0efd2:
+
+Function ReduceTF1
+==================
+
+- Defined in :ref:`file_Splines_SplineStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ReduceTF1(std::vector<std::vector<TF1 *>>&)
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Utils_1a1ee28e60049e882dbfa0ed808a140aaa:
+
+Function M3::Utils::GetGPUInfo
+==============================
+
+- Defined in :ref:`file_Manager_Monitor.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Utils::GetGPUInfo()
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_define_Core_8h_1ab6a7e23420f0bcfb04f42f45f8283101:
+
+Define _restrict_
+=================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: _restrict_
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1ad7693a9e309503bd894b04443f163f3c:
+
+Function M3::AddPath
+====================
+
+- Defined in :ref:`file_Manager_Monitor.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::AddPath(std::string&)
+   :project: MaCh3

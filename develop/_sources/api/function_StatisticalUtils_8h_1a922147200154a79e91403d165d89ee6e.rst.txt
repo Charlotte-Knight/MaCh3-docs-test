@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a922147200154a79e91403d165d89ee6e:
+
+Function GetCredibleRegionSig
+=============================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetCredibleRegionSig(std::unique_ptr<TH2D>&, const bool, const double)
+   :project: MaCh3

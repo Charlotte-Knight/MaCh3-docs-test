@@ -1,0 +1,51 @@
+
+.. _program_listing_file_Parameters_SpecialProposals.h:
+
+Program Listing for File SpecialProposals.h
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Parameters_SpecialProposals.h>` (``Parameters/SpecialProposals.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include <memory>
+   #include <string>
+   #include <vector>
+   
+   #include "Manager/Core.h"
+   
+   _MaCh3_Safe_Include_Start_
+   #include "TF1.h"
+   _MaCh3_Safe_Include_End_
+   
+   struct FunctionalFlipProposal {
+     int target_index = M3::_BAD_INT_;
+     std::vector<int> argument_indices;
+     std::vector<std::string> argument_names;
+     std::string formula;
+     std::unique_ptr<TF1> evaluator;
+   
+     FunctionalFlipProposal() = default;
+     FunctionalFlipProposal(FunctionalFlipProposal&&) _noexcept_ = default;
+     FunctionalFlipProposal& operator=(FunctionalFlipProposal&&) _noexcept_ = default;
+   
+     FunctionalFlipProposal(const FunctionalFlipProposal&) = delete;
+     FunctionalFlipProposal& operator=(const FunctionalFlipProposal&) = delete;
+   };
+   
+   struct PendingFunctionalFlipProposal {
+     int target_index = M3::_BAD_INT_;
+     std::string group_name;
+     YAML::Node config;
+   };
+   
+   
+   struct FlipGroup {
+      std::vector<int> FlipParameterIndex;  
+      std::vector<double> FlipParameterPoint; 
+      std::vector<FunctionalFlipProposal> FunctionalFlipParameters;
+   };

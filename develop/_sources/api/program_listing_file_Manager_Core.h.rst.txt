@@ -1,0 +1,142 @@
+
+.. _program_listing_file_Manager_Core.h:
+
+Program Listing for File Core.h
+===============================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Manager_Core.h>` (``Manager/Core.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   
+   // C++ includes
+   #include <sstream>
+   #include <fstream>
+   #include <iostream>
+   #include <vector>
+   #include <iomanip>
+   #include <cmath>
+   #include <limits>
+   
+   namespace M3 {
+     // Run low or high memory versions of structs
+     // N.B. for 64 bit systems sizeof(float) == sizeof(double) so not a huge effect
+     #ifdef _LOW_MEMORY_STRUCTS_
+     using float_t = float;
+     using int_t = short;
+     using uint_t = unsigned short;
+     constexpr static const char* float_t_str_repr = "F";
+     #else
+     using float_t = double;
+     using int_t = int;
+     using uint_t = unsigned;
+     constexpr static const char* float_t_str_repr = "D";
+     #endif
+   
+     template <typename T>
+     constexpr T fmaf_t(T x, T y, T z) {
+       #ifdef _LOW_MEMORY_STRUCTS_
+       return std::fmaf(x, y, z);
+       #else
+       return std::fma(x, y, z);
+       #endif
+     }
+     constexpr static const double _BAD_DOUBLE_ = -999.99;
+     constexpr static const int _BAD_INT_ = -999;
+     constexpr static const double _DEFAULT_RETURN_VAL_ = -999999.123456;
+   
+     constexpr static const double Unity_D = 1.;
+     constexpr static const float Unity_F = 1.;
+     #ifdef _LOW_MEMORY_STRUCTS_
+     constexpr static const float_t Unity = Unity_F;
+     #else
+     constexpr static const float_t Unity = Unity_D;
+     #endif
+     constexpr static const double Zero_D = 0.;
+     constexpr static const float Zero_F = 0.;
+     #ifdef _LOW_MEMORY_STRUCTS_
+     constexpr static const float_t Zero = Zero_F;
+     #else
+     constexpr static const float_t Zero = Zero_D;
+     #endif
+   
+     constexpr static const double KinematicLowBound = std::numeric_limits<double>::lowest();
+     constexpr static const double KinematicUpBound = std::numeric_limits<double>::max();
+   
+     constexpr static const double _LARGE_LOGL_ = 1234567890.0;
+   
+     constexpr static const double _LOW_MC_BOUND_ = .00001;
+   
+     constexpr static const double DefSplineKnotUpBound = 9999;
+     constexpr static const double DefSplineKnotLowBound = -9999;
+   
+     constexpr static const int UnderOverFlowBin = -1;
+   }
+   
+   #ifndef MACH3_DEBUG
+   #define _noexcept_ noexcept
+   #else
+   #define _noexcept_
+   #endif
+   
+   #ifndef MACH3_DEBUG
+     #if defined(__GNUC__)
+       #define _restrict_ __restrict__
+     #else
+       #define _restrict_
+     #endif
+   #else
+     #define _restrict_
+   #endif
+   
+   
+   #define _TH2PolyOverflowBins_ 9
+   
+   #ifdef MULTITHREAD
+   #include "omp.h"
+   #endif
+   
+   #define _MaCh3_Safe_Include_Start_ \
+   _Pragma("GCC diagnostic push") \
+   _Pragma("GCC diagnostic ignored \"-Wuseless-cast\"") \
+   _Pragma("GCC diagnostic ignored \"-Wfloat-conversion\"") \
+   _Pragma("GCC diagnostic ignored \"-Wold-style-cast\"") \
+   _Pragma("GCC diagnostic ignored \"-Wformat-nonliteral\"") \
+   _Pragma("GCC diagnostic ignored \"-Wswitch-enum\"") \
+   _Pragma("GCC diagnostic ignored \"-Wconversion\"") \
+   _Pragma("GCC diagnostic ignored \"-Wshadow\"") \
+   _Pragma("GCC diagnostic ignored \"-Wsuggest-override\"") \
+   _Pragma("GCC diagnostic ignored \"-Wsign-compare\"")
+   _Pragma("GCC diagnostic ignored \"-Wtautological-compare\"")
+   #if defined(__GNUC__) && __GNUC__ >= 13
+     _Pragma("GCC diagnostic ignored \"-Wdangling-reference\"")
+   #endif
+   #define _MaCh3_Safe_Include_End_ \
+   _Pragma("GCC diagnostic pop")
+   
+   // clang and IntelLLVM need slightly different diagnostics
+   #if defined(__clang__) || defined(__INTEL_LLVM_COMPILER)
+     #undef _MaCh3_Safe_Include_Start_
+     #define _MaCh3_Safe_Include_Start_ \
+     _Pragma("clang diagnostic push") \
+     _Pragma("clang diagnostic ignored \"-Wfloat-conversion\"") \
+     _Pragma("clang diagnostic ignored \"-Wold-style-cast\"") \
+     _Pragma("clang diagnostic ignored \"-Wformat-nonliteral\"") \
+     _Pragma("clang diagnostic ignored \"-Wswitch-enum\"") \
+     _Pragma("clang diagnostic ignored \"-Wconversion\"") \
+     _Pragma("clang diagnostic ignored \"-Wshadow\"") \
+     _Pragma("clang diagnostic ignored \"-Wdeprecated-literal-operator\"") \
+     _Pragma("clang diagnostic ignored \"-Wsuggest-override\"") \
+     _Pragma("clang diagnostic ignored \"-Wsign-compare\"")
+     _Pragma("clang diagnostic ignored \"-Wtautological-compare\"")
+     _Pragma("clang diagnostic ignored \"-Wdeprecated-literal-operator\"")
+     _Pragma("clang diagnostic ignored \"-Wbitwise-instead-of-logical\"")
+     _Pragma("clang diagnostic ignored \"-Wlanguage-extension-token\"")
+     #undef _MaCh3_Safe_Include_End_
+     #define _MaCh3_Safe_Include_End_ \
+     _Pragma("clang diagnostic pop")
+   #endif

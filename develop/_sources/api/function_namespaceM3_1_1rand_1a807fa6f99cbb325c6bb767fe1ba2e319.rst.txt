@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1rand_1a807fa6f99cbb325c6bb767fe1ba2e319:
+
+Function M3::rand::Poisson
+==========================
+
+- Defined in :ref:`file_Manager_Random.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::rand::Poisson(const double)
+   :project: MaCh3

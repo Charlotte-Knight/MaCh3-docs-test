@@ -1,0 +1,5 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="M3::MaCh3ArgumentParser" alt="" coords="5,5,281,53"/>
+<area shape="rect" id="node2" title="ArgumentParser" alt="" coords="57,101,229,149"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="146,54,146,88,141,88,141,54"/>
+</map>

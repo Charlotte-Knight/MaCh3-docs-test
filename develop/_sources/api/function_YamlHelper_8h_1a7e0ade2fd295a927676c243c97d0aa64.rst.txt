@@ -1,0 +1,14 @@
+.. _exhale_function_YamlHelper_8h_1a7e0ade2fd295a927676c243c97d0aa64:
+
+Function TMacroToYAML
+=====================
+
+- Defined in :ref:`file_Manager_YamlHelper.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: TMacroToYAML(const TMacro&)
+   :project: MaCh3

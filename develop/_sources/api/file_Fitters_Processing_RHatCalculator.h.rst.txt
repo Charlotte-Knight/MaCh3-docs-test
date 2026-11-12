@@ -1,0 +1,49 @@
+
+.. _file_Fitters_Processing_RHatCalculator.h:
+
+File RHatCalculator.h
+=====================
+
+|exhale_lsh| :ref:`Parent directory <dir_Fitters_Processing>` (``Fitters/Processing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Fitters/Processing/RHatCalculator.h``)
+----------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Fitters_Processing_RHatCalculator.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Parameters/ParameterHandlerUtils.h`` (:ref:`file_Parameters_ParameterHandlerUtils.h`)
+
+- ``Processing/StatisticalUtils.h`` (:ref:`file_Fitters_Processing_StatisticalUtils.h`)
+
+- ``Samples/HistogramUtils.h`` (:ref:`file_Samples_HistogramUtils.h`)
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classRHatCalculator`
+

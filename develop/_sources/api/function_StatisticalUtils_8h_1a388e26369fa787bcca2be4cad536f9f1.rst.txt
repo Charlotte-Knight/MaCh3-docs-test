@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a388e26369fa787bcca2be4cad536f9f1:
+
+Function GetDeltaChi2
+=====================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetDeltaChi2(TH1D *)
+   :project: MaCh3

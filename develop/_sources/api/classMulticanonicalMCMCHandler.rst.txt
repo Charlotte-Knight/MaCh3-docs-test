@@ -1,0 +1,18 @@
+.. _exhale_class_classMulticanonicalMCMCHandler:
+
+Class MulticanonicalMCMCHandler
+===============================
+
+- Defined in :ref:`file_Fitters_Algorithms_MulticanonicalMCMCHandler.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: MulticanonicalMCMCHandler
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

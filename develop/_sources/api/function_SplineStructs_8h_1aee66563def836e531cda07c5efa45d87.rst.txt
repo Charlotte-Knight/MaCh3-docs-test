@@ -1,0 +1,14 @@
+.. _exhale_function_SplineStructs_8h_1aee66563def836e531cda07c5efa45d87:
+
+Function isFlat
+===============
+
+- Defined in :ref:`file_Splines_SplineStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: isFlat(TSpline3_red *&)
+   :project: MaCh3

@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Full API &#8212; MaCh3 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/unabridged_orphan';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/version-switcher.js?v=294b64cd"></script>
+    <link rel="icon" href="../_static/mach3logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/mach3logo.png" class="logo__image only-light" alt="MaCh3 documentation - Home"/>
+    <img src="../_static/mach3logo.png" class="logo__image only-dark pst-js-only" alt="MaCh3 documentation - Home"/>
+  
+  
+</a></div>
+    
+      <div class="navbar-item"><div class="pst-js-only">
+  <select class="form-select form-select-sm docs-version-switcher"
+          aria-label="Documentation version"
+          data-version="develop"
+          data-page="api/unabridged_orphan.html"
+          data-manifest="https://charlotte-knight.github.io/MaCh3-docs-test/versions.json">
+    <option value="">develop</option>
+  </select>
+  <small class="docs-version-error" role="status" hidden></small>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="library_root.html">
+    C++ API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../pymach3/index.html">
+    pyMaCh3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://mach3-software.github.io/MaCh3/.Archive/v2.7.0/index.html">
+    Doxygen
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../user-guide/publications.html">
+    Results and Publications
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../user-guide/release-notes.html">
+    Release Notes
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../bibliography.html">
+    Bibliography
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mach3-software/MaCh3" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page" aria-expanded="false" aria-controls="pst-secondary-sidebar-modal">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide/index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="library_root.html">
+    C++ API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../pymach3/index.html">
+    pyMaCh3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://mach3-software.github.io/MaCh3/.Archive/v2.7.0/index.html">
+    Doxygen
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide/publications.html">
+    Results and Publications
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../user-guide/release-notes.html">
+    Release Notes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../bibliography.html">
+    Bibliography
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mach3-software/MaCh3" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Full API</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="full-api">
+<h1>Full API<a class="headerlink" href="#full-api" title="Link to this heading">#</a></h1>
+<section id="directories">
+<h2>Directories<a class="headerlink" href="#directories" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_CLI.html">Directory CLI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_CLI.html#subdirectories">Subdirectories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dir_CLI.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_CLI_API.html">Directory API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_CLI_API.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_CLI_Modules.html">Directory Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_CLI_Modules.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_Doc.html">Directory Doc</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_Doc.html#subdirectories">Subdirectories</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_Doc_MaCh3Web.html">Directory MaCh3Web</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_Doc_MaCh3Web.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_Fitters.html">Directory Fitters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_Fitters.html#subdirectories">Subdirectories</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_Fitters_Algorithms.html">Directory Algorithms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_Fitters_Algorithms.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_Fitters_Processing.html">Directory Processing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_Fitters_Processing.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_Manager.html">Directory Manager</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_Manager.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_NuDock.html">Directory NuDock</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_NuDock.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_Parameters.html">Directory Parameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_Parameters.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_Samples.html">Directory Samples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_Samples.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_Splines.html">Directory Splines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_Splines.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_Utils.html">Directory Utils</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_Utils.html#subdirectories">Subdirectories</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="dir_Utils_Plotting.html">Directory Plotting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="dir_Utils_Plotting.html#files">Files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="files">
+<h2>Files<a class="headerlink" href="#files" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Parameters_AdaptiveMCMCHandler.h.html">File AdaptiveMCMCHandler.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_AdaptiveMCMCHandler.h.html#definition-parameters-adaptivemcmchandler-h">Definition (<code class="docutils literal notranslate"><span class="pre">Parameters/AdaptiveMCMCHandler.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Parameters_AdaptiveMCMCHandler.h.html">Program Listing for File AdaptiveMCMCHandler.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_AdaptiveMCMCHandler.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_AdaptiveMCMCHandler.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_AdaptiveMCMCHandler.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Splines_BinnedSplineHandler.h.html">File BinnedSplineHandler.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_BinnedSplineHandler.h.html#definition-splines-binnedsplinehandler-h">Definition (<code class="docutils literal notranslate"><span class="pre">Splines/BinnedSplineHandler.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Splines_BinnedSplineHandler.h.html">Program Listing for File BinnedSplineHandler.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_BinnedSplineHandler.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_BinnedSplineHandler.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_BinnedSplineHandler.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Samples_BinningHandler.h.html">File BinningHandler.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_BinningHandler.h.html#definition-samples-binninghandler-h">Definition (<code class="docutils literal notranslate"><span class="pre">Samples/BinningHandler.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Samples_BinningHandler.h.html">Program Listing for File BinningHandler.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_BinningHandler.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_BinningHandler.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_BinningHandler.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Manager_Core.h.html">File Core.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Core.h.html#definition-manager-core-h">Definition (<code class="docutils literal notranslate"><span class="pre">Manager/Core.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Manager_Core.h.html">Program Listing for File Core.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Core.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Core.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Core.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Core.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Core.h.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Core.h.html#defines">Defines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Core.h.html#typedefs">Typedefs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Core.h.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Doc_MaCh3Web_Definitions.dox.html">File Definitions.dox</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Doc_MaCh3Web_Definitions.dox.html#definition-doc-mach3web-definitions-dox">Definition (<code class="docutils literal notranslate"><span class="pre">Doc/MaCh3Web/Definitions.dox</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Doc_MaCh3Web_Definitions.dox.html">Program Listing for File Definitions.dox</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Doc_MaCh3Web_Definitions.dox.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Doc_MaCh3Web_Definitions.dox.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Algorithms_DelayedMR2T2.h.html">File DelayedMR2T2.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_DelayedMR2T2.h.html#definition-fitters-algorithms-delayedmr2t2-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Algorithms/DelayedMR2T2.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Algorithms_DelayedMR2T2.h.html">Program Listing for File DelayedMR2T2.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_DelayedMR2T2.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_DelayedMR2T2.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_DelayedMR2T2.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_CLI_Modules_DiagMCMCModule.hpp.html">File DiagMCMCModule.hpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_DiagMCMCModule.hpp.html#definition-cli-modules-diagmcmcmodule-hpp">Definition (<code class="docutils literal notranslate"><span class="pre">CLI/Modules/DiagMCMCModule.hpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_CLI_Modules_DiagMCMCModule.hpp.html">Program Listing for File DiagMCMCModule.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_DiagMCMCModule.hpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_DiagMCMCModule.hpp.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_DiagMCMCModule.hpp.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_CLI_DynamicPlugin.hpp.html">File DynamicPlugin.hpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_DynamicPlugin.hpp.html#definition-cli-dynamicplugin-hpp">Definition (<code class="docutils literal notranslate"><span class="pre">CLI/DynamicPlugin.hpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_CLI_DynamicPlugin.hpp.html">Program Listing for File DynamicPlugin.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_DynamicPlugin.hpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_DynamicPlugin.hpp.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_DynamicPlugin.hpp.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_DynamicPlugin.hpp.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Samples_EventInfo.h.html">File EventInfo.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_EventInfo.h.html#definition-samples-eventinfo-h">Definition (<code class="docutils literal notranslate"><span class="pre">Samples/EventInfo.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Samples_EventInfo.h.html">Program Listing for File EventInfo.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_EventInfo.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_EventInfo.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_EventInfo.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Algorithms_FitterBase.h.html">File FitterBase.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_FitterBase.h.html#definition-fitters-algorithms-fitterbase-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Algorithms/FitterBase.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Algorithms_FitterBase.h.html">Program Listing for File FitterBase.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_FitterBase.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_FitterBase.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_FitterBase.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_CLI_Modules_GetPenaltyTermModule.hpp.html">File GetPenaltyTermModule.hpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_GetPenaltyTermModule.hpp.html#definition-cli-modules-getpenaltytermmodule-hpp">Definition (<code class="docutils literal notranslate"><span class="pre">CLI/Modules/GetPenaltyTermModule.hpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_CLI_Modules_GetPenaltyTermModule.hpp.html">Program Listing for File GetPenaltyTermModule.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_GetPenaltyTermModule.hpp.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_GetPenaltyTermModule.hpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_GetPenaltyTermModule.hpp.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_GetPenaltyTermModule.hpp.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Samples_HistogramUtils.h.html">File HistogramUtils.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_HistogramUtils.h.html#definition-samples-histogramutils-h">Definition (<code class="docutils literal notranslate"><span class="pre">Samples/HistogramUtils.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Samples_HistogramUtils.h.html">Program Listing for File HistogramUtils.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_HistogramUtils.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_HistogramUtils.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_HistogramUtils.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_HistogramUtils.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_HistogramUtils.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Utils_Plotting_InputManager.h.html">File InputManager.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_InputManager.h.html#definition-utils-plotting-inputmanager-h">Definition (<code class="docutils literal notranslate"><span class="pre">Utils/Plotting/InputManager.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Utils_Plotting_InputManager.h.html">Program Listing for File InputManager.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_InputManager.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_InputManager.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_InputManager.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_InputManager.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_InputManager.h.html#enums">Enums</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Algorithms_LikelihoodFit.h.html">File LikelihoodFit.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_LikelihoodFit.h.html#definition-fitters-algorithms-likelihoodfit-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Algorithms/LikelihoodFit.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Algorithms_LikelihoodFit.h.html">Program Listing for File LikelihoodFit.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_LikelihoodFit.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_LikelihoodFit.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_LikelihoodFit.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_CLI_API_m3argparse.hpp.html">File m3argparse.hpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_API_m3argparse.hpp.html#definition-cli-api-m3argparse-hpp">Definition (<code class="docutils literal notranslate"><span class="pre">CLI/API/m3argparse.hpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_CLI_API_m3argparse.hpp.html">Program Listing for File m3argparse.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_API_m3argparse.hpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_API_m3argparse.hpp.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_API_m3argparse.hpp.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_API_m3argparse.hpp.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Manager_MaCh3Exception.h.html">File MaCh3Exception.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Exception.h.html#definition-manager-mach3exception-h">Definition (<code class="docutils literal notranslate"><span class="pre">Manager/MaCh3Exception.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Manager_MaCh3Exception.h.html">Program Listing for File MaCh3Exception.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Exception.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Exception.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Exception.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Exception.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Algorithms_MaCh3Factory.h.html">File MaCh3Factory.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MaCh3Factory.h.html#definition-fitters-algorithms-mach3factory-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Algorithms/MaCh3Factory.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Algorithms_MaCh3Factory.h.html">Program Listing for File MaCh3Factory.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MaCh3Factory.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MaCh3Factory.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MaCh3Factory.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Manager_MaCh3Logger.h.html">File MaCh3Logger.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Logger.h.html#definition-manager-mach3logger-h">Definition (<code class="docutils literal notranslate"><span class="pre">Manager/MaCh3Logger.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Manager_MaCh3Logger.h.html">Program Listing for File MaCh3Logger.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Logger.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Logger.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Logger.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Logger.h.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Logger.h.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Manager_MaCh3Modes.h.html">File MaCh3Modes.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Modes.h.html#definition-manager-mach3modes-h">Definition (<code class="docutils literal notranslate"><span class="pre">Manager/MaCh3Modes.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Manager_MaCh3Modes.h.html">Program Listing for File MaCh3Modes.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Modes.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Modes.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Modes.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_MaCh3Modes.h.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_CLI_MaCh3Program.hpp.html">File MaCh3Program.hpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_MaCh3Program.hpp.html#definition-cli-mach3program-hpp">Definition (<code class="docutils literal notranslate"><span class="pre">CLI/MaCh3Program.hpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_CLI_MaCh3Program.hpp.html">Program Listing for File MaCh3Program.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_MaCh3Program.hpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_MaCh3Program.hpp.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_MaCh3Program.hpp.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Splines_MaCh3SplinesLinkDef.h.html">File MaCh3SplinesLinkDef.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_MaCh3SplinesLinkDef.h.html#definition-splines-mach3splineslinkdef-h">Definition (<code class="docutils literal notranslate"><span class="pre">Splines/MaCh3SplinesLinkDef.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Splines_MaCh3SplinesLinkDef.h.html">Program Listing for File MaCh3SplinesLinkDef.h</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Manager_Manager.h.html">File Manager.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Manager.h.html#definition-manager-manager-h">Definition (<code class="docutils literal notranslate"><span class="pre">Manager/Manager.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Manager_Manager.h.html">Program Listing for File Manager.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Manager.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Manager.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Manager.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Algorithms_MCMCBase.h.html">File MCMCBase.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MCMCBase.h.html#definition-fitters-algorithms-mcmcbase-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Algorithms/MCMCBase.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Algorithms_MCMCBase.h.html">Program Listing for File MCMCBase.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MCMCBase.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MCMCBase.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MCMCBase.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Processing_MCMCProcessor.h.html">File MCMCProcessor.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_MCMCProcessor.h.html#definition-fitters-processing-mcmcprocessor-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Processing/MCMCProcessor.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Processing_MCMCProcessor.h.html">Program Listing for File MCMCProcessor.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_MCMCProcessor.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_MCMCProcessor.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_MCMCProcessor.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_MCMCProcessor.h.html#enums">Enums</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Algorithms_MinuitFit.h.html">File MinuitFit.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MinuitFit.h.html#definition-fitters-algorithms-minuitfit-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Algorithms/MinuitFit.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Algorithms_MinuitFit.h.html">Program Listing for File MinuitFit.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MinuitFit.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MinuitFit.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Manager_Monitor.h.html">File Monitor.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Monitor.h.html#definition-manager-monitor-h">Definition (<code class="docutils literal notranslate"><span class="pre">Manager/Monitor.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Manager_Monitor.h.html">Program Listing for File Monitor.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Monitor.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Monitor.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Monitor.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Monitor.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Monitor.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Algorithms_MR2T2.h.html">File MR2T2.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MR2T2.h.html#definition-fitters-algorithms-mr2t2-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Algorithms/MR2T2.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Algorithms_MR2T2.h.html">Program Listing for File MR2T2.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MR2T2.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MR2T2.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MR2T2.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Algorithms_MulticanonicalMCMCHandler.h.html">File MulticanonicalMCMCHandler.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MulticanonicalMCMCHandler.h.html#definition-fitters-algorithms-multicanonicalmcmchandler-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Algorithms/MulticanonicalMCMCHandler.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Algorithms_MulticanonicalMCMCHandler.h.html">Program Listing for File MulticanonicalMCMCHandler.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MulticanonicalMCMCHandler.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MulticanonicalMCMCHandler.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MulticanonicalMCMCHandler.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MulticanonicalMCMCHandler.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MulticanonicalMCMCHandler.h.html#enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MulticanonicalMCMCHandler.h.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_MulticanonicalMCMCHandler.h.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_NuDock_NuDockFactory.h.html">File NuDockFactory.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_NuDockFactory.h.html#definition-nudock-nudockfactory-h">Definition (<code class="docutils literal notranslate"><span class="pre">NuDock/NuDockFactory.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_NuDock_NuDockFactory.h.html">Program Listing for File NuDockFactory.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_NuDockFactory.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_NuDockFactory.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_NuDockFactory.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_NuDockFactory.h.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_NuDockFactory.h.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_NuDock_NuDockServerBase.h.html">File NuDockServerBase.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_NuDockServerBase.h.html#definition-nudock-nudockserverbase-h">Definition (<code class="docutils literal notranslate"><span class="pre">NuDock/NuDockServerBase.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_NuDock_NuDockServerBase.h.html">Program Listing for File NuDockServerBase.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_NuDockServerBase.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_NuDockServerBase.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_NuDockServerBase.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Samples_OscillationHandler.h.html">File OscillationHandler.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_OscillationHandler.h.html#definition-samples-oscillationhandler-h">Definition (<code class="docutils literal notranslate"><span class="pre">Samples/OscillationHandler.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Samples_OscillationHandler.h.html">Program Listing for File OscillationHandler.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_OscillationHandler.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_OscillationHandler.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_OscillationHandler.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Processing_OscProcessor.h.html">File OscProcessor.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_OscProcessor.h.html#definition-fitters-processing-oscprocessor-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Processing/OscProcessor.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Processing_OscProcessor.h.html">Program Listing for File OscProcessor.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_OscProcessor.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_OscProcessor.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Parameters_ParameterHandlerBase.h.html">File ParameterHandlerBase.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerBase.h.html#definition-parameters-parameterhandlerbase-h">Definition (<code class="docutils literal notranslate"><span class="pre">Parameters/ParameterHandlerBase.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Parameters_ParameterHandlerBase.h.html">Program Listing for File ParameterHandlerBase.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerBase.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerBase.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerBase.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Parameters_ParameterHandlerGeneric.h.html">File ParameterHandlerGeneric.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerGeneric.h.html#definition-parameters-parameterhandlergeneric-h">Definition (<code class="docutils literal notranslate"><span class="pre">Parameters/ParameterHandlerGeneric.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Parameters_ParameterHandlerGeneric.h.html">Program Listing for File ParameterHandlerGeneric.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerGeneric.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerGeneric.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerGeneric.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Parameters_ParameterHandlerUtils.h.html">File ParameterHandlerUtils.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerUtils.h.html#definition-parameters-parameterhandlerutils-h">Definition (<code class="docutils literal notranslate"><span class="pre">Parameters/ParameterHandlerUtils.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Parameters_ParameterHandlerUtils.h.html">Program Listing for File ParameterHandlerUtils.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerUtils.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerUtils.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerUtils.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerUtils.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterHandlerUtils.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Parameters_ParameterStructs.h.html">File ParameterStructs.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterStructs.h.html#definition-parameters-parameterstructs-h">Definition (<code class="docutils literal notranslate"><span class="pre">Parameters/ParameterStructs.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Parameters_ParameterStructs.h.html">Program Listing for File ParameterStructs.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterStructs.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterStructs.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterStructs.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterStructs.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterStructs.h.html#enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterStructs.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Parameters_ParameterTunes.h.html">File ParameterTunes.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterTunes.h.html#definition-parameters-parametertunes-h">Definition (<code class="docutils literal notranslate"><span class="pre">Parameters/ParameterTunes.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Parameters_ParameterTunes.h.html">Program Listing for File ParameterTunes.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterTunes.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterTunes.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_ParameterTunes.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Parameters_PCAHandler.h.html">File PCAHandler.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_PCAHandler.h.html#definition-parameters-pcahandler-h">Definition (<code class="docutils literal notranslate"><span class="pre">Parameters/PCAHandler.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Parameters_PCAHandler.h.html">Program Listing for File PCAHandler.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_PCAHandler.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_PCAHandler.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_PCAHandler.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Utils_Plotting_PlottingManager.h.html">File PlottingManager.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_PlottingManager.h.html#definition-utils-plotting-plottingmanager-h">Definition (<code class="docutils literal notranslate"><span class="pre">Utils/Plotting/PlottingManager.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Utils_Plotting_PlottingManager.h.html">Program Listing for File PlottingManager.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_PlottingManager.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_PlottingManager.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_PlottingManager.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Utils_Plotting_PlottingUtils.h.html">File PlottingUtils.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_PlottingUtils.h.html#definition-utils-plotting-plottingutils-h">Definition (<code class="docutils literal notranslate"><span class="pre">Utils/Plotting/PlottingUtils.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Utils_Plotting_PlottingUtils.h.html">Program Listing for File PlottingUtils.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_PlottingUtils.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_PlottingUtils.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_PlottingUtils.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_PlottingUtils.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_CLI_API_plugin.hpp.html">File plugin.hpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_API_plugin.hpp.html#definition-cli-api-plugin-hpp">Definition (<code class="docutils literal notranslate"><span class="pre">CLI/API/plugin.hpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_CLI_API_plugin.hpp.html">Program Listing for File plugin.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_API_plugin.hpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_API_plugin.hpp.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_API_plugin.hpp.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_API_plugin.hpp.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_API_plugin.hpp.html#defines">Defines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_API_plugin.hpp.html#typedefs">Typedefs</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Algorithms_PredictiveThrower.h.html">File PredictiveThrower.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_PredictiveThrower.h.html#definition-fitters-algorithms-predictivethrower-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Algorithms/PredictiveThrower.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Algorithms_PredictiveThrower.h.html">Program Listing for File PredictiveThrower.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_PredictiveThrower.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_PredictiveThrower.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_CLI_Modules_ProcessMCMCModule.hpp.html">File ProcessMCMCModule.hpp</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_ProcessMCMCModule.hpp.html#definition-cli-modules-processmcmcmodule-hpp">Definition (<code class="docutils literal notranslate"><span class="pre">CLI/Modules/ProcessMCMCModule.hpp</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_CLI_Modules_ProcessMCMCModule.hpp.html">Program Listing for File ProcessMCMCModule.hpp</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_ProcessMCMCModule.hpp.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_ProcessMCMCModule.hpp.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_ProcessMCMCModule.hpp.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_CLI_Modules_ProcessMCMCModule.hpp.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Algorithms_PSO.h.html">File PSO.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_PSO.h.html#definition-fitters-algorithms-pso-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Algorithms/PSO.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Algorithms_PSO.h.html">Program Listing for File PSO.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_PSO.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_PSO.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Algorithms_PSO.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Manager_Random.h.html">File Random.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Random.h.html#definition-manager-random-h">Definition (<code class="docutils literal notranslate"><span class="pre">Manager/Random.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Manager_Random.h.html">Program Listing for File Random.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Random.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Random.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Random.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Random.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_Random.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Processing_RHatCalculator.h.html">File RHatCalculator.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_RHatCalculator.h.html#definition-fitters-processing-rhatcalculator-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Processing/RHatCalculator.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Processing_RHatCalculator.h.html">Program Listing for File RHatCalculator.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_RHatCalculator.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_RHatCalculator.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Samples_SampleHandlerBase.h.html">File SampleHandlerBase.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleHandlerBase.h.html#definition-samples-samplehandlerbase-h">Definition (<code class="docutils literal notranslate"><span class="pre">Samples/SampleHandlerBase.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Samples_SampleHandlerBase.h.html">Program Listing for File SampleHandlerBase.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleHandlerBase.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleHandlerBase.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleHandlerBase.h.html#enums">Enums</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Samples_SampleHandlerFunctional.h.html">File SampleHandlerFunctional.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleHandlerFunctional.h.html#definition-samples-samplehandlerfunctional-h">Definition (<code class="docutils literal notranslate"><span class="pre">Samples/SampleHandlerFunctional.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Samples_SampleHandlerFunctional.h.html">Program Listing for File SampleHandlerFunctional.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleHandlerFunctional.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleHandlerFunctional.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleHandlerFunctional.h.html#namespaces">Namespaces</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Samples_SampleHandlerInterface.h.html">File SampleHandlerInterface.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleHandlerInterface.h.html#definition-samples-samplehandlerinterface-h">Definition (<code class="docutils literal notranslate"><span class="pre">Samples/SampleHandlerInterface.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Samples_SampleHandlerInterface.h.html">Program Listing for File SampleHandlerInterface.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleHandlerInterface.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleHandlerInterface.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleHandlerInterface.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_NuDock_SampleHandlerNuDockBase.h.html">File SampleHandlerNuDockBase.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_SampleHandlerNuDockBase.h.html#definition-nudock-samplehandlernudockbase-h">Definition (<code class="docutils literal notranslate"><span class="pre">NuDock/SampleHandlerNuDockBase.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_NuDock_SampleHandlerNuDockBase.h.html">Program Listing for File SampleHandlerNuDockBase.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_SampleHandlerNuDockBase.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_SampleHandlerNuDockBase.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_NuDock_SampleHandlerNuDockBase.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Samples_SampleInfo.h.html">File SampleInfo.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleInfo.h.html#definition-samples-sampleinfo-h">Definition (<code class="docutils literal notranslate"><span class="pre">Samples/SampleInfo.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Samples_SampleInfo.h.html">Program Listing for File SampleInfo.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleInfo.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleInfo.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleInfo.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleInfo.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Samples_SampleStructs.h.html">File SampleStructs.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleStructs.h.html#definition-samples-samplestructs-h">Definition (<code class="docutils literal notranslate"><span class="pre">Samples/SampleStructs.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Samples_SampleStructs.h.html">Program Listing for File SampleStructs.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleStructs.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleStructs.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleStructs.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleStructs.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleStructs.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleStructs.h.html#enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Samples_SampleStructs.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Parameters_SpecialProposals.h.html">File SpecialProposals.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_SpecialProposals.h.html#definition-parameters-specialproposals-h">Definition (<code class="docutils literal notranslate"><span class="pre">Parameters/SpecialProposals.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Parameters_SpecialProposals.h.html">Program Listing for File SpecialProposals.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_SpecialProposals.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_SpecialProposals.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Parameters_SpecialProposals.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Splines_SplineBase.h.html">File SplineBase.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineBase.h.html#definition-splines-splinebase-h">Definition (<code class="docutils literal notranslate"><span class="pre">Splines/SplineBase.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Splines_SplineBase.h.html">Program Listing for File SplineBase.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineBase.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineBase.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineBase.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Splines_SplineCommon.h.html">File SplineCommon.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineCommon.h.html#definition-splines-splinecommon-h">Definition (<code class="docutils literal notranslate"><span class="pre">Splines/SplineCommon.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Splines_SplineCommon.h.html">Program Listing for File SplineCommon.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineCommon.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineCommon.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineCommon.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineCommon.h.html#enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineCommon.h.html#variables">Variables</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Splines_SplineStructs.h.html">File SplineStructs.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineStructs.h.html#definition-splines-splinestructs-h">Definition (<code class="docutils literal notranslate"><span class="pre">Splines/SplineStructs.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Splines_SplineStructs.h.html">Program Listing for File SplineStructs.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineStructs.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineStructs.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineStructs.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineStructs.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_SplineStructs.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Fitters_Processing_StatisticalUtils.h.html">File StatisticalUtils.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_StatisticalUtils.h.html#definition-fitters-processing-statisticalutils-h">Definition (<code class="docutils literal notranslate"><span class="pre">Fitters/Processing/StatisticalUtils.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Fitters_Processing_StatisticalUtils.h.html">Program Listing for File StatisticalUtils.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_StatisticalUtils.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_StatisticalUtils.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_StatisticalUtils.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_StatisticalUtils.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_StatisticalUtils.h.html#enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Fitters_Processing_StatisticalUtils.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Utils_Plotting_StyleManager.h.html">File StyleManager.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_StyleManager.h.html#definition-utils-plotting-stylemanager-h">Definition (<code class="docutils literal notranslate"><span class="pre">Utils/Plotting/StyleManager.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Utils_Plotting_StyleManager.h.html">Program Listing for File StyleManager.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_StyleManager.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_StyleManager.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_StyleManager.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Utils_Plotting_StyleManager.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Manager_TablePrinter.h.html">File TablePrinter.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_TablePrinter.h.html#definition-manager-tableprinter-h">Definition (<code class="docutils literal notranslate"><span class="pre">Manager/TablePrinter.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Manager_TablePrinter.h.html">Program Listing for File TablePrinter.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_TablePrinter.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_TablePrinter.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_TablePrinter.h.html#namespaces">Namespaces</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_TablePrinter.h.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_TablePrinter.h.html#enums">Enums</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_TablePrinter.h.html#functions">Functions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Splines_UnbinnedSplineHandler.h.html">File UnbinnedSplineHandler.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_UnbinnedSplineHandler.h.html#definition-splines-unbinnedsplinehandler-h">Definition (<code class="docutils literal notranslate"><span class="pre">Splines/UnbinnedSplineHandler.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Splines_UnbinnedSplineHandler.h.html">Program Listing for File UnbinnedSplineHandler.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_UnbinnedSplineHandler.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Splines_UnbinnedSplineHandler.h.html#classes">Classes</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="file_Manager_YamlHelper.h.html">File YamlHelper.h</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_YamlHelper.h.html#definition-manager-yamlhelper-h">Definition (<code class="docutils literal notranslate"><span class="pre">Manager/YamlHelper.h</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="program_listing_file_Manager_YamlHelper.h.html">Program Listing for File YamlHelper.h</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_YamlHelper.h.html#detailed-description">Detailed Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_YamlHelper.h.html#includes">Includes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_YamlHelper.h.html#included-by">Included By</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_YamlHelper.h.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="file_Manager_YamlHelper.h.html#defines">Defines</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="pages">
+<h2>Pages<a class="headerlink" href="#pages" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="page_citelist.html">Bibliography</a></li>
+</ul>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal" tabindex="-1"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directories">Directories</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files">Files</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pages">Pages</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/api/unabridged_orphan.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright MaCh3 Collaboration.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.24.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

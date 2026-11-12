@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1adba5abb16555092305a8b459f94a24c1:
+
+Function CheckBonferoniCorrectedpValue
+======================================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: CheckBonferoniCorrectedpValue(const std::vector<std::string>&, const std::vector<double>&, const double)
+   :project: MaCh3

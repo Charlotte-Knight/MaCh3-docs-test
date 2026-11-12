@@ -1,0 +1,63 @@
+
+.. _file_Parameters_SpecialProposals.h:
+
+File SpecialProposals.h
+=======================
+
+|exhale_lsh| :ref:`Parent directory <dir_Parameters>` (``Parameters``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Parameters/SpecialProposals.h``)
+----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Parameters_SpecialProposals.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/Core.h`` (:ref:`file_Manager_Core.h`)
+
+- ``TF1.h``
+
+- ``memory``
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Parameters_ParameterHandlerBase.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structFlipGroup`
+
+- :ref:`exhale_struct_structFunctionalFlipProposal`
+
+- :ref:`exhale_struct_structPendingFunctionalFlipProposal`
+

@@ -1,0 +1,61 @@
+
+.. _file_Samples_BinningHandler.h:
+
+File BinningHandler.h
+=====================
+
+|exhale_lsh| :ref:`Parent directory <dir_Samples>` (``Samples``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Samples/BinningHandler.h``)
+-----------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Samples_BinningHandler.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/Manager.h`` (:ref:`file_Manager_Manager.h`)
+
+- ``Samples/HistogramUtils.h`` (:ref:`file_Samples_HistogramUtils.h`)
+
+- ``Samples/SampleInfo.h`` (:ref:`file_Samples_SampleInfo.h`)
+
+- ``Samples/SampleStructs.h`` (:ref:`file_Samples_SampleStructs.h`)
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Samples_SampleHandlerBase.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classBinningHandler`
+

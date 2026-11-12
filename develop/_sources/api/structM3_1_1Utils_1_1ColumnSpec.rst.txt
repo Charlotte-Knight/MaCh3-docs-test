@@ -1,0 +1,18 @@
+.. _exhale_struct_structM3_1_1Utils_1_1ColumnSpec:
+
+Struct ColumnSpec
+=================
+
+- Defined in :ref:`file_Manager_TablePrinter.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: M3::Utils::ColumnSpec
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

@@ -1,0 +1,5 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="SplineParameter" alt="" coords="20,5,195,53"/>
+<area shape="rect" id="node2" title="TypeParameterBase" alt="" coords="5,101,209,149"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="110,54,110,88,105,88,105,54"/>
+</map>

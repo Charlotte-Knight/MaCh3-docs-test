@@ -1,0 +1,7 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="FitterBase" alt="" coords="11,101,125,149"/>
+<area shape="rect" id="node3" title="Manager" alt="" coords="17,197,119,245"/>
+<area shape="poly" id="edge1" title="usage" alt="" coords="71,150,71,184,65,184,65,150"/>
+<area shape="rect" id="node2" title="MCMCBase" alt="" coords="5,5,131,53"/>
+<area shape="poly" id="edge2" title="public&#45;inheritance" alt="" coords="71,54,71,88,65,88,65,54"/>
+</map>

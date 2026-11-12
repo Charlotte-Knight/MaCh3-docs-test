@@ -1,0 +1,14 @@
+.. _exhale_enum_SampleStructs_8h_1a706416000041de040e97d5dbe0bdb580:
+
+Enum TargetMat
+==============
+
+- Defined in :ref:`file_Samples_SampleStructs.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: TargetMat
+   :project: MaCh3

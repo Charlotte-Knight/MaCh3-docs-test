@@ -1,0 +1,99 @@
+
+.. _program_listing_file_CLI_MaCh3Program.hpp:
+
+Program Listing for File MaCh3Program.hpp
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_MaCh3Program.hpp>` (``CLI/MaCh3Program.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   
+   #pragma once
+   #include <map>
+   #include <memory>
+   #include <string>
+   #include <vector>
+   #include <filesystem>
+   #include "CLI/API/plugin.hpp"
+   #include "CLI/DynamicPlugin.hpp"
+   
+   namespace fs = std::filesystem;
+   
+   namespace M3{
+       class MaCh3Program: public MaCh3ArgumentParser{
+           public:
+               using MaCh3ArgumentParser::MaCh3ArgumentParser;
+   
+               virtual ~MaCh3Program(){
+                   //std::cout<<"UNLOADED"<< std::endl;
+                   this->unload_dynamic_plugins();
+               }
+   
+               void add_core_module(IModule& module);
+   
+               void load_dynamic_plugins();
+   
+               void install_completions() const;
+   
+               void completions(const std::string& prefix, const std::vector<std::string>& context) const;
+   
+               void unload_dynamic_plugins();
+   
+               int Run();
+   
+           private:
+               std::string detect_shell() const;
+   
+               bool write_file(const fs::path& path, std::string_view content) const;
+   
+               std::vector<std::string> expand_plugin_path(const std::string& path) const;
+   
+           private:
+               std::vector<std::string> m_subcommands;                                     
+               std::map<const MaCh3ArgumentParser*, IModule*> m_module_map;                
+               std::map<const MaCh3ArgumentParser*, std::unique_ptr<DynamicPlugin>> m_dynamic_plugin_map;  
+   
+               static constexpr std::string_view BASH_COMPLETION = R"(
+   _mach3_complete() {
+       local cur prev words cword
+       _init_completion || return
+   
+       # Pass current prefix + preceding words as context; binary filters by prefix
+       local -a raw
+       mapfile -t raw < <(mach3 --complete "$cur" "${words[@]:1:$((cword-1))}" 2>/dev/null)
+   
+       if [[ ${#raw[@]} -eq 0 ]]; then
+           # No completions from binary — fall back to default (file) completion
+           compopt -o default 2>/dev/null
+           return
+       fi
+       COMPREPLY=( "${raw[@]}" )
+   }
+   complete -F _mach3_complete mach3
+   )";
+               static constexpr std::string_view ZSH_COMPLETION = R"(
+   #compdef mach3
+   
+   _mach3() {
+       local cur="${words[$CURRENT]}"
+       local -a ctx
+       ctx=("${words[@]:1:$((CURRENT-2))}")
+   
+       local -a completions
+       completions=("${(@f)$(mach3 --complete "$cur" "${ctx[@]}" 2>/dev/null)}")
+   
+       if [[ ${#completions[@]} -eq 0 ]]; then
+           _files
+           return
+       fi
+       compadd -a completions
+   }
+   
+   _mach3
+   )";
+       };
+   }

@@ -1,0 +1,81 @@
+
+.. _program_listing_file_Splines_SplineBase.h:
+
+Program Listing for File SplineBase.h
+=====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Splines_SplineBase.h>` (``Splines/SplineBase.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // C++ includes
+   #include <cstdlib>
+   #include <iomanip>
+   
+   // MaCh3  includes
+   #include "Splines/SplineStructs.h"
+   #include "Splines/SplineCommon.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   // ROOT include
+   #include "TFile.h"
+   #include "TH1F.h"
+   #include "TKey.h"
+   #include "TString.h"
+   #include "TIterator.h"
+   #include "TStopwatch.h"
+   #include "TCanvas.h"
+   #include "TStyle.h"
+   #include "TTree.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   //KS: Joy of forward declaration https://gieseanw.wordpress.com/2018/02/25/the-joys-of-forward-declarations-results-from-the-real-world/
+   class SplineMonolithGPU;
+   
+   class SplineBase {
+     public:
+       SplineBase(const bool Use_GPU = true);
+       virtual ~SplineBase();
+   
+       virtual void Evaluate() = 0;
+   
+       virtual std::string GetName() const {return "SplineBase";};
+   
+       short int GetNParams() const {return nParams;};
+   
+       virtual void PrepareSplineFile(std::string FileName) = 0;
+       virtual void LoadSplineFile(std::string FileName) = 0;
+   
+       void SynchroniseMemTransfer() const;
+   
+     protected:
+       void FindSplineSegment();
+       virtual void CalcSplineWeights() = 0;
+   
+       void PrepareFastSplineInfoDir(std::unique_ptr<TFile>& SplineFile) const;
+   
+       void LoadFastSplineInfoDir(std::unique_ptr<TFile>& SplineFile);
+   
+       void GetTF1Coeff(TF1_red* &spl, int &nPoints, float *&coeffs) const;
+       void SetupSegments();
+   
+       std::vector<FastSplineInfo> SplineInfoArray;
+       short int *SplineSegments;
+       float *ParamValues;
+       short int nParams;
+       short int _max_knots;
+       unsigned int NSplines_valid;
+   
+       SplineMonolithGPU* gpu_monolith;
+   
+       bool useGPU;
+     private:
+       void CheckSegmentValidity(const M3::int_t i,
+                                 const M3::int_t segment,
+                                 const M3::float_t xvar,
+                                 const std::vector<M3::float_t>& xPts) const;
+   };

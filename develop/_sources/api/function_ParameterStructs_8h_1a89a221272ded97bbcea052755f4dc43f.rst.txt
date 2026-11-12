@@ -1,0 +1,14 @@
+.. _exhale_function_ParameterStructs_8h_1a89a221272ded97bbcea052755f4dc43f:
+
+Function GetTF1
+===============
+
+- Defined in :ref:`file_Parameters_ParameterStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetTF1(const SplineInterpolation)
+   :project: MaCh3

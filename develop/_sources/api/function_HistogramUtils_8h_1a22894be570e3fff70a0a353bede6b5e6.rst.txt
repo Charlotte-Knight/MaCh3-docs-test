@@ -1,0 +1,14 @@
+.. _exhale_function_HistogramUtils_8h_1a22894be570e3fff70a0a353bede6b5e6:
+
+Function PolyProjectionX
+========================
+
+- Defined in :ref:`file_Samples_HistogramUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: PolyProjectionX(TObject *, const std::string&, const std::vector<double>&, const bool)
+   :project: MaCh3

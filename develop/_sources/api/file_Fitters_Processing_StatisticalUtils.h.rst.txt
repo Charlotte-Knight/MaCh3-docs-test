@@ -1,0 +1,162 @@
+
+.. _file_Fitters_Processing_StatisticalUtils.h:
+
+File StatisticalUtils.h
+=======================
+
+|exhale_lsh| :ref:`Parent directory <dir_Fitters_Processing>` (``Fitters/Processing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Utility functions for statistical interpretations in MaCh3. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Fitters/Processing/StatisticalUtils.h``)
+------------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Fitters_Processing_StatisticalUtils.h.rst
+
+
+
+Detailed Description
+--------------------
+
+Kamil Skwarczynski 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/Manager.h`` (:ref:`file_Manager_Manager.h`)
+
+- ``Samples/HistogramUtils.h`` (:ref:`file_Samples_HistogramUtils.h`)
+
+- ``TCanvas.h``
+
+- ``TGraphAsymmErrors.h``
+
+- ``TLine.h``
+
+- ``TROOT.h``
+
+- ``TStyle.h``
+
+- ``algorithm``
+
+- ``cmath``
+
+- ``iomanip``
+
+- ``iostream``
+
+- ``sstream``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Fitters_Processing_MCMCProcessor.h`
+
+- :ref:`file_Fitters_Processing_RHatCalculator.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespaceM3_1a007e5ed320c3672a3faf79da0a38fb7a`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_StatisticalUtils_8h_1adba5abb16555092305a8b459f94a24c1`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a13aa52c404712954271d7c7faa728334`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a24346722df353ed84efd3fcf0b886587`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a8ba1090ae92f61008a6576c45b4b3b7b`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a57771836d3d082d24170e24a2f04a4d6`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a807e7b865e4ac63b979f7c8bbe5d8475`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1ab4dc9e4455015e55031e2cc8a076349d`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1afecd84c56d6546271c4547192aae31af`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a3dbcf2e503dd81c1c26f063a7e6b3362`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1ab910cfac66889e76e29d7f77dd4d4e93`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a2ab3766c7598cced99b8c6cf0dfedb9c`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a3cc352ea65a5fbf8bfbd7a03991ee5bf`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a922147200154a79e91403d165d89ee6e`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a388e26369fa787bcca2be4cad536f9f1`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1acf403b05be9baa719893db7449e833c7`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a7237fc819d10a341c286a5597f584a96`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1aadbb121e8fc7db8e4e28d6b04d351460`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a94e492e3e9142db9e1cb1c4c027259f3`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1aac0e253784ed2f2a3258d68df22a2568`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a805e612837e9c06375079dea641c3804`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1aaf02981e45bb7adc146cebb4d82c6f36`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1ad58f0ddda31283c3598fc09f98046192`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a51c1b8d697008fa6e02849b8f1334abb`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a04394b98587b44b98b003bd1226606ed`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a34d5232bfb12e29ec9d63acaa8744b58`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a5f94558219eeb50331a4bf6abecbe3eb`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a9200ca12dfa35fbeedc9dff8d5b2d73a`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1a50bab39868d6bf7f3a34beef30eeb9b9`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1ac37b51459c20e314d2da409d57a5fa31`
+
+- :ref:`exhale_function_StatisticalUtils_8h_1aa6fd944e00fcda133cfef10782f08de0`
+

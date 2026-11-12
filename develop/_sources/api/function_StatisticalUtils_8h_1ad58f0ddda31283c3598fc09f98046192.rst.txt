@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1ad58f0ddda31283c3598fc09f98046192:
+
+Function GetNumberOfRuns
+========================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetNumberOfRuns(const std::vector<int>&)
+   :project: MaCh3

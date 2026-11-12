@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1a1bb16de3a587023bbfa4b46aa214f7e1:
+
+Function M3::GetConfigMacroFromChain
+====================================
+
+- Defined in :ref:`file_Parameters_ParameterHandlerUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::GetConfigMacroFromChain(TDirectory *)
+   :project: MaCh3

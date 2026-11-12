@@ -1,0 +1,53 @@
+
+.. _file_Parameters_ParameterTunes.h:
+
+File ParameterTunes.h
+=====================
+
+|exhale_lsh| :ref:`Parent directory <dir_Parameters>` (``Parameters``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Parameters/ParameterTunes.h``)
+--------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Parameters_ParameterTunes.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/Manager.h`` (:ref:`file_Manager_Manager.h`)
+
+- ``Parameters/ParameterHandlerUtils.h`` (:ref:`file_Parameters_ParameterHandlerUtils.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Parameters_ParameterHandlerBase.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classParameterTunes`
+

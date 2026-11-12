@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a3dbcf2e503dd81c1c26f063a7e6b3362:
+
+Function GetBIC
+===============
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetBIC(const double, const int, const int)
+   :project: MaCh3

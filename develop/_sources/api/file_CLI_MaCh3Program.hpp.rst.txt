@@ -1,0 +1,69 @@
+
+.. _file_CLI_MaCh3Program.hpp:
+
+File MaCh3Program.hpp
+=====================
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI>` (``CLI``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Core program class for the MaCh3 command-line interface. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``CLI/MaCh3Program.hpp``)
+-------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_CLI_MaCh3Program.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``CLI/API/plugin.hpp`` (:ref:`file_CLI_API_plugin.hpp`)
+
+- ``CLI/DynamicPlugin.hpp`` (:ref:`file_CLI_DynamicPlugin.hpp`)
+
+- ``filesystem``
+
+- ``map``
+
+- ``memory``
+
+- ``string``
+
+- ``vector``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classM3_1_1MaCh3Program`
+

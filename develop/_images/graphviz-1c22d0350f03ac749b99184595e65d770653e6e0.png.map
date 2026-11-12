@@ -1,0 +1,19 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="DelayedMR2T2" alt="" coords="5,5,167,53"/>
+<area shape="rect" id="node5" title="MR2T2" alt="" coords="43,101,129,149"/>
+<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="89,54,89,88,83,88,83,54"/>
+<area shape="rect" id="node2" title="FitterBase" alt="" coords="279,293,394,341"/>
+<area shape="rect" id="node3" title="LikelihoodFit" alt="" coords="173,197,308,245"/>
+<area shape="poly" id="edge2" title="public&#45;inheritance" alt="" coords="266,244,305,282,301,286,263,248"/>
+<area shape="rect" id="node4" title="MCMCBase" alt="" coords="23,197,149,245"/>
+<area shape="poly" id="edge3" title="public&#45;inheritance" alt="" coords="148,243,267,287,265,292,146,248"/>
+<area shape="poly" id="edge4" title="public&#45;inheritance" alt="" coords="89,150,89,184,83,184,83,150"/>
+<area shape="rect" id="node6" title="MinuitFit" alt="" coords="172,101,272,149"/>
+<area shape="poly" id="edge5" title="public&#45;inheritance" alt="" coords="229,149,236,183,231,184,224,150"/>
+<area shape="rect" id="node7" title="NuDockServerBase" alt="" coords="333,197,533,245"/>
+<area shape="poly" id="edge6" title="public&#45;inheritance" alt="" coords="411,248,372,286,368,282,407,244"/>
+<area shape="rect" id="node8" title="PSO" alt="" coords="297,101,369,149"/>
+<area shape="poly" id="edge7" title="public&#45;inheritance" alt="" coords="312,152,275,189,271,186,308,148"/>
+<area shape="rect" id="node9" title="PredictiveThrower" alt="" coords="557,197,743,245"/>
+<area shape="poly" id="edge8" title="public&#45;inheritance" alt="" coords="575,248,408,298,406,293,573,243"/>
+</map>

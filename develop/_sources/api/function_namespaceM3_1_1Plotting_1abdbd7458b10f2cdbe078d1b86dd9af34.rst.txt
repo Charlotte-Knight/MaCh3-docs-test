@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Plotting_1abdbd7458b10f2cdbe078d1b86dd9af34:
+
+Function M3::Plotting::SetSymmetricRatioRange
+=============================================
+
+- Defined in :ref:`file_Utils_Plotting_PlottingUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Plotting::SetSymmetricRatioRange(const std::vector<std::unique_ptr<TH1D>>&)
+   :project: MaCh3

@@ -1,0 +1,91 @@
+
+.. _file_CLI_API_plugin.hpp:
+
+File plugin.hpp
+===============
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI_API>` (``CLI/API``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Plugin interface and registration macros for MaCh3. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``CLI/API/plugin.hpp``)
+-----------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_CLI_API_plugin.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``CLI/API/m3argparse.hpp`` (:ref:`file_CLI_API_m3argparse.hpp`)
+
+- ``memory``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_CLI_DynamicPlugin.hpp`
+
+- :ref:`file_CLI_MaCh3Program.hpp`
+
+- :ref:`file_CLI_Modules_DiagMCMCModule.hpp`
+
+- :ref:`file_CLI_Modules_GetPenaltyTermModule.hpp`
+
+- :ref:`file_CLI_Modules_ProcessMCMCModule.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classM3_1_1IPlugin`
+
+- :ref:`exhale_class_classM3_1_1PluginBase`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_plugin_8hpp_1af4ee15ffb2d7160a1f03b5239d2c7ec8`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceM3_1a5053b9d7dce6ad7a919acb6497a6686d`
+
+- :ref:`exhale_typedef_namespaceM3_1afd98b2e1cfd69589744c3e3a8a155629`
+

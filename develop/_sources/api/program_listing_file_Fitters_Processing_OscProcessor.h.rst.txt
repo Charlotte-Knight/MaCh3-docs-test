@@ -1,0 +1,68 @@
+
+.. _program_listing_file_Fitters_Processing_OscProcessor.h:
+
+Program Listing for File OscProcessor.h
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Fitters_Processing_OscProcessor.h>` (``Fitters/Processing/OscProcessor.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // MaCh3 includes
+   #include "Processing/MCMCProcessor.h"
+   #include "Samples/HistogramUtils.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   // ROOT includes
+   #include "TComplex.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   class OscProcessor : public MCMCProcessor {
+     public:
+       OscProcessor(const std::string &InputFile);
+       virtual ~OscProcessor();
+   
+       void PerformJarlskogAnalysis();
+   
+       void MakePiePlot();
+   
+       void ProducePMNSElements();
+   
+       void ProduceUnitarityTriangles();
+     protected:
+       void LoadAdditionalInfo() final;
+   
+       void MakeJarlskogPlot(const std::unique_ptr<TH1D>& jarl,
+                             const std::unique_ptr<TH1D>& jarl_flatsindcp,
+                             const std::unique_ptr<TH1D>& jarl_NH,
+                             const std::unique_ptr<TH1D>& jarl_NH_flatsindcp,
+                             const std::unique_ptr<TH1D>& jarl_IH,
+                             const std::unique_ptr<TH1D>& jarl_IH_flatsindcp);
+   
+       double CalcJarlskog(const double s2th13, const double s2th23, const double s2th12, const double dcp) const;
+       double SamplePriorForParam(const int paramIndex,
+                                  const std::vector<double>& FlatBounds) const;
+       void Get1DReactorConstraintInfo(std::pair<double, double>& Sin13_NewPrior, bool& DoReweight) const;
+   
+       std::array<std::array<TComplex, 3>, 3> CalculatePMNSElements(const double s2th13, const double s2th23, const double s2th12, const double dcp) const;
+   
+       bool PlotJarlskog;
+   
+       bool OscEnabled;
+   
+       std::string Sin2Theta13Name;
+       std::string Sin2Theta12Name;
+       std::string Sin2Theta23Name;
+       std::string DeltaCPName;
+       std::string DeltaM2_23Name;
+   
+       int Sin2Theta13Index;
+       int Sin2Theta12Index;
+       int Sin2Theta23Index;
+       int DeltaCPIndex;
+       int DeltaM2_23Index;
+   };

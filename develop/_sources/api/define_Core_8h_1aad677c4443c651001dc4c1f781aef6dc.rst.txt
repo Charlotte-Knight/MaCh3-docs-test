@@ -1,0 +1,14 @@
+.. _exhale_define_Core_8h_1aad677c4443c651001dc4c1f781aef6dc:
+
+Define _TH2PolyOverflowBins_
+============================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: _TH2PolyOverflowBins_
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceM3_1aaf4ba720c8ab2982beaa3c243aee1b98:
+
+Variable M3::_LARGE_LOGL_
+=========================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: M3::_LARGE_LOGL_
+   :project: MaCh3

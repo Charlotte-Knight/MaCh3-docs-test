@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Utils_1a45c1b264497aabdcceff3707d6f0fa10:
+
+Function M3::Utils::EstimateDataTransferRate
+============================================
+
+- Defined in :ref:`file_Manager_Monitor.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Utils::EstimateDataTransferRate(TChain *, const Long64_t)
+   :project: MaCh3

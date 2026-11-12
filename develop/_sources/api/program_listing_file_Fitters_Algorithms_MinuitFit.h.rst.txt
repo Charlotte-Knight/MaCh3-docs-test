@@ -1,0 +1,34 @@
+
+.. _program_listing_file_Fitters_Algorithms_MinuitFit.h:
+
+Program Listing for File MinuitFit.h
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Fitters_Algorithms_MinuitFit.h>` (``Fitters/Algorithms/MinuitFit.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   //MaCh3 includes
+   #include "Algorithms/LikelihoodFit.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   // ROOT includes
+   #include "Math/Minimizer.h"
+   #include "Math/Factory.h"
+   #include "Math/Functor.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   class MinuitFit : public LikelihoodFit {
+    public:
+     MinuitFit(Manager * const fitMan);
+     virtual ~MinuitFit();
+   
+     void RunMCMC() final;
+    private:
+     std::unique_ptr<ROOT::Math::Minimizer> minuit;
+   };
+   

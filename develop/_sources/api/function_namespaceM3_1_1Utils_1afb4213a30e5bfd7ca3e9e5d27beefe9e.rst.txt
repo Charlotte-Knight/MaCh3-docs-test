@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Utils_1afb4213a30e5bfd7ca3e9e5d27beefe9e:
+
+Function M3::Utils::GetMaCh3Version
+===================================
+
+- Defined in :ref:`file_Manager_Monitor.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Utils::GetMaCh3Version()
+   :project: MaCh3

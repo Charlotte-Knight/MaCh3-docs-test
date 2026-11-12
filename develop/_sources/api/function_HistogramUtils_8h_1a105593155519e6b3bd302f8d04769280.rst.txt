@@ -1,0 +1,14 @@
+.. _exhale_function_HistogramUtils_8h_1a105593155519e6b3bd302f8d04769280:
+
+Function RatioPolys
+===================
+
+- Defined in :ref:`file_Samples_HistogramUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: RatioPolys(TH2Poly *, TH2Poly *)
+   :project: MaCh3

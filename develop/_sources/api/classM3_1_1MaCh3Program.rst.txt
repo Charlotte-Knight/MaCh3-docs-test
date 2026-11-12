@@ -1,0 +1,27 @@
+.. _exhale_class_classM3_1_1MaCh3Program:
+
+Class MaCh3Program
+==================
+
+- Defined in :ref:`file_CLI_MaCh3Program.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public M3::MaCh3ArgumentParser`` (:ref:`exhale_class_classM3_1_1MaCh3ArgumentParser`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: M3::MaCh3Program
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

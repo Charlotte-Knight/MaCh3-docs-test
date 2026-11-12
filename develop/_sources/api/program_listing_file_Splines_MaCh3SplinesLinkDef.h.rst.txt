@@ -1,0 +1,17 @@
+
+.. _program_listing_file_Splines_MaCh3SplinesLinkDef.h:
+
+Program Listing for File MaCh3SplinesLinkDef.h
+==============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Splines_MaCh3SplinesLinkDef.h>` (``Splines/MaCh3SplinesLinkDef.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #if defined(__CLING__) || defined(__CINT__)
+   
+   #pragma link C++ class SplineMonoStruct+;
+   #pragma link C++ class SplineIndex+;
+   #endif

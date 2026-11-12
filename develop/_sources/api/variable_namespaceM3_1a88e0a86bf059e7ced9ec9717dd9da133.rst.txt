@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceM3_1a88e0a86bf059e7ced9ec9717dd9da133:
+
+Variable M3::_LOW_MC_BOUND_
+===========================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: M3::_LOW_MC_BOUND_
+   :project: MaCh3

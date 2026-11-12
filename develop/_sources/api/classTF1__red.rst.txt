@@ -1,0 +1,27 @@
+.. _exhale_class_classTF1__red:
+
+Class TF1_red
+=============
+
+- Defined in :ref:`file_Splines_SplineStructs.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public TResponseFunction_red`` (:ref:`exhale_class_classTResponseFunction__red`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: TF1_red
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

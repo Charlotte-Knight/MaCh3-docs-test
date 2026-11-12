@@ -1,0 +1,7 @@
+<map id="%3" name="%3">
+<area shape="rect" id="node1" title="FitterBase" alt="" coords="48,101,163,149"/>
+<area shape="rect" id="node2" title="Manager" alt="" coords="54,197,157,245"/>
+<area shape="poly" id="edge1" title="usage" alt="" coords="108,150,108,184,103,184,103,150"/>
+<area shape="rect" id="node3" title="NuDockServerBase" alt="" coords="5,5,205,53"/>
+<area shape="poly" id="edge2" title="public&#45;inheritance" alt="" coords="108,54,108,88,103,88,103,54"/>
+</map>

@@ -1,0 +1,14 @@
+.. _exhale_function_MaCh3Logger_8h_1aa603c55ea73cd86d1994901227883e1e:
+
+Function SetMaCh3LoggerFormat
+=============================
+
+- Defined in :ref:`file_Manager_MaCh3Logger.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: SetMaCh3LoggerFormat()
+   :project: MaCh3
