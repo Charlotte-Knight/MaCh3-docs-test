@@ -30,6 +30,18 @@ autodoc_class_signature = "separated"
 napoleon_use_rtype = False
 napoleon_preprocess_types = True
 
+# Match PyData's API signatures, resolving fonts in the reader's browser.
+graphviz_output_format = "svg"
+graphviz_font = (
+    "ui-monospace, Cascadia Code, Source Code Pro, Menlo, Consolas, "
+    "DejaVu Sans Mono, monospace"
+)
+graphviz_dot_args = [
+    f"-Gfontname={graphviz_font}",
+    f"-Nfontname={graphviz_font}",
+    f"-Efontname={graphviz_font}",
+]
+
 
 def breathe_specifications(kind):
     if kind in ("class", "struct"):

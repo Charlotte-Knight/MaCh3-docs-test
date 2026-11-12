@@ -55,6 +55,9 @@ Exhale adds Breathe's graph option to every generated class and struct page,
 and Sphinx renders available diagrams with Graphviz. These diagrams are
 regenerated automatically on every documentation build; no per-class pages
 or diagram files need to be maintained by hand.
+Diagrams use SVG with the same monospace font stack as PyData's API signatures,
+so labels use the reader's available fonts rather than a font baked into a PNG.
+The matching Graphviz font stack is configured in `docs/conf.py`.
 
 ## Automatic Python API reference
 
