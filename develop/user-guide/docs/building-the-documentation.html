@@ -50,6 +50,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'user-guide/docs/building-the-documentation';</script>
     <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
     <script src="../../_static/version-switcher.js?v=294b64cd"></script>
+    <script src="../../_static/diagram-theme.js?v=7aaf9fa9"></script>
     <link rel="icon" href="../../_static/mach3logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -578,10 +579,17 @@ regenerated automatically on every documentation build; no per-class pages
 or diagram files need to be maintained by hand.
 Diagrams use SVG with the same monospace font stack as PyData’s API signatures,
 so labels use the reader’s available fonts rather than a font baked into a PNG.
-The matching Graphviz font stack is configured in <code class="docutils literal notranslate"><span class="pre">docs/conf.py</span></code>.</p>
+The matching Graphviz font stack is configured in <code class="docutils literal notranslate"><span class="pre">docs/conf.py</span></code>.
+The diagram canvas is transparent. <code class="docutils literal notranslate"><span class="pre">diagram-theme.js</span></code> styles the embedded SVG
+boxes and labels using PyData’s active theme colours, updates them when the
+theme changes, and brightens dark relationship colours while preserving their
+distinctions. Default blue arrows become black in light mode and white in dark
+mode. Without JavaScript, the original Graphviz styling remains.</p>
 <section id="automatic-c-api-navigation">
 <h2>Automatic C++ API navigation<a class="headerlink" href="#automatic-c-api-navigation" title="Link to this heading">#</a></h2>
-<p>The left sidebar groups API entities by the directory containing their declaring
+<p>The C++ API landing page starts with <strong>By source directory</strong>, followed by
+Exhale’s hierarchy views.
+The left sidebar groups API entities by the directory containing their declaring
 header, including nested source directories. For example, classes declared in
 <code class="docutils literal notranslate"><span class="pre">Fitters/Algorithms/</span></code> appear beneath <strong>C++ API &gt; Fitters &gt; Algorithms</strong>.
 Each directory has one overview page with section headings for classes, structs,
@@ -665,6 +673,9 @@ migration are not rebuilt with today’s guides. To retry a release that include
 this versioned workflow, run the Documentation workflow manually with that tag
 selected. If the <code class="docutils literal notranslate"><span class="pre">github-pages</span></code>
 environment restricts deployment branches, allow <code class="docutils literal notranslate"><span class="pre">develop</span></code> and release tags.
+The demonstration tag <code class="docutils literal notranslate"><span class="pre">docs-test</span></code> is also supported: pushing it builds a snapshot
+under <code class="docutils literal notranslate"><span class="pre">docs-test/</span></code> and adds it to the version selector. Allow this tag in the
+<code class="docutils literal notranslate"><span class="pre">github-pages</span></code> environment too if deployment tags are restricted.
 No personal access token is required. The deployment job reports the published
 URL. For a project repository, the site is normally hosted at
 <code class="docutils literal notranslate"><span class="pre">https://&lt;owner&gt;.github.io/&lt;repository&gt;/</span></code>.</p>
@@ -673,7 +684,9 @@ URL. For a project repository, the site is normally hosted at
 <p>Each Sphinx build is published under <code class="docutils literal notranslate"><span class="pre">develop/</span></code> or its release tag, for example
 <code class="docutils literal notranslate"><span class="pre">v2.8.0/</span></code>. The site root redirects to the highest published stable Sphinx release,
 or to development documentation until a stable release is available. Prereleases
-appear in the selector but do not replace a stable release as the default.</p>
+appear in the selector but do not replace a stable release as the default.
+The <code class="docutils literal notranslate"><span class="pre">docs-test</span></code> snapshot likewise does not replace a stable release or <code class="docutils literal notranslate"><span class="pre">develop</span></code>
+as the default.</p>
 <p>The version selector combines Sphinx releases with all entries from the legacy
 Doxygen site’s selector. Legacy entries always open the Doxygen homepage for
 that version; their URLs do not match Sphinx page paths. Switching between

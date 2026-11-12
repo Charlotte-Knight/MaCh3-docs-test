@@ -66,9 +66,16 @@ or diagram files need to be maintained by hand.
 Diagrams use SVG with the same monospace font stack as PyData's API signatures,
 so labels use the reader's available fonts rather than a font baked into a PNG.
 The matching Graphviz font stack is configured in `docs/conf.py`.
+The diagram canvas is transparent. `diagram-theme.js` styles the embedded SVG
+boxes and labels using PyData's active theme colours, updates them when the
+theme changes, and brightens dark relationship colours while preserving their
+distinctions. Default blue arrows become black in light mode and white in dark
+mode. Without JavaScript, the original Graphviz styling remains.
 
 ## Automatic C++ API navigation
 
+The C++ API landing page starts with **By source directory**, followed by
+Exhale's hierarchy views.
 The left sidebar groups API entities by the directory containing their declaring
 header, including nested source directories. For example, classes declared in
 `Fitters/Algorithms/` appear beneath **C++ API > Fitters > Algorithms**.
@@ -161,6 +168,9 @@ migration are not rebuilt with today's guides. To retry a release that includes
 this versioned workflow, run the Documentation workflow manually with that tag
 selected. If the `github-pages`
 environment restricts deployment branches, allow `develop` and release tags.
+The demonstration tag `docs-test` is also supported: pushing it builds a snapshot
+under `docs-test/` and adds it to the version selector. Allow this tag in the
+`github-pages` environment too if deployment tags are restricted.
 No personal access token is required. The deployment job reports the published
 URL. For a project repository, the site is normally hosted at
 `https://<owner>.github.io/<repository>/`.
@@ -171,6 +181,8 @@ Each Sphinx build is published under `develop/` or its release tag, for example
 `v2.8.0/`. The site root redirects to the highest published stable Sphinx release,
 or to development documentation until a stable release is available. Prereleases
 appear in the selector but do not replace a stable release as the default.
+The `docs-test` snapshot likewise does not replace a stable release or `develop`
+as the default.
 
 The version selector combines Sphinx releases with all entries from the legacy
 Doxygen site's selector. Legacy entries always open the Doxygen homepage for
