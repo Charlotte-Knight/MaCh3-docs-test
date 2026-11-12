@@ -2,6 +2,7 @@ project = "MaCh3"
 copyright = "MaCh3 Collaboration"
 author = "MaCh3 Collaboration"
 
+import os
 import re
 
 from exhale.utils import makeCustomSpecificationsMapping
@@ -117,12 +118,19 @@ html_title = "MaCh3 documentation"
 html_logo = "_static/mach3logo.png"
 html_favicon = "_static/mach3logo.png"
 html_static_path = ["_static"]
+templates_path = ["_templates"]
+html_js_files = ["version-switcher.js"]
+html_context = {
+    "docs_version": os.environ.get("DOCS_VERSION", "develop"),
+    "docs_versions_url": os.environ.get("DOCS_VERSIONS_URL", ""),
+}
 html_theme_options = {
     "logo": {
         "image_light": "_static/mach3logo.png",
         "image_dark": "_static/mach3logo.png",
     },
     "github_url": "https://github.com/mach3-software/MaCh3",
+    "navbar_start": ["navbar-logo", "docs-version-switcher"],
 }
 
 

@@ -20,7 +20,7 @@ user-guide/index
 tutorials/index
 api/library_root
 pymach3/index
-Doxygen <https://mach3-software.github.io/MaCh3/index.html>
+Doxygen <https://mach3-software.github.io/MaCh3/.Archive/v2.7.0/index.html>
 ```
 
 ```{toctree}

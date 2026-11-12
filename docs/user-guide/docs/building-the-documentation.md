@@ -98,15 +98,68 @@ To enable deployment for a repository:
    repository variable `DOCS_PAGES_ENABLED` with the value `true`.
 3. Push to `develop` or run the Documentation workflow manually on `develop`.
 
-Only successful non-PR builds of `develop` deploy, using the `github-pages`
-environment. No personal access token is required. The deployment job reports
-the published URL. For a project repository, the site is normally hosted at
+Successful non-PR builds of `develop` and release tags matching `v*` deploy,
+using the `github-pages` environment. Tags must have the form `vMAJOR.MINOR.PATCH`
+or `vMAJOR.MINOR.PATCH-PRERELEASE`, following the existing release convention.
+Each tag builds its own C++ source and Python bindings; tags predating the Sphinx
+migration are not rebuilt with today's guides. To retry a release that includes
+this versioned workflow, run the Documentation workflow manually with that tag
+selected. If the `github-pages`
+environment restricts deployment branches, allow `develop` and release tags.
+No personal access token is required. The deployment job reports the published
+URL. For a project repository, the site is normally hosted at
 `https://<owner>.github.io/<repository>/`.
+
+### Versions and legacy documentation
+
+Each Sphinx build is published under `develop/` or its release tag, for example
+`v2.8.0/`. The site root redirects to the highest published stable Sphinx release,
+or to development documentation until a stable release is available. Prereleases
+appear in the selector but do not replace a stable release as the default.
+
+The version selector combines Sphinx releases with all entries from the legacy
+Doxygen site's selector. Legacy entries always open the Doxygen homepage for
+that version; their URLs do not match Sphinx page paths. Switching between
+Sphinx versions preserves the page and fragment when the page exists, otherwise
+opens the selected version's homepage. Search is scoped to the selected version.
+
+The manifest at the site root, `versions.json`, is shared by all Sphinx versions.
+New releases appear in older Sphinx selectors without rebuilding those releases.
+The legacy entries are maintained in `docs/_static/legacy-versions.json`; update
+this list if additional historical Doxygen archives become available.
+
+Published HTML and the manifest are persisted in the `docs-site` branch.
+Deployments restore that branch, replace only the version being built, update
+the manifest and root redirect, and deploy the complete tree. Do not delete this
+branch: it stores the release snapshots, not the seven-day review artifacts.
+The deployment job needs `contents: write` for this branch as well as Pages
+permissions; repository rules must permit the Actions bot to update `docs-site`.
+Deployments are serialized to prevent concurrent updates from losing versions.
+The deployment queue retains pending releases rather than replacing them with
+newer runs.
+
+For the first deployment in the upstream `mach3-software/MaCh3` repository, CI
+also preserves the existing Doxygen root under `legacy/develop/` and its
+`.Archive/` directories at their original paths. This keeps historical URLs
+working when Sphinx replaces the upstream homepage. Forks link directly to the
+upstream legacy site instead of duplicating its archives.
+The separate Doxygen navigation link and plotting-guide link use the existing
+v2.7.0 archive so they also survive replacement of the upstream homepage.
+
+For local builds, the selector shows the current development build and legacy
+versions. Set `DOCS_VERSION` and `DOCS_VERSIONS_URL` when building to select a
+different label and a shared manifest URL. Serve HTML over HTTP rather than
+opening `file://` URLs so the browser can fetch the JSON manifest:
+
+```sh
+python -m http.server --directory docs/_build/html 8000
+```
 
 Deployment is opt-in so forks can review the new site without replacing the
 upstream Doxygen site. The original Doxygen build remains available. When
 `DOCS_PAGES_ENABLED=true`, its old publishing job is skipped to avoid competing
-deployments; its documentation artifacts are still built. The existing
+deployments, and TagDoxygen no longer archives stale `gh-pages` content for new
+tags; the original documentation build jobs remain available. The existing
 upstream Doxygen site is also linked from the Sphinx sidebar.
 
 GitHub Pages serves the static site, including Sphinx's browser-side search.

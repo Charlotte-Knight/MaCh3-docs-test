@@ -18,6 +18,7 @@ jobs:
     secrets: inherit
 
   tag-doxygen:
+    if: vars.DOCS_PAGES_ENABLED != 'true'
     name: TagDoxygen
     runs-on: ubuntu-latest
 

@@ -1,0 +1,10 @@
+<div class="pst-js-only">
+  <select class="form-select form-select-sm docs-version-switcher"
+          aria-label="Documentation version"
+          data-version="{{ docs_version | e }}"
+          data-page="{{ pagename | e }}.html"
+          data-manifest="{{ (docs_versions_url or pathto('_static/legacy-versions.json', 1)) | e }}">
+    <option value="">{{ docs_version | e }}</option>
+  </select>
+  <small class="docs-version-error" role="status" hidden></small>
+</div>

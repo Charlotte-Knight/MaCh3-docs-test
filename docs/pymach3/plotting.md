@@ -2,7 +2,7 @@
 
 The plotting module produces plots from MaCh3 outputs and supports comparing
 results with other fitters. The
-[Doxygen plotting guide](https://mach3-software.github.io/MaCh3/group__MaCh3Plotting.html)
+[Doxygen plotting guide](https://mach3-software.github.io/MaCh3/.Archive/v2.7.0/group__MaCh3Plotting.html)
 describes the plotting configuration.
 
 {py:class}`pyMaCh3._pyMaCh3.plotting.PlottingManager` provides high-level
