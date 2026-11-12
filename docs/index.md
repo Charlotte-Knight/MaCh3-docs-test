@@ -1,7 +1,7 @@
 # MaCh3 Documentation
 
 MaCh3 is a Bayesian neutrino oscillation fitter. This site brings together its
-user guide, tutorials, and generated C++ API reference.
+user guide, tutorials, and generated C++ and Python API references.
 
 Use the [user guide](user-guide/index.md) to learn about MCMC, fitting, and
 analysis workflows. The [tutorials](tutorials/index.md) page links to the
@@ -19,6 +19,7 @@ The API is also linked from the guide; for example, see
 user-guide/index
 tutorials/index
 api/library_root
+pymach3/index
 Doxygen <https://mach3-software.github.io/MaCh3/index.html>
 ```
 

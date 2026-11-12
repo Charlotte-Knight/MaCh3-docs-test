@@ -13,23 +13,95 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-24.04
+    container:
+      image: ghcr.io/mach3-software/mach3:alma9latest
+    defaults:
+      run:
+        shell: bash
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
       - name: Install system dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install --yes doxygen graphviz texlive-binaries perl
+          dnf install --assumeyes python3.12 python3.12-devel flex bison graphviz texlive-scheme-basic perl
 
       - name: Install documentation dependencies
-        run: python -m pip install -r docs/requirements.txt
+        run: |
+          python3.12 -m venv .venv
+          .venv/bin/python -m pip install "cmake>=3.24,<4" numpy -r docs/requirements.txt
+
+      - name: Build Doxygen 1.9.8
+        run: |
+          curl --fail --location --retry 3 \
+            https://codeload.github.com/doxygen/doxygen/tar.gz/refs/tags/Release_1_9_8 \
+            --output "$RUNNER_TEMP/doxygen.tar.gz"
+          tar -xzf "$RUNNER_TEMP/doxygen.tar.gz" -C "$RUNNER_TEMP"
+          .venv/bin/cmake -S "$RUNNER_TEMP/doxygen-Release_1_9_8" \
+            -B "$RUNNER_TEMP/doxygen-build" -DCMAKE_BUILD_TYPE=Release
+          .venv/bin/cmake --build "$RUNNER_TEMP/doxygen-build" --target doxygen --parallel 4
+          echo "$RUNNER_TEMP/doxygen-build/bin" >> "$GITHUB_PATH"
+
+      - name: Build current MaCh3 and Python bindings
+        run: |
+          .venv/bin/cmake -S . -B build-docs \
+            -DMaCh3_PYTHON_ENABLED=ON \
+            -DPython_EXECUTABLE="$PWD/.venv/bin/python" \
+            -DMaCh3_GPU_ENABLED=OFF \
+            -DNuFastLinear_ENABLED=ON
+          .venv/bin/cmake --build build-docs --parallel 4
+          .venv/bin/cmake --install build-docs
+
+      - name: Verify current Python bindings
+        env:
+          PYTHONPATH: ${{ github.workspace }}/build-docs
+        run: |
+          export LD_LIBRARY_PATH="$PWD/build-docs/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+          .venv/bin/python - <<'PY'
+          from pathlib import Path
+          import pyMaCh3
+          from pyMaCh3 import manager, samples, splines, fitters, parameters, plotting
+          expected = Path("build-docs/pyMaCh3").resolve()
+          assert Path(pyMaCh3.__file__).resolve().parent == expected
+          print(f"Documenting {pyMaCh3.__file__}")
+          PY
 
       - name: Build documentation
-        run: sphinx-build -W --keep-going -b html docs docs/_build/html
+        env:
+          PYTHONPATH: ${{ github.workspace }}/build-docs
+        run: |
+          export LD_LIBRARY_PATH="$PWD/build-docs/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+          .venv/bin/sphinx-build -W --keep-going -b html docs docs/_build/html
+
+      - name: Upload documentation for review
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: SphinxHTML
+          path: docs/_build/html
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload GitHub Pages artifact
+        if: github.ref == 'refs/heads/develop' && github.event_name != 'pull_request' && vars.DOCS_PAGES_ENABLED == 'true'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/_build/html
+
+  deploy:
+    if: github.ref == 'refs/heads/develop' && github.event_name != 'pull_request' && vars.DOCS_PAGES_ENABLED == 'true'
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: documentation-pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy documentation
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -2,6 +2,8 @@ project = "MaCh3"
 copyright = "MaCh3 Collaboration"
 author = "MaCh3 Collaboration"
 
+import re
+
 from exhale.utils import makeCustomSpecificationsMapping
 
 
@@ -12,6 +14,8 @@ extensions = [
     "sphinx.ext.graphviz",
     "sphinx.ext.mathjax",
     "sphinxcontrib.bibtex",
+    "sphinx.ext.autodoc",
+    "sphinx.ext.napoleon",
 ]
 
 root_doc = "index"
@@ -21,6 +25,9 @@ nitpicky = True
 breathe_projects = {"MaCh3": "./xml"}
 breathe_default_project = "MaCh3"
 bibtex_bibfiles = ["../Doc/MaCh3Web/bibliography.bib"]
+autodoc_class_signature = "separated"
+napoleon_use_rtype = False
+napoleon_preprocess_types = True
 
 
 def breathe_specifications(kind):
@@ -78,6 +85,11 @@ myst_enable_extensions = [
 ]
 
 nitpick_ignore = [
+    ("py:class", "pybind11_builtins.pybind11_object"),
+    ("py:class", "pyMaCh3._pyMaCh3.splines._ResponseFunctionBase"),
+    ("py:class", "numpy.ndarray"),
+    ("py:class", "numpy.float32"),
+    ("py:class", "numpy.float64"),
     ("cpp:class", "std::string"),
     ("cpp:class", "std::vector"),
     ("cpp:class", "TObject"),
@@ -112,3 +124,34 @@ html_theme_options = {
     },
     "github_url": "https://github.com/mach3-software/MaCh3",
 }
+
+
+# Some pybind11 signatures retain C++ names for types registered later.
+binding_type_aliases = {
+    "pyMaCh3.m_parameters.SystematicType": "pyMaCh3._pyMaCh3.parameters.SystematicType",
+    "pyMaCh3.samples.SampleHandlerInterface": "pyMaCh3._pyMaCh3.samples.SampleHandlerInterface",
+    "M3::Plotting::InputManager": "pyMaCh3._pyMaCh3.plotting.InputManager",
+    "M3::Plotting::StyleManager": "pyMaCh3._pyMaCh3.plotting.StyleManager",
+    "SplineInterpolation": "pyMaCh3._pyMaCh3.splines.InterpolationType",
+}
+
+
+def normalize_binding_names(text):
+    if text is not None:
+        for original, target in binding_type_aliases.items():
+            text = re.sub(r"(?<![\w.])" + re.escape(original) + r"(?!\w)", target, text)
+    return text
+
+
+def normalize_binding_docstrings(app, what, name, obj, options, lines):
+    for index, line in enumerate(lines):
+        lines[index] = normalize_binding_names(line)
+
+
+def normalize_binding_signature(app, what, name, obj, options, signature, return_annotation):
+    return normalize_binding_names(signature), normalize_binding_names(return_annotation)
+
+
+def setup(app):
+    app.connect("autodoc-process-docstring", normalize_binding_docstrings)
+    app.connect("autodoc-process-signature", normalize_binding_signature)
