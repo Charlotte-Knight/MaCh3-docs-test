@@ -54,12 +54,29 @@ reference generated from the Python bindings.
 
 ::::
 
-## Project resources
+::::{grid} 1 2 2 4
+:gutter: 3
 
-[Results and publications](user-guide/publications.md) ·
-[Release notes](user-guide/release-notes.md) ·
-[Bibliography](bibliography.md) ·
-[Doxygen documentation](https://mach3-software.github.io/MaCh3/.Archive/v2.7.0/index.html)
+:::{grid-item-card} Results and publications
+:link: user-guide/publications
+:link-type: doc
+:::
+
+:::{grid-item-card} Release notes
+:link: user-guide/release-notes
+:link-type: doc
+:::
+
+:::{grid-item-card} Bibliography
+:link: bibliography
+:link-type: doc
+:::
+
+:::{grid-item-card} Doxygen documentation
+:link: https://mach3-software.github.io/MaCh3/.Archive/v2.7.0/index.html
+:::
+
+::::
 
 ```{toctree}
 :hidden:

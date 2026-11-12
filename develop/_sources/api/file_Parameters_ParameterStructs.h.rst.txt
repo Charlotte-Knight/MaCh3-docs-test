@@ -130,9 +130,9 @@ Functions
 
 - :ref:`exhale_function_ParameterStructs_8h_1aada74c1e7e4ede3e8e9ab32f32791814`
 
-- :ref:`exhale_function_ParameterStructs_8h_1a1af8b6ffd2afc4dd39b00663baef8989`
-
 - :ref:`exhale_function_ParameterStructs_8h_1ad0ad271345b43361a90efe977486167b`
+
+- :ref:`exhale_function_ParameterStructs_8h_1a1af8b6ffd2afc4dd39b00663baef8989`
 
 - :ref:`exhale_function_ParameterStructs_8h_1a89a221272ded97bbcea052755f4dc43f`
 
