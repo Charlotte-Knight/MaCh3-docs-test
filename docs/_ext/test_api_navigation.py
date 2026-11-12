@@ -17,8 +17,10 @@ class NavigationTests(unittest.TestCase):
         self.nodes = []
         self.listing = self.api / "unabridged_api.rst.include"
         self.orphan = self.api / "unabridged_orphan.rst"
+        self.root_page = self.api / "library_root.rst"
         self.app = SimpleNamespace(exhale_root=SimpleNamespace(
             root_directory=str(self.api),
+            full_root_file_path=str(self.root_page),
             unabridged_api_file=str(self.listing),
             unabridged_orphan_file=str(self.orphan),
             all_nodes=self.nodes,
@@ -37,6 +39,13 @@ class NavigationTests(unittest.TestCase):
         return node
 
     def generate(self):
+        self.root_page.write_text(
+            "C++ API\n=======\n\n"
+            ".. include:: page_view_hierarchy.rst.include\n\n"
+            ".. include:: class_view_hierarchy.rst.include\n\n"
+            ".. include:: file_view_hierarchy.rst.include\n\n"
+            ".. include:: unabridged_api.rst.include\n"
+        )
         self.listing.write_text(".. toctree::\n\n" + "".join(
             f"   {node.file_name}\n" for node in self.nodes if node.kind not in ("file", "dir")
         ))
@@ -44,6 +53,19 @@ class NavigationTests(unittest.TestCase):
             f"   {node.file_name}\n" for node in self.nodes if node.kind in ("file", "dir")
         ))
         generate_navigation(self.app)
+
+    def test_source_directory_section_precedes_preserved_hierarchies(self):
+        self.node("Handler", location="Samples/Handler.h")
+        self.generate()
+        content = self.root_page.read_text()
+        includes = re.findall(r"^\.\. include:: (.+)$", content, re.MULTILINE)
+        self.assertEqual(includes, [
+            self.listing.name,
+            "page_view_hierarchy.rst.include",
+            "class_view_hierarchy.rst.include",
+            "file_view_hierarchy.rst.include",
+        ])
+        self.assertTrue(content.startswith("C++ API\n=======\n\n"))
 
     def test_nested_directories_and_alphabetical_entities(self):
         zeta = self.node("Zeta", location="Fitters/Algorithms/Zeta.h")

@@ -5,7 +5,7 @@ on:
     branches: [develop]
   push:
     branches: [develop]
-    tags: ['v*']
+    tags: ['v*', 'docs-test']
   workflow_dispatch:
 
 permissions:
@@ -103,7 +103,7 @@ jobs:
           retention-days: 7
 
   deploy:
-    if: (github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/tags/v')) && github.event_name != 'pull_request' && vars.DOCS_PAGES_ENABLED == 'true'
+    if: (github.ref == 'refs/heads/develop' || startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/tags/docs-test') && github.event_name != 'pull_request' && vars.DOCS_PAGES_ENABLED == 'true'
     needs: build
     runs-on: ubuntu-24.04
     permissions:

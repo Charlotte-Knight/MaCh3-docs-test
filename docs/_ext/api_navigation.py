@@ -144,6 +144,19 @@ def generate_navigation(app):
     directory_tree(navigation / "files", "Source files", files)
     top_level.append(navigation / "files/index.rst")
     write_index(listing, "By source directory", top_level, heading="-")
+    root_page = Path(root.full_root_file_path)
+    content = root_page.read_text(encoding="utf-8")
+    listing_include = f".. include:: {listing.name}"
+    if content.count(listing_include) != 1:
+        raise ExtensionError("Expected one full API listing include in Exhale's root page")
+    content = content.replace(listing_include, "").rstrip() + "\n"
+    first_include = content.find(".. include:: ")
+    if first_include < 0:
+        raise ExtensionError("Expected hierarchy includes in Exhale's root page")
+    content = (
+        content[:first_include] + listing_include + "\n\n" + content[first_include:]
+    )
+    root_page.write_text(content, encoding="utf-8")
     orphan.write_text(
         ":orphan:\n\nFull API\n========\n\n"
         "See :doc:`library_root` for the directory-grouped API reference.\n",

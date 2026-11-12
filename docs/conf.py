@@ -142,7 +142,7 @@ html_favicon = "_static/mach3logo.png"
 html_static_path = ["_static"]
 html_css_files = ["custom.css"]
 templates_path = ["_templates"]
-html_js_files = ["version-switcher.js"]
+html_js_files = ["version-switcher.js", "diagram-theme.js"]
 html_context = {
     "docs_version": os.environ.get("DOCS_VERSION", "develop"),
     "docs_versions_url": os.environ.get("DOCS_VERSIONS_URL", ""),

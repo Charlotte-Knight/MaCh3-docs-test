@@ -29,7 +29,7 @@ def assemble(
     source, destination, version, base_url, legacy_manifest,
     legacy_site=None, preserve_legacy=False,
 ):
-    if version != "develop":
+    if version not in ("develop", "docs-test"):
         release_key(version)
     if urlsplit(base_url).scheme not in ("http", "https") or not urlsplit(base_url).netloc:
         raise ValueError("The Pages base URL must be an absolute HTTP(S) URL")
@@ -87,16 +87,21 @@ def assemble(
         entry["name"] = name
         entry.pop("preferred", None)
     releases = sorted(
-        (name for name in versions if name != "develop"), key=release_key, reverse=True,
+        (name for name in versions if name not in ("develop", "docs-test")),
+        key=release_key, reverse=True,
     )
     stable = next((name for name in releases if RELEASE.fullmatch(name).group(4) is None), None)
-    preferred = stable or ("develop" if "develop" in versions else releases[0])
+    preferred = stable or (
+        "develop" if "develop" in versions else releases[0] if releases else "docs-test"
+    )
     versions[preferred]["preferred"] = True
     if stable:
         versions[preferred]["name"] = f"{preferred} (stable)"
     ordered = ([versions["develop"]] if "develop" in versions else []) + [
         versions[name] for name in releases
     ]
+    if "docs-test" in versions:
+        ordered.append(versions["docs-test"])
     ordered.extend(entry for entry in legacy if entry["version"] not in versions)
     manifest_path.write_text(json.dumps(ordered, indent=2) + "\n")
     url = html.escape(base_url + preferred + "/", quote=True)

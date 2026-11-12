@@ -54,6 +54,32 @@ class PublishingTests(unittest.TestCase):
         self.publish("v3.0.0-rc.1")
         self.assertIn(self.base + "v3.0.0-rc.1/", (self.site / "index.html").read_text())
 
+    def test_docs_test_snapshot_appears_without_replacing_development_default(self):
+        self.publish("develop")
+        manifest = self.publish("docs-test")
+        self.assertEqual([entry["version"] for entry in manifest[:2]], ["develop", "docs-test"])
+        snapshot = manifest[1]
+        self.assertEqual(snapshot["name"], "docs-test")
+        self.assertEqual(snapshot["url"], self.base + "docs-test/")
+        self.assertFalse(snapshot.get("preferred", False))
+        self.assertEqual((self.site / "docs-test/index.html").read_text(), "new documentation")
+        self.assertIn(self.base + "develop/", (self.site / "index.html").read_text())
+
+    def test_docs_test_survives_release_and_development_deployments(self):
+        self.publish("docs-test")
+        self.publish("v3.0.0")
+        manifest = self.publish("develop")
+        self.assertEqual(
+            [entry["version"] for entry in manifest[:3]], ["develop", "v3.0.0", "docs-test"],
+        )
+        self.assertIn(self.base + "v3.0.0/", (self.site / "index.html").read_text())
+        self.assertTrue((self.site / "docs-test/index.html").is_file())
+
+    def test_docs_test_can_be_published_first(self):
+        manifest = self.publish("docs-test")
+        self.assertTrue(manifest[0]["preferred"])
+        self.assertIn(self.base + "docs-test/", (self.site / "index.html").read_text())
+
     def test_republishing_replaces_only_the_selected_version(self):
         self.publish("v3.0.0")
         self.publish("develop")
