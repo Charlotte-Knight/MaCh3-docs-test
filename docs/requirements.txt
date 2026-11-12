@@ -2,6 +2,7 @@ sphinx>=7.4,<9
 breathe>=5.1,<6
 exhale>=0.3.7,<1
 myst-parser>=3,<5
+sphinx-design>=0.6,<1
 pydata-sphinx-theme>=0.16.1,<0.25
 sphinxcontrib-bibtex>=2.6,<3
 jsonschema>=4.23,<5

@@ -15,6 +15,7 @@ extensions = [
     "breathe",
     "exhale",
     "myst_parser",
+    "sphinx_design",
     "sphinx.ext.graphviz",
     "sphinx.ext.mathjax",
     "sphinxcontrib.bibtex",
