@@ -1,0 +1,254 @@
+
+.. _program_listing_file_Parameters_ParameterHandlerBase.h:
+
+Program Listing for File ParameterHandlerBase.h
+===============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Parameters_ParameterHandlerBase.h>` (``Parameters/ParameterHandlerBase.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // MaCh3 includes
+   #include "Manager/Manager.h"
+   #include "Parameters/ParameterHandlerUtils.h"
+   #include "Parameters/AdaptiveMCMCHandler.h"
+   #include "Parameters/PCAHandler.h"
+   #include "Parameters/ParameterTunes.h"
+   #include "Manager/TablePrinter.h"
+   #include "Parameters/SpecialProposals.h"
+   
+   class ParameterHandlerBase {
+    public:
+     ParameterHandlerBase(std::string name, std::string file, double threshold = -1, int FirstPCAdpar = -999, int LastPCAdpar = -999);
+     ParameterHandlerBase() = default;
+   
+     virtual ~ParameterHandlerBase();
+   
+     // ETA - maybe need to add checks to index on the setters? i.e. if( i > _fPropVal.size()){throw;}
+     void SetCovMatrix(TMatrixDSym *cov);
+     void SetName(const std::string& name) { matrixName = name; }
+     void SetParName(const int i, const std::string& name) { _fNames.at(i) = name; }
+     void SetSingleParameter(const int parNo, const double parVal);
+     void SetPar(const int i, const double val);
+     void SetParCurrProp(const int i, const double val);
+     void SetParProp(const int i, const double val) {
+       _fPropVal[i] = static_cast<M3::float_t>(val);
+       if (pca) PCAObj->TransferToPCA();
+     }
+     void SetParameters(const std::vector<double>& pars = {});
+     void SetFlatPrior(const int i, const bool eL);
+   
+     void SetRandomThrow(const int i, const double rand) { randParams[i] = rand;}
+     double GetRandomThrow(const int i) const { return randParams[i];}
+   
+     void SetBranches(TTree &tree, const bool SaveProposal = false);
+     void SetStepScale(const double scale, const bool verbose=true);
+     void SetIndivStepScale(const int ParameterIndex, const double StepScale){ _fIndivStepScale.at(ParameterIndex) = StepScale; }
+     void SetIndivStepScale(const std::vector<double>& stepscale);
+   
+     void SaveUpdatedMatrixConfig();
+   
+     void ThrowParameters();
+     void RandomConfiguration();
+   
+     int CheckBounds() const _noexcept_;
+     double CalcLikelihood() const _noexcept_;
+     virtual double GetLikelihood();
+   
+     TMatrixDSym *GetCovMatrix() const { return covMatrix; }
+     TMatrixDSym *GetInvCovMatrix() const { return invCovMatrix; }
+     double GetInvCovMatrix(const int i, const int j) const { return InvertCovMatrix[i][j]; }
+   
+     double GetCorrThrows(const int i) const { return corr_throw[i]; }
+   
+     bool GetFlatPrior(const int i) const { return _fFlatPrior[i]; }
+   
+     std::string GetName() const { return matrixName; }
+     std::string GetParName(const int i) const {return _fNames[i];}
+   
+     int GetParIndex(const std::string& name) const;
+   
+     std::string GetParFancyName(const int i) const {return _fFancyNames[i];}
+   
+     double GetDiagonalError(const int i) const { return std::sqrt((*covMatrix)(i,i)); }
+     double GetError(const int i) const {return _fError[i];}
+   
+     void ResetIndivStepScale();
+   
+     void SetIndivStepScaleForSkippedAdaptParams();
+   
+     void InitialiseAdaption(const YAML::Node& adapt_manager);
+     void SaveAdaptiveToFile(const std::string& outFileName, const std::string& systematicName) {
+       AdaptiveHandler->SaveAdaptiveToFile(outFileName, systematicName); }
+   
+     bool GetDoAdaption() const {return use_adaptive;}
+     void SetThrowMatrix(const TMatrixDSym *cov);
+     void SetSubThrowMatrix(int first_index, int last_index, TMatrixDSym const &subcov);
+     void UpdateThrowMatrix(TMatrixDSym *cov);
+     void SetNumberOfSteps(const int nsteps) {
+       AdaptiveHandler->SetTotalSteps(nsteps);
+       if(AdaptiveHandler->AdaptionUpdate()) ResetIndivStepScale();
+     }
+   
+     TMatrixDSym *GetThrowMatrix() const {return throwMatrix;}
+     double GetThrowMatrix(const int i, const int j) const { return throwMatrixCholDecomp[i][j];}
+   
+     TH2D* GetCorrelationMatrix() const;
+   
+     const M3::float_t* RetPointer(const int iParam) const {return &(_fPropVal.data()[iParam]);}
+   
+     const std::vector<M3::float_t> &GetParPropVec() {return _fPropVal;}
+   
+     int  GetNumParams() const {return _fNumPar;}
+     std::vector<double> GetPreFitValues() const {return _fPreFitValue;}
+     std::vector<double> GetProposed() const;
+     M3::float_t GetParProp(const int i) const { return _fPropVal[i]; }
+     double GetParCurr(const int i) const { return _fCurrVal[i]; }
+     const std::vector<double> &GetParCurrVec() const { return _fCurrVal; }
+   
+     double GetParPreFit(const int i) const { return _fPreFitValue[i]; }
+     double GetUpperBound(const int i) const { return _fUpBound[i];}
+     double GetLowerBound(const int i) const { return _fLowBound[i]; }
+     double GetIndivStepScale(const int ParameterIndex) const {return _fIndivStepScale.at(ParameterIndex); }
+     double GetGlobalStepScale() const {return _fGlobalStepScale; }
+   
+     int GetNParameters() const {
+       if (pca) return PCAObj->GetNumberPCAedParameters();
+       else return _fNumPar;
+     }
+   
+     void PrintPreFitValues() const;
+     void PrintPreFitCurrPropValues() const;
+     void PrintIndivStepScale() const;
+   
+     virtual void ProposeStep();
+     void Randomize() _noexcept_;
+     void CorrelateSteps() _noexcept_;
+     void UpdateAdaptiveCovariance();
+   
+     void AcceptStep() _noexcept_;
+   
+     void SetFixAllParameters();
+     void SetFixParameter(const int i);
+     void SetFixParameter(const std::string& name);
+   
+     void SetFreeAllParameters();
+     void SetFreeParameter(const int i);
+     void SetFreeParameter(const std::string& name);
+   
+     bool IsParameterFixed(const int i) const {
+       if (_fError[i] < 0) { return true; }
+       else                { return false; }
+     }
+     bool IsParameterFixed(const std::string& name) const;
+   
+     void ConstructPCA(const double eigen_threshold, int FirstPCAdpar, int LastPCAdpar);
+   
+     bool IsPCA() const { return pca; }
+   
+     YAML::Node GetConfig() const { return _fYAMLDoc; }
+   
+     AdaptiveMCMCHandler* GetAdaptiveHandler() const  {
+       if (!use_adaptive) {
+         MACH3LOG_ERROR("Am not running in Adaptive mode");
+         throw MaCh3Exception(__FILE__ , __LINE__ );
+       }
+       return AdaptiveHandler.get();
+     }
+   
+     void SetTune(const std::string& TuneName);
+   
+     PCAHandler* GetPCAHandler() const {
+       if (!pca) {
+         MACH3LOG_ERROR("Am not running in PCA mode");
+         throw MaCh3Exception(__FILE__ , __LINE__ );
+       }
+       return PCAObj.get();
+     }
+   
+     void MatchMaCh3OutputBranches(TTree *PosteriorFile,
+                                   std::vector<double>& BranchValues,
+                                   std::vector<std::string>& BranchNames,
+                                   const std::vector<std::string>& FancyNames = {});
+    protected:
+     void InitFromFile(const std::string& name, const std::string& file);
+     void ReserveMemory(const int size);
+   
+     void MakePosDef(TMatrixDSym *cov = nullptr, bool verbose = true);
+   
+     void MakeClosestPosDef(TMatrixDSym *cov);
+   
+     void SetThrowMatrixFromFile(const std::string& matrix_file_name, const std::string& matrix_name, const std::string& means_name);
+     void SanitizeAdaption() const;
+   
+     void FlipParameterGroup(const std::string& group);
+   
+     M3::float_t EvaluateFunctionalFlip(const FunctionalFlipProposal& flip, const std::vector<double>& proposed_values) const;
+   
+     void CircularParBounds(const int i, const double LowBound, const double UpBound);
+   
+     void EnableSpecialProposal(const YAML::Node& param, const int Index);
+   
+     void AddFunctionalFlip(const YAML::Node& param, const int index, const std::string& group_name);
+   
+     void QueueFunctionalFlip(const YAML::Node& param, const int index, const std::string& group_name);
+   
+     void ResolveFunctionalFlips();
+   
+     void SpecialStepProposal();
+   
+     bool doSpecialStepProposal;
+   
+     std::string inputFile;
+   
+     std::string matrixName;
+     TMatrixDSym *covMatrix;
+     TMatrixDSym *invCovMatrix;
+     std::vector<std::vector<double>> InvertCovMatrix;
+   
+     double* randParams;
+     double* corr_throw;
+     double _fGlobalStepScale;
+   
+     std::vector<std::string> _fNames;
+     std::vector<std::string> _fFancyNames;
+     YAML::Node _fYAMLDoc;
+     int _fNumPar;
+     std::vector<double> _fPreFitValue;
+     std::vector<double> _fCurrVal;
+     std::vector<M3::float_t> _fPropVal;
+     std::vector<double> _fError;
+     std::vector<double> _fLowBound;
+     std::vector<double> _fUpBound;
+     std::vector<double> _fIndivStepScale;
+     std::vector<bool> _fFlatPrior;
+   
+     std::vector<double> _fIndivStepScaleInitial;
+   
+     double _fGlobalStepScaleInitial;
+   
+     std::vector<bool> param_skip_adapt_flags;
+   
+     TMatrixDSym* throwMatrix;
+     double** throwMatrixCholDecomp;
+   
+     bool pca;
+     bool use_adaptive;
+   
+     std::unique_ptr<PCAHandler> PCAObj;
+     std::unique_ptr<AdaptiveMCMCHandler> AdaptiveHandler;
+     std::unique_ptr<ParameterTunes> Tunes;
+   
+     std::map<std::string, FlipGroup> FlipGroups;
+     std::vector<PendingFunctionalFlipProposal> PendingFunctionalFlipParameters;
+     std::vector<int>    CircularBoundsIndex;
+     std::vector<std::pair<double,double>> CircularBoundsValues;
+   
+    private:
+     void ToggleFixParameter(const int i);
+     void ToggleFixParameter(const std::string& name);
+   };

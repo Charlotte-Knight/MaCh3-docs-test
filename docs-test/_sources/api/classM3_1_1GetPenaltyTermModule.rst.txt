@@ -1,0 +1,27 @@
+.. _exhale_class_classM3_1_1GetPenaltyTermModule:
+
+Class GetPenaltyTermModule
+==========================
+
+- Defined in :ref:`file_CLI_Modules_GetPenaltyTermModule.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public M3::PluginBase`` (:ref:`exhale_class_classM3_1_1PluginBase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: M3::GetPenaltyTermModule
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

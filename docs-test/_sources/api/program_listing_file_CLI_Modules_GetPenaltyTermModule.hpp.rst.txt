@@ -1,0 +1,48 @@
+
+.. _program_listing_file_CLI_Modules_GetPenaltyTermModule.hpp:
+
+Program Listing for File GetPenaltyTermModule.hpp
+=================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_CLI_Modules_GetPenaltyTermModule.hpp>` (``CLI/Modules/GetPenaltyTermModule.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   
+   
+   #pragma once
+   #include "yaml-cpp/yaml.h"
+   #include "CLI/API/plugin.hpp"
+   
+   namespace M3{
+   
+     class GetPenaltyTermModule: public IModuleBase{
+   
+       public:
+         virtual ~GetPenaltyTermModule();
+   
+         MaCh3ArgumentParser* get_parser() override;
+   
+         int Run() override;
+   
+       private:
+         void ReadCovFile(const std::string& inputFile,
+                          std::vector <double>& Prior,
+                          std::vector <bool>& isFlat,
+                          std::vector<std::string>& ParamNames,
+                          std::vector<std::vector<double>>& invCovMatrix,
+                          int& nParams);
+   
+         void LoadSettings(YAML::Node& Settings,
+                           std::vector<std::string>& SetsNames,
+                           std::vector<std::string>& FancyTitle,
+                           std::vector<std::vector<bool>>& isRelevantParam,
+                           const std::vector<std::string>& ParamNames,
+                           const int nParams);
+   
+         void GetPenaltyTerm(const std::string& inputFile, const std::string& configFile);
+   
+     };
+   }

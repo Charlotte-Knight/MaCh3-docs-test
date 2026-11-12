@@ -1,0 +1,14 @@
+.. _exhale_define_MaCh3Logger_8h_1afa930300ae979052e16935bee1397a95:
+
+Define MACH3LOG_OFF
+===================
+
+- Defined in :ref:`file_Manager_MaCh3Logger.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MACH3LOG_OFF
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1acf403b05be9baa719893db7449e833c7:
+
+Function GetDunneKaboth
+=======================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetDunneKaboth(const double)
+   :project: MaCh3

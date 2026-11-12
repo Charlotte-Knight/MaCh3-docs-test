@@ -1,0 +1,18 @@
+.. _exhale_struct_structBinShiftLookup:
+
+Struct BinShiftLookup
+=====================
+
+- Defined in :ref:`file_Samples_SampleStructs.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: BinShiftLookup
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

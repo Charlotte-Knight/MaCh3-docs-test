@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1a68ab9b6b3d413a94604c740208c7895d:
+
+Function M3::FixSampleNamesQuotes
+=================================
+
+- Defined in :ref:`file_Parameters_ParameterHandlerUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::FixSampleNamesQuotes(std::string&)
+   :project: MaCh3

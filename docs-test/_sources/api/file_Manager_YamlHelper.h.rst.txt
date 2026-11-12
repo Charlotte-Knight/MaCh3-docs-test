@@ -1,0 +1,155 @@
+
+.. _file_Manager_YamlHelper.h:
+
+File YamlHelper.h
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir_Manager>` (``Manager``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Utility functions for handling YAML nodes. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Manager/YamlHelper.h``)
+-------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Manager_YamlHelper.h.rst
+
+
+
+Detailed Description
+--------------------
+
+MaCh3 uses YAML in a specific way within its configuration system. These helper functions act as a safety layer on top of yaml-cpp, adding MaCh3-specific validation, consistency checks, and enhanced error reporting.
+
+you can read more about Yaml: here 
+
+Kamil Skwarczynski 
+
+Luke Pickering 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/Core.h`` (:ref:`file_Manager_Core.h`)
+
+- ``Manager/MaCh3Exception.h`` (:ref:`file_Manager_MaCh3Exception.h`)
+
+- ``TList.h``
+
+- ``TMacro.h``
+
+- ``TObjString.h``
+
+- ``cxxabi.h``
+
+- ``fstream``
+
+- ``iostream``
+
+- ``regex``
+
+- ``string``
+
+- ``yaml-cpp/yaml.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Manager_MaCh3Modes.h`
+
+- :ref:`file_Manager_Manager.h`
+
+- :ref:`file_Manager_Monitor.h`
+
+- :ref:`file_Samples_HistogramUtils.h`
+
+- :ref:`file_Utils_Plotting_InputManager.h`
+
+- :ref:`file_Utils_Plotting_PlottingManager.h`
+
+- :ref:`file_Utils_Plotting_StyleManager.h`
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_YamlHelper_8h_1ad2340a340fd6649a6d220abc16d4757b`
+
+- :ref:`exhale_function_YamlHelper_8h_1a2ec5eac7a7a860300203a9c418e802ee`
+
+- :ref:`exhale_function_YamlHelper_8h_1a5809a38cdc84e79f861c6de8f84ae83e`
+
+- :ref:`exhale_function_YamlHelper_8h_1a30fc1dad7dde70247024fbb1c8f89bdc`
+
+- :ref:`exhale_function_YamlHelper_8h_1ac79360f33b9ee8b7ecf11cc7429ffd0c`
+
+- :ref:`exhale_function_YamlHelper_8h_1a57276bf6624191db1d835a88b711e096`
+
+- :ref:`exhale_function_YamlHelper_8h_1a2a8231c2076b91564e31e55567018f00`
+
+- :ref:`exhale_function_YamlHelper_8h_1a296c2eab8cecbc8a278add0ea507da94`
+
+- :ref:`exhale_function_YamlHelper_8h_1ad047b94c4cdbbc6d7c73a75243b0a010`
+
+- :ref:`exhale_function_YamlHelper_8h_1ad1f8b65ec4424125518fb65ebff28f0e`
+
+- :ref:`exhale_function_YamlHelper_8h_1a99b6a2259dcdf8e2875c807a793d7cd1`
+
+- :ref:`exhale_function_YamlHelper_8h_1a7d9483510cc8dcf165dc9e13f85a7e3e`
+
+- :ref:`exhale_function_YamlHelper_8h_1aa04e7b65c543d159d861e5d06d954369`
+
+- :ref:`exhale_function_YamlHelper_8h_1a269e230f4f26b824c65a4c7a1472e07b`
+
+- :ref:`exhale_function_YamlHelper_8h_1a55f0b8c6b5d52b5c269ce26c7d3853f5`
+
+- :ref:`exhale_function_YamlHelper_8h_1af3f5457963c2e716d78f519b2a59d3c1`
+
+- :ref:`exhale_function_YamlHelper_8h_1a3c6595806e439f4ff22e04c22bbe18f9`
+
+- :ref:`exhale_function_YamlHelper_8h_1a3ff1f2154c0a70ad5a145fcc5891e7ec`
+
+- :ref:`exhale_function_YamlHelper_8h_1a8f274e653fbd3e5451faf71549318c24`
+
+- :ref:`exhale_function_YamlHelper_8h_1a7e0ade2fd295a927676c243c97d0aa64`
+
+- :ref:`exhale_function_YamlHelper_8h_1aae72fb06a391f1073add5eed6c6485dd`
+
+- :ref:`exhale_function_YamlHelper_8h_1a2d4f3247b6e13ef8c127ff66e699d3cb`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_YamlHelper_8h_1a236f7db41b3514852c36138d94d8015e`
+
+- :ref:`exhale_define_YamlHelper_8h_1ae828b8f0cb6b6bbd5fd4e7e5aaf9632f`
+
+- :ref:`exhale_define_YamlHelper_8h_1ad802d5a5acdc16a796b21af74f6f5f59`
+

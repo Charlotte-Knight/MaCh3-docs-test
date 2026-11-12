@@ -1,0 +1,67 @@
+
+.. _file_Parameters_ParameterHandlerBase.h:
+
+File ParameterHandlerBase.h
+===========================
+
+|exhale_lsh| :ref:`Parent directory <dir_Parameters>` (``Parameters``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Parameters/ParameterHandlerBase.h``)
+--------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Parameters_ParameterHandlerBase.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/Manager.h`` (:ref:`file_Manager_Manager.h`)
+
+- ``Manager/TablePrinter.h`` (:ref:`file_Manager_TablePrinter.h`)
+
+- ``Parameters/AdaptiveMCMCHandler.h`` (:ref:`file_Parameters_AdaptiveMCMCHandler.h`)
+
+- ``Parameters/PCAHandler.h`` (:ref:`file_Parameters_PCAHandler.h`)
+
+- ``Parameters/ParameterHandlerUtils.h`` (:ref:`file_Parameters_ParameterHandlerUtils.h`)
+
+- ``Parameters/ParameterTunes.h`` (:ref:`file_Parameters_ParameterTunes.h`)
+
+- ``Parameters/SpecialProposals.h`` (:ref:`file_Parameters_SpecialProposals.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Fitters_Algorithms_FitterBase.h`
+
+- :ref:`file_Fitters_Algorithms_MulticanonicalMCMCHandler.h`
+
+- :ref:`file_Parameters_ParameterHandlerGeneric.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classParameterHandlerBase`
+

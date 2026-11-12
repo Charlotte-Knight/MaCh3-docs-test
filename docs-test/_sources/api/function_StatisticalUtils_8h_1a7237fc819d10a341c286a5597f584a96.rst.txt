@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a7237fc819d10a341c286a5597f584a96:
+
+Function GetGaussian
+====================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetGaussian(TH1D *&, TF1 *, double&, double&)
+   :project: MaCh3

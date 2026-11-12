@@ -1,0 +1,302 @@
+
+.. _program_listing_file_Samples_SampleHandlerBase.h:
+
+Program Listing for File SampleHandlerBase.h
+============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Samples_SampleHandlerBase.h>` (``Samples/SampleHandlerBase.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   //MaCh3 includes
+   #include "Samples/SampleInfo.h"
+   #include "Samples/EventInfo.h"
+   
+   #include "Splines/BinnedSplineHandler.h"
+   #include "Parameters/ParameterHandlerGeneric.h"
+   #include "Samples/SampleHandlerInterface.h"
+   #include "Samples/OscillationHandler.h"
+   #include "Samples/BinningHandler.h"
+   #include "Samples/SampleHandlerFunctional.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   #include "THStack.h"
+   #include "TLegend.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   enum SamplePlotType {
+     kModePlot = 0,
+     kOscChannelPlot = 1
+   };
+   
+   class SampleHandlerBase :  public SampleHandlerInterface
+   {
+    public:
+     //######################################### Functions #########################################
+     SampleHandlerBase(std::string ConfigFileName, ParameterHandlerGeneric* _ParHandler,
+                     const std::shared_ptr<OscillationHandler>& OscillatorObj_ = nullptr);
+     virtual ~SampleHandlerBase();
+   
+     int GetNDim(const int Sample) const final { return SampleDetails[Sample].nDimensions; }
+     std::string GetName() const final;
+     std::string GetSampleTitle(const int iSample) const final {return SampleDetails[iSample].SampleTitle;}
+     std::string GetSampleName(const int iSample) const {return SampleDetails[iSample].SampleName;}
+     std::string GetKinVarName(const int iSample, const int Dimension) const final;
+   
+     void PrintIntegral(const int iSample, const TString& OutputName="/dev/null", const int WeightStyle=0, const TString& OutputCSVName="/dev/null");
+   
+     void AddData(const int Sample, TH1* Data);
+   
+     void AddData(const int Sample, const std::vector<double>& Data_Array);
+   
+     void PrintRates(const bool DataOnly = false) final;
+     double GetLikelihood() const override;
+     double GetSampleLikelihood(const int iSample) const override;
+     //===============================================================================
+   
+     int GetSampleIndex(const std::string& SampleTitle) const;
+   
+     const TH1* GetDataHist(const int Sample) final;
+     const TH1* GetDataHist(const std::string& Sample);
+   
+     const TH1* GetMCHist(const int Sample) final;
+     const TH1* GetMCHist(const std::string& Sample);
+   
+     const TH1* GetW2Hist(const int Sample) final;
+     const TH1* GetW2Hist(const std::string& Sample);
+     void Reweight() override;
+     M3::float_t GetEventWeight(const int iEvent);
+   
+     int GetNOscChannels(const int iSample) const final {return static_cast<int>(SampleDetails[iSample].OscChannels.size());};
+     std::string GetFlavourName(const int iSample, const int iChannel) const final {
+       if (iChannel < 0 || iChannel > GetNOscChannels(iSample)) {
+         MACH3LOG_ERROR("Invalid Channel Requested: {}", iChannel);
+         throw MaCh3Exception(__FILE__ , __LINE__);
+       }
+       return SampleDetails[iSample].OscChannels[iChannel].flavourName;
+     }
+     std::unique_ptr<TH1> Get1DVarHist(const int iSample, const std::string &ProjectionVar,
+                                       const std::vector<KinematicCut> &EventSelectionVec = {}, int WeightStyle = 0,
+                                       const std::vector<KinematicCut> &SubEventSelectionVec = {}) final;
+     std::unique_ptr<TH2> Get2DVarHist(const int iSample, const std::string& ProjectionVarX, const std::string& ProjectionVarY,
+                                       const std::vector< KinematicCut >& EventSelectionVec = {},
+                                       int WeightStyle = 0, const std::vector< KinematicCut >& SubEventSelectionVec = {}) final;
+     std::vector<KinematicCut> BuildModeChannelSelection(const int iSample, const int kModeToFill, const int kChannelToFill) const;
+     void Fill1DSubEventHist(const int iSample, TH1D* _h1DVar, const std::string& ProjectionVar,
+                             const std::vector< KinematicCut >& SubEventSelectionVec = {},
+                             int WeightStyle=0);
+     void Fill2DSubEventHist(const int iSample, TH2* _h2DVar, const std::string& ProjectionVarX, const std::string& ProjectionVarY,
+                             const std::vector< KinematicCut >& SubEventSelectionVec = {}, int WeightStyle = 0);
+     std::unique_ptr<TH1> Get1DVarHistByModeAndChannel(const int iSample, const std::string& ProjectionVar_Str,
+                                                       const int kModeToFill = -1, const int kChannelToFill = -1,
+                                                       const int WeightStyle = 0) final;
+     std::unique_ptr<TH2> Get2DVarHistByModeAndChannel(const int iSample, const std::string& ProjectionVar_StrX,
+                                                       const std::string& ProjectionVar_StrY, const int kModeToFill = -1,
+                                                       const int kChannelToFill = -1, const int WeightStyle = 0) final;
+   
+     int GetRangeForPlotType(const SamplePlotType TypeEnum, const int iSample) const;
+   
+     std::vector<std::unique_ptr<TH1>> ReturnHistsBySelection1D(const int iSample, const std::string& KinematicProjection,
+                                                                const SamplePlotType Selection1, const int Selection2 = -1,
+                                                                const int WeightStyle = 0);
+     std::vector<std::unique_ptr<TH2>> ReturnHistsBySelection2D(const int iSample, const std::string& KinematicProjectionX,
+                                                                const std::string& KinematicProjectionY,
+                                                                const SamplePlotType Selection1, const int Selection2 = -1,
+                                                                const int WeightStyle=0);
+     std::unique_ptr<THStack> ReturnStackedHistBySelection1D(const int iSample, const std::string& KinematicProjection,
+                                             const SamplePlotType Selection1, const int Selection2 = -1, const int WeightStyle = 0);
+     const TLegend* ReturnStackHistLegend() const {return THStackLeg;}
+   
+     int ReturnKinematicParameterFromString(const std::string& KinematicStr) const;
+     std::string ReturnStringFromKinematicParameter(const int KinematicVariable) const;
+   
+     void SaveAdditionalInfo(TDirectory* Dir) final;
+   
+     int ReturnKinematicVectorFromString(const std::string& KinematicStr) const;
+     std::string ReturnStringFromKinematicVector(const int KinematicVariable) const;
+     bool IsSubEventVarString(const std::string& VarStr) const;
+   
+     unsigned int GetNEvents() const {return nEvents;}
+   
+     auto GetDataArray() const {
+       return SampleHandler_data;
+     }
+     auto GetMCArray() const {
+       return SampleHandler_array;
+     }
+     auto GetW2Array() const {
+       return SampleHandler_array_w2;
+     }
+     std::vector<double> GetArrayForSample(const int Sample, std::vector<double> const & array) const;
+   
+     std::vector<double> GetDataArray(const int Sample) const {
+       return GetArrayForSample(Sample, SampleHandler_data);
+     }
+     std::vector<double> GetMCArray(const int Sample) const {
+       return GetArrayForSample(Sample, SampleHandler_array);
+     }
+     std::vector<double> GetW2Array(const int Sample) const {
+       return GetArrayForSample(Sample, SampleHandler_array_w2);
+     }
+     void CheckEmptyBins() const;
+   
+    protected:
+     void InitialiseNuOscillatorObjects();
+     const M3::float_t* GetNuOscillatorPointers(const int iEvent) const;
+     void SetupNuOscillatorPointers();
+     void ReadConfig();
+     void LoadSingleSample(const int iSample, const YAML::Node& Settings);
+   
+     virtual void AddAdditionalWeightPointers() = 0;
+   
+     void SetupKinematicMap();
+   
+     virtual void SetupSplines() = 0;
+   
+     //DB Require all objects to have a function which reads in the MC
+     virtual void Init() = 0;
+   
+     virtual int SetupExperimentMC() = 0;
+   
+     virtual void SetupMC() = 0;
+     virtual void InititialiseData() = 0;
+   
+     void Initialise();
+   
+     //===============================================================================
+     void SetSplinePointers();
+     std::vector< SplineIndex > GetSplineBins(int Event, BinnedSplineHandler* BinnedSpline, bool& ThrowCrititcal) const;
+   
+     void FindNominalBinAndEdges();
+   
+     void SetBinning();
+   
+     void SetupReweightArrays();
+     //===============================================================================
+   
+     // ----- start Functional Parameters -----
+     virtual void RegisterFunctionalParameters(){};
+     virtual void PrepFunctionalParameters(){};
+   
+     template <typename EventType, typename SFType>
+     void RegisterIndividualFunctionalParameter(
+         std::vector<EventType> &ExptEvents,
+         std::vector<std::string> const &par_names,
+         SFType shift_func);
+   
+     template <typename EventType, typename SFType>
+     void RegisterIndividualFunctionalParameter(std::vector<EventType> &ExptEvents,
+                                                std::string const &par_name,
+                                                SFType shift_func);
+     virtual void ApplyShifts(const int iEvent);
+     virtual void ResetShifts([[maybe_unused]] const int iEvent) {};
+     virtual void FinaliseShifts([[maybe_unused]] const int iEvent) {};
+     // ----- end Functional Parameters -----
+   
+     bool IsEventSelected(const int iSample, const int iEvent) _noexcept_;
+     bool IsSubEventSelected(const std::vector<KinematicCut> &SubEventCuts, const int iEvent, unsigned const int iSubEvent, size_t nsubevents);
+   
+     void CalcNormsBins(std::vector<std::vector<NormParameter>>& norm_parameters, std::vector< std::vector< int > >& norms_bins);
+     template <typename ParT> bool PassesSelection(const ParT& Par, std::size_t iEvent);
+     M3::float_t CalcWeightTotal(const EventInfo* _restrict_ MCEvent) const _noexcept_;
+   
+     virtual void CalcWeightFunc([[maybe_unused]] const int iEvent) {return;};
+   
+     double ReturnKinematicParameter(const std::string& KinematicParameter, int iEvent) const {
+       return ReturnKinematicParameter(ReturnKinematicParameterFromString(KinematicParameter), iEvent);
+     }
+     virtual double ReturnKinematicParameter(const int KinematicVariable, const int iEvent) const = 0;
+   
+     // === JM declare the same functions for kinematic vectors ===
+     std::vector<double> ReturnKinematicVector(const std::string& KinematicParameter, const int iEvent) const {
+       return ReturnKinematicVector(ReturnKinematicVectorFromString(KinematicParameter), iEvent);
+     }
+     virtual std::vector<double> ReturnKinematicVector([[maybe_unused]] const int KinematicVariable,
+                                                       [[maybe_unused]] const int iEvent) const {return {};};
+     // ===========================================================
+   
+     std::vector<double> ReturnKinematicParameterBinning(const int Sample, const std::string &KinematicParameter) const final;
+   
+     const double* GetPointerToKinematicParameter(const std::string& KinematicParameter, int iEvent) const {
+       return GetPointerToKinematicParameter(ReturnKinematicParameterFromString(KinematicParameter), iEvent);
+     }
+     virtual const double* GetPointerToKinematicParameter(const int KinematicVariable, const int iEvent) const = 0;
+   
+     const double* GetPointerToOscChannel(const int iEvent) const;
+     void SetupNormParameters();
+     void SetupOscParameters();
+     //===============================================================================
+     void FillHist(const int Sample, TH1* Hist, std::vector<double> &Array);
+   
+     void FillArray();
+   
+     void ResetHistograms() _noexcept_;
+     void InitialiseSplineObject();
+   
+     std::unique_ptr<SplineBase> SplineHandler;
+   
+     std::shared_ptr<OscillationHandler> Oscillator;
+   
+     //===============================================================================
+     //DB Variables required for GetLikelihood
+     std::unique_ptr<BinningHandler> Binning;
+     std::vector<double> SampleHandler_array;
+     std::vector<double> SampleHandler_array_w2;
+     std::vector<double> SampleHandler_data;
+     //===============================================================================
+   
+     //===============================================================================
+     std::vector<EventInfo> MCEvents;
+     std::vector<SampleInfo> SampleDetails;
+     //===============================================================================
+   
+     //===============================================================================
+     //DB Covariance Objects
+     ParameterHandlerGeneric *ParHandler = nullptr;
+   
+     //===============================================================================
+     std::string SampleHandlerName;
+   
+     //===========================================================================
+     std::vector< std::vector< KinematicCut > > StoredSelection;
+     std::vector< std::vector< KinematicCut > > Selection;
+      //===========================================================================
+   
+     const std::unordered_map<std::string, int>* KinematicParameters;
+     const std::unordered_map<int, std::string>* ReversedKinematicParameters;
+   
+     // === JM mapping between string and kinematic vector enum ===
+     const std::unordered_map<std::string, int>* KinematicVectors;
+     const std::unordered_map<int, std::string>* ReversedKinematicVectors;
+     // ===========================================================
+   
+     std::unique_ptr<Manager> SampleManager;
+   
+     std::unordered_map<std::string, double> _modeNomWeightMap;
+   
+     //===============================================================================
+     TLegend* THStackLeg = nullptr;
+   
+     bool FirstTimeW2;
+     bool UpdateW2;
+   
+     NuPDG GetInitPDGFromFileName(const std::string& FileName) const {return FileToInitPDGMap.at(FileName);}
+     NuPDG GetFinalPDGFromFileName(const std::string& FileName) const {return FileToFinalPDGMap.at(FileName);}
+   
+    private:
+      std::vector<std::vector<KinematicCut>> ApplyTemporarySelection(const int iSample,
+                                                                     const std::vector<KinematicCut>& ExtraCuts);
+     std::unordered_map<std::string, NuPDG> FileToInitPDGMap;
+     std::unordered_map<std::string, NuPDG> FileToFinalPDGMap;
+   
+     M3::detail::Functional functional;
+   
+     unsigned int nEvents;
+   };
+   
+   //template implementation details live here
+   #include "Samples/SampleHandlerBase.txx"

@@ -1,0 +1,14 @@
+.. _exhale_define_plugin_8hpp_1af4ee15ffb2d7160a1f03b5239d2c7ec8:
+
+Define MACH3_REGISTER_PLUGIN
+============================
+
+- Defined in :ref:`file_CLI_API_plugin.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MACH3_REGISTER_PLUGIN
+   :project: MaCh3

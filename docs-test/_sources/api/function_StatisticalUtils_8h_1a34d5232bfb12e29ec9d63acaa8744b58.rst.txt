@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a34d5232bfb12e29ec9d63acaa8744b58:
+
+Function GetSubOptimality
+=========================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetSubOptimality(const std::vector<double>&, const int)
+   :project: MaCh3

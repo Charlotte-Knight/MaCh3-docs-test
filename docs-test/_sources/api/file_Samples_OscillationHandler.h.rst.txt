@@ -1,0 +1,51 @@
+
+.. _file_Samples_OscillationHandler.h:
+
+File OscillationHandler.h
+=========================
+
+|exhale_lsh| :ref:`Parent directory <dir_Samples>` (``Samples``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Samples/OscillationHandler.h``)
+---------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Samples_OscillationHandler.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Samples/SampleStructs.h`` (:ref:`file_Samples_SampleStructs.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Samples_SampleHandlerBase.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classOscillationHandler`
+

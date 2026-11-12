@@ -1,0 +1,87 @@
+
+.. _program_listing_file_Splines_UnbinnedSplineHandler.h:
+
+Program Listing for File UnbinnedSplineHandler.h
+================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Splines_UnbinnedSplineHandler.h>` (``Splines/UnbinnedSplineHandler.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include "Splines/SplineBase.h"
+   
+   class UnbinnedSplineHandler : public SplineBase {
+     public:
+       UnbinnedSplineHandler(std::vector<std::vector<TResponseFunction_red*> > &MasterSpline,
+                 const std::vector<RespFuncType> &SplineType,
+                 const bool SaveFlatTree = false,
+                 const std::string& _FastSplineName = "SplineFile.root",
+                 const bool Use_GPU = true);
+       UnbinnedSplineHandler(const std::string& FileName);
+       virtual ~UnbinnedSplineHandler();
+   
+       void Evaluate() final;
+   
+       std::string GetName() const override {return "SplineMonolith";};
+   
+       const M3::float_t* RetPointer(const int event) const {return &cpu_total_weights[event];}
+       
+       void SetSplinePointers(std::vector< const M3::float_t* > spline_ParsPointers) {
+         for (M3::int_t i = 0; i < nParams; ++i) SplineInfoArray[i].splineParsPointer = spline_ParsPointers[i];
+       };
+       
+       void PrepareSplineFile(std::string FileName) final;
+       void LoadSplineFile(std::string FileName) final;
+     private:
+       void Initialise();
+       void ScanMasterSpline(std::vector<std::vector<TResponseFunction_red*> > & MasterSpline,
+                                    unsigned int &nEvents,
+                                    short int &MaxPoints,
+                                    short int &numParams,
+                                    int &nSplines,
+                                    unsigned int &NSplinesValid,
+                                    unsigned int &numKnots,
+                                    unsigned int &nTF1Valid,
+                                    unsigned int &nTF1_coeff,
+                                    const std::vector<RespFuncType> &SplineType);
+       void PrepareForGPU(std::vector<std::vector<TResponseFunction_red*> > &MasterSpline, const std::vector<RespFuncType> &SplineType);
+       void MoveToGPU();
+   
+       void PrintInitialsiation() const;
+   
+       void GetSplineCoeff_SepMany(TSpline3_red* &spl, int &nPoints, float *&xArray, float *&manyArray) const;
+   
+       void CalcSplineWeights() final;
+       void CalcTotalEventWeight();
+   
+       unsigned int NEvents;
+   
+       unsigned int NTF1_valid;
+   
+       unsigned int nKnots;
+       unsigned int nTF1coeff;
+   
+       float *cpu_weights_spline_var;
+       float *cpu_weights_tf1_var;
+       M3::float_t* cpu_total_weights;
+   
+       std::vector<unsigned int> cpu_nParamPerEvent;
+   
+       std::vector<unsigned int> cpu_nParamPerEvent_tf1;
+   
+       SplineMonoStruct* cpu_monolith;
+   
+       std::vector<float> cpu_coeff_TF1_many;
+   
+       std::vector<short int> cpu_nPoints_arr;
+   
+       std::vector<short int> cpu_paramNo_TF1_arr;
+   
+       bool SaveSplineFile;
+   
+       std::string FastSplineName;
+   };

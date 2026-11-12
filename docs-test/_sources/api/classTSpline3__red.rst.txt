@@ -1,0 +1,27 @@
+.. _exhale_class_classTSpline3__red:
+
+Class TSpline3_red
+==================
+
+- Defined in :ref:`file_Splines_SplineStructs.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public TResponseFunction_red`` (:ref:`exhale_class_classTResponseFunction__red`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: TSpline3_red
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

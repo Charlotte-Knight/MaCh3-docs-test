@@ -1,0 +1,14 @@
+.. _exhale_function_MaCh3Factory_8h_1a648d2793b16eb62b088b8e9611a15ff1:
+
+Template Function MaCh3CovarianceFactory
+========================================
+
+- Defined in :ref:`file_Fitters_Algorithms_MaCh3Factory.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: MaCh3CovarianceFactory(Manager *, const std::string&)
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_function_YamlHelper_8h_1aa04e7b65c543d159d861e5d06d954369:
+
+Function MergeNodes
+===================
+
+- Defined in :ref:`file_Manager_YamlHelper.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: MergeNodes(const YAML::Node&, const YAML::Node&)
+   :project: MaCh3

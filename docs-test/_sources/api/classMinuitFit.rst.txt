@@ -1,0 +1,27 @@
+.. _exhale_class_classMinuitFit:
+
+Class MinuitFit
+===============
+
+- Defined in :ref:`file_Fitters_Algorithms_MinuitFit.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public LikelihoodFit`` (:ref:`exhale_class_classLikelihoodFit`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: MinuitFit
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

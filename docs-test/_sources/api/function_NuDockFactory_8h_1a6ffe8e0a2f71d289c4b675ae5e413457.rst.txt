@@ -1,0 +1,14 @@
+.. _exhale_function_NuDockFactory_8h_1a6ffe8e0a2f71d289c4b675ae5e413457:
+
+Function FormatOscParsForMaCh3
+==============================
+
+- Defined in :ref:`file_NuDock_NuDockFactory.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: FormatOscParsForMaCh3(const std::string&, double&)
+   :project: MaCh3

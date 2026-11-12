@@ -1,0 +1,118 @@
+
+.. _program_listing_file_Parameters_ParameterHandlerGeneric.h:
+
+Program Listing for File ParameterHandlerGeneric.h
+==================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Parameters_ParameterHandlerGeneric.h>` (``Parameters/ParameterHandlerGeneric.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // MaCh3 includes
+   #include "Parameters/ParameterHandlerBase.h"
+   #include "Samples/SampleStructs.h"
+   
+   class ParameterHandlerGeneric : public ParameterHandlerBase {
+     public:
+       ParameterHandlerGeneric(const std::vector<std::string>& FileNames, std::string name = "xsec_cov", double threshold = -1, int FirstPCAdpar = -999, int LastPCAdpar = -999);
+       ~ParameterHandlerGeneric();
+   
+       // General Getter functions not split by detector
+       std::vector<std::string> GetParSampleID(const int i) const { return _fSampleNames[i];};
+       std::string GetParamTypeString(const int i) const { return SystType_ToString(_fParamType[i]); }
+       SystType GetParamType(const int i) const {return _fParamType[i];}
+       std::string GetParamGroup(const int i) const{return _ParameterGroup[i];};
+     
+       SplineInterpolation GetParSplineInterpolation(const int i) const {return SplineParams.at(i)._SplineInterpolationType;}
+       const std::vector<SplineInterpolation> GetSplineInterpolationFromSampleName(const std::string& SampleName) const;
+       std::string GetParSplineName(const int i) const {return SplineParams.at(i)._fSplineNames;}
+   
+       const std::vector<int> GetGlobalSystIndexFromSampleName(const std::string& SampleName, const SystType Type) const;
+       double GetParSplineKnotUpperBound(const int i) const {return SplineParams.at(i)._SplineKnotUpBound;}
+       double GetParSplineKnotLowerBound(const int i) const {return SplineParams.at(i)._SplineKnotLowBound;}
+   
+       int GetNumParamsFromSampleName(const std::string& SampleName, const SystType Type) const;
+       const std::vector<std::string> GetParsNamesFromSampleName(const std::string& SampleName, const SystType Type) const;
+       const std::vector<int> GetParsIndexFromSampleName(const std::string& SampleName, const SystType Type) const;
+   
+       const std::vector<std::string> GetSplineParsNamesFromSampleName(const std::string& SampleName) const;
+       const std::vector<std::string> GetSplineFileParsNamesFromSampleName(const std::string& SampleName) const;
+   
+       const std::vector< std::vector<int> > GetSplineModeVecFromSampleName(const std::string& SampleName) const;
+       const std::vector<int> GetSystIndexFromSampleName(const std::string& SampleName, const SystType Type) const;
+       const std::vector<NormParameter> GetNormParsFromSampleName(const std::string& SampleName) const;
+       const std::vector<FunctionalParameter> GetFunctionalParametersFromSampleName(const std::string& SampleName) const;
+       const std::vector<SplineParameter> GetSplineParsFromSampleName(const std::string& SampleName) const;
+       const std::vector<OscillationParameter> GetOscParsFromSampleName(const std::string& SampleName) const;
+   
+       bool IsParFromGroup(const int i, const std::string& Group) const;
+   
+       int GetNumParFromGroup(const std::string& Group) const;
+       std::vector<std::string> GetUniqueParameterGroups() const;
+   
+       void SetGroupOnlyParameters(const std::string& Group, const std::vector<double>& Pars = {});
+       void SetGroupOnlyParameters(const std::vector<std::string>& Groups);
+       
+       void SetFixGroupOnlyParameters(const std::string& Group);
+       void SetFixGroupOnlyParameters(const std::vector<std::string>& Groups);
+   
+       void SetFreeGroupOnlyParameters(const std::string& Group);
+       void SetFreeGroupOnlyParameters(const std::vector<std::string>& Groups);
+   
+       void DumpMatrixToFile(const std::string& Name);
+   
+     protected:
+       void InitialiseFromConfig(const std::vector<std::string>& YAMLFile);
+       void Print() const;
+       void PrintGlobablInfo() const;
+       void PrintNormParams() const;
+       void PrintSplineParams() const;
+       void PrintFunctionalParams() const;
+       void PrintOscillationParams() const;
+       void PrintParameterGroups() const;
+   
+       void CheckCorrectInitialisation() const;
+       void LoadCorrelationFromConfig(std::vector<std::map<std::string,double>>& Correlations,
+                                      std::map<std::string, int>& CorrNamesMap);
+       void LoadAndMergeYAML(const std::vector<std::string>& YAMLFile,
+                             std::map<std::pair<int,int>, std::unique_ptr<TMatrixDSym>>& overrides);
+       template <typename FilterFunc, typename ActionFunc>
+       void IterateOverParams(const std::string& SampleName, FilterFunc filter, ActionFunc action) const;
+   
+       void InitParameters();
+   
+       void InitParametersTypeFromConfig();
+   
+       NormParameter GetNormParameter(const YAML::Node& param, const int Index) const;
+   
+       OscillationParameter GetOscillationParameters(const YAML::Node& param, const int Index) const;
+   
+       FunctionalParameter GetFunctionalParameters(const YAML::Node& param, const int Index) const;
+       SplineParameter GetSplineParameter(const YAML::Node& param, const int Index) const;
+       void GetBaseParameter(const YAML::Node& param, const int Index, TypeParameterBase& Parameter) const;
+   
+       bool AppliesToSample(const int SystIndex, const std::string& SampleName) const;
+   
+       template<typename ParamT>
+       std::vector<ParamT> GetTypeParamsFromSampleName(const std::map<int, int>& indexMap, const std::vector<ParamT>& params, const std::string& SampleName) const;
+   
+       std::vector<std::vector<std::string>> _fSampleNames;
+   
+       std::vector<SystType> _fParamType;
+   
+       std::vector<std::string> _ParameterGroup;
+   
+       std::vector<std::map<int, int>> _fSystToGlobalSystIndexMap;
+   
+       std::vector<SplineParameter> SplineParams;
+   
+       std::vector<NormParameter> NormParams;
+   
+       std::vector<FunctionalParameter> FuncParams;
+   
+       std::vector<OscillationParameter> OscParams;
+   };

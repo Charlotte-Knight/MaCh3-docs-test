@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1a6a398d9cc5c005959286835d630b0092:
+
+Function M3::CaseInsentiveMatch
+===============================
+
+- Defined in :ref:`file_Parameters_ParameterHandlerUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::CaseInsentiveMatch(std::string, std::string)
+   :project: MaCh3

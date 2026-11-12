@@ -1,0 +1,119 @@
+
+.. _program_listing_file_Samples_HistogramUtils.h:
+
+Program Listing for File HistogramUtils.h
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Samples_HistogramUtils.h>` (``Samples/HistogramUtils.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // MaCh3 includes
+   #include "Samples/SampleStructs.h"
+   #include "Parameters/ParameterStructs.h"
+   #include "Manager/YamlHelper.h"
+   #include "Manager/Random.h"
+   //KS: Joy of forward declaration https://gieseanw.wordpress.com/2018/02/25/the-joys-of-forward-declarations-results-from-the-real-world/
+   class TObject;
+   
+   
+   double OverflowIntegral(TH2Poly* poly);
+   
+   double NoOverflowIntegral(TH2Poly* poly);
+   
+   TH1D* PolyProjectionX(TObject* poly, const std::string& TempName, const std::vector<double>& xbins, const bool computeErrors = false);
+   TH1D* PolyProjectionY(TObject* poly, const std::string& TempName, const std::vector<double>& ybins, const bool computeErrors = false);
+   
+   TH2D* ConvertTH2PolyToTH2D(TH2Poly *poly, TH2D *TH2Dhist);
+   TH2Poly* ConvertTH2DtoTH2Poly(TH2D *TH2Dhist);
+   
+   TH2Poly* NormalisePoly(TH2Poly* Histogram);
+   
+   void NormaliseTH2Poly(TH2Poly* Histogram);
+   
+   TH2Poly* PolyScaleWidth(TH2Poly *Histogram, double scale);
+   
+   double PolyIntegralWidth(TH2Poly *Histogram);
+   
+   template<class HistType> HistType* RatioHists(HistType* NumHist, HistType* DenomHist);
+   
+   TH2Poly* RatioPolys(TH2Poly* NumPoly, TH2Poly* DenomPoly);
+   
+   TH2Poly* MakePolyHist(const std::string& name, const std::vector<double>& BinArray_x, const std::vector<double>& BinArray_y);
+   
+   void CheckTH2PolyFileVersion(TFile *file);
+   
+   void RemoveFitter(TH1D* hist, const std::string& name);
+   
+   void MakeFluctuatedHistogramStandard(TH1D *FluctHist, TH1D* PolyHist);
+   void MakeFluctuatedHistogramAlternative(TH1D *FluctHist, TH1D* PolyHist);
+   
+   void MakeFluctuatedHistogramStandard(TH2D *FluctHist, TH2D* PolyHist);
+   void MakeFluctuatedHistogramAlternative(TH2D *FluctHist, TH2D* PolyHist);
+   
+   void MakeFluctuatedHistogramStandard(TH2Poly *FluctHist, TH2Poly* PolyHist);
+   void MakeFluctuatedHistogramAlternative(TH2Poly *FluctHist, TH2Poly* PolyHist);
+   
+   int GetRandomPoly2(const TH2Poly* PolyHist);
+   
+   void FastViolinFill(TH2D* violin, TH1D* hist_1d);
+   
+   template <typename Derived, typename Base>
+   std::vector<std::unique_ptr<Base>>
+   CastVector(std::vector<std::unique_ptr<Derived>>&& inputVec) {
+     std::vector<std::unique_ptr<Base>> outputVec;
+     outputVec.reserve(inputVec.size());
+     for (auto& ptr : inputVec) {
+       outputVec.push_back(std::unique_ptr<Base>(std::move(ptr)));
+     }
+     return outputVec;
+   }
+   
+   inline std::string file_exists(std::string filename) {
+     std::ifstream infile(filename.c_str());
+     if (!infile.good()) {
+       MACH3LOG_ERROR("File {} does not exist", filename);
+       MACH3LOG_ERROR("Please try again");
+       throw MaCh3Exception(__FILE__ , __LINE__ );
+     }
+     return filename;
+   }
+   
+   double returnCherenkovThresholdMomentum(const int PDG);
+   
+   double CalculateQ2(double PLep, double PUpd, double EnuTrue, double InitialQ2 = 0.0);
+   
+   double CalculateEnu(double PLep, double cosTheta, double EB, bool neutrino);
+   
+   std::unique_ptr<TH1D> MakeSummaryFromSpectra(const TH2D* Spectra, const std::string& name);
+   
+   std::vector<double> BuildBinEdgesFromNode(YAML::Node const &bin_edges_node, bool &found_range_specifier);
+   
+   std::vector<double> BinRangeToBinEdges(YAML::Node const &bin_range);
+   
+   namespace M3 {
+   template <typename ObjectType>
+   std::unique_ptr<ObjectType> Clone(const ObjectType* obj, const std::string& name = "") {
+     std::string cloneName = name.empty() ? obj->GetName() : name;
+   
+     std::unique_ptr<ObjectType> Hist(static_cast<ObjectType*>(obj->Clone(cloneName.c_str())));
+     // Disable ROOT memory management because it causes lot of headache especially as smart pointers are much smarter
+     Hist->SetDirectory(nullptr);
+   
+     return Hist;
+   }
+   
+   TFile* Open(const std::string& Name, const std::string& Type, const std::string& File, const int Line);
+   
+   void ScaleHistogram(TH1* Sample_Hist, const double scale);
+   
+   void CheckBinningMatch(const TH1D* Hist1, const TH1D* Hist2, const std::string& File, const int Line);
+   void CheckBinningMatch(const TH2D* Hist1, const TH2D* Hist2, const std::string& File, const int Line);
+   void CheckBinningMatch(TH2Poly* Hist1, TH2Poly* Hist2, const std::string& File, const int Line);
+   YAML::Node PolyToYaml(TH2Poly* Hist, const std::string& YamlName, const std::string& File, const int Line);
+   
+   } //end M3

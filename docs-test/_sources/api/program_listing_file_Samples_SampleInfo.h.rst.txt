@@ -1,0 +1,64 @@
+
+.. _program_listing_file_Samples_SampleInfo.h:
+
+Program Listing for File SampleInfo.h
+=====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Samples_SampleInfo.h>` (``Samples/SampleInfo.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include <vector>
+   #include <string>
+   
+   #include "Samples/SampleStructs.h"
+   
+   struct OscChannelInfo {
+     std::string flavourName;
+     std::string flavourName_Latex;
+   
+     int InitPDG;
+     int FinalPDG;
+   
+     double ChannelIndex;
+   };
+   
+   inline int GetOscChannel(const std::vector<OscChannelInfo>& OscChannel, const int InitFlav, const int FinalFlav) {
+     for (size_t i = 0; i < OscChannel.size(); ++i) {
+       if (InitFlav == OscChannel[i].InitPDG && FinalFlav == OscChannel[i].FinalPDG) {
+         return static_cast<int>(OscChannel[i].ChannelIndex);
+       }
+     }
+   
+     MACH3LOG_ERROR("Didn't find Osc channel for InitFlav = {}, FinalFlav = {}", InitFlav, FinalFlav);
+     throw MaCh3Exception(__FILE__, __LINE__);
+   }
+   
+   struct SampleInfo {
+     SampleInfo() = default;
+   
+     ~SampleInfo() {
+       if(DataHist != nullptr) delete DataHist;
+       if(MCHist   != nullptr) delete MCHist;
+       if(W2Hist   != nullptr) delete W2Hist;
+     }
+   
+     std::vector<std::string> VarStr;
+   
+     std::string SampleTitle = "";
+     std::string SampleName = "";
+   
+     int nDimensions = M3::_BAD_INT_;
+   
+     std::vector<std::vector<std::string>> mc_files;
+     std::vector<std::string> spline_files;
+   
+     std::vector<OscChannelInfo> OscChannels;
+   
+     TH1 *DataHist = nullptr;
+     TH1* MCHist = nullptr;
+     TH1* W2Hist = nullptr;
+   };

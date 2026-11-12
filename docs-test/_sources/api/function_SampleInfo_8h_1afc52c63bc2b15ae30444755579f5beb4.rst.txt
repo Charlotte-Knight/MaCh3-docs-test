@@ -1,0 +1,14 @@
+.. _exhale_function_SampleInfo_8h_1afc52c63bc2b15ae30444755579f5beb4:
+
+Function GetOscChannel
+======================
+
+- Defined in :ref:`file_Samples_SampleInfo.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetOscChannel(const std::vector<OscChannelInfo>&, const int, const int)
+   :project: MaCh3

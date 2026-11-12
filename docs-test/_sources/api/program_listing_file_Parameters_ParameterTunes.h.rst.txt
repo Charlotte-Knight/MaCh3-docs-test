@@ -1,0 +1,31 @@
+
+.. _program_listing_file_Parameters_ParameterTunes.h:
+
+Program Listing for File ParameterTunes.h
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Parameters_ParameterTunes.h>` (``Parameters/ParameterTunes.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // MaCh3 Includes
+   #include "Manager/Manager.h"
+   #include "Parameters/ParameterHandlerUtils.h"
+   
+   class ParameterTunes{
+    public:
+     ParameterTunes(const YAML::Node& Settings);
+     virtual ~ParameterTunes();
+   
+     std::vector<double> GetTune(const int TuneNumber) const;
+     std::vector<double> GetTune(const std::string& TuneName) const;
+     void PrintTunes() const;
+    private:
+      std::vector<std::string> TuneNames;
+     std::vector<std::vector<double>> TuneValues;
+     std::unordered_map<std::string, int> TuneMap;
+   };

@@ -1,0 +1,133 @@
+
+.. _file_Manager_Monitor.h:
+
+File Monitor.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_Manager>` (``Manager``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+System and monitoring utilities for printing system information and status updates. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Manager/Monitor.h``)
+----------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Manager_Monitor.h.rst
+
+
+
+Detailed Description
+--------------------
+
+Kamil Skwarczynski 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/MaCh3Exception.h`` (:ref:`file_Manager_MaCh3Exception.h`)
+
+- ``Manager/MaCh3Logger.h`` (:ref:`file_Manager_MaCh3Logger.h`)
+
+- ``Manager/YamlHelper.h`` (:ref:`file_Manager_YamlHelper.h`)
+
+- ``TBranch.h``
+
+- ``TChain.h``
+
+- ``TMacro.h``
+
+- ``TStopwatch.h``
+
+- ``TTree.h``
+
+- ``cstdlib``
+
+- ``fstream``
+
+- ``iostream``
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Manager_MaCh3Modes.h`
+
+- :ref:`file_Manager_Manager.h`
+
+- :ref:`file_Manager_Random.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+- :ref:`namespace_M3__Utils`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceM3_1ad7693a9e309503bd894b04443f163f3c`
+
+- :ref:`exhale_function_namespaceM3_1ad1896bacf74c409a461dd1ea43f8bc99`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a45c1b264497aabdcceff3707d6f0fa10`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1aec1d76a89edfeeffb62ae3e0011e30df`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a34224111b48a6bbdd04c22be13c19dd7`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a1ee28e60049e882dbfa0ed808a140aaa`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1afb4213a30e5bfd7ca3e9e5d27beefe9e`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1ad796df2f1b4323201c86682a96fa9c23`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1aa584cce13ec0c8ba9d7c4bbce66c5985`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1ab9577b73681bd9048699f72a7df05451`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1ab292ea845a1776f3427789eb76141e8d`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a357e4fd9163d29d0cf9dfd3841786559`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a4be30065aafa9370c2a6640c50f00b50`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1ab6df30ddfffcd5b5c3a1a34826c14d41`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a55dd0ac1201ba988a6293faade5003c1`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1ab021e008806b98e6c67713e2685c96b4`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1adb1ec2c447be60dc963ab75230417d5d`
+

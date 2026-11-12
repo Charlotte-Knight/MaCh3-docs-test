@@ -1,0 +1,24 @@
+.. _dir_Manager:
+
+
+Directory Manager
+=================
+
+
+*Directory path:* ``Manager``
+
+
+Files
+-----
+
+- :ref:`file_Manager_Core.h`
+- :ref:`file_Manager_MaCh3Exception.h`
+- :ref:`file_Manager_MaCh3Logger.h`
+- :ref:`file_Manager_MaCh3Modes.h`
+- :ref:`file_Manager_Manager.h`
+- :ref:`file_Manager_Monitor.h`
+- :ref:`file_Manager_Random.h`
+- :ref:`file_Manager_TablePrinter.h`
+- :ref:`file_Manager_YamlHelper.h`
+
+

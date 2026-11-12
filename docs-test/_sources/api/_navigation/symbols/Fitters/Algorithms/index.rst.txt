@@ -1,0 +1,56 @@
+Algorithms
+==========
+
+
+Classes
+-------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../classDelayedMR2T2.rst
+   ../../../../classFitterBase.rst
+   ../../../../classLikelihoodFit.rst
+   ../../../../classMCMCBase.rst
+   ../../../../classMinuitFit.rst
+   ../../../../classMR2T2.rst
+   ../../../../classMulticanonicalMCMCHandler.rst
+   ../../../../classparticle.rst
+   ../../../../classPredictiveThrower.rst
+   ../../../../classPSO.rst
+
+Structs
+-------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../structPredictiveSample.rst
+
+Enums
+-----
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../enum_namespaceM3_1aac995ad2de0eca11488028f2d4a964e7.rst
+
+Functions
+---------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../function_namespaceM3_1a6d1b944b696e99865fcaf038d828748d.rst
+   ../../../../function_namespaceM3_1a116e94960ba2df3ac2ec3ebe499307ae.rst
+   ../../../../function_MaCh3Factory_8h_1a648d2793b16eb62b088b8e9611a15ff1.rst
+   ../../../../function_MaCh3Factory_8h_1a67c9a07c72e9d3d441cd3181dafdb905.rst
+   ../../../../function_MaCh3Factory_8h_1a790d0802b36a03be651d830ae33ed8e6.rst
+
+Variables
+---------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../variable_namespaceM3_1aeb787f15a88d520047578ed3f63fc345.rst

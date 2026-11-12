@@ -1,0 +1,27 @@
+.. _exhale_class_classMaCh3Exception:
+
+Class MaCh3Exception
+====================
+
+- Defined in :ref:`file_Manager_MaCh3Exception.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public std::exception``
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: MaCh3Exception
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

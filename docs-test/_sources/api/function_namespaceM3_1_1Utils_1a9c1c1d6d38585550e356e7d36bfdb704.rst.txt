@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Utils_1a9c1c1d6d38585550e356e7d36bfdb704:
+
+Function M3::Utils::FormatDouble
+================================
+
+- Defined in :ref:`file_Samples_SampleStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Utils::FormatDouble(const double, const int)
+   :project: MaCh3

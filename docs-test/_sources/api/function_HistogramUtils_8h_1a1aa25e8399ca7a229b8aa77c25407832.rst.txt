@@ -1,0 +1,14 @@
+.. _exhale_function_HistogramUtils_8h_1a1aa25e8399ca7a229b8aa77c25407832:
+
+Function CheckTH2PolyFileVersion
+================================
+
+- Defined in :ref:`file_Samples_HistogramUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: CheckTH2PolyFileVersion(TFile *)
+   :project: MaCh3

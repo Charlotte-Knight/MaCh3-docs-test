@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Release Notes &#8212; MaCh3 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e261dab0" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user-guide/release-notes';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/version-switcher.js?v=294b64cd"></script>
+    <script src="../_static/diagram-theme.js?v=7aaf9fa9"></script>
+    <link rel="icon" href="../_static/mach3logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliography" href="../bibliography.html" />
+    <link rel="prev" title="Results and Publications" href="publications.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/mach3logo.png" class="logo__image only-light" alt="MaCh3 documentation - Home"/>
+    <img src="../_static/mach3logo.png" class="logo__image only-dark pst-js-only" alt="MaCh3 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/library_root.html">
+    C++ API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../pymach3/index.html">
+    pyMaCh3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://mach3-software.github.io/MaCh3/.Archive/v2.7.0/index.html">
+    Doxygen
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="publications.html">
+    Results and Publications
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#" aria-current="page">
+    Release Notes
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../bibliography.html">
+    Bibliography
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><div class="pst-js-only">
+  <select class="form-select form-select-sm docs-version-switcher"
+          aria-label="Documentation version"
+          data-version="docs-test"
+          data-page="user-guide/release-notes.html"
+          data-manifest="https://charlotte-knight.github.io/MaCh3-docs-test/versions.json">
+    <option value="">docs-test</option>
+  </select>
+  <small class="docs-version-error" role="status" hidden></small>
+</div></div>
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mach3-software/MaCh3" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page" aria-expanded="false" aria-controls="pst-secondary-sidebar-modal">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/library_root.html">
+    C++ API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../pymach3/index.html">
+    pyMaCh3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://mach3-software.github.io/MaCh3/.Archive/v2.7.0/index.html">
+    Doxygen
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="publications.html">
+    Results and Publications
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#" aria-current="page">
+    Release Notes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../bibliography.html">
+    Bibliography
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><div class="pst-js-only">
+  <select class="form-select form-select-sm docs-version-switcher"
+          aria-label="Documentation version"
+          data-version="docs-test"
+          data-page="user-guide/release-notes.html"
+          data-manifest="https://charlotte-knight.github.io/MaCh3-docs-test/versions.json">
+    <option value="">docs-test</option>
+  </select>
+  <small class="docs-version-error" role="status" hidden></small>
+</div></div>
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mach3-software/MaCh3" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Release Notes</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="release-notes">
+<h1>Release Notes<a class="headerlink" href="#release-notes" title="Link to this heading">#</a></h1>
+<img width="80%" alt="mach3_release_timeline" src="../_static/images/release-notes-01.png" />
+<p>Legend:</p>
+<ul class="simple">
+<li><p><strong>Bold</strong> - indicate breaking change.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Version</strong></p></th>
+<th class="head"><p><strong>Features</strong></p></th>
+<th class="head"><p><strong>Release Date</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>v3.0.0</p></td>
+<td><p>* Major: Stable interface for HK/DUNE era of analyses <br> * Minor:</p></td>
+<td><p>XX-XX-2027</p></td>
+</tr>
+<tr class="row-odd"><td><p>v2.9.0</p></td>
+<td><p>* Major:  <br> * Minor:</p></td>
+<td><p>XX-XX-2027</p></td>
+</tr>
+<tr class="row-even"><td><p>v2.8.0</p></td>
+<td><p>* Major: Umbrella Sampling works with variable of choice, Binned Spline Maker <br> * Minor: Bump <code class="docutils literal notranslate"><span class="pre">CPM</span></code> v0.43.1→v0.43.2, <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> v2.1.1-&gt;v2.2.0, Bump <code class="docutils literal notranslate"><span class="pre">spdlog</span></code> 1.12.0→1.13.0, macos support for pyMaCh3, Bump <code class="docutils literal notranslate"><span class="pre">NuDock</span></code> v0.0.2-mach-&gt;v0.0.3, more flexibility in storing toys for prior/posterior predictive, port remaining executables to MaCh3-CLI</p></td>
+<td><p>XX-XX-2026</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.7.1">v2.7.1</a></p></td>
+<td><p>* Major: Reduce Binned spline RAM usage and fixed nasty bug <br> * Minor: Animations visualising MaCh3 features, fancier MainPage</p></td>
+<td><p>21-09-2026</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.7.0">v2.7.0</a></p></td>
+<td><p>* Major: <strong>Osc params no longer require particular order</strong>, <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> v1.5.0-&gt;v2.1.1, Flip Groups, Functional flip <br> * Minor: <strong>Tweaked syntax for step scale</strong>, <strong>Removed Sample-Summary</strong>, <strong>Unified random number generator</strong>, <strong>Spline tokens no longer assumes dimensionality</strong>, histogram plotting range via style config, GPU for binned splines and steps toward spline unification, <strong>split of Fitters folder into processing and algorithms</strong>, Bump <code class="docutils literal notranslate"><span class="pre">pybind</span></code> v2.13.5→v2.13.6, table printing class, ability to control GPU splines via config not only compilation flags, fancy algorithm name, CLI autocompletion, optimised step scale based on LLH scan</p></td>
+<td><p>14-09-2026</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.6.1">v2.6.1</a></p></td>
+<td><p>* Major:  <code class="docutils literal notranslate"><span class="pre">MCMCProcessor</span></code> support for umbrella weight <br> * Minor: <code class="docutils literal notranslate"><span class="pre">UmbrellaSolver</span></code> no longer produces hard-coded output <code class="docutils literal notranslate"><span class="pre">TTree</span></code>, Logarithmic scale for LLH scan, unify <code class="docutils literal notranslate"><span class="pre">RHat</span></code> and <code class="docutils literal notranslate"><span class="pre">RHat_HighMem</span></code>, unified App/CLI folder, reducing bot spam</p></td>
+<td><p>12-08-2026</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.6.0">v2.6.0</a></p></td>
+<td><p>* Major: Umbrella Sampling, Unified CLI, <strong>Multi-dimensional functional parameters</strong>, Ability to apply 1D+2D reweighting or any other combination, improved LLH map <br> * Minor: <strong>Rename a few variables and functions</strong>, <strong>ToggleFix no longer part of public API</strong>, <strong>move to C++17</strong>, Apply Poisson errors to data in post pred, <strong>More wildcards support</strong>, gcc16 support, MakePosdef working better with very low covariance, Bump <code class="docutils literal notranslate"><span class="pre">CPM</span></code> v0.42.3→v0.43.1, using hash instead of version for CI actions</p></td>
+<td><p>13-07-2026</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.5.1">v2.5.1</a></p></td>
+<td><p>* Major: Unitarity Triangles, Posterior Predictive By Mode <br> * Minor: Prior/Posterior between sample correlations, More compact way of defining OscChannels in config, More options to define bining used in ReturnKinematicParameter, Removed 7D loop in binned splines, More pyMaCh3 bindings, Bump <code class="docutils literal notranslate"><span class="pre">CPM</span></code> v0.42.1→v0.42.3, Warning for empty bins</p></td>
+<td><p>14-05-2026</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.5.0">v2.5.0</a></p></td>
+<td><p>* Major: <strong>End to SampleHandlerFD</strong>, Improved python binding, <strong>Stop hard-coding N_Splines for GPU splines</strong>, <strong>Ability to pass multiple files per OscChannel</strong>, <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> 1.4.5-&gt;1.5.0, ApplyBasedOnSampleName now uses actual SampleName not SampleHandlerName <br> * Minor: <strong>Renaming of some classes, objects, namespaces</strong>, <strong>Fewer virtual function in ReturnKinematics</strong>, merge norm pointers into total weight pointers, Unbinned splines work with float/double, add <code class="docutils literal notranslate"><span class="pre">InitialsieData</span></code> pure virtual hook, <code class="docutils literal notranslate"><span class="pre">Get2DVarHist</span></code> works with Non-uniform Binning, bin width scale in plotting no longer hard-coded</p></td>
+<td><p>13-04-2026</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.4.2">v2.4.2</a></p></td>
+<td><p>* Major: Documentation overhaul, Support of unbinned splines (only with float), PostPred to work with flexible binning, NuDock support, programmatic way of defining binning for uniform with linspace/logspace, Rate-only pValue <br> * Minor: Composite CI jobs, PostPred improved workflow with ND to FD propagation, improved efficiency of sampling from previous step, CMake 4 compatibility, <code class="docutils literal notranslate"><span class="pre">Catch2</span></code> 3.5.2-&gt;3.7.1, <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> 1.4.4-&gt;1.4.5, Predictive Event Rates, removed <code class="docutils literal notranslate"><span class="pre">Weight_On_SplineBySpline_Basis</span></code>, <code class="docutils literal notranslate"><span class="pre">SampleHandler</span></code> can initialise with <code class="docutils literal notranslate"><span class="pre">nullptr</span></code> to <code class="docutils literal notranslate"><span class="pre">ParamHandler</span></code>, Predictive LLH, FinaliseShifts hook, KinemCuts for SplineParams, Predictive Information Criterion</p></td>
+<td><p>19-03-2026</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.4.1">v2.4.1</a></p></td>
+<td><p>* Major:  Remove SigmaVarLegacy <br> * Minor: <code class="docutils literal notranslate"><span class="pre">YAML</span></code> 0.8.0-&gt;0.9.0, <code class="docutils literal notranslate"><span class="pre">ParameterHandler</span></code> performance tracker, introduced <code class="docutils literal notranslate"><span class="pre">FunctionalShifter</span></code> struct</p></td>
+<td><p>13-02-2026</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.4.0">v2.4.0</a></p></td>
+<td><p>* Major: <strong>Flexible Binning</strong>, <strong>Overhaul GetMCHist and AddData</strong>, N-Dimensional LLH Map <br> * Minor: Bump <code class="docutils literal notranslate"><span class="pre">CPM</span></code> v0.42.0→v0.42.1, tidy Triangle Plot maker, <strong>Chain format change (xsec_ -&gt; param_)</strong>, <strong>Unify Capitalization of Classes and minor renaming</strong>, <strong>Rename SigmaVarFD → SigmaVar</strong>, Plot sigma var of event rates, <code class="docutils literal notranslate"><span class="pre">StyleManage</span></code> prettify kinematics name</p></td>
+<td><p>04-02-2026</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.3.2">v2.3.2</a></p></td>
+<td><p>* Major: LLH around central value which may not be prior, Y-binning migration  <br> * Minor: gcc15 and c++23 compatibility, faster CombineMaCh3Chain, MacOS compatibility, PiePlot (Clock Plot) for Delta CP, introduction of Definitions.dox, Ability to Set SubThrowMatrix, Bump <code class="docutils literal notranslate"><span class="pre">spdlog</span></code> 1.11.0→1.12.0</p></td>
+<td><p>16-01-2026</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.3.1">v2.3.1</a></p></td>
+<td><p>* Major:  Predictive to support 2D histograms, ability to non adapt specified parameters <br> * Minor: Fixed Osc channel bug, ability to overwrite pointer to osc weight, Refactor MCMCProcessor GPU utilities into a proper class, Print Data Rates functionality, Prior Predictive no longer require passing chain as input, improved and expanded predictive plotting, beta parameter study to predictive code</p></td>
+<td><p>12-12-2025</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.3.0">v2.3.0</a></p></td>
+<td><p>* Major: <strong>Multiple samples in one SampleHandler</strong>, <strong>SetupWeight pointers being handled in core</strong>, Robbins-Monro to adaptive MCMC <br> * Minor: Fixes for loading throw matrix from file, LTO compiler option, bump <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> 1.4.3-&gt;1.4.4, Sigma var works with more than 1 dimension, bug fixes to MaCh3 Plotting, samples with multiple osc channels in Tutorial, refined treatment of how we fix or free parameters</p></td>
+<td><p>13-11-2025</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.2.3">v2.2.3</a></p></td>
+<td><p>* Major: Delayed Rejection MCMC and MCMCBase, Fast Spline Info for Binned Splines, Chain Smearing, tagging of Doxygen documentation and version control, 2D Chain reweighting <br> * Minor:  bump <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> 1.4.1-&gt;1.4.3, increased spline verbosity, Corr matrix plotted with parameter group, bump <code class="docutils literal notranslate"><span class="pre">CPM</span></code> 0.40.2-&gt;0.42.0, Kochanek Bartels interpolation, MCMCProcessor Matrix Conversion to Yaml, <code class="docutils literal notranslate"><span class="pre">GetPostFitParam</span></code> to support 2D plots, custom (speedy) Cholesky decomposition, Sigma Variation plotting application, Predictive Plotting application</p></td>
+<td><p>14-10-2025</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.2.2">v2.2.2</a></p></td>
+<td><p>* Major: Use of global bin number during reweighting <br> * Minor: Spline interpolation plotting, Savage-Dickey for Jarlskog, inclusion of SampleInfo struct</p></td>
+<td><p>06-08-2025</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.2.1">v2.2.1</a></p></td>
+<td><p>* Major:  Chain Reweighting meta-data, Prior/Posterior Predictive Distributions and p-value <br> * Minor: Sigma Var for FD, more checks are being done at CombineChains, improved plotting options for CredibleIntervals, intel icpx bot and cmake changes</p></td>
+<td><p>14-07-2025</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.2.0">v2.2.0</a></p></td>
+<td><p>* Major: <strong>Merge ParameterHandlerOsc into Generic</strong>, ability to specify doing circular bounds and flipping via config, Improved treatment of LLH calculation for low Data and MC <br> * Minor: <strong>Improve Histogram getters</strong>, Fix to not reset W2 if not updating W2, Sub-Event (for example particle) level plotting, Norm parameters working with discrete cuts, binning struct, port Jarlskog Plotting from T2K, <strong>Return Kinematic Binning now use yaml instead of experiment specific hard-coding</strong>, bump <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> 1.3.3-&gt;1.4.1</p></td>
+<td><p>26-06-2025</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.1.0">v2.1.0</a></p></td>
+<td><p>* Major:  <strong>Osc Channel removal</strong>, ability to use Tunes, <strong>event class format</strong> <br> * Minor: Introduction of <code class="docutils literal notranslate"><span class="pre">OscillationHandler</span></code>, improve treatment of fixed parameters in Adaptive MCMC, Doxygen graphs are now SVG, improved interface for PCA Handler, Faster Caching of steps in <strong>MCMCProcessor</strong>, mean autocorrelation plotting, Throwing parameters in PCA base</p></td>
+<td><p>05-06-2025</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v2.0.0">v2.0.0</a></p></td>
+<td><p>* Major: More long term planned development with wider communication, revisited versioning scheme  <br> * Minor: <strong>Classes renaming</strong>, <strong>Fixed starting from previous chain when using adaption</strong>, tools to pass tune or covariance matrix into Yaml, optional individual spline parameter knot capping</p></td>
+<td><p>14-05-2025</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.5.0">v1.5.0</a></p></td>
+<td><p>* Major: <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> 1.2.2-&gt;1.3.1, improvement to functional parameters, improve selection of test statistics, shared <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> object <br> * Minor: Faster spline loading, <strong>DetId name modification…</strong>, <strong>More settings for adaptive MCMC</strong>, Valgrind bot, ability to specify empty bounds, improved config override settings, kinematic cut struct.</p></td>
+<td><p>01-05-2025</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.4.8">v1.4.8</a></p></td>
+<td><p>* Major: Fix to circular prior <br> * Minor: .</p></td>
+<td><p>07-03-2025</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.4.7">v1.4.7</a></p></td>
+<td><p>* Major: <br> * Minor: Fix for problem with duplicate spline mode.</p></td>
+<td><p>27-02-2025</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.4.6">v1.4.6</a></p></td>
+<td><p>* Major: <br> * Minor: Stop spammy messages, <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> 1.2.1-&gt;1.2.2.</p></td>
+<td><p>24-02-2025</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.4.5">v1.4.5</a></p></td>
+<td><p>* Major: <br> * Minor: Sigma Var CI.</p></td>
+<td><p>24-02-2025</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.4.4">v1.4.4</a></p></td>
+<td><p>* Major: <br> * Minor: Fixed SplineFD initialisation, plotting kinematic distributions to tutorial, PrintIntegral work 1D and 2D</p></td>
+<td><p>21-02-2025</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.4.3">v1.4.3</a></p></td>
+<td><p>* Major: <strong>MaCh3 mode usage in SplineFD base</strong> <br> * Minor: Add configurable special parameter bounds in LLH scan</p></td>
+<td><p>20-02-2025</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.4.2">v1.4.2</a></p></td>
+<td><p>* Major: Now MaCh3 mode is used for each sample, this allows to introduce plenty of plotting from T2K code <br> * Minor: Unify FindSplineSegment between both spline classes, <strong>change user can disable GPU via CMake</strong>, bump <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> to 1.2.1</p></td>
+<td><p>19-02-2025</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.4.1">v1.4.1</a></p></td>
+<td><p>* Major: <br> * Minor:  Introduce OscProcessor, support for Clang compiler</p></td>
+<td><p>12-02-2025</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.4.0">v1.4.0</a></p></td>
+<td><p>* Major: <strong>Overhaul of detector ID handling</strong>, linking detector ID to oscillation parameters to make Beam + ATM easier, <strong>Maps between kinematic enum and string</strong>, detachment of struct and const (Core.h), heavily expanded PCA handler. <br> * Minor:  Added MaCh3 safe include, minor speed-up to BinnedSpline, <strong>Covariance factory now uses smart pointers</strong>, more protection to Yaml loading, compilation with -march=native, <strong>UNITY et al. to namespace</strong>.</p></td>
+<td><p>10-02-2025</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.3.6">v1.3.6</a></p></td>
+<td><p>* Major: Unified binning for every osc channel for oscillation calculations, bump <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> 1.1.1-&gt;1.2.0 <br> * Minor: Fixes to start from the previous chain.</p></td>
+<td><p>07-02-2025</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.3.5">v1.3.5</a></p></td>
+<td><p>* Major: <br> * Minor: Move throw to within expected if statement in <code class="docutils literal notranslate"><span class="pre">splineFDBase</span></code> dimension checking</p></td>
+<td><p>24-01-2025</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.3.4">v1.3.4</a></p></td>
+<td><p>* Major:  Fix signal definition treatment, bump <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> 1.1.0-&gt;1.1.1 <br> * Minor: Manager factory, <code class="docutils literal notranslate"><span class="pre">StatisticalUtils</span></code> no longer header only, FFT build protection</p></td>
+<td><p>22-01-2025</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.3.3">v1.3.3</a></p></td>
+<td><p>* Major: . <br> * Minor: Bump <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> 1.0.3-&gt;1.1.0, tweaks to ROOT includes, safety logger functions</p></td>
+<td><p>13-01-2025</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.3.2">v1.3.2</a></p></td>
+<td><p>* Major: <strong>Tidy of Cov Osc</strong>. <br> * Minor: More helpful YAML error messages, more detector ID and YAML helpers in CI, parameter group added to MCMC processor, ROOT dictionary for spline classes, benchmark and telemetry CI, fix compilation with logger turned off, Diag MCMC Plotting, Circular prior, binned splines CI.</p></td>
+<td><p>10-01-2025</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.3.1">v1.3.1</a></p></td>
+<td><p>* Major: Fixed, getting norm parameters from detector ID. <br> * Minor: Flexible violin plotter, more verbose norm parameters, <strong>fixed adaptive MCMC settings</strong>, more step scale verbosity, LLH scan and step proposal CI.</p></td>
+<td><p>21-12-2024</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.3.0">v1.3.0</a></p></td>
+<td><p>* Major: <code class="docutils literal notranslate"><span class="pre">-Werror</span></code>, CMake changes, C++ casting, <code class="docutils literal notranslate"><span class="pre">SamplePDF</span></code> factory, MCMC thinning, restructured <code class="docutils literal notranslate"><span class="pre">pyMaCh3</span></code> for better maintainability, <code class="docutils literal notranslate"><span class="pre">pyMaCh3</span></code> CI, FFT autocorrelations and improvements to RHat, sample summary CI, separate CPU and GPU compiler flags, updated <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code> version, CI PR title checker. <br> * Minor: WAIC.</p></td>
+<td><p>16-12-2024</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.2.0">v1.2.0</a></p></td>
+<td><p>* Major: <code class="docutils literal notranslate"><span class="pre">NuOscillator</span></code>, <strong>FD constructor clean-up</strong>, stored config for covariances, covariance factory, improved <code class="docutils literal notranslate"><span class="pre">pyMaCh3</span></code> interface, <strong>ended special treatment of covariance oscillations</strong>, <strong>stopped hardcoded fixing of baseline</strong>, sample PDF CI. <br> * Minor: start from previous chain, <strong>removed deprecated functions</strong>.</p></td>
+<td><p>20-11-2024</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.1.8">v1.1.8</a></p></td>
+<td><p>* Major: <br> * Minor: Updates to MCMC processor.</p></td>
+<td><p>07-10-2024</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.1.7">v1.1.7</a></p></td>
+<td><p>* Major: <br> * Minor: CMake fix for version, further expanded CI, 1D and 2D MCMC posteriors added to plotting, no longer stores a copy of CPM.</p></td>
+<td><p>06-10-2024</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.1.6">v1.1.6</a></p></td>
+<td><p>* Major: <br> * Minor: Debug mode added to CI, updates to saving monolith to ROOT file, fleshed out PCA and adaptive handlers, updated <code class="docutils literal notranslate"><span class="pre">CUDAProb</span></code> to stop warnings.</p></td>
+<td><p>20-09-2024</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.1.5">v1.1.5</a></p></td>
+<td><p>* Major: <strong>Removed hardcoded flux handling, introduced parameter group treatment</strong>, refactored GPU spline utilities into a class. <br> * Minor: SIMD for FD splines.</p></td>
+<td><p>19-09-2024</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.1.4">v1.1.4</a></p></td>
+<td><p>* Major: <br> * Minor: Fixed debug compilation, bug fix with YAML covariance oscillation initialization.</p></td>
+<td><p>14-09-2024</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.1.3">v1.1.3</a></p></td>
+<td><p>* Major: <strong>Covariance oscillations from YAML</strong>. <br> * Minor: plotting, diagnostics now properly installed, Drag Race no longer breaks LLH scans.</p></td>
+<td><p>12-09-2024</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.1.2">v1.1.2</a></p></td>
+<td><p>* Major: <strong>Flexible TF1 for <code class="docutils literal notranslate"><span class="pre">SplineMonolith</span></code> event-by-event.</strong> <br> * Minor:</p></td>
+<td><p>11-09-2024</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.1.1">v1.1.1</a></p></td>
+<td><p>* Major: <br> * Minor: Expanded CI validations, removed <code class="docutils literal notranslate"><span class="pre">ThrowParms</span></code>, no longer throws xsec in initializer, GIF evolution, Doxygen wiki.</p></td>
+<td><p>09-09-2024</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/releases/tag/v1.1.0">v1.1.0</a></p></td>
+<td><p>* Major: Fixed PCA, MaCh3 modes from config, adaptation handler, PCA handler, Python binding. <br> * Minor: MCMC diagnostics, improved GPU CMake, custom error handling, added power spectra, updated adaptive MCMC, MaCh3 factory, violin plot update, Drag Race, flexible plotting, flexible sample binning for the FD, run FD with no splines loaded, CI/CD improvements.</p></td>
+<td><p>03-09-2024</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/tree/5c90b1cdb6616fdf5f4e2ad223f8ee0d507c9969">v1.0.0</a></p></td>
+<td><p>* Major: First officially usable version, <code class="docutils literal notranslate"><span class="pre">FitterBase</span></code> class, which <code class="docutils literal notranslate"><span class="pre">MCMC</span></code> inherits from, a logger, different test statistics available, embedded configs in the chain output. <br> * Minor: improved CMake and MCMC diagnostic tools.</p></td>
+<td><p>09-04-2024</p></td>
+</tr>
+<tr class="row-odd"><td><p>v0.0.4</p></td>
+<td><p>* Major: Inclusion CUDAProb3 as new oscillator <br> * Minor:</p></td>
+<td><p>27-06-2023</p></td>
+</tr>
+<tr class="row-even"><td><p>v0.0.2</p></td>
+<td><p>* Major: <br> * Minor: Move to cmake</p></td>
+<td><p>10-08-2022</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/mach3-software/MaCh3/tree/df41232fa276fa918a79af9928bab088814f4e38">v0.0.0</a></p></td>
+<td><p>* Major: Initial release <br> * Minor:</p></td>
+<td><p>10-06-2022</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="release-summary-talks">
+<h2>Release Summary Talks<a class="headerlink" href="#release-summary-talks" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>v2.5.1 - v2.6.0</strong> — <a class="reference external" href="https://indico.global/event/18212/contributions/166438/attachments/75682/146821/CoreUpdates.pdf">8 September 2026</a></p></li>
+<li><p><strong>v2.4.0 – v2.5.0</strong> — <a class="reference external" href="https://indico.global/event/17497/contributions/149780/attachments/69417/134641/MaCh3%20News.pdf">5 May 2026</a></p></li>
+<li><p><strong>v2.2.2 – v2.3.2</strong> — <a class="reference external" href="https://indico.global/event/16525/contributions/142708/attachments/66207/128092/13.MaCh3Devel-01.26.pdf">20 January 2026</a></p></li>
+<li><p><strong>v2.2.1</strong> — <a class="reference external" href="https://indico.global/event/15221/contributions/130845/attachments/61568/118568/MaCh3%20Core%20Update%20-%20August%20Meeting.pdf">5 August 2025</a></p></li>
+<li><p><strong>v2.0.0 – v2.2.2</strong> — <a class="reference external" href="https://indico.global/event/15220/contributions/130837/attachments/60784/117119/MaCh3Devel.pdf">8 July 2025</a></p></li>
+<li><p><strong>v1.5.0</strong> — <a class="reference external" href="https://indico.global/event/15228/contributions/130865/attachments/60814/117173/M3CoreUpdate060525.pdf">6 May 2025</a></p></li>
+<li><p><strong>v1.3.5 – v1.4.6</strong> — <a class="reference external" href="https://indico.global/event/15230/contributions/130874/attachments/60820/117179/MaCh3Devel-02.25.pdf">25 February 2025</a></p></li>
+<li><p><strong>v1.3.0 – v1.3.4</strong> — <a class="reference external" href="https://indico.global/event/15231/contributions/130877/attachments/60821/117180/MaCh3Devel.pdf">14 January 2025</a></p></li>
+<li><p><strong>v1.2.0</strong> — <a class="reference external" href="https://indico.global/event/15232/contributions/130879/attachments/60823/117183/CoreUpdate.pdf">3 December 2024</a></p></li>
+<li><p><strong>v1.1.1 – v1.1.8</strong> — <a class="reference external" href="https://indico.global/event/15233/contributions/130882/attachments/60825/117185/MaCh3Devel.pdf">5 November 2024</a></p></li>
+<li><p><strong>v1.1.0</strong> — <a class="reference external" href="https://indico.global/event/15236/contributions/130891/attachments/60830/117190/MaCh3_General_030924.pdf">3 September 2024</a></p></li>
+<li><p><strong>v1.0.0</strong> — <a class="reference external" href="https://indico.global/event/15239/contributions/130903/attachments/60840/117200/MaCh3%20GM%20-04.2024.pdf">30 April 2024</a></p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="publications.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Results and Publications</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../bibliography.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliography</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal" tabindex="-1"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#release-summary-talks">Release Summary Talks</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright MaCh3 Collaboration.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.24.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

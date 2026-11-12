@@ -1,0 +1,40 @@
+Plotting
+========
+
+
+Classes
+-------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../classM3_1_1Plotting_1_1InputManager.rst
+   ../../../../classM3_1_1Plotting_1_1PlottingManager.rst
+   ../../../../classM3_1_1Plotting_1_1StyleManager.rst
+
+Structs
+-------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../structM3_1_1Plotting_1_1InputFile.rst
+
+Enums
+-----
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../enum_namespaceM3_1_1Plotting_1a62d6a732804190bc7a907c3a9e1babdd.rst
+
+Functions
+---------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../function_namespaceM3_1_1Plotting_1abdbd7458b10f2cdbe078d1b86dd9af34.rst
+   ../../../../function_namespaceM3_1_1Plotting_1a894dcf7a8543769506cc006b9899c09c.rst
+   ../../../../function_namespaceM3_1_1Plotting_1a1185f525313b8e84842cd0688258b235.rst
+   ../../../../function_namespaceM3_1_1Plotting_1a42c78cbe11e4b7244441b871f3ad3e45.rst

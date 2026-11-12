@@ -1,0 +1,14 @@
+.. _exhale_define_MaCh3Logger_8h_1a61052119a625282d0ec6d4a97adf3ee2:
+
+Define MACH3LOG_ERROR
+=====================
+
+- Defined in :ref:`file_Manager_MaCh3Logger.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MACH3LOG_ERROR
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1ac37b51459c20e314d2da409d57a5fa31:
+
+Function PoissonGraphScaled
+===========================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: PoissonGraphScaled(const TH1D *, double, double)
+   :project: MaCh3

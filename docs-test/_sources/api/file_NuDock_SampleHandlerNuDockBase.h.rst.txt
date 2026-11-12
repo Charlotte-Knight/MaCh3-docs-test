@@ -1,0 +1,64 @@
+
+.. _file_NuDock_SampleHandlerNuDockBase.h:
+
+File SampleHandlerNuDockBase.h
+==============================
+
+|exhale_lsh| :ref:`Parent directory <dir_NuDock>` (``NuDock``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Client-side sample handler that delegates reweighting and likelihood evaluation to a remote NuDock server. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``NuDock/SampleHandlerNuDockBase.h``)
+-------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_NuDock_SampleHandlerNuDockBase.h.rst
+
+
+
+Detailed Description
+--------------------
+
+Hank Hua 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``NuDockFactory.h`` (:ref:`file_NuDock_NuDockFactory.h`)
+
+- ``Parameters/ParameterHandlerGeneric.h`` (:ref:`file_Parameters_ParameterHandlerGeneric.h`)
+
+- ``Samples/SampleHandlerInterface.h`` (:ref:`file_Samples_SampleHandlerInterface.h`)
+
+- ``nudock.hpp``
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classSampleHandlerNuDockBase`
+

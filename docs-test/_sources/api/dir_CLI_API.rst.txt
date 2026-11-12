@@ -1,0 +1,22 @@
+.. _dir_CLI_API:
+
+
+Directory API
+=============
+
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI>` (``CLI``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``CLI/API``
+
+
+Files
+-----
+
+- :ref:`file_CLI_API_m3argparse.hpp`
+- :ref:`file_CLI_API_plugin.hpp`
+
+

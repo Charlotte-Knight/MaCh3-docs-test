@@ -1,0 +1,14 @@
+.. _exhale_function_HistogramUtils_8h_1a060e41fa0e5f91ce4fcbb6a4cafeaf13:
+
+Function CalculateQ2
+====================
+
+- Defined in :ref:`file_Samples_HistogramUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: CalculateQ2(double, double, double, double)
+   :project: MaCh3

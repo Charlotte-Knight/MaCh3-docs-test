@@ -1,0 +1,14 @@
+.. _exhale_function_SplineStructs_8h_1ad5cf65febeac6a16f6ef017567c50d26:
+
+Function ApplyKnotWeightCap
+===========================
+
+- Defined in :ref:`file_Splines_SplineStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ApplyKnotWeightCap(TGraph *, const int, ParameterHandlerGeneric *)
+   :project: MaCh3

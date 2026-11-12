@@ -1,0 +1,66 @@
+
+.. _file_Samples_SampleInfo.h:
+
+File SampleInfo.h
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir_Samples>` (``Samples``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Samples/SampleInfo.h``)
+-------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Samples_SampleInfo.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Samples/SampleStructs.h`` (:ref:`file_Samples_SampleStructs.h`)
+
+- ``string``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Samples_BinningHandler.h`
+
+- :ref:`file_Samples_SampleHandlerBase.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structOscChannelInfo`
+
+- :ref:`exhale_struct_structSampleInfo`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_SampleInfo_8h_1afc52c63bc2b15ae30444755579f5beb4`
+

@@ -1,0 +1,17 @@
+Algorithms
+==========
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../file_Fitters_Algorithms_DelayedMR2T2.h.rst
+   ../../../../file_Fitters_Algorithms_FitterBase.h.rst
+   ../../../../dir_Fitters_Algorithms.rst
+   ../../../../file_Fitters_Algorithms_LikelihoodFit.h.rst
+   ../../../../file_Fitters_Algorithms_MaCh3Factory.h.rst
+   ../../../../file_Fitters_Algorithms_MCMCBase.h.rst
+   ../../../../file_Fitters_Algorithms_MinuitFit.h.rst
+   ../../../../file_Fitters_Algorithms_MR2T2.h.rst
+   ../../../../file_Fitters_Algorithms_MulticanonicalMCMCHandler.h.rst
+   ../../../../file_Fitters_Algorithms_PredictiveThrower.h.rst
+   ../../../../file_Fitters_Algorithms_PSO.h.rst

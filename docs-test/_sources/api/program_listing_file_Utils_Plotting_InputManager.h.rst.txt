@@ -1,0 +1,516 @@
+
+.. _program_listing_file_Utils_Plotting_InputManager.h:
+
+Program Listing for File InputManager.h
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Utils_Plotting_InputManager.h>` (``Utils/Plotting/InputManager.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // MaCh3 Includes
+   #include "Manager/MaCh3Logger.h"
+   #include "Manager/YamlHelper.h"
+   #include "Manager/MaCh3Exception.h"
+   #include "Fitters/Processing/MCMCProcessor.h"
+   #include "Samples/SampleStructs.h"
+   
+   // Other plotting includes
+   #include "PlottingUtils.h"
+   
+   namespace M3 {
+   namespace Plotting {
+   enum fileTypeEnum {
+     kLLH,         
+     kPostFit,     
+     kMCMC,        
+     kSigmaVar,    
+   
+     kNFileTypes 
+   };
+   
+   struct InputFile {
+     InputFile(const std::string &fName) {
+       fileName = fName;
+   
+       file = std::make_shared<TFile>(fileName.c_str());
+       if (file->IsZombie()) {
+         MACH3LOG_ERROR("Failed to open file: {}", fileName);
+         throw MaCh3Exception(__FILE__ , __LINE__ );
+       }
+       hasLLHScans = false;
+       hasPostFitErrors = false;
+       hasSigmaVars = false;
+   
+       for (std::string LLHType : {"sample", "penalty", "total"})
+       {
+         hasLLHScans_map[LLHType] = false;
+       }
+     }
+   
+     // NO COPYING!!
+     InputFile( const InputFile& ) = delete;
+     // Moving ok
+     InputFile( InputFile&& ) = default;
+     // EM: ^^ there should only really be one instance of an InputFile for each
+     // underlying root file. If copying is allowed then it can lead to bad bad things
+     // like pointers getting deleted and then trying to be accessed by a copied 
+     // InputFile instance
+   
+     ~InputFile() {
+       MACH3LOG_DEBUG("###### Deleting InputFile Object holding file ######");
+       LLHScans_map.clear();
+     }
+   
+     void Close(){
+       MACH3LOG_DEBUG("[InputFile] closing file {}", fileName);
+       file->Close();
+     }
+   
+     void Summarise() const {
+       MACH3LOG_INFO("### Input File Summary ###");
+       MACH3LOG_INFO("  Root file loc: {}", fileName);
+       MACH3LOG_INFO("  Came from fitter: {}", fitter);
+       MACH3LOG_INFO("  N LLH scans: {}", availableParams_LLH.size());
+       MACH3LOG_INFO("  N Processed post fit errors: {}", availableParams_postFitErrors.size());
+     }
+   
+     void Dump() const {
+       Summarise();
+       MACH3LOG_INFO("Available LLH parameters: ");
+       for (std::string paramName : availableParams_LLH)
+       {
+         MACH3LOG_INFO("  {}", paramName);
+       }
+       MACH3LOG_INFO("Available Post Fit errors: ");
+       for (std::string paramName : availableParams_postFitErrors)
+       {
+         MACH3LOG_INFO("  {}", paramName);
+       }
+     }
+   
+     std::unique_ptr<MCMCProcessor> mcmcProc;
+     TTree *posteriorTree = nullptr;
+   
+     std::shared_ptr<TFile> file;          
+     std::string fileName; 
+   
+     std::string fitter; 
+   
+   
+     // EM: info on the LLH scans
+     bool hasLLHScans; 
+     std::vector<std::string>
+         availableParams_LLH; 
+     std::unordered_map<std::string, bool>
+         hasLLHScans_map; 
+     std::unordered_map<std::string, std::unordered_map<std::string, std::shared_ptr<TGraph>>>
+         LLHScans_map; 
+     std::unordered_map<std::string, std::unordered_map<std::string, bool>>
+         availableParams_map_LLH; 
+     // EM: maybe don't really need the "availableParams.." "hasLLHScans...", could just implement
+     // these as functions that look for the given parameter in the existing maps, might make things
+     // nicer
+   
+     // EM: info on LLH scans broken down by sample
+     bool hasLLHScansBySample; 
+     std::vector<std::string> availableSamples_LLH; 
+     std::unordered_map<std::string, std::unordered_map<std::string, std::shared_ptr<TGraph>>>
+         LLHScansBySample_map; 
+     std::unordered_map<std::string, std::unordered_map<std::string, bool>>
+         availableParams_map_LLHBySample; 
+   
+     // EM: info on post fit errors
+     bool hasPostFitErrors; 
+     std::vector<std::string>
+         availableParams_postFitErrors; 
+     std::unordered_map<std::string, std::unordered_map<std::string, double>>
+         postFitErrors; 
+     std::unordered_map<std::string, std::unordered_map<std::string, double>>
+         postFitValues; 
+     std::string defaultErrorType;
+   
+     // Stuff relating to MCMC
+     bool has1dPosteriors;
+     bool hasMCMCchain;
+   
+     int nMCMCentries;
+   
+     std::unordered_map<std::string, bool> availableParams_map_MCMCchain;
+     std::unordered_map<std::string, bool> availableParams_map_1dPosteriors;
+   
+     std::vector<std::string> availableParams_1dPosteriors;
+     std::vector<std::string> availableParams_MCMCchain;
+   
+     std::unordered_map<std::string, double*> MCMCstepParamsMap;
+     std::unordered_map<std::string, int> MCMCstepTreeIndicesMap;
+   
+     std::unordered_map<std::string, std::shared_ptr<TGraph>> posteriors1d_map;
+     
+     // EM: almost certainly won't want to load all of these into memory at the start
+     bool hasSigmaVars; 
+   };
+   
+   class InputManager {
+   public:
+     const std::string NOT_FOUND_STR =
+         "__PARAM_NAME_NOT_FOUND__"; 
+   
+     InputManager(const std::string &translationConfigName, const std::vector<std::string>& _fileNames);
+   
+     void addFile(const std::string &fileName);
+   
+     ~InputManager()
+     {
+       MACH3LOG_DEBUG("##### Deleting InputManager Instance #####");
+       for (InputFile &file: _fileVec)
+       {
+         file.Close();
+       }
+     }
+   
+     // NO COPYING!
+     InputManager(const InputManager&) = delete;
+     // moving is ok
+     InputManager(InputManager&&) = default;
+     // EM: ^^ Do this as there should only ever really be one instance of the 
+     // InputManager (should maybe make it a singleton actually)
+     // if copied then it can lead to things being deleted that we really don't
+     // want to be deleted
+   
+     static const std::string convertFileTypeNames(const fileTypeEnum fileType) {
+       switch (fileType)
+       {
+       case kLLH:
+         return "LLH";
+       case kPostFit:
+         return "PostFit";
+       case kMCMC:
+         return "MCMC";
+       case kSigmaVar:
+         return "SigmaVar";
+       case kNFileTypes:
+         return "NFileTypes";
+       default:
+         return "UNKNOWN_FILE_TYPE";
+       }
+     }
+   
+     void print(const std::string &printLevel = "summary") const;
+   
+     // FNs to get to the tasty tasty data stored in the files
+   
+     std::vector<std::vector<double>> getLLHScan(const int fileNum, const std::string& paramName, const std::string& LLHType) const {
+       if (!getEnabledLLH(fileNum, paramName, LLHType))
+       {
+         MACH3LOG_WARN("file at index {} does not have LLH scan for parameter {}", fileNum, paramName);
+         MACH3LOG_WARN("am returning an empty vector");
+         return std::vector<std::vector<double>>(2); 
+       }
+       return TGraphToVector(*_fileVec[fileNum].LLHScans_map.at(LLHType).at(paramName));
+     }
+   
+     void getMCMCentry(const int fileNum, const int entry) const {
+       // EM: the const here is a little bit of a lie since GetEntry will in fact modify 
+       //     the pointers to the stored data for the MCMC chain values but hopefully this should be ok
+       const InputFile &file = _fileVec[fileNum];
+   
+       if( entry > file.nMCMCentries )
+       {
+         MACH3LOG_ERROR("Trying to access entries beyond what exist in file {}. No-can-do!", file.fileName);
+       }
+       else
+       {
+         MACH3LOG_TRACE("Getting entry {} in MCMC tree for file at index {}", entry, fileNum);
+         file.posteriorTree->GetEntry(entry);
+         MACH3LOG_TRACE("  Got successfully");
+       }
+     }
+   
+     double getMCMCvalue(int fileNum, const std::string& paramName) const {
+       if (!getEnabledMCMCchain(fileNum, paramName))
+       {
+         MACH3LOG_WARN("file at index {} does not have an MCMC entry for parameter {}", fileNum, paramName);
+         MACH3LOG_WARN("am returning a bad float");
+         return M3::_BAD_DOUBLE_;
+       }
+   
+       return *_fileVec[fileNum].MCMCstepParamsMap.at(paramName);
+     }
+   
+     std::vector<std::vector<double>> get1dPosterior(const int fileNum, const std::string& paramName) const {
+       if (!getEnabled1dPosteriors(fileNum, paramName))
+       {
+         MACH3LOG_WARN("file at index {} does not have a 1d posterior for parameter {}", fileNum, paramName);
+         MACH3LOG_WARN("am returning an empty vector");
+         return std::vector<std::vector<double>>(2);
+       }
+       return TGraphToVector(*_fileVec[fileNum].posteriors1d_map.at(paramName));
+     }
+   
+     int getnMCMCentries(const int fileNum) const {
+       return _fileVec[fileNum].nMCMCentries;
+     }
+   
+     inline TGraph getLLHScan_TGraph(const int fileNum, const std::string& paramName, const std::string& LLHType) const {
+       if (!getEnabledLLH(fileNum, paramName, LLHType))
+       {
+         MACH3LOG_WARN("file at index {} does not have LLH scan for parameter {}", fileNum, paramName);
+         MACH3LOG_WARN("am returning an empty TGraph");
+         return TGraph(); 
+       }
+       return *_fileVec[fileNum].LLHScans_map.at(LLHType).at(paramName);
+     }
+   
+     inline TH1D getLLHScan_TH1D(const int fileNum, const std::string& paramName, const std::string& LLHType) const {
+       if (!getEnabledLLH(fileNum, paramName, LLHType))
+       {
+         MACH3LOG_WARN("file at index {} does not have LLH scan for parameter {}", fileNum, paramName);
+         MACH3LOG_WARN("am returning an empty TH1D");
+         return TH1D(); 
+       }
+       return TGraphToTH1D(*_fileVec[fileNum].LLHScans_map.at(LLHType).at(paramName));
+     }
+   
+     std::vector<std::vector<double>> getSampleSpecificLLHScan(const int fileNum, const std::string& paramName, const std::string& sample) const {
+       if (!getEnabledLLHBySample(fileNum, paramName, sample))
+       {
+         MACH3LOG_WARN("file at index {} does not have LLH scan for sample {} for parameter {}", fileNum, sample, paramName);
+         MACH3LOG_WARN("am returning an empty vector");
+         return std::vector<std::vector<double>>(2); 
+       }
+       return TGraphToVector(*_fileVec[fileNum].LLHScansBySample_map.at(sample).at(paramName));
+     }
+   
+     inline TGraph getSampleSpecificLLHScan_TGraph(const int fileNum, const std::string& paramName,
+                                            const std::string& sample) const {
+       if (!getEnabledLLHBySample(fileNum, paramName, sample))
+       {
+         MACH3LOG_WARN("file at index {} does not have LLH scan for sample {} for parameter {}", fileNum, sample, paramName);
+         MACH3LOG_WARN("am returning an empty TGraph");
+         return TGraph();
+       }
+       return *_fileVec[fileNum].LLHScansBySample_map.at(sample).at(paramName);
+     }
+   
+     inline TH1D getSampleSpecificLLHScan_TH1D(const int fileNum, const std::string& paramName, const std::string& sample) const {
+       if (!getEnabledLLHBySample(fileNum, paramName, sample))
+       {
+         MACH3LOG_WARN("file at index {} does not have LLH scan for sample {} for parameter {}", fileNum, sample, paramName);
+         MACH3LOG_WARN("am returning an empty TH1D");
+         return TH1D();
+       }
+       return TGraphToTH1D(*_fileVec[fileNum].LLHScansBySample_map.at(sample).at(paramName));
+     }
+   
+     inline bool getEnabledLLH(const int fileNum, const std::string& paramName,
+                               const std::string& LLHType = "total") const {
+       return _fileVec[fileNum].availableParams_map_LLH.at(LLHType).at(paramName);
+     }
+   
+     inline bool getEnabledLLHBySample(const int fileNum, const std::string& paramName, const std::string& sample) const {
+       return _fileVec[fileNum].availableParams_map_LLHBySample.at(sample).at(paramName);
+     }
+   
+     inline bool getEnabledMCMCchain(const int fileNum, const std::string& paramName) const {
+       return _fileVec[fileNum].availableParams_map_MCMCchain.at(paramName);
+     }
+   
+     inline bool getEnabled1dPosteriors(const int fileNum, const std::string& paramName) const {
+       return _fileVec[fileNum].availableParams_map_1dPosteriors.at(paramName);
+     }
+   
+     double getPostFitError(const int fileNum, const std::string &paramName, std::string errorType = "") const;
+   
+     double getPostFitValue(const int fileNum, const std::string &paramName, std::string errorType = "") const;
+   
+     inline const std::vector<std::string> &getKnownParameters() const { return _knownParameters; }
+     inline const std::vector<std::string> &getKnownSamples() const { return _knownSamples; }
+     inline size_t getNInputFiles() const { return _fileVec.size(); }
+   
+     inline std::vector<std::string> getTaggedParameters(const std::vector<std::string> &tags, std::string checkType = "all") const {
+       return getTaggedValues(_knownParameters, _paramToTagsMap, tags, checkType);
+     }
+   
+     inline std::vector<std::string> getTaggedSamples(const std::vector<std::string> &tags, std::string checkType = "all") const {
+       return getTaggedValues(_knownSamples, _sampleToTagsMap, tags, checkType);
+     }
+   
+     inline InputFile const &getFile(int fileId) const { return _fileVec[fileId]; }
+     inline std::string translateName(int fileId, fileTypeEnum fileType, std::string paramName) const {
+       return getFitterSpecificParamName(_fileVec[fileId].fitter, fileType, paramName);
+     }
+     inline const std::vector<std::string> &getKnownLLHParameters(int fileId) const {
+       return _fileVec[fileId].availableParams_LLH;
+     }
+     inline const std::vector<std::string> &getKnownLLHSamples(int fileId) const {
+       return _fileVec[fileId].availableSamples_LLH;
+     }
+     inline const std::vector<std::string> &getKnownPostFitParameters(int fileId) const {
+       return _fileVec[fileId].availableParams_postFitErrors;
+     }
+     inline const std::vector<std::string> &getKnownMCMCParameters(int fileId) const {
+       return _fileVec[fileId].availableParams_MCMCchain;
+     }
+     inline const std::vector<std::string> &getKnown1dPosteriorParameters(int fileId) const {
+       return _fileVec[fileId].availableParams_1dPosteriors;
+     }
+   
+   private:
+     // Helper function to get tagged values from a vector of values
+     // specify the initial list of *values*, the map of values to their tags, the tags to check,
+     // and the type of check to perform (see getTaggedParameter() for details)
+     std::vector<std::string> getTaggedValues(const std::vector<std::string> &values, 
+                                              const std::unordered_map<std::string, 
+                                              std::vector<std::string>> &tagMap, 
+                                              const std::vector<std::string> &tags, std::string checkType) const;
+   
+     // Helper function to parse a root file location string
+     // any instance of {PARAMETER} gets replaced with fitter specific parameter name
+     // similar for {SAMPLE}
+     // any other token that gets added in future can also just be added here and added to end of the
+     // argument list The string will also be split by the ":" delimeter into a directory and a name to
+     // look for in that directory
+     std::vector<std::string> parseLocation(const std::string &locationString, std::string &fitter,
+                                            fileTypeEnum fileType, const std::string &parameter = "",
+                                            const std::string &sample = "", const std::string &parameter2 = "") const;
+   
+     // helper function to look for an object defined by a vector of strings [ (directory to look in),
+     // (end of the name of the object) ] this just calls roots TDirectoryFile->Get() function so
+     // behaves in the same way:
+     //   if the object exists then it is loaded and returned
+     //   if it doesn't exist then just returns nullptr
+     std::shared_ptr<TObject> findRootObject(const InputFile &fileDef, const std::vector<std::string> &locationVec) const;
+   
+     // Check the input file for a particular post fit error for a particular parameter. if
+     // setInputFileError, will add the information to the InputFiles postFitErrors histogram.
+     bool findPostFitParamError(InputFile &inputFileDef, const std::string &parameter, std::string &fitter,
+                                const std::string &errorType, const bool setInputFileError = false);
+   
+     // Check the input file for a particular post fit error for a particular parameter. if
+     // setInputFileError, will add the information to the InputFiles postFitErrors histogram.
+     bool findBySampleLLH(InputFile &inputFileDef, const std::string &parameter, std::string &fitter,
+                          const std::string &sample, bool setInputFileScan = false);
+   
+     // check the input file for raw MCMC step values for a particular parameter
+     bool findRawChainSteps(InputFile &inputFileDef, const std::string &parameter, std::string &fitter, bool setInputBranch = false ) const ;
+   
+     // check the input file for processed 1d posteriors for a particular parameter
+     bool find1dPosterior(InputFile &inputFileDef, const std::string &parameter, std::string &fitter, bool setFileData = false) const ;
+   
+     // fns tp read an input file
+     void fillFileInfo(InputFile &inputFileDef, const bool printThoughts = true);
+     void fillFileData(InputFile &inputFileDef, const bool printThoughts = true);
+   
+     // helper function to read from the translation config file to get an option for a particular sub
+     // node (e.g. Parameters or Samples) returns true and sets "ret" if the option is specified for this
+     // fitter and parameter otherwise returns false
+     template <typename T>
+     inline bool getFitterSpecificOption(const std::string &fitter, const std::string &option, T &ret, const std::string &parameter,
+                                  YAML::Node subConfig) const{
+       if (subConfig[parameter])
+       {
+         // EM: this is config definition of fitter specific names for this parameter
+         YAML::Node paramTranslation = subConfig[parameter];
+   
+         if (paramTranslation[fitter])
+         {
+           // EM: then this is definition of how to find parameter in the specified fitter
+           YAML::Node fitterParamTranslation = paramTranslation[fitter];
+   
+           if (fitterParamTranslation[option])
+           {
+             ret = fitterParamTranslation[option].as<T>();
+             return true;
+           }
+         }
+       }
+       return false;
+     }
+   
+     // Specialised option getter for parameters
+     template <typename T>
+     inline bool getFitterSpecificParamOption(const std::string &fitter, const std::string &option, T &ret,
+                                              const std::string &parameter) const {
+       return getFitterSpecificOption<T>(fitter, option, ret, parameter, _parametersConfig);
+     }
+   
+     // specialised option getter for samples
+     template <typename T>
+     inline bool getFitterSpecificSampleOption(const std::string &fitter, std::string option, T &ret,
+                                               std::string parameter) const {
+       return getFitterSpecificOption<T>(fitter, option, ret, parameter, _samplesConfig);
+     }
+   
+     // helper function to read from the translation config to get the parameter name for a specific
+     // fitter and file type
+     inline std::string getFitterSpecificParamName(const std::string &fitter, fileTypeEnum fileType,
+                                                   const std::string &parameter) const {
+       std::string specificName;
+       if (getFitterSpecificParamOption<std::string>(fitter, convertFileTypeNames(fileType),
+                                                     specificName, parameter))
+       {
+         return specificName;
+       }
+       // EM: Default to just return the specified name
+       return parameter;
+     }
+   
+     // helper function to read from the translation config file to get the sample name for a specific
+     // fitter and file type
+     inline std::string getFitterSpecificSampleName(const std::string &fitter, fileTypeEnum fileType,
+                                                    const std::string &sample) const {
+       std::string specificName;
+       if (getFitterSpecificSampleOption<std::string>(fitter, convertFileTypeNames(fileType),
+                                                      specificName, sample))
+       {
+         return specificName;
+       }
+       // EM: Default to just return the specified name
+       return sample;
+     }
+   
+   
+     std::vector<std::string> TryToFindDefaultParamNames(const std::string& fileNames) const;
+   
+     // helper fn to test if string "str" ends with other string "ending"
+     inline bool strEndsWith(const std::string& str, const std::string& ending) const {
+       if (str.size() >= ending.size()) {
+         return str.compare(str.size() - ending.size(), ending.size(), ending) == 0;
+       }
+       return false;
+     }
+   
+   private:
+     // all parameters which are known to this InputManager: all the ones defined in the translation
+     // config used to create it
+     std::vector<std::string> _knownParameters;
+   
+     // all samples which are known to this InputManager: all the ones defined in the translation
+     // config used to create it
+     std::vector<std::string> _knownSamples;
+   
+     // hold the names of the fitters known to this manager
+     std::vector<std::string> _knownFitters;
+   
+     // map parameter names to their specified tags
+     std::unordered_map<std::string, std::vector<std::string>> _paramToTagsMap;
+     // map sample names to their specified tags
+     std::unordered_map<std::string, std::vector<std::string>> _sampleToTagsMap;
+     
+     // the configs defining the translation of parameters between fitters and also the directory
+     // structure for each fitter
+     YAML::Node _translatorConfig;
+     YAML::Node _fitterSpecConfig;
+     YAML::Node _parametersConfig;
+     YAML::Node _samplesConfig;
+   
+     // vector of InputFile objects that this manager is responsible for
+     std::vector<InputFile> _fileVec;
+   };
+   } // namespace Plotting
+   } // namespace M3

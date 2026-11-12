@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1afecd84c56d6546271c4547192aae31af:
+
+Function GetBetaParameter
+=========================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetBetaParameter(const double, const double, const double, TestStatistic)
+   :project: MaCh3

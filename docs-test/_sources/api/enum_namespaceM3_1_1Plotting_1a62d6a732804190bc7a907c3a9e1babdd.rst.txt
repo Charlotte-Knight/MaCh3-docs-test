@@ -1,0 +1,14 @@
+.. _exhale_enum_namespaceM3_1_1Plotting_1a62d6a732804190bc7a907c3a9e1babdd:
+
+Enum fileTypeEnum
+=================
+
+- Defined in :ref:`file_Utils_Plotting_InputManager.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: M3::Plotting::fileTypeEnum
+   :project: MaCh3

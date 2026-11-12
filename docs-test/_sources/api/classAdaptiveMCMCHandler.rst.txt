@@ -1,0 +1,18 @@
+.. _exhale_class_classAdaptiveMCMCHandler:
+
+Class AdaptiveMCMCHandler
+=========================
+
+- Defined in :ref:`file_Parameters_AdaptiveMCMCHandler.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: AdaptiveMCMCHandler
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

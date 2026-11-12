@@ -1,0 +1,18 @@
+.. _exhale_class_classM3_1_1rand_1_1Random:
+
+Class Random
+============
+
+- Defined in :ref:`file_Manager_Random.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: M3::rand::Random
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

@@ -1,0 +1,14 @@
+.. _exhale_define_YamlHelper_8h_1ad802d5a5acdc16a796b21af74f6f5f59:
+
+Define M3OpenConfig
+===================
+
+- Defined in :ref:`file_Manager_YamlHelper.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: M3OpenConfig
+   :project: MaCh3

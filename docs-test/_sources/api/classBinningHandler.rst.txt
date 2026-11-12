@@ -1,0 +1,18 @@
+.. _exhale_class_classBinningHandler:
+
+Class BinningHandler
+====================
+
+- Defined in :ref:`file_Samples_BinningHandler.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: BinningHandler
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

@@ -1,0 +1,121 @@
+
+.. _file_Manager_MaCh3Logger.h:
+
+File MaCh3Logger.h
+==================
+
+|exhale_lsh| :ref:`Parent directory <dir_Manager>` (``Manager``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+MaCh3 Logging utilities built on top of SPDLOG. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Manager/MaCh3Logger.h``)
+--------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Manager_MaCh3Logger.h.rst
+
+
+
+Detailed Description
+--------------------
+
+KS: MaCh3 uses SPDLOG as its core logging backend, and this file serves as a wrapper around it. The MaCh3 logging system uses compile-time log level definitions to control which log statements are compiled. This ensures that, in default builds, ``MACH3LOG_DEBUG`` and lower levels are completely removed at compile time for maximal performance.
+
+The available compile-time log level definitions can be found here.
+
+You can read more about SPDLOG formatting, levels, and configuration on the official SPDLOG wiki. 
+
+Kamil Skwarczynski 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/Core.h`` (:ref:`file_Manager_Core.h`)
+
+- ``exception``
+
+- ``functional``
+
+- ``iostream``
+
+- ``spdlog/spdlog.h``
+
+- ``sstream``
+
+- ``string``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Manager_MaCh3Exception.h`
+
+- :ref:`file_Manager_Monitor.h`
+
+- :ref:`file_Manager_TablePrinter.h`
+
+- :ref:`file_Parameters_ParameterStructs.h`
+
+- :ref:`file_Samples_SampleStructs.h`
+
+- :ref:`file_Utils_Plotting_InputManager.h`
+
+- :ref:`file_Utils_Plotting_PlottingManager.h`
+
+- :ref:`file_Utils_Plotting_PlottingUtils.h`
+
+- :ref:`file_Utils_Plotting_StyleManager.h`
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_MaCh3Logger_8h_1af60f058d76fca9889ca3c930a377c353`
+
+- :ref:`exhale_function_MaCh3Logger_8h_1ada930684d7c1ed8916f1fbe6d266ca77`
+
+- :ref:`exhale_function_MaCh3Logger_8h_1aa603c55ea73cd86d1994901227883e1e`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_MaCh3Logger_8h_1a07ff6d6a15b24f94afc88a1b89779beb`
+
+- :ref:`exhale_define_MaCh3Logger_8h_1a4db4657acad5c79ac4bbb66a9d1c5905`
+
+- :ref:`exhale_define_MaCh3Logger_8h_1a61052119a625282d0ec6d4a97adf3ee2`
+
+- :ref:`exhale_define_MaCh3Logger_8h_1a95fa4dffc648e4c5536c9292c2bdcac3`
+
+- :ref:`exhale_define_MaCh3Logger_8h_1afa930300ae979052e16935bee1397a95`
+
+- :ref:`exhale_define_MaCh3Logger_8h_1afc88f0aa23c7127b2ff6e5c7ca3fa892`
+
+- :ref:`exhale_define_MaCh3Logger_8h_1ad5b2eb6377721e3ac95def22c2386bb1`
+

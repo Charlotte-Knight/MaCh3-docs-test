@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Plotting_1a1185f525313b8e84842cd0688258b235:
+
+Function M3::Plotting::TGraphToVector(const TGraph&)
+====================================================
+
+- Defined in :ref:`file_Utils_Plotting_PlottingUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Plotting::TGraphToVector(const TGraph&)
+   :project: MaCh3

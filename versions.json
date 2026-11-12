@@ -6,6 +6,11 @@
     "preferred": true
   },
   {
+    "version": "docs-test",
+    "name": "docs-test",
+    "url": "https://charlotte-knight.github.io/MaCh3-docs-test/docs-test/"
+  },
+  {
     "version": "legacy-develop",
     "name": "develop (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/",

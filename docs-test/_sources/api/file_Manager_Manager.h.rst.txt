@@ -1,0 +1,77 @@
+
+.. _file_Manager_Manager.h:
+
+File Manager.h
+==============
+
+|exhale_lsh| :ref:`Parent directory <dir_Manager>` (``Manager``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Manager/Manager.h``)
+----------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Manager_Manager.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/MaCh3Exception.h`` (:ref:`file_Manager_MaCh3Exception.h`)
+
+- ``Manager/Monitor.h`` (:ref:`file_Manager_Monitor.h`)
+
+- ``Manager/Random.h`` (:ref:`file_Manager_Random.h`)
+
+- ``Manager/YamlHelper.h`` (:ref:`file_Manager_YamlHelper.h`)
+
+- ``Samples/SampleStructs.h`` (:ref:`file_Samples_SampleStructs.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Fitters_Algorithms_FitterBase.h`
+
+- :ref:`file_Fitters_Algorithms_MulticanonicalMCMCHandler.h`
+
+- :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+- :ref:`file_NuDock_NuDockFactory.h`
+
+- :ref:`file_Parameters_AdaptiveMCMCHandler.h`
+
+- :ref:`file_Parameters_PCAHandler.h`
+
+- :ref:`file_Parameters_ParameterHandlerBase.h`
+
+- :ref:`file_Parameters_ParameterTunes.h`
+
+- :ref:`file_Samples_BinningHandler.h`
+
+- :ref:`file_Samples_SampleHandlerInterface.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classManager`
+

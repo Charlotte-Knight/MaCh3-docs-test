@@ -1,0 +1,69 @@
+
+.. _file_CLI_DynamicPlugin.hpp:
+
+File DynamicPlugin.hpp
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir_CLI>` (``CLI``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Wrapper class for dynamically loaded plugins. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``CLI/DynamicPlugin.hpp``)
+--------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_CLI_DynamicPlugin.hpp.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``CLI/API/plugin.hpp`` (:ref:`file_CLI_API_plugin.hpp`)
+
+- ``dlfcn.h``
+
+- ``functional``
+
+- ``memory``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_CLI_MaCh3Program.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classM3_1_1DynamicPlugin`
+

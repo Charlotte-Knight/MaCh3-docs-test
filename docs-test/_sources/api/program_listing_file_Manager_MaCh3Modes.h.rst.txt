@@ -1,0 +1,81 @@
+
+.. _program_listing_file_Manager_MaCh3Modes.h:
+
+Program Listing for File MaCh3Modes.h
+=====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Manager_MaCh3Modes.h>` (``Manager/MaCh3Modes.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // C++ Includes
+   #include <cmath>
+   #include <map>
+   #include <string>
+   
+   //MaCh3 includes
+   #include "Manager/YamlHelper.h"
+   #include "Manager/Monitor.h"
+   #include "Manager/MaCh3Exception.h"
+   
+   using MaCh3Modes_t = int;
+   
+   struct MaCh3ModeInfo {
+     std::string Name;
+     std::string FancyName;
+     int PlotColor;
+     std::vector<int> GeneratorMaping;
+     bool IsNC;
+     std::string SplineSuffix;
+     bool IsMode(const int GenMode) const {
+       bool exists = std::find(GeneratorMaping.begin(), GeneratorMaping.end(), GenMode) != GeneratorMaping.end();
+       return exists;
+     }
+   };
+   
+   class MaCh3Modes {
+    public:
+     MaCh3Modes(std::string const &filename);
+     MaCh3Modes(const YAML::Node& config);
+     virtual ~MaCh3Modes(){};
+   
+     void Print() const;
+   
+     int GetNModes() const {return NModes;}
+     MaCh3Modes_t GetMode(const std::string& name) const;
+     std::string GetMaCh3ModeName(const int Index) const;
+     int GetMaCh3ModePlotColor(const int Index) const;
+     std::string GetMaCh3ModeFancyName(const int Index) const;
+     bool IsMaCh3ModeNC(const int Index) const;
+     std::string GetSplineSuffixFromMaCh3Mode(const int Index);
+     MaCh3Modes_t GetModeFromGenerator(const int Index) const;
+     std::string GetName() const {return "MaCh3Modes";};
+     int GetNCCModes() const {return nCCModes;};
+   
+    private:
+     inline void Initialise(const YAML::Node& config);
+   
+     inline MaCh3Modes_t EnsureModeNameRegistered(std::string const &name);
+   
+     inline void DeclareNewMode(std::string const &name,
+                                std::string const &fancyname,
+                                int PlotColor,
+                                std::vector<int> const &GenMap,
+                                const bool IsNC,
+                                const std::string& SplineSuffix);
+   
+     inline void PrepareMap();
+   
+     std::map<std::string, MaCh3Modes_t> Mode;
+     std::map<MaCh3Modes_t, MaCh3ModeInfo> fMode;
+     std::vector<int> ModeMap;
+   
+     std::string Title;
+     std::string Generator;
+     int NModes;
+     int nCCModes;
+   };

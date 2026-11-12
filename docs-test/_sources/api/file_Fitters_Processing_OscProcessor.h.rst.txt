@@ -1,0 +1,49 @@
+
+.. _file_Fitters_Processing_OscProcessor.h:
+
+File OscProcessor.h
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_Fitters_Processing>` (``Fitters/Processing``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Fitters/Processing/OscProcessor.h``)
+--------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Fitters_Processing_OscProcessor.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Processing/MCMCProcessor.h`` (:ref:`file_Fitters_Processing_MCMCProcessor.h`)
+
+- ``Samples/HistogramUtils.h`` (:ref:`file_Samples_HistogramUtils.h`)
+
+- ``TComplex.h``
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classOscProcessor`
+

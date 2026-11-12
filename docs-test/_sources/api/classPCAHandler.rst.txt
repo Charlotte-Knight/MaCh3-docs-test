@@ -1,0 +1,18 @@
+.. _exhale_class_classPCAHandler:
+
+Class PCAHandler
+================
+
+- Defined in :ref:`file_Parameters_PCAHandler.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: PCAHandler
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

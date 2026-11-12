@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a13aa52c404712954271d7c7faa728334:
+
+Function ComputeKLDivergence(TH2Poly \*, TH2Poly \*)
+====================================================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ComputeKLDivergence(TH2Poly *, TH2Poly *)
+   :project: MaCh3

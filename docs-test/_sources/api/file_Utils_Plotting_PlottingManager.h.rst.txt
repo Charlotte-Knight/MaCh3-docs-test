@@ -1,0 +1,76 @@
+
+.. _file_Utils_Plotting_PlottingManager.h:
+
+File PlottingManager.h
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir_Utils_Plotting>` (``Utils/Plotting``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Utils/Plotting/PlottingManager.h``)
+-------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Utils_Plotting_PlottingManager.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``InputManager.h`` (:ref:`file_Utils_Plotting_InputManager.h`)
+
+- ``Manager/MaCh3Exception.h`` (:ref:`file_Manager_MaCh3Exception.h`)
+
+- ``Manager/MaCh3Logger.h`` (:ref:`file_Manager_MaCh3Logger.h`)
+
+- ``Manager/YamlHelper.h`` (:ref:`file_Manager_YamlHelper.h`)
+
+- ``StyleManager.h`` (:ref:`file_Utils_Plotting_StyleManager.h`)
+
+- ``algorithm``
+
+- ``iomanip``
+
+- ``iostream``
+
+- ``stdio.h``
+
+- ``stdlib.h``
+
+- ``unistd.h``
+
+- ``vector``
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+- :ref:`namespace_M3__Plotting`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classM3_1_1Plotting_1_1PlottingManager`
+

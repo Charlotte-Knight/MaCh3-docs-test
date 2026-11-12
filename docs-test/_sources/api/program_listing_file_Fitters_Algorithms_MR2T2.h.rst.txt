@@ -1,0 +1,26 @@
+
+.. _program_listing_file_Fitters_Algorithms_MR2T2.h:
+
+Program Listing for File MR2T2.h
+================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Fitters_Algorithms_MR2T2.h>` (``Fitters/Algorithms/MR2T2.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include "Algorithms/MCMCBase.h"
+   
+   class MR2T2 : public MCMCBase {
+    public:
+        MR2T2(Manager *const FitManager);
+   
+        virtual ~MR2T2() = default;
+    protected:
+       void DoStep() override;
+       void ProposeStep() final;
+       double AcceptanceProbability() override;
+   };

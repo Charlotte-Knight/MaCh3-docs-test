@@ -1,0 +1,14 @@
+.. _exhale_function_SplineStructs_8h_1a02798d50f282b82a68b58d672dcb2472:
+
+Function ReduceTSpline3
+=======================
+
+- Defined in :ref:`file_Splines_SplineStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ReduceTSpline3(std::vector<std::vector<TSpline3 *>>&)
+   :project: MaCh3

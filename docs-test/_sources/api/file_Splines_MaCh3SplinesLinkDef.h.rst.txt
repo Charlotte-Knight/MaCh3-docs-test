@@ -1,0 +1,32 @@
+
+.. _file_Splines_MaCh3SplinesLinkDef.h:
+
+File MaCh3SplinesLinkDef.h
+==========================
+
+|exhale_lsh| :ref:`Parent directory <dir_Splines>` (``Splines``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Splines/MaCh3SplinesLinkDef.h``)
+----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Splines_MaCh3SplinesLinkDef.h.rst
+
+
+
+
+
+
+
+
+

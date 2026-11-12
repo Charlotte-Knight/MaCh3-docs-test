@@ -1,0 +1,16 @@
+Manager
+=======
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../file_Manager_Core.h.rst
+   ../../../file_Manager_MaCh3Exception.h.rst
+   ../../../file_Manager_MaCh3Logger.h.rst
+   ../../../file_Manager_MaCh3Modes.h.rst
+   ../../../dir_Manager.rst
+   ../../../file_Manager_Manager.h.rst
+   ../../../file_Manager_Monitor.h.rst
+   ../../../file_Manager_Random.h.rst
+   ../../../file_Manager_TablePrinter.h.rst
+   ../../../file_Manager_YamlHelper.h.rst

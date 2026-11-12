@@ -1,0 +1,79 @@
+
+.. _namespace_M3__Utils:
+
+Namespace M3::Utils
+===================
+
+
+Utility helpers used across MaCh3. 
+
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structM3_1_1Utils_1_1ColumnSpec`
+
+- :ref:`exhale_class_classM3_1_1Utils_1_1TablePrinter`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespaceM3_1_1Utils_1afd16809dc4d7eef736cc3c3b32d9dfce`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a40e73d1ded5f35067042285af5d70348`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a45c1b264497aabdcceff3707d6f0fa10`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a9c1c1d6d38585550e356e7d36bfdb704`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1aec1d76a89edfeeffb62ae3e0011e30df`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a34224111b48a6bbdd04c22be13c19dd7`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a1ee28e60049e882dbfa0ed808a140aaa`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1afb4213a30e5bfd7ca3e9e5d27beefe9e`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a0b01bdf0cb6a60b9447fcf7bea9ce472`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1ad796df2f1b4323201c86682a96fa9c23`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1aa584cce13ec0c8ba9d7c4bbce66c5985`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1ae1851bb53770476caf14eb00e4b429a2`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1ab9577b73681bd9048699f72a7df05451`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1ab292ea845a1776f3427789eb76141e8d`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a357e4fd9163d29d0cf9dfd3841786559`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a4be30065aafa9370c2a6640c50f00b50`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a186a7214d984c1917cf6c615ba4bb2c9`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1ab6df30ddfffcd5b5c3a1a34826c14d41`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a55dd0ac1201ba988a6293faade5003c1`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1ab021e008806b98e6c67713e2685c96b4`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1adb1ec2c447be60dc963ab75230417d5d`

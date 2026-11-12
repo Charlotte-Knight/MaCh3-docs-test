@@ -1,0 +1,9 @@
+API
+===
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../dir_CLI_API.rst
+   ../../../../file_CLI_API_m3argparse.hpp.rst
+   ../../../../file_CLI_API_plugin.hpp.rst

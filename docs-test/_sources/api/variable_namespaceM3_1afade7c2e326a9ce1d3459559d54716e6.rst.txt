@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceM3_1afade7c2e326a9ce1d3459559d54716e6:
+
+Variable M3::Unity_D
+====================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: M3::Unity_D
+   :project: MaCh3

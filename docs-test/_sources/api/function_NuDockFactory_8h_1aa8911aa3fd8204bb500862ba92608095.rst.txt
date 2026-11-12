@@ -1,0 +1,14 @@
+.. _exhale_function_NuDockFactory_8h_1aa8911aa3fd8204bb500862ba92608095:
+
+Function InitialiseNuDockObj
+============================
+
+- Defined in :ref:`file_NuDock_NuDockFactory.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: InitialiseNuDockObj(Manager *, std::unique_ptr<NuDock>&)
+   :project: MaCh3

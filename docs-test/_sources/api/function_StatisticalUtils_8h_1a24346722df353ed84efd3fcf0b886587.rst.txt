@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a24346722df353ed84efd3fcf0b886587:
+
+Function ComputeKLDivergence(const std::vector<double>&, const std::vector<double>&)
+====================================================================================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ComputeKLDivergence(const std::vector<double>&, const std::vector<double>&)
+   :project: MaCh3

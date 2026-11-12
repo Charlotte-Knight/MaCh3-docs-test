@@ -1,0 +1,72 @@
+
+.. _file_Samples_SampleHandlerBase.h:
+
+File SampleHandlerBase.h
+========================
+
+|exhale_lsh| :ref:`Parent directory <dir_Samples>` (``Samples``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Samples/SampleHandlerBase.h``)
+--------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Samples_SampleHandlerBase.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Parameters/ParameterHandlerGeneric.h`` (:ref:`file_Parameters_ParameterHandlerGeneric.h`)
+
+- ``Samples/BinningHandler.h`` (:ref:`file_Samples_BinningHandler.h`)
+
+- ``Samples/EventInfo.h`` (:ref:`file_Samples_EventInfo.h`)
+
+- ``Samples/OscillationHandler.h`` (:ref:`file_Samples_OscillationHandler.h`)
+
+- ``Samples/SampleHandlerBase.txx``
+
+- ``Samples/SampleHandlerFunctional.h`` (:ref:`file_Samples_SampleHandlerFunctional.h`)
+
+- ``Samples/SampleHandlerInterface.h`` (:ref:`file_Samples_SampleHandlerInterface.h`)
+
+- ``Samples/SampleInfo.h`` (:ref:`file_Samples_SampleInfo.h`)
+
+- ``Splines/BinnedSplineHandler.h`` (:ref:`file_Splines_BinnedSplineHandler.h`)
+
+- ``THStack.h``
+
+- ``TLegend.h``
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classSampleHandlerBase`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_SampleHandlerBase_8h_1acd80f4d29c8405ff6fa2dd89ff4e9365`
+

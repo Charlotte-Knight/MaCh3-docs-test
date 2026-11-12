@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a805e612837e9c06375079dea641c3804:
+
+Function GetModeError
+=====================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetModeError(TH1D *)
+   :project: MaCh3

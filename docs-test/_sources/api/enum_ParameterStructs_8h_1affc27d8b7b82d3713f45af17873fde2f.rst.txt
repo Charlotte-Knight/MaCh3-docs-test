@@ -1,0 +1,14 @@
+.. _exhale_enum_ParameterStructs_8h_1affc27d8b7b82d3713f45af17873fde2f:
+
+Enum SystType
+=============
+
+- Defined in :ref:`file_Parameters_ParameterStructs.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: SystType
+   :project: MaCh3

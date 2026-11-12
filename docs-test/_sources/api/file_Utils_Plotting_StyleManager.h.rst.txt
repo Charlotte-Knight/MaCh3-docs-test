@@ -1,0 +1,70 @@
+
+.. _file_Utils_Plotting_StyleManager.h:
+
+File StyleManager.h
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_Utils_Plotting>` (``Utils/Plotting``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Utils/Plotting/StyleManager.h``)
+----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Utils_Plotting_StyleManager.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/MaCh3Exception.h`` (:ref:`file_Manager_MaCh3Exception.h`)
+
+- ``Manager/MaCh3Logger.h`` (:ref:`file_Manager_MaCh3Logger.h`)
+
+- ``Manager/YamlHelper.h`` (:ref:`file_Manager_YamlHelper.h`)
+
+- ``TColor.h``
+
+- ``TH1.h``
+
+- ``TStyle.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Utils_Plotting_PlottingManager.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+- :ref:`namespace_M3__Plotting`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classM3_1_1Plotting_1_1StyleManager`
+

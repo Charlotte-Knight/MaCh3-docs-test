@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceM3_1a32ef26a222f7341e03dcc42cdd2badd3:
+
+Variable M3::_BAD_DOUBLE_
+=========================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: M3::_BAD_DOUBLE_
+   :project: MaCh3

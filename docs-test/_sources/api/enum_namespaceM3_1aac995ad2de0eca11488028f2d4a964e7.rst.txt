@@ -1,0 +1,14 @@
+.. _exhale_enum_namespaceM3_1aac995ad2de0eca11488028f2d4a964e7:
+
+Enum BiasFunction
+=================
+
+- Defined in :ref:`file_Fitters_Algorithms_MulticanonicalMCMCHandler.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: M3::BiasFunction
+   :project: MaCh3

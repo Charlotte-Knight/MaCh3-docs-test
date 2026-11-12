@@ -1,0 +1,63 @@
+
+.. _program_listing_file_Splines_SplineCommon.h:
+
+Program Listing for File SplineCommon.h
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Splines_SplineCommon.h>` (``Splines/SplineCommon.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   
+   constexpr int _nCoeff_ = 4;
+   constexpr int _nTF1Coeff_ = 2;
+   
+   enum SplineSegmentCoeffs
+   {
+     kCoeffY = 0, 
+     kCoeffB = 1, 
+     kCoeffC = 2, 
+     kCoeffD = 3  
+   };
+   
+   // *******************
+   struct SplineIndex {
+   // *******************
+     virtual ~SplineIndex() = default;
+   
+     int value    = 0;
+     int iSample  = 0;
+     int iOscChan = 0;
+     int iSyst    = 0;
+     int iMode    = 0;
+     std::vector<int> iVar{0, 0, 0};
+   
+     #ifndef __CUDACC__
+     // Include ClassDef macro for ROOT dictionary generation, but only in C++ code
+     ClassDef(SplineIndex, 1);
+     #endif
+   };
+   
+   // *******************
+   struct SplineMonoStruct {
+   // *******************
+     virtual ~SplineMonoStruct() = default;
+   
+     std::vector<float> coeff_x;
+   
+     std::vector<float> coeff_many;
+   
+     std::vector<unsigned int> nKnots_arr;
+   
+     std::vector<short int> paramNo_arr;
+   
+     #ifndef __CUDACC__
+     // Include ClassDef macro for ROOT dictionary generation, but only in C++ code
+     ClassDef(SplineMonoStruct, 1);
+     #endif
+   };
+   

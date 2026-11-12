@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceM3_1a4fc5221346bd0dd85e3dadaf1ecdf502:
+
+Variable M3::_DEFAULT_RETURN_VAL_
+=================================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: M3::_DEFAULT_RETURN_VAL_
+   :project: MaCh3

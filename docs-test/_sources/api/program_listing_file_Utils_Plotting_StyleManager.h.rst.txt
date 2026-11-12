@@ -1,0 +1,72 @@
+
+.. _program_listing_file_Utils_Plotting_StyleManager.h:
+
+Program Listing for File StyleManager.h
+=======================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Utils_Plotting_StyleManager.h>` (``Utils/Plotting/StyleManager.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // MaCh3 Includes
+   #include "Manager/MaCh3Logger.h"
+   #include "Manager/YamlHelper.h"
+   #include "Manager/MaCh3Exception.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   // ROOT Things
+   #include "TColor.h"
+   #include "TH1.h"
+   #include "TStyle.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   namespace M3 {
+   namespace Plotting {
+   
+   class StyleManager {
+   public:
+     StyleManager(const std::string& configName);
+     
+     // NO COPYING!
+     StyleManager( const StyleManager& ) = delete;
+     StyleManager( StyleManager&& ) = default;
+   
+     ~StyleManager(){
+       MACH3LOG_DEBUG("##### Deleting StyleManager Instance #####");
+     }
+   
+     std::string prettifyParamName(const std::string &origName) const {
+       return prettifyName(origName, "parameters");
+     };
+   
+     std::string prettifySampleName(const std::string &origName) const {
+       return prettifyName(origName, "samples");
+     };
+   
+     std::string prettifyKinematicName(const std::string &origName) const {
+       return prettifyName(origName, "kinematics");
+     };
+   
+     double getBinWidthScale(const std::string &Name) const;
+   
+     // style setting options
+     void setPalette(const int rootPlotStyle) const;
+   
+     void setPalette(const std::string& configStyleName) const;
+   
+     void setTH1Style(TH1 *hist, const std::string& styleName) const;
+   
+     void setTH1XRange(TH1 *hist) const;
+   private:
+     YAML::Node _styleConfig;
+   
+     // helper to basically just read fancy names from config  
+     std::string prettifyName(const std::string &origName, const std::string &nameType) const;
+   
+   };
+   } // namespace Plotting
+   } // namespace M3

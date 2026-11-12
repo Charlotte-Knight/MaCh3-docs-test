@@ -1,0 +1,108 @@
+
+.. _program_listing_file_Fitters_Processing_StatisticalUtils.h:
+
+Program Listing for File StatisticalUtils.h
+===========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Fitters_Processing_StatisticalUtils.h>` (``Fitters/Processing/StatisticalUtils.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // C++ includes
+   #include <iostream>
+   #include <sstream>
+   #include <iomanip>
+   #include <vector>
+   #include <algorithm>
+   #include <cmath>
+   
+   //MaCh3 includes
+   #include "Manager/Manager.h"
+   #include "Samples/HistogramUtils.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   // ROOT includes
+   #include "TCanvas.h"
+   #include "TLine.h"
+   #include "TROOT.h"
+   #include "TStyle.h"
+   #include "TGraphAsymmErrors.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   class TGraphAsymmErrors;
+   
+   
+   namespace M3 {
+     enum kInfCrit {
+       kBIC,      
+       kDIC,      
+       kWAIC,     
+       kInfCrits  
+     };
+   }
+   
+   std::string GetJeffreysScale(const double BayesFactor);
+   
+   std::string GetDunneKaboth(const double BayesFactor);
+   
+   double GetSigmaValue(const int sigma);
+   
+   double GetBIC(const double llh, const int data, const int nPars);
+   
+   double GetNeffective(const int N1, const int N2);
+   
+   void CheckBonferoniCorrectedpValue(const std::vector<std::string>& SampleNameVec,
+                                             const std::vector<double>& PValVec,
+                                             const double Threshold = 0.05);
+   
+   double GetAndersonDarlingTestStat(const double CumulativeData, const double CumulativeMC, const double CumulativeJoint);
+   
+   int GetNumberOfRuns(const std::vector<int>& GroupClasifier);
+   
+   double GetBetaParameter(const double data, const double mc, const double w2, TestStatistic TestStat);
+   
+   double GetSubOptimality(const std::vector<double>& EigenValues, const int TotalTarameters);
+   
+   void GetArithmetic(TH1D * const hist, double& Mean, double& Error);
+   
+   void GetGaussian(TH1D*& hist, TF1* gauss, double& Mean, double& Error);
+   
+   void GetHPD(TH1D* const hist, double& Mean, double& Error, double& Error_p, double& Error_m, const double coverage = 0.6827);
+   
+   void GetCredibleInterval(const std::unique_ptr<TH1D>& hist, std::unique_ptr<TH1D>& hpost_copy, const double coverage = 0.6827);
+   
+   void GetCredibleIntervalSig(const std::unique_ptr<TH1D>& hist, std::unique_ptr<TH1D>& hpost_copy, const bool CredibleInSigmas, const double coverage = 0.6827);
+   
+   void GetCredibleRegion(std::unique_ptr<TH2D>& hist2D, const double coverage = 0.6827);
+   
+   void GetCredibleRegionSig(std::unique_ptr<TH2D>& hist2D, const bool CredibleInSigmas, const double coverage = 0.6827);
+   
+   double GetIQR(TH1D *Hist);
+   
+   double ComputeKLDivergence(const std::vector<double>& Data, const std::vector<double>& MC);
+   double ComputeKLDivergence(TH2Poly* DataPoly, TH2Poly* PolyMC);
+   
+   double FisherCombinedPValue(const std::vector<double>& pvalues);
+   
+   std::unique_ptr<TH1D> GetDeltaChi2(TH1D* posterior_probability_hist);
+   
+   void ThinningMCMC(const std::string& FilePath, const int ThinningCut);
+   
+   double GetZScore(const double value, const double mean, const double stddev);
+   
+   double GetPValueFromZScore(const double zScore);
+   
+   double GetModeError(TH1D* hpost);
+   
+   void Get2DBayesianpValue(TH2D *Histogram);
+   
+   void PassErrorToRatioPlot(TH1D* RatioHist, TH1D* Hist1, TH1D* DataHist);
+   
+   std::unique_ptr<TGraphAsymmErrors> PoissonGraph(const TH1D* h, double cl = 0.683);
+   
+   std::unique_ptr<TGraphAsymmErrors> PoissonGraphScaled(const TH1D* h, double scale = 1.0, double cl = 0.683);
+   

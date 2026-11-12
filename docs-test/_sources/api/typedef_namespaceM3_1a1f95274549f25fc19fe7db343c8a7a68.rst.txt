@@ -1,0 +1,14 @@
+.. _exhale_typedef_namespaceM3_1a1f95274549f25fc19fe7db343c8a7a68:
+
+Typedef M3::float_t
+===================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: M3::float_t
+   :project: MaCh3

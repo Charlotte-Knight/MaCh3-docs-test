@@ -1,0 +1,73 @@
+
+.. _file_Fitters_Algorithms_FitterBase.h:
+
+File FitterBase.h
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir_Fitters_Algorithms>` (``Fitters/Algorithms``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Fitters/Algorithms/FitterBase.h``)
+------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Fitters_Algorithms_FitterBase.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/Manager.h`` (:ref:`file_Manager_Manager.h`)
+
+- ``Parameters/ParameterHandlerBase.h`` (:ref:`file_Parameters_ParameterHandlerBase.h`)
+
+- ``Parameters/ParameterHandlerGeneric.h`` (:ref:`file_Parameters_ParameterHandlerGeneric.h`)
+
+- ``Processing/MCMCProcessor.h`` (:ref:`file_Fitters_Processing_MCMCProcessor.h`)
+
+- ``Samples/SampleHandlerInterface.h`` (:ref:`file_Samples_SampleHandlerInterface.h`)
+
+- ``fstream``
+
+- ``iostream``
+
+- ``sstream``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Fitters_Algorithms_LikelihoodFit.h`
+
+- :ref:`file_Fitters_Algorithms_MCMCBase.h`
+
+- :ref:`file_Fitters_Algorithms_MaCh3Factory.h`
+
+- :ref:`file_Fitters_Algorithms_PredictiveThrower.h`
+
+- :ref:`file_NuDock_NuDockServerBase.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classFitterBase`
+

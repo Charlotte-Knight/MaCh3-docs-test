@@ -1,0 +1,13 @@
+Splines
+=======
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../file_Splines_BinnedSplineHandler.h.rst
+   ../../../file_Splines_MaCh3SplinesLinkDef.h.rst
+   ../../../file_Splines_SplineBase.h.rst
+   ../../../file_Splines_SplineCommon.h.rst
+   ../../../dir_Splines.rst
+   ../../../file_Splines_SplineStructs.h.rst
+   ../../../file_Splines_UnbinnedSplineHandler.h.rst

@@ -1,0 +1,6 @@
+:orphan:
+
+Full API
+========
+
+See :doc:`library_root` for the directory-grouped API reference.

@@ -1,0 +1,27 @@
+.. _exhale_struct_structNormParameter:
+
+Struct NormParameter
+====================
+
+- Defined in :ref:`file_Parameters_ParameterStructs.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public TypeParameterBase`` (:ref:`exhale_struct_structTypeParameterBase`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: NormParameter
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

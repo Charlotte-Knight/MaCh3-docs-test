@@ -1,0 +1,131 @@
+
+.. _program_listing_file_Fitters_Algorithms_MulticanonicalMCMCHandler.h:
+
+Program Listing for File MulticanonicalMCMCHandler.h
+====================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Fitters_Algorithms_MulticanonicalMCMCHandler.h>` (``Fitters/Algorithms/MulticanonicalMCMCHandler.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include <ostream>
+   #include <string>
+   #include <vector>
+   
+   #include "Parameters/ParameterHandlerBase.h"
+   #include "Manager/Manager.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   #include "TSpline.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   
+   namespace M3 {
+     enum class BiasFunction {
+       kGaussian,
+       kVonMises,
+       kGeneralisedGaussian
+     };
+   
+     inline M3::BiasFunction ParseBiasFunction(const std::string& biasFunctionName) {
+       if (biasFunctionName == "gaussian") {
+         return M3::BiasFunction::kGaussian;
+       }
+       if (biasFunctionName == "vonMises") {
+         return M3::BiasFunction::kVonMises;
+       }
+       if (biasFunctionName == "generalisedGaussian") {
+         return M3::BiasFunction::kGeneralisedGaussian;
+       }
+       throw MaCh3Exception(__FILE__, __LINE__, "Unknown multicanonical bias function: " + biasFunctionName);
+     }
+   
+     inline std::string BiasFunction_ToString(const M3::BiasFunction& biasFunction) {
+       switch (biasFunction) {
+         case M3::BiasFunction::kGaussian:
+           return "gaussian";
+         case M3::BiasFunction::kVonMises:
+           return "vonMises";
+         case M3::BiasFunction::kGeneralisedGaussian:
+           return "generalisedGaussian";
+         default:
+           throw MaCh3Exception(__FILE__, __LINE__, "Unknown multicanonical bias function");
+       }
+     }
+   
+     constexpr double UmbrellaGaussianNormFactor = 0.906402477055;
+   }
+   
+   class MulticanonicalMCMCHandler {
+    public:
+     MulticanonicalMCMCHandler();
+     virtual ~MulticanonicalMCMCHandler();
+   
+     #ifdef MACH3_DEBUG
+     void setDebugStream(std::ostream* os, bool enabled);
+     #endif
+   
+     void FindOscCovParams(const std::vector<ParameterHandlerBase*>& systematics);
+   
+     void AdjustUmbrellaStepScale(const std::vector<ParameterHandlerBase*>& systematics);
+   
+     void InitializeMulticanonicalHandlerConfig(Manager* fitMan, std::vector<ParameterHandlerBase*>& systematics);
+   
+     void InitializeMulticanonicalParams(std::vector<ParameterHandlerBase*>& systematics);
+   
+     double GetMulticanonicalWeight() const;
+   
+     double GetMulticanonicalWeightSpline(double deltacp, double delm23) const;
+   
+     double GetMulticanonicalWeightGaussian(double deltacp) const;
+   
+     double GetMulticanonicalWeightTripleGaussian(double deltacp) const;
+   
+     double GetMulticanonicalWeightVonMises(double deltacp) const;
+   
+     double GetMulticanonicalWeightGenGaussian(double deltacp) const;
+   
+     double circularDistance(double x, double mean) const;
+   
+     double generalisedGaussian2(double x, double mean, double width) const;
+   
+     int oscCovVar;
+     std::string multicanonicalVarName;
+     int multicanonicalVar;
+     int multicanonicalVar_dm23;
+   
+     const M3::float_t* multicanonicalVarValue;
+     const M3::float_t* multicanonicalVar_dm23_value;
+   
+     M3::BiasFunction umbrellaBiasFunction;
+   
+     std::string umbrellaBiasFunctionName;
+   
+     bool multicanonicalSpline;
+   
+    protected:
+     double multicanonicalBeta;
+   
+     TSpline3* dcp_spline_IO;
+     TSpline3* dcp_spline_NO;
+   
+     double umbrellaMean;
+     double umbrellaWidth;
+     int umbrellaNumber;
+     bool umbrellaOverlapMode;
+     double umbrellaSigmaOverlap;
+     bool umbrellaAdjustStepScale;
+     double umbrellaStepScaleFactor;
+     bool flipWindow;
+   
+     double vonMises_kappa;
+     double vonMises_I0_kappa;
+   
+   #ifdef MACH3_DEBUG
+     std::ostream* debugStream = nullptr;
+     bool debugEnabled = false;
+   #endif
+   };

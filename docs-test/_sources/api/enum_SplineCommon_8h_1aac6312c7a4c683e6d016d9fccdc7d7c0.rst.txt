@@ -1,0 +1,14 @@
+.. _exhale_enum_SplineCommon_8h_1aac6312c7a4c683e6d016d9fccdc7d7c0:
+
+Enum SplineSegmentCoeffs
+========================
+
+- Defined in :ref:`file_Splines_SplineCommon.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: SplineSegmentCoeffs
+   :project: MaCh3

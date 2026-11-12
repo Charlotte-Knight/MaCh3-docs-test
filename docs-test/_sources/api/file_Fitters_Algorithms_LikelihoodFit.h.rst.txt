@@ -1,0 +1,55 @@
+
+.. _file_Fitters_Algorithms_LikelihoodFit.h:
+
+File LikelihoodFit.h
+====================
+
+|exhale_lsh| :ref:`Parent directory <dir_Fitters_Algorithms>` (``Fitters/Algorithms``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Fitters/Algorithms/LikelihoodFit.h``)
+---------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Fitters_Algorithms_LikelihoodFit.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Algorithms/FitterBase.h`` (:ref:`file_Fitters_Algorithms_FitterBase.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Fitters_Algorithms_MaCh3Factory.h`
+
+- :ref:`file_Fitters_Algorithms_MinuitFit.h`
+
+- :ref:`file_Fitters_Algorithms_PSO.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classLikelihoodFit`
+

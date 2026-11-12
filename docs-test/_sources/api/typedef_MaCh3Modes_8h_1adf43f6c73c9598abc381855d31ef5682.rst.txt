@@ -1,0 +1,14 @@
+.. _exhale_typedef_MaCh3Modes_8h_1adf43f6c73c9598abc381855d31ef5682:
+
+Typedef MaCh3Modes_t
+====================
+
+- Defined in :ref:`file_Manager_MaCh3Modes.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: MaCh3Modes_t
+   :project: MaCh3

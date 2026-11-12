@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1a50bc6511eef3b80c8ef0a1cbb45a4eff:
+
+Function M3::MakeCorrelationMatrix
+==================================
+
+- Defined in :ref:`file_Parameters_ParameterHandlerUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::MakeCorrelationMatrix(YAML::Node&, const std::vector<double>&, const std::vector<double>&, const std::vector<std::vector<double>>&, const std::string&, const std::vector<std::string>&)
+   :project: MaCh3

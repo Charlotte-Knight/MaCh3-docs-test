@@ -1,0 +1,168 @@
+
+.. _file_Manager_Core.h:
+
+File Core.h
+===========
+
+|exhale_lsh| :ref:`Parent directory <dir_Manager>` (``Manager``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+KS: Core MaCh3 definitions and compile-time configuration utilities. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Manager/Core.h``)
+-------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Manager_Core.h.rst
+
+
+
+Detailed Description
+--------------------
+
+KS: This header contains the fundamental MaCh3 type definitions, constants, and macros used throughout the framework. It centralizes basic numerical types, default constants, and utility macros for controlling memory layout, precision, and compiler diagnostics.
+
+Clarence Wret 
+
+Kamil Skwarczynski 
+
+Luke Pickering 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``cmath``
+
+- ``fstream``
+
+- ``iomanip``
+
+- ``iostream``
+
+- ``limits``
+
+- ``omp.h``
+
+- ``sstream``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Manager_MaCh3Exception.h`
+
+- :ref:`file_Manager_MaCh3Logger.h`
+
+- :ref:`file_Manager_Random.h`
+
+- :ref:`file_Manager_YamlHelper.h`
+
+- :ref:`file_Parameters_ParameterStructs.h`
+
+- :ref:`file_Parameters_SpecialProposals.h`
+
+- :ref:`file_Samples_SampleStructs.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespaceM3_1ad501f876b26ca2cef7bb5f434deaffb8`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_Core_8h_1a91209a17295738b34b124b79faa68a1b`
+
+- :ref:`exhale_define_Core_8h_1a46b8fa28114cf68de4549061568b5ade`
+
+- :ref:`exhale_define_Core_8h_1a2abc3d82639661d84964bed9e2df0e68`
+
+- :ref:`exhale_define_Core_8h_1ab6a7e23420f0bcfb04f42f45f8283101`
+
+- :ref:`exhale_define_Core_8h_1aad677c4443c651001dc4c1f781aef6dc`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_namespaceM3_1a1f95274549f25fc19fe7db343c8a7a68`
+
+- :ref:`exhale_typedef_namespaceM3_1adb59b8ecdc4e1b2d5d4c826a13aa7463`
+
+- :ref:`exhale_typedef_namespaceM3_1a08723e82326f079864a8672505dd5741`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespaceM3_1a32ef26a222f7341e03dcc42cdd2badd3`
+
+- :ref:`exhale_variable_namespaceM3_1aed6ca6561a78ba6c90a98ddfa22353aa`
+
+- :ref:`exhale_variable_namespaceM3_1a4fc5221346bd0dd85e3dadaf1ecdf502`
+
+- :ref:`exhale_variable_namespaceM3_1aaf4ba720c8ab2982beaa3c243aee1b98`
+
+- :ref:`exhale_variable_namespaceM3_1a88e0a86bf059e7ced9ec9717dd9da133`
+
+- :ref:`exhale_variable_namespaceM3_1a1aeda1bb6057e3f765d6d919246376e0`
+
+- :ref:`exhale_variable_namespaceM3_1a058de9d83e6afc416781469031c1aba5`
+
+- :ref:`exhale_variable_namespaceM3_1a1f7f36d023b8c549459b28521e002f6d`
+
+- :ref:`exhale_variable_namespaceM3_1a889843c4944ea4c89dd03ef2d1000a96`
+
+- :ref:`exhale_variable_namespaceM3_1ae55af9a5eb2878e4c5e4bbe5c2af029d`
+
+- :ref:`exhale_variable_namespaceM3_1a016e9a04de587fed0e52a2ff7af57393`
+
+- :ref:`exhale_variable_namespaceM3_1a71856d3b09903af6696008c3cb8386b0`
+
+- :ref:`exhale_variable_namespaceM3_1afade7c2e326a9ce1d3459559d54716e6`
+
+- :ref:`exhale_variable_namespaceM3_1a0888fc3177e4a0c3ddbed03a5bd358b0`
+
+- :ref:`exhale_variable_namespaceM3_1aa45c9a847fa5c777ff86ee3f22b8206c`
+
+- :ref:`exhale_variable_namespaceM3_1a931980122d8d6dd84058a055e247992b`
+
+- :ref:`exhale_variable_namespaceM3_1a2c65b735b4367784c25f7a02a75ec218`
+

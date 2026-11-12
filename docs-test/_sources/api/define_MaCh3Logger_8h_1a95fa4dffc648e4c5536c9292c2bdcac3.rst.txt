@@ -1,0 +1,14 @@
+.. _exhale_define_MaCh3Logger_8h_1a95fa4dffc648e4c5536c9292c2bdcac3:
+
+Define MACH3LOG_INFO
+====================
+
+- Defined in :ref:`file_Manager_MaCh3Logger.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MACH3LOG_INFO
+   :project: MaCh3

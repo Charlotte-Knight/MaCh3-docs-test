@@ -1,0 +1,27 @@
+.. _exhale_class_classOscProcessor:
+
+Class OscProcessor
+==================
+
+- Defined in :ref:`file_Fitters_Processing_OscProcessor.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public MCMCProcessor`` (:ref:`exhale_class_classMCMCProcessor`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: OscProcessor
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

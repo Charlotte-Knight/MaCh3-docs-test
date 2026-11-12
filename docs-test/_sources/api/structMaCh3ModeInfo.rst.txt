@@ -1,0 +1,18 @@
+.. _exhale_struct_structMaCh3ModeInfo:
+
+Struct MaCh3ModeInfo
+====================
+
+- Defined in :ref:`file_Manager_MaCh3Modes.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: MaCh3ModeInfo
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a3cc352ea65a5fbf8bfbd7a03991ee5bf:
+
+Function GetCredibleRegion
+==========================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetCredibleRegion(std::unique_ptr<TH2D>&, const double)
+   :project: MaCh3

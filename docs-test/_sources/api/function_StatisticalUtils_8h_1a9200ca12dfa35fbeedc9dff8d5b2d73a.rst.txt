@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a9200ca12dfa35fbeedc9dff8d5b2d73a:
+
+Function PassErrorToRatioPlot
+=============================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: PassErrorToRatioPlot(TH1D *, TH1D *, TH1D *)
+   :project: MaCh3

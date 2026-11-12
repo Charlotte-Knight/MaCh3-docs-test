@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Utils_1adb1ec2c447be60dc963ab75230417d5d:
+
+Function M3::Utils::TerminalToString
+====================================
+
+- Defined in :ref:`file_Manager_Monitor.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Utils::TerminalToString(std::string)
+   :project: MaCh3

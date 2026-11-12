@@ -1,0 +1,27 @@
+.. _exhale_class_classM3_1_1ProcessMCMCModule:
+
+Class ProcessMCMCModule
+=======================
+
+- Defined in :ref:`file_CLI_Modules_ProcessMCMCModule.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public M3::PluginBase`` (:ref:`exhale_class_classM3_1_1PluginBase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: M3::ProcessMCMCModule
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

@@ -1,0 +1,59 @@
+
+.. _program_listing_file_Manager_Monitor.h:
+
+Program Listing for File Monitor.h
+==================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Manager_Monitor.h>` (``Manager/Monitor.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // C++ includes
+   #include <iostream>
+   #include <fstream>
+   #include <string>
+   #include <vector>
+   #include <cstdlib>
+   
+   // MaCh3 includes
+   #include "Manager/MaCh3Logger.h"
+   #include "Manager/MaCh3Exception.h"
+   #include "Manager/YamlHelper.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   // ROOT include
+   #include "TTree.h"
+   #include "TBranch.h"
+   #include "TMacro.h"
+   #include "TChain.h"
+   #include "TStopwatch.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   
+   
+   namespace M3 {
+   namespace Utils {
+     void MaCh3Welcome();
+     void GetOSInfo();
+     void GetCPUInfo();
+     void GetGPUInfo();
+     void NThreadsSanity();
+     std::string TerminalToString(std::string cmd);
+     void EstimateDataTransferRate(TChain* chain, const Long64_t entry);
+     void GetDiskUsage();
+     void PrintProgressBar(const Long64_t Done, const Long64_t All);
+     std::string GetMaCh3Version();
+     int getValue(const std::string& Type);
+     int parseLine(const std::string& line);
+     void PrintConfig(const YAML::Node& node);
+     void Print(const TTree* tree);
+     void MaCh3Usage(int argc, char **argv);
+   } // end Utils namespace
+   
+     int GetNThreads();
+     void AddPath(std::string& FilePath);
+   } // end M3 namespace

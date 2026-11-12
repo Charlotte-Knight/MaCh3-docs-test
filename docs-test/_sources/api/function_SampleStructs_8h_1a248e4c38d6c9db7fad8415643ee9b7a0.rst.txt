@@ -1,0 +1,14 @@
+.. _exhale_function_SampleStructs_8h_1a248e4c38d6c9db7fad8415643ee9b7a0:
+
+Function TestStatFromString
+===========================
+
+- Defined in :ref:`file_Samples_SampleStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: TestStatFromString(const std::string&)
+   :project: MaCh3

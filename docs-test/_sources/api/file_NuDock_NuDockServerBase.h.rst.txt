@@ -1,0 +1,62 @@
+
+.. _file_NuDock_NuDockServerBase.h:
+
+File NuDockServerBase.h
+=======================
+
+|exhale_lsh| :ref:`Parent directory <dir_NuDock>` (``NuDock``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Base class for the MaCh3 NuDock server, exposing fit internals via a JSON-based request/response protocol. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``NuDock/NuDockServerBase.h``)
+------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_NuDock_NuDockServerBase.h.rst
+
+
+
+Detailed Description
+--------------------
+
+Hank Hua 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``Fitters/Algorithms/FitterBase.h`` (:ref:`file_Fitters_Algorithms_FitterBase.h`)
+
+- ``NuDockFactory.h`` (:ref:`file_NuDock_NuDockFactory.h`)
+
+- ``nlohmann/json.hpp``
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classNuDockServerBase`
+

@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a94e492e3e9142db9e1cb1c4c027259f3:
+
+Function GetIQR
+===============
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetIQR(TH1D *)
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_function_HistogramUtils_8h_1ab18c6b2408d7b9021bad06d47a06ee8d:
+
+Function NoOverflowIntegral
+===========================
+
+- Defined in :ref:`file_Samples_HistogramUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: NoOverflowIntegral(TH2Poly *)
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_function_ParameterStructs_8h_1af1b80b5456f9b1cb847fb56ddcc3c1ab:
+
+Function SplineInterpolation_ToRespFuncType
+===========================================
+
+- Defined in :ref:`file_Parameters_ParameterStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: SplineInterpolation_ToRespFuncType(const SplineInterpolation)
+   :project: MaCh3

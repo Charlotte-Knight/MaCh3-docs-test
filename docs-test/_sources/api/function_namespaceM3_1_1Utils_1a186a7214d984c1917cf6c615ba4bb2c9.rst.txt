@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Utils_1a186a7214d984c1917cf6c615ba4bb2c9:
+
+Function M3::Utils::PDGToNuOscillatorFlavour
+============================================
+
+- Defined in :ref:`file_Samples_SampleStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Utils::PDGToNuOscillatorFlavour(const int)
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_function_MaCh3Logger_8h_1af60f058d76fca9889ca3c930a377c353:
+
+Function get_default_log_level
+==============================
+
+- Defined in :ref:`file_Manager_MaCh3Logger.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: get_default_log_level()
+   :project: MaCh3

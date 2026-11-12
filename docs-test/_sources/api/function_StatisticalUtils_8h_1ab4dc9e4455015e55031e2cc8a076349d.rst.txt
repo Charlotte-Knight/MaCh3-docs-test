@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1ab4dc9e4455015e55031e2cc8a076349d:
+
+Function GetArithmetic
+======================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetArithmetic(TH1D *const, double&, double&)
+   :project: MaCh3

@@ -1,0 +1,12 @@
+Namespaces
+==========
+
+.. toctree::
+   :maxdepth: 1
+
+   ../namespace_M3.rst
+   ../namespace_M3__Plotting.rst
+   ../namespace_M3__Utils.rst
+   ../namespace_M3__detail.rst
+   ../namespace_M3__rand.rst
+   ../namespace_std.rst

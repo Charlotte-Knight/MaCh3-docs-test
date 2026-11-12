@@ -1,0 +1,72 @@
+
+.. _file_Fitters_Algorithms_MaCh3Factory.h:
+
+File MaCh3Factory.h
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_Fitters_Algorithms>` (``Fitters/Algorithms``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Factory methods for MaCh3 software which streamline initialisation of different objects. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Fitters/Algorithms/MaCh3Factory.h``)
+--------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Fitters_Algorithms_MaCh3Factory.h.rst
+
+
+
+Detailed Description
+--------------------
+
+Kamil Skwarczynski 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``Algorithms/DelayedMR2T2.h`` (:ref:`file_Fitters_Algorithms_DelayedMR2T2.h`)
+
+- ``Algorithms/FitterBase.h`` (:ref:`file_Fitters_Algorithms_FitterBase.h`)
+
+- ``Algorithms/LikelihoodFit.h`` (:ref:`file_Fitters_Algorithms_LikelihoodFit.h`)
+
+- ``Algorithms/MR2T2.h`` (:ref:`file_Fitters_Algorithms_MR2T2.h`)
+
+- ``Algorithms/PSO.h`` (:ref:`file_Fitters_Algorithms_PSO.h`)
+
+- ``Parameters/ParameterHandlerGeneric.h`` (:ref:`file_Parameters_ParameterHandlerGeneric.h`)
+
+
+
+
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_MaCh3Factory_8h_1a648d2793b16eb62b088b8e9611a15ff1`
+
+- :ref:`exhale_function_MaCh3Factory_8h_1a67c9a07c72e9d3d441cd3181dafdb905`
+
+- :ref:`exhale_function_MaCh3Factory_8h_1a790d0802b36a03be651d830ae33ed8e6`
+

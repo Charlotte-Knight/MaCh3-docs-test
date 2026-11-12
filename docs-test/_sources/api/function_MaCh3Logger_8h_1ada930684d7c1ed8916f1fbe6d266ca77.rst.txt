@@ -1,0 +1,14 @@
+.. _exhale_function_MaCh3Logger_8h_1ada930684d7c1ed8916f1fbe6d266ca77:
+
+Template Function LoggerPrint
+=============================
+
+- Defined in :ref:`file_Manager_MaCh3Logger.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: LoggerPrint(const std::string&, LogFunc, Func&&, Args&&...)
+   :project: MaCh3

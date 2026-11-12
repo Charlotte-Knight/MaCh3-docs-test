@@ -1,0 +1,158 @@
+
+.. _file_Samples_SampleStructs.h:
+
+File SampleStructs.h
+====================
+
+|exhale_lsh| :ref:`Parent directory <dir_Samples>` (``Samples``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Samples/SampleStructs.h``)
+----------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Samples_SampleStructs.h.rst
+
+
+
+Detailed Description
+--------------------
+
+Asher Kaboth 
+
+Clarence Wret 
+
+Patrick Dunne 
+
+Dan Barrow 
+
+Ed Atkin 
+
+Kamil Skwarczynski 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``Constants/OscillatorConstants.h``
+
+- ``Manager/Core.h`` (:ref:`file_Manager_Core.h`)
+
+- ``Manager/MaCh3Exception.h`` (:ref:`file_Manager_MaCh3Exception.h`)
+
+- ``Manager/MaCh3Logger.h`` (:ref:`file_Manager_MaCh3Logger.h`)
+
+- ``Parameters/ParameterStructs.h`` (:ref:`file_Parameters_ParameterStructs.h`)
+
+- ``TF1.h``
+
+- ``TFile.h``
+
+- ``TH1.h``
+
+- ``TH2Poly.h``
+
+- ``TObjString.h``
+
+- ``TSpline.h``
+
+- ``list``
+
+- ``set``
+
+- ``unordered_map``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Manager_Manager.h`
+
+- :ref:`file_Parameters_ParameterHandlerGeneric.h`
+
+- :ref:`file_Samples_BinningHandler.h`
+
+- :ref:`file_Samples_EventInfo.h`
+
+- :ref:`file_Samples_HistogramUtils.h`
+
+- :ref:`file_Samples_OscillationHandler.h`
+
+- :ref:`file_Samples_SampleHandlerInterface.h`
+
+- :ref:`file_Samples_SampleInfo.h`
+
+- :ref:`file_Utils_Plotting_InputManager.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+- :ref:`namespace_M3__Utils`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structBinInfo`
+
+- :ref:`exhale_struct_structBinShiftLookup`
+
+- :ref:`exhale_struct_structKinematicCut`
+
+- :ref:`exhale_struct_structSampleBinningInfo`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_SampleStructs_8h_1a0dfdd8cf84b8fa3495e9e5e520fe6cd2`
+
+- :ref:`exhale_enum_SampleStructs_8h_1a706416000041de040e97d5dbe0bdb580`
+
+- :ref:`exhale_enum_SampleStructs_8h_1a960da89e33ac45a56f7bbfac3068dc67`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_SampleStructs_8h_1af4afb01e9e8a6b9fa2bf0ece1b4e0859`
+
+- :ref:`exhale_function_SampleStructs_8h_1a4a3cb7a9d73e72bb8144bed28ed5855d`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a9c1c1d6d38585550e356e7d36bfdb704`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a0b01bdf0cb6a60b9447fcf7bea9ce472`
+
+- :ref:`exhale_function_namespaceM3_1_1Utils_1a186a7214d984c1917cf6c615ba4bb2c9`
+
+- :ref:`exhale_function_SampleStructs_8h_1a36b7eae1e9918d93ac6912d88c498a24`
+
+- :ref:`exhale_function_SampleStructs_8h_1a248e4c38d6c9db7fad8415643ee9b7a0`
+
+- :ref:`exhale_function_SampleStructs_8h_1a300e6cbc6c664b9ae8462c637732cf61`
+

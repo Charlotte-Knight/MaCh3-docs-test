@@ -1,0 +1,27 @@
+.. _exhale_class_classPSO:
+
+Class PSO
+=========
+
+- Defined in :ref:`file_Fitters_Algorithms_PSO.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public LikelihoodFit`` (:ref:`exhale_class_classLikelihoodFit`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: PSO
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

@@ -1,0 +1,92 @@
+
+.. _file_Manager_MaCh3Exception.h:
+
+File MaCh3Exception.h
+=====================
+
+|exhale_lsh| :ref:`Parent directory <dir_Manager>` (``Manager``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Defines the custom exception class used throughout MaCh3. 
+
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Manager/MaCh3Exception.h``)
+-----------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Manager_MaCh3Exception.h.rst
+
+
+
+Detailed Description
+--------------------
+
+The ``MaCh3Exception`` class provides a lightweight wrapper around ``std::exception`` for consistent error handling across the framework. It automatically logs the file and line number where the exception was thrown, using MaCh3’s logging system.
+
+Kamil Skwarczynski 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/Core.h`` (:ref:`file_Manager_Core.h`)
+
+- ``Manager/MaCh3Logger.h`` (:ref:`file_Manager_MaCh3Logger.h`)
+
+- ``iostream``
+
+- ``stdexcept``
+
+- ``string``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Manager_MaCh3Modes.h`
+
+- :ref:`file_Manager_Manager.h`
+
+- :ref:`file_Manager_Monitor.h`
+
+- :ref:`file_Manager_YamlHelper.h`
+
+- :ref:`file_Parameters_ParameterStructs.h`
+
+- :ref:`file_Samples_SampleStructs.h`
+
+- :ref:`file_Utils_Plotting_InputManager.h`
+
+- :ref:`file_Utils_Plotting_PlottingManager.h`
+
+- :ref:`file_Utils_Plotting_PlottingUtils.h`
+
+- :ref:`file_Utils_Plotting_StyleManager.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classMaCh3Exception`
+

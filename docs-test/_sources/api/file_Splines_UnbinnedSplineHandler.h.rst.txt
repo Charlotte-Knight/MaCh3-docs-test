@@ -1,0 +1,45 @@
+
+.. _file_Splines_UnbinnedSplineHandler.h:
+
+File UnbinnedSplineHandler.h
+============================
+
+|exhale_lsh| :ref:`Parent directory <dir_Splines>` (``Splines``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Splines/UnbinnedSplineHandler.h``)
+------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Splines_UnbinnedSplineHandler.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Splines/SplineBase.h`` (:ref:`file_Splines_SplineBase.h`)
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classUnbinnedSplineHandler`
+

@@ -1,0 +1,28 @@
+.. _exhale_class_classSampleHandlerInterface:
+
+Class SampleHandlerInterface
+============================
+
+- Defined in :ref:`file_Samples_SampleHandlerInterface.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public SampleHandlerBase`` (:ref:`exhale_class_classSampleHandlerBase`)
+- ``public SampleHandlerNuDockBase`` (:ref:`exhale_class_classSampleHandlerNuDockBase`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: SampleHandlerInterface
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a2ab3766c7598cced99b8c6cf0dfedb9c:
+
+Function GetCredibleIntervalSig
+===============================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetCredibleIntervalSig(const std::unique_ptr<TH1D>&, std::unique_ptr<TH1D>&, const bool, const double)
+   :project: MaCh3

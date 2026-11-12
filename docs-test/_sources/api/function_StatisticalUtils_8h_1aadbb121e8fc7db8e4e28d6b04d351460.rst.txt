@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1aadbb121e8fc7db8e4e28d6b04d351460:
+
+Function GetHPD
+===============
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetHPD(TH1D *const, double&, double&, double&, double&, const double)
+   :project: MaCh3

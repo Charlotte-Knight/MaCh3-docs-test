@@ -1,0 +1,14 @@
+.. _exhale_function_SplineStructs_8h_1ae3ff4629bf4f805e11a0f9b16f95fcde:
+
+Function ApplyKnotWeightCapTSpline3
+===================================
+
+- Defined in :ref:`file_Splines_SplineStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: ApplyKnotWeightCapTSpline3(TSpline3 *&, const int, ParameterHandlerGeneric *)
+   :project: MaCh3

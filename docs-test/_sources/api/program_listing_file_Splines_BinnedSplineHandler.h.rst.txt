@@ -1,0 +1,104 @@
+
+.. _program_listing_file_Splines_BinnedSplineHandler.h:
+
+Program Listing for File BinnedSplineHandler.h
+==============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Splines_BinnedSplineHandler.h>` (``Splines/BinnedSplineHandler.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   //MaCh3 includes
+   #include "Splines/SplineBase.h"
+   #include "Manager/MaCh3Modes.h"
+   
+   class BinnedSplineHandler : public SplineBase {
+     public:
+       BinnedSplineHandler(ParameterHandlerGeneric *ParamHandler, MaCh3Modes *Modes_, const bool Use_GPU = true);
+       virtual ~BinnedSplineHandler();
+   
+       void Evaluate() final;
+   
+       void AddSample(const std::string& SampleName,
+                      const std::string& SampleTitle,
+                      const std::vector<std::string>& OscChanFileNames,
+                      const std::vector<std::string>& SplineVarNames);
+       void TransferToMonolith();
+       void CleanUpMemory();
+   
+       virtual void FillSampleArray(const std::string& SampleTitle, const std::vector<std::string>& OscChanFileNames);
+       std::vector<SplineIndex> GetEventSplines(const std::string& SampleTitle, int iOscChan, int EventMode, const std::vector<double>& VarVals);
+       int CountNumberOfLoadedSplines(bool NonFlat=false, int Verbosity=0) const;
+   
+       const M3::float_t* RetPointer(const SplineIndex& Variables) const;
+       void PrepareSplineFile(std::string FileName) final;
+       void LoadSplineFile(std::string FileName) final;
+   
+     protected:
+       void CalcSplineWeights() final;
+       void PrepForReweight();
+       void BuildSampleIndexingArray(const std::string& SampleTitle);
+       std::vector<TAxis*> FindSplineBinning(const std::string& FileName, const std::string& SampleTitle);
+   
+       void PrintBinning(TAxis* Axis) const;
+       void PrintSampleDetails(const std::string& SampleTitle) const;
+       void PrintArrayDetails(const std::string& SampleTitle) const;
+       int GetSampleIndex(const std::string& SampleTitle) const;
+       bool isValidSplineIndex(const std::string& SampleTitle, int iSyst, int iOscChan, int iMode, const std::vector<int>& iVar) const;
+       std::vector< std::vector<int> > StripDuplicatedModes(const std::vector< std::vector<int> >& InputVector) const;
+       void GetSplineCoeff_SepMany(int splineindex, M3::float_t *& xArray, M3::float_t *&manyArray);
+   
+       ParameterHandlerGeneric* ParHandler;
+   
+       //And now the actual member variables
+       std::vector<std::string> SampleNames;
+       std::vector<std::string> SampleTitles;
+       std::vector<int> Dimensions;
+       std::vector<std::vector<std::string>> DimensionLabels;
+       std::vector<int> nSplineParams;
+       std::vector<int> nOscChans;
+       std::vector< std::vector< std::vector<TAxis*> > > SplineBinning;
+       std::vector< std::vector<std::string> > SplineFileParPrefixNames;
+       std::vector< std::vector< std::vector<int> > > SplineModeVecs;
+       std::vector< std::vector<int> > GlobalSystIndex;
+       std::vector< std::vector<SplineInterpolation> > SplineInterpolationTypes;
+   
+       std::vector<std::string> UniqueSystNames;
+       std::vector<int> UniqueSystIndices;
+   
+       std::vector<SplineIndex> IndexVect;
+       std::map<std::tuple<int, int, int, int, std::vector<int>>, int> IndexVectMap;
+       std::vector<unsigned int> nKnots_arr;
+   
+       std::vector< TSpline3_red* > splinevec_Monolith;
+   
+       unsigned int MonolithIndex;
+       int CoeffIndex;
+   
+       std::vector<int> monolith_index;
+       M3::float_t *xcoeff_arr;
+       M3::float_t *manycoeff_arr;
+   
+       std::vector<M3::float_t> cpu_spline_weights;
+       std::vector<short int> paramNo_arr;
+   
+       MaCh3Modes* Modes;
+       enum TokenOrdering{kSystToken,kModeToken,kVarBinToken};
+       virtual std::vector<std::string> GetTokensFromSplineName(const std::string& FullSplineName) = 0;
+   
+     private:
+       void MoveToGPU();
+       void InvestigateMissingSplines() const;
+       void LoadSettingsDir(std::unique_ptr<TFile>& SplineFile);
+       void LoadMonolithDir(std::unique_ptr<TFile>& SplineFile);
+       void LoadIndexDir(std::unique_ptr<TFile>& SplineFile);
+   
+       void PrepareSettingsDir(std::unique_ptr<TFile>& SplineFile) const;
+       void PrepareMonolithDir(std::unique_ptr<TFile>& SplineFile) const;
+       void PrepareIndexDir(std::unique_ptr<TFile>& SplineFile) const;
+       void PrepareOtherInfoDir(std::unique_ptr<TFile>& SplineFile) const;
+   };

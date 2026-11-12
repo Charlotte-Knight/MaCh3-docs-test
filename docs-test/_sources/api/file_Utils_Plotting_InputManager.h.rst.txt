@@ -1,0 +1,79 @@
+
+.. _file_Utils_Plotting_InputManager.h:
+
+File InputManager.h
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_Utils_Plotting>` (``Utils/Plotting``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Utils/Plotting/InputManager.h``)
+----------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Utils_Plotting_InputManager.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Fitters/Processing/MCMCProcessor.h`` (:ref:`file_Fitters_Processing_MCMCProcessor.h`)
+
+- ``Manager/MaCh3Exception.h`` (:ref:`file_Manager_MaCh3Exception.h`)
+
+- ``Manager/MaCh3Logger.h`` (:ref:`file_Manager_MaCh3Logger.h`)
+
+- ``Manager/YamlHelper.h`` (:ref:`file_Manager_YamlHelper.h`)
+
+- ``PlottingUtils.h`` (:ref:`file_Utils_Plotting_PlottingUtils.h`)
+
+- ``Samples/SampleStructs.h`` (:ref:`file_Samples_SampleStructs.h`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Utils_Plotting_PlottingManager.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+- :ref:`namespace_M3__Plotting`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structM3_1_1Plotting_1_1InputFile`
+
+- :ref:`exhale_class_classM3_1_1Plotting_1_1InputManager`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_namespaceM3_1_1Plotting_1a62d6a732804190bc7a907c3a9e1babdd`
+

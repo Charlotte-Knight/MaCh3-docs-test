@@ -1,0 +1,14 @@
+.. _exhale_function_HistogramUtils_8h_1aa4a6c663b339c664ba7dc8e8f135b95f:
+
+Function MakeFluctuatedHistogramAlternative(TH2D \*, TH2D \*)
+=============================================================
+
+- Defined in :ref:`file_Samples_HistogramUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: MakeFluctuatedHistogramAlternative(TH2D *, TH2D *)
+   :project: MaCh3

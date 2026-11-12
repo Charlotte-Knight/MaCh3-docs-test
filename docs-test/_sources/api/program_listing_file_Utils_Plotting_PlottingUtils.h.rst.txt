@@ -1,0 +1,59 @@
+
+.. _program_listing_file_Utils_Plotting_PlottingUtils.h:
+
+Program Listing for File PlottingUtils.h
+========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Utils_Plotting_PlottingUtils.h>` (``Utils/Plotting/PlottingUtils.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // MaCh3 includes
+   #include "Manager/MaCh3Logger.h"
+   #include "Manager/MaCh3Exception.h"
+   
+   // C++
+   #include <algorithm>
+   #include <iomanip>
+   #include <iostream>
+   #include <map>
+   
+   _MaCh3_Safe_Include_Start_ //{
+   // ROOT
+   #include "TCanvas.h"
+   #include "TGraph2D.h"
+   #include "TColor.h"
+   #include "TDirectory.h"
+   #include "TFile.h"
+   #include "TGraph.h"
+   #include "TH1.h"
+   #include "TH1D.h"
+   #include "TH2.h"
+   #include "TH2Poly.h"
+   #include "THStack.h"
+   #include "TKey.h"
+   #include "TLatex.h"
+   #include "TLegend.h"
+   #include "TLine.h"
+   #include "TROOT.h"
+   #include "TStyle.h"
+   #include "TMultiGraph.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   
+   namespace M3 {
+   namespace Plotting {
+   TH1D TGraphToTH1D(const TGraph& graph, const std::string& newName = "", const std::string& newTitle = "");
+   
+   
+   std::vector<std::vector<double>> TGraphToVector(const TGraph& graph);
+   
+   void SetSymmetricRatioRange(const std::vector<std::unique_ptr<TH1D>>& RatioPlot);
+   
+   std::vector<std::vector<double>> TGraphToVector(const TGraph2D& graph);
+   } // namespace Plotting
+   } // namespace M3

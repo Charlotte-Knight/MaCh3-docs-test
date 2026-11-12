@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1a116e94960ba2df3ac2ec3ebe499307ae:
+
+Function M3::ParseBiasFunction
+==============================
+
+- Defined in :ref:`file_Fitters_Algorithms_MulticanonicalMCMCHandler.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::ParseBiasFunction(const std::string&)
+   :project: MaCh3

@@ -1,0 +1,14 @@
+.. _exhale_define_Core_8h_1a46b8fa28114cf68de4549061568b5ade:
+
+Define _MaCh3_Safe_Include_Start_
+=================================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: _MaCh3_Safe_Include_Start_
+   :project: MaCh3

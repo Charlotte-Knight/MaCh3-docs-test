@@ -1,0 +1,30 @@
+API
+===
+
+
+Classes
+-------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../classM3_1_1IPlugin.rst
+   ../../../../classM3_1_1MaCh3ArgumentParser.rst
+   ../../../../classM3_1_1PluginBase.rst
+
+Type aliases
+------------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../typedef_namespaceM3_1a5053b9d7dce6ad7a919acb6497a6686d.rst
+   ../../../../typedef_namespaceM3_1afd98b2e1cfd69589744c3e3a8a155629.rst
+
+Macros
+------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../define_plugin_8hpp_1af4ee15ffb2d7160a1f03b5239d2c7ec8.rst

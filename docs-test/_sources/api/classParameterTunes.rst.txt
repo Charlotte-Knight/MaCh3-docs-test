@@ -1,0 +1,18 @@
+.. _exhale_class_classParameterTunes:
+
+Class ParameterTunes
+====================
+
+- Defined in :ref:`file_Parameters_ParameterTunes.h`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: ParameterTunes
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

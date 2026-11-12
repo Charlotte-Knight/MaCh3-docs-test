@@ -1,0 +1,14 @@
+.. _exhale_function_SampleStructs_8h_1a36b7eae1e9918d93ac6912d88c498a24:
+
+Function TargetMat_ToString
+===========================
+
+- Defined in :ref:`file_Samples_SampleStructs.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: TargetMat_ToString(const TargetMat)
+   :project: MaCh3

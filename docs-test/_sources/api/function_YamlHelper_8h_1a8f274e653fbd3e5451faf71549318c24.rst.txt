@@ -1,0 +1,14 @@
+.. _exhale_function_YamlHelper_8h_1a8f274e653fbd3e5451faf71549318c24:
+
+Function TMacroToString
+=======================
+
+- Defined in :ref:`file_Manager_YamlHelper.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: TMacroToString(const TMacro&)
+   :project: MaCh3

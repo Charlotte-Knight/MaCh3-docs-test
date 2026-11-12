@@ -1,0 +1,14 @@
+.. _exhale_function_YamlHelper_8h_1a2a8231c2076b91564e31e55567018f00:
+
+Template Function FindFromManager
+=================================
+
+- Defined in :ref:`file_Manager_YamlHelper.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: FindFromManager(const YAML::Node&, Args...)
+   :project: MaCh3

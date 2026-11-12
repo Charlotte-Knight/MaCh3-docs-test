@@ -1,0 +1,56 @@
+Splines
+=======
+
+
+Classes
+-------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../classBinnedSplineHandler.rst
+   ../../../classSplineBase.rst
+   ../../../classTF1__red.rst
+   ../../../classTResponseFunction__red.rst
+   ../../../classTSpline3__red.rst
+   ../../../classUnbinnedSplineHandler.rst
+
+Structs
+-------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../structFastSplineInfo.rst
+   ../../../structSplineIndex.rst
+   ../../../structSplineMonoStruct.rst
+
+Enums
+-----
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../enum_SplineCommon_8h_1aac6312c7a4c683e6d016d9fccdc7d7c0.rst
+
+Functions
+---------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../function_SplineStructs_8h_1ad5cf65febeac6a16f6ef017567c50d26.rst
+   ../../../function_SplineStructs_8h_1ae3ff4629bf4f805e11a0f9b16f95fcde.rst
+   ../../../function_SplineStructs_8h_1ab2c8d72ae04d6efb77876248cb67a338.rst
+   ../../../function_SplineStructs_8h_1aee66563def836e531cda07c5efa45d87.rst
+   ../../../function_SplineStructs_8h_1adb758df8e7abdf29f474bf643da0efd2.rst
+   ../../../function_SplineStructs_8h_1a02798d50f282b82a68b58d672dcb2472.rst
+
+Variables
+---------
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../variable_SplineCommon_8h_1a790348db7c20fb9896e94403fbee52cf.rst
+   ../../../variable_SplineCommon_8h_1ad6cacf3d45a37eeeeffe38ad24345d54.rst

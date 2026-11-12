@@ -1,0 +1,14 @@
+.. _exhale_variable_NuDockFactory_8h_1a0fb3a5566e0f615cc546f78dea53d16c:
+
+Variable NuDockOscNameMap_r
+===========================
+
+- Defined in :ref:`file_NuDock_NuDockFactory.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: NuDockOscNameMap_r
+   :project: MaCh3

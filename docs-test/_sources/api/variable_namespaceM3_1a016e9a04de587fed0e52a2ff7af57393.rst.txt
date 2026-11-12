@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceM3_1a016e9a04de587fed0e52a2ff7af57393:
+
+Variable M3::UnderOverFlowBin
+=============================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: M3::UnderOverFlowBin
+   :project: MaCh3

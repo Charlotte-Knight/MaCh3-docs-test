@@ -1,0 +1,14 @@
+.. _exhale_define_YamlHelper_8h_1a236f7db41b3514852c36138d94d8015e:
+
+Define Get2DBounds
+==================
+
+- Defined in :ref:`file_Manager_YamlHelper.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: Get2DBounds
+   :project: MaCh3

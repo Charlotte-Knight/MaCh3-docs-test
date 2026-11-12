@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Utils_1a34224111b48a6bbdd04c22be13c19dd7:
+
+Function M3::Utils::GetDiskUsage
+================================
+
+- Defined in :ref:`file_Manager_Monitor.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Utils::GetDiskUsage()
+   :project: MaCh3

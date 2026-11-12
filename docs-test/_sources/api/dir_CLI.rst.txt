@@ -1,0 +1,23 @@
+.. _dir_CLI:
+
+
+Directory CLI
+=============
+
+
+*Directory path:* ``CLI``
+
+Subdirectories
+--------------
+
+- :ref:`dir_CLI_API`
+- :ref:`dir_CLI_Modules`
+
+
+Files
+-----
+
+- :ref:`file_CLI_DynamicPlugin.hpp`
+- :ref:`file_CLI_MaCh3Program.hpp`
+
+

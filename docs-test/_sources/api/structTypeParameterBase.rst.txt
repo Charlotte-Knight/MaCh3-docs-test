@@ -1,0 +1,30 @@
+.. _exhale_struct_structTypeParameterBase:
+
+Struct TypeParameterBase
+========================
+
+- Defined in :ref:`file_Parameters_ParameterStructs.h`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public FunctionalParameter`` (:ref:`exhale_struct_structFunctionalParameter`)
+- ``public NormParameter`` (:ref:`exhale_struct_structNormParameter`)
+- ``public OscillationParameter`` (:ref:`exhale_struct_structOscillationParameter`)
+- ``public SplineParameter`` (:ref:`exhale_struct_structSplineParameter`)
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: TypeParameterBase
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

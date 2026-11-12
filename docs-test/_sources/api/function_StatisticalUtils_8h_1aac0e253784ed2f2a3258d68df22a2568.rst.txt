@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1aac0e253784ed2f2a3258d68df22a2568:
+
+Function GetJeffreysScale
+=========================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetJeffreysScale(const double)
+   :project: MaCh3

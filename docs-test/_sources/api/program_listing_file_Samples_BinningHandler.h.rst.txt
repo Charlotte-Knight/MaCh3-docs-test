@@ -1,0 +1,59 @@
+
+.. _program_listing_file_Samples_BinningHandler.h:
+
+Program Listing for File BinningHandler.h
+=========================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Samples_BinningHandler.h>` (``Samples/BinningHandler.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   #include <vector>
+   #include <string>
+   
+   #include "Samples/SampleStructs.h"
+   #include "Samples/SampleInfo.h"
+   #include "Samples/HistogramUtils.h"
+   #include "Manager/Manager.h"
+   
+   // ***************************
+   class BinningHandler {
+   // ***************************
+    public:
+     BinningHandler();
+   
+     virtual ~BinningHandler() {};
+   
+     int FindGlobalBin(const int iSample,
+                       const std::vector<const double*>& KinVar,
+                       const std::vector<int>& NomBin) const;
+   
+     int FindNominalBin(const int iSample, const int iDim, const double Var) const;
+   
+     int GetGlobalBinSafe(const int iSample, const std::vector<int>& Bins) const;
+     int GetBinSafe(const int iSample, const std::vector<int>& Bins) const;
+     int GetNBins() const {return TotalNumberOfBins;};
+     int GetNBins(const int iSample) const {return static_cast<int>(SampleBinning[iSample].nBins);};
+     int GetNDim(const int iSample) const { return int(SampleBinning[iSample].BinEdges.size()); }
+     std::string GetBinName(const int GlobalBin) const;
+     std::string GetBinName(const int iSample, const int SampleBin) const;
+     std::string GetBinName(const int iSample, const std::vector<int>& Bins) const;
+     int GetSampleIndex(const int GlobalBin) const;
+     std::vector<double> GetBinEdges(const int iSample, const int iDim) const {return SampleBinning[iSample].BinEdges.at(iDim);};
+   
+     int GetNAxisBins(const int iSample, const int iDim) const;
+     bool IsUniform(const int iSample) const;
+     int GetSampleStartBin(const int iSample) const;
+     int GetSampleEndBin(const int iSample) const;
+     const std::vector<BinInfo> GetNonUniformBins(const int iSample) const;
+     void SetGlobalBinNumbers();
+   
+     void SetupSampleBinning(const YAML::Node& Settings, SampleInfo& SingleSample);
+   
+    private:
+     int TotalNumberOfBins;
+     std::vector<SampleBinningInfo> SampleBinning;
+   };

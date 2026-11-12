@@ -1,0 +1,72 @@
+
+.. _file_Manager_MaCh3Modes.h:
+
+File MaCh3Modes.h
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir_Manager>` (``Manager``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Manager/MaCh3Modes.h``)
+-------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Manager_MaCh3Modes.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``Manager/MaCh3Exception.h`` (:ref:`file_Manager_MaCh3Exception.h`)
+
+- ``Manager/Monitor.h`` (:ref:`file_Manager_Monitor.h`)
+
+- ``Manager/YamlHelper.h`` (:ref:`file_Manager_YamlHelper.h`)
+
+- ``cmath``
+
+- ``map``
+
+- ``string``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Samples_SampleHandlerInterface.h`
+
+- :ref:`file_Splines_BinnedSplineHandler.h`
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structMaCh3ModeInfo`
+
+- :ref:`exhale_class_classMaCh3Modes`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_MaCh3Modes_8h_1adf43f6c73c9598abc381855d31ef5682`
+

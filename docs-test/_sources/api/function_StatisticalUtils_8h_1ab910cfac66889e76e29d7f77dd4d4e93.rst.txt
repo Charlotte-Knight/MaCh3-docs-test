@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1ab910cfac66889e76e29d7f77dd4d4e93:
+
+Function GetCredibleInterval
+============================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetCredibleInterval(const std::unique_ptr<TH1D>&, std::unique_ptr<TH1D>&, const double)
+   :project: MaCh3

@@ -1,0 +1,30 @@
+.. _dir_Fitters_Algorithms:
+
+
+Directory Algorithms
+====================
+
+
+|exhale_lsh| :ref:`Parent directory <dir_Fitters>` (``Fitters``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``Fitters/Algorithms``
+
+
+Files
+-----
+
+- :ref:`file_Fitters_Algorithms_DelayedMR2T2.h`
+- :ref:`file_Fitters_Algorithms_FitterBase.h`
+- :ref:`file_Fitters_Algorithms_LikelihoodFit.h`
+- :ref:`file_Fitters_Algorithms_MaCh3Factory.h`
+- :ref:`file_Fitters_Algorithms_MCMCBase.h`
+- :ref:`file_Fitters_Algorithms_MinuitFit.h`
+- :ref:`file_Fitters_Algorithms_MR2T2.h`
+- :ref:`file_Fitters_Algorithms_MulticanonicalMCMCHandler.h`
+- :ref:`file_Fitters_Algorithms_PredictiveThrower.h`
+- :ref:`file_Fitters_Algorithms_PSO.h`
+
+

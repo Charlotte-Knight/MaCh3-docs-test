@@ -1,0 +1,14 @@
+.. _exhale_function_YamlHelper_8h_1a30fc1dad7dde70247024fbb1c8f89bdc:
+
+Function Cnode
+==============
+
+- Defined in :ref:`file_Manager_YamlHelper.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: Cnode(const YAML::Node&)
+   :project: MaCh3

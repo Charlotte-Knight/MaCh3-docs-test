@@ -1,0 +1,124 @@
+
+.. _program_listing_file_Manager_Random.h:
+
+Program Listing for File Random.h
+=================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Manager_Random.h>` (``Manager/Random.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   #include <cstdint>
+   #include <vector>
+   
+   #include "Manager/Core.h"
+   #include "Manager/Monitor.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   // ROOT include
+   #include "TRandom3.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   namespace M3::rand
+   {
+   class Random
+   {
+    public:
+     static Random& Instance()
+     {
+       static Random instance;
+       return instance;
+     }
+   
+     void SetSeed(const std::uint64_t seed)
+     {
+       fSeed = seed;
+       const auto nThreads = GetNThreads();
+       fEngines.clear();
+       fEngines.reserve(nThreads);
+   
+       for (int thread = 0; thread < nThreads; ++thread) {
+         fEngines.emplace_back(std::make_unique<TRandom3>(fSeed));
+       }
+     }
+   
+     std::uint64_t GetSeed() const {
+       return fSeed;
+     }
+   
+     TRandom3* Engine() {
+       return fEngines[ThreadID()].get();
+     }
+   
+     double Uniform(const double min = 0.0,
+                    const double max = 1.0) {
+       return Engine()->Uniform(min, max);
+     }
+   
+     int UniformInt(const int min, const int max) {
+       return Engine()->Integer(max - min + 1) + min;
+     }
+   
+     double Gaus(const double mean = 0.0,
+                 const double sigma = 1.0) {
+       return Engine()->Gaus(mean, sigma);
+     }
+   
+     double PoissonD(const double mean) {
+       return Engine()->PoissonD(mean);
+     }
+   
+     int Poisson(const double mean) {
+       #pragma GCC diagnostic push
+       #pragma GCC diagnostic ignored "-Wconversion"
+       return Engine()->Poisson(mean);
+       #pragma GCC diagnostic pop
+     }
+    private:
+     Random() {
+       SetSeed(0);
+     }
+   
+     static std::size_t ThreadID() {
+       #ifdef MULTITHREAD
+       return static_cast<std::size_t>(omp_get_thread_num());
+       #else
+       return 0;
+       #endif
+     }
+   
+     std::uint64_t fSeed = 0;
+   
+     std::vector<std::unique_ptr<TRandom3>> fEngines;
+   };
+   
+     inline void SetSeed(const std::uint64_t seed) {
+       Random::Instance().SetSeed(seed);
+     }
+   
+     inline double Uniform(const double min = 0.0,
+                           const double max = 1.0) {
+       return Random::Instance().Uniform(min, max);
+     }
+   
+     inline int Poisson(const double mean) {
+       return Random::Instance().Poisson(mean);
+     }
+   
+     inline double PoissonD(const double mean) {
+       return Random::Instance().PoissonD(mean);
+     }
+   
+     inline int UniformInt(const int min, const int max) {
+       return Random::Instance().UniformInt(min, max);
+     }
+   
+     inline double Gaus(const double mean = 0.0,
+                        const double sigma = 1.0) {
+       return Random::Instance().Gaus(mean, sigma);
+     }
+   } // namespace M3

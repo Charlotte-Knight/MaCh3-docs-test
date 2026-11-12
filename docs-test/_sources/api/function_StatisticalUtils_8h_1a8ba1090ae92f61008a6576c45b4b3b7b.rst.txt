@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a8ba1090ae92f61008a6576c45b4b3b7b:
+
+Function FisherCombinedPValue
+=============================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: FisherCombinedPValue(const std::vector<double>&)
+   :project: MaCh3

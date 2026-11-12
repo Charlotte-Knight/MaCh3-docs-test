@@ -1,0 +1,18 @@
+.. _exhale_struct_structFastSplineInfo:
+
+Struct FastSplineInfo
+=====================
+
+- Defined in :ref:`file_Splines_SplineStructs.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: FastSplineInfo
+   :project: MaCh3
+   :members:
+   :protected-members:
+   :undoc-members:
+   :allow-dot-graphs:

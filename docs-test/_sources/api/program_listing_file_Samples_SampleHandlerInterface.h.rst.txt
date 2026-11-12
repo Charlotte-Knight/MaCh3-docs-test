@@ -1,0 +1,107 @@
+
+.. _program_listing_file_Samples_SampleHandlerInterface.h:
+
+Program Listing for File SampleHandlerInterface.h
+=================================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Samples_SampleHandlerInterface.h>` (``Samples/SampleHandlerInterface.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   //C++ includes
+   #include <assert.h>
+   
+   //MaCh3 includes
+   #include "Samples/SampleStructs.h"
+   #include "Samples/HistogramUtils.h"
+   #include "Manager/Manager.h"
+   #include "Manager/MaCh3Modes.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   //ROOT includes
+   #include "TTree.h"
+   #include "TH1D.h"
+   #include "TH2D.h"
+   #include "TMath.h"
+   #include "TFile.h"
+   #include "TROOT.h"
+   #include "TString.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   class SampleHandlerInterface
+   {
+    public:
+      SampleHandlerInterface();
+     virtual ~SampleHandlerInterface();
+   
+     virtual M3::int_t GetNSamples(){ return nSamples; };
+     virtual std::string GetSampleTitle(const int iSample) const = 0;
+     virtual std::string GetName() const = 0;
+     virtual double GetSampleLikelihood(const int iSample) const = 0;
+     virtual void CleanMemoryBeforeFit() = 0;
+     virtual void SaveAdditionalInfo([[maybe_unused]] TDirectory* Dir) {};
+     MaCh3Modes* GetMaCh3Modes() const { return Modes.get(); }
+     virtual void Reweight()=0;
+     virtual double GetLikelihood() const = 0;
+   
+     virtual void PrintRates(const bool DataOnly = false) = 0;
+   
+     virtual int GetNOscChannels(const int iSample) const = 0;
+   
+     virtual std::string GetKinVarName(const int iSample, const int Dimension) const = 0;
+   
+     virtual const TH1* GetDataHist(const int Sample) = 0;
+     virtual const TH1* GetMCHist(const int Sample) = 0;
+     virtual const TH1* GetW2Hist(const int Sample) = 0;
+   
+     virtual int GetNDim(const int Sample) const = 0;
+     virtual std::string GetFlavourName(const int iSample, const int iChannel) const = 0;
+   
+     virtual std::vector<double> ReturnKinematicParameterBinning(const int iSample, const std::string &KinematicParameter) const = 0;
+   
+     virtual std::unique_ptr<TH1> Get1DVarHistByModeAndChannel(const int iSample, const std::string& ProjectionVar_Str,
+                                                               const int kModeToFill = -1, const int kChannelToFill = -1,
+                                                               const int WeightStyle = 0) = 0;
+     virtual std::unique_ptr<TH2> Get2DVarHistByModeAndChannel(const int iSample, const std::string& ProjectionVar_StrX,
+                                                               const std::string& ProjectionVar_StrY, int kModeToFill = -1,
+                                                               const int kChannelToFill = -1, const int WeightStyle = 0) = 0;
+     virtual std::unique_ptr<TH1> Get1DVarHist(const int iSample, const std::string &ProjectionVar,
+                                               const std::vector<KinematicCut> &EventSelectionVec = {}, int WeightStyle = 0,
+                                               const std::vector<KinematicCut> &SubEventSelectionVec = {}) = 0;
+     virtual std::unique_ptr<TH2> Get2DVarHist(const int iSample, const std::string& ProjectionVarX,
+                                               const std::string& ProjectionVarY,
+                                               const std::vector< KinematicCut >& EventSelectionVec = {},
+                                               const int WeightStyle = 0, const std::vector< KinematicCut >& SubEventSelectionVec = {}) = 0;
+   
+     double GetPoissonLLH(const double data, const double mc) const;
+   
+     double GetTestStatLLH(const double data, const double mc, const double w2) const;
+   
+     void SetTestStatistic(TestStatistic testStat){ fTestStatistic = testStat; }
+     TestStatistic GetTestStatistic() const { return fTestStatistic; }
+   
+   protected:
+     void QuietPlease();
+     void NowTalk();
+   
+     template <typename T>
+     bool MatchCondition(const std::vector<T>& allowedValues, const T& value) {
+       if (allowedValues.empty()) {
+         return true;  // Apply to all if no specific values are specified
+       }
+       return std::find(allowedValues.begin(), allowedValues.end(), value) != allowedValues.end();
+     }
+   
+     TestStatistic fTestStatistic;
+   
+     std::streambuf *buf;
+     std::streambuf *errbuf;
+   
+     M3::int_t nSamples;
+   
+     std::unique_ptr<MaCh3Modes> Modes;
+   };

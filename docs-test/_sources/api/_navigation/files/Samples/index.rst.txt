@@ -1,0 +1,16 @@
+Samples
+=======
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../file_Samples_BinningHandler.h.rst
+   ../../../file_Samples_EventInfo.h.rst
+   ../../../file_Samples_HistogramUtils.h.rst
+   ../../../file_Samples_OscillationHandler.h.rst
+   ../../../file_Samples_SampleHandlerBase.h.rst
+   ../../../file_Samples_SampleHandlerFunctional.h.rst
+   ../../../file_Samples_SampleHandlerInterface.h.rst
+   ../../../file_Samples_SampleInfo.h.rst
+   ../../../dir_Samples.rst
+   ../../../file_Samples_SampleStructs.h.rst

@@ -1,0 +1,14 @@
+.. _exhale_function_namespaceM3_1_1Utils_1aa584cce13ec0c8ba9d7c4bbce66c5985:
+
+Function M3::Utils::getValue
+============================
+
+- Defined in :ref:`file_Manager_Monitor.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: M3::Utils::getValue(const std::string&)
+   :project: MaCh3

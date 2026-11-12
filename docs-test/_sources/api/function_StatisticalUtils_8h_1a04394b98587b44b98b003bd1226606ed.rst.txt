@@ -1,0 +1,14 @@
+.. _exhale_function_StatisticalUtils_8h_1a04394b98587b44b98b003bd1226606ed:
+
+Function GetSigmaValue
+======================
+
+- Defined in :ref:`file_Fitters_Processing_StatisticalUtils.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: GetSigmaValue(const int)
+   :project: MaCh3

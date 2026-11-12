@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fitter configuration &#8212; MaCh3 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=75c7c72ae941e8b558d8" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=4ae1632d" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=6a604523" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=e261dab0" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8" />
+
+    <script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <script data-sd-tabs-storage-prefix="sphinx-design-tab-id-" src="../_static/design-tabs.js?v=fcb327ea"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user-guide/configuration';</script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <script src="../_static/version-switcher.js?v=294b64cd"></script>
+    <script src="../_static/diagram-theme.js?v=7aaf9fa9"></script>
+    <link rel="icon" href="../_static/mach3logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="FAQ" href="faq.html" />
+    <link rel="prev" title="The mach3 command" href="cli.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation" aria-expanded="false" aria-controls="pst-primary-sidebar-modal">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/mach3logo.png" class="logo__image only-light" alt="MaCh3 documentation - Home"/>
+    <img src="../_static/mach3logo.png" class="logo__image only-dark pst-js-only" alt="MaCh3 documentation - Home"/>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/library_root.html">
+    C++ API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../pymach3/index.html">
+    pyMaCh3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://mach3-software.github.io/MaCh3/.Archive/v2.7.0/index.html">
+    Doxygen
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="publications.html">
+    Results and Publications
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="release-notes.html">
+    Release Notes
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../bibliography.html">
+    Bibliography
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><div class="pst-js-only">
+  <select class="form-select form-select-sm docs-version-switcher"
+          aria-label="Documentation version"
+          data-version="docs-test"
+          data-page="user-guide/configuration.html"
+          data-manifest="https://charlotte-knight.github.io/MaCh3-docs-test/versions.json">
+    <option value="">docs-test</option>
+  </select>
+  <small class="docs-version-error" role="status" hidden></small>
+</div></div>
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mach3-software/MaCh3" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page" aria-expanded="false" aria-controls="pst-secondary-sidebar-modal">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal" tabindex="-1"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="index.html">
+    User Guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../tutorials/index.html">
+    Tutorials
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../api/library_root.html">
+    C++ API
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../pymach3/index.html">
+    pyMaCh3
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-external" href="https://mach3-software.github.io/MaCh3/.Archive/v2.7.0/index.html">
+    Doxygen
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="publications.html">
+    Results and Publications
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="release-notes.html">
+    Release Notes
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../bibliography.html">
+    Bibliography
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><div class="pst-js-only">
+  <select class="form-select form-select-sm docs-version-switcher"
+          aria-label="Documentation version"
+          data-version="docs-test"
+          data-page="user-guide/configuration.html"
+          data-manifest="https://charlotte-knight.github.io/MaCh3-docs-test/versions.json">
+    <option value="">docs-test</option>
+  </select>
+  <small class="docs-version-error" role="status" hidden></small>
+</div></div>
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/mach3-software/MaCh3" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item pst-sidebar-collapse"><button type="button" id="pst-collapse-sidebar-button" aria-expanded="true" aria-controls="pst-primary-sidebar">
+  <svg class="pst-icon" role="img" aria-hidden="true" focusable="false" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M3 15.5C2.36232 15.5 1.74874 15.2564 1.28478 14.8189C0.820828 14.3815 0.541576 13.7832 0.504167 13.1467L0.5 13L0.5 3C0.499965 2.36232 0.743605 1.74874 1.18107 1.28478C1.61854 0.820828 2.21676 0.541576 2.85333 0.504167L3 0.5L13 0.5C13.6377 0.499965 14.2513 0.743605 14.7152 1.18107C15.1792 1.61854 15.4584 2.21676 15.4958 2.85333L15.5 3L15.5 13C15.5 13.6377 15.2564 14.2513 14.8189 14.7152C14.3815 15.1792 13.7832 15.4584 13.1467 15.4958L13 15.5L3 15.5ZM3 13.8333L10.5 13.8333L10.5 2.16667L3 2.16667C2.79589 2.16669 2.59889 2.24163 2.44636 2.37726C2.29383 2.5129 2.19638 2.69979 2.1725 2.9025L2.16667 3L2.16667 13C2.16669 13.2041 2.24163 13.4011 2.37726 13.5536C2.5129 13.7062 2.69979 13.8036 2.9025 13.8275L3 13.8333ZM6.65583 10.325L6.5775 10.2558L4.91083 8.58917C4.76735 8.44567 4.68116 8.25476 4.66843 8.05223C4.65569 7.84971 4.71729 7.6495 4.84167 7.48917L4.91083 7.41083L6.5775 5.74417C6.72747 5.59471 6.9287 5.50794 7.14032 5.50148C7.35194 5.49502 7.55809 5.56935 7.7169 5.70937C7.8757 5.8494 7.97525 6.04463 7.99533 6.25539C8.01541 6.46616 7.95451 6.67667 7.825 6.84417L7.75583 6.9225L6.67917 8L7.75583 9.0775C7.89931 9.22099 7.98551 9.41191 7.99824 9.61443C8.01097 9.81695 7.94938 10.0172 7.825 10.1775L7.75583 10.2558C7.61234 10.3993 7.42142 10.4855 7.2189 10.4982C7.01638 10.511 6.81617 10.4494 6.65583 10.325Z"/>
+  </svg>
+  <span class="pst-collapse-sidebar-label">Collapse Sidebar</span>
+  <span class="pst-expand-sidebar-label">Expand Sidebar</span>
+</button></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cli.html">The <code class="docutils literal notranslate"><span class="pre">mach3</span></code> command</a></li>
+<li class="toctree-l1 current active"><a aria-current="page" class="current reference internal" href="#">Fitter configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bayesian-analysis.html">Bayesian Analysis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="posterior-predictive.html">Posterior Predictive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mcmc-convergence.html">MCMC Convergence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="adaptive-mcmc.html">Adaptive MCMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="splines.html">Splines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="containers.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clusters.html">Clusters</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="docs/index.html">Docs</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/building-the-documentation.html">Building the documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/linking-cpp-api.html">Linking to C++ API entities</a></li>
+</ul>
+</details></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">User Guide</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Fitter configuration</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="fitter-configuration">
+<h1>Fitter configuration<a class="headerlink" href="#fitter-configuration" title="Link to this heading">#</a></h1>
+<p>MaCh3 uses YAML configuration files to select fitters, load sample and
+systematic models, and configure analysis tools. This page demonstrates
+<strong>schema-driven documentation</strong>: the setting entries below are rendered
+automatically from a JSON Schema written in YAML. Each entry has a linkable
+full key path, type, constraints, description, and example where available.
+<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;</span></code> represents a user-chosen map key and <code class="docutils literal notranslate"><span class="pre">[]</span></code> represents an array item.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a proof of concept, not a complete MaCh3 configuration specification.
+It is based on a supplied example from
+<a class="reference external" href="https://github.com/mach3-software/MaCh3Tutorial">MaCh3Tutorial</a>, its comments,
+and selected checks against MaCh3 source. Some descriptions and numeric bounds
+are inferred. <code class="docutils literal notranslate"><span class="pre">TutorialSamples</span></code> is tutorial-specific, not a universal setting.</p>
+<p>All properties are optional in this demonstration and unknown keys are allowed.
+A successful validation does <strong>not</strong> mean a configuration will run: requirements
+depend on the executable, algorithm, plugins, and experiment. File existence,
+ROOT objects, parameter names, and ordering of numeric bounds are not checked.
+Example values are <strong>not runtime defaults</strong>.</p>
+</div>
+<section id="files-and-validation">
+<h2>Files and validation<a class="headerlink" href="#files-and-validation" title="Link to this heading">#</a></h2>
+<p>Download the <a class="reference download internal" download="" href="../_downloads/e4132906ff1fd00bb48de1e62b499931/fitter-config.schema.yaml"><code class="xref download docutils literal notranslate"><span class="pre">schema</span></code></a> or
+the <a class="reference download internal" download="" href="../_downloads/824f1855b85d0ae5aefa37fc51d9efb4/FitterConfig.yaml"><code class="xref download docutils literal notranslate"><span class="pre">sanitized</span> <span class="pre">example</span></code></a>.
+The example preserves the supplied settings, replaces the machine-specific
+spline path, and uses explicit <code class="docutils literal notranslate"><span class="pre">true</span></code>/<code class="docutils literal notranslate"><span class="pre">false</span></code> booleans. Input paths refer to
+tutorial assets; this repository does not supply those assets.</p>
+<p>The schema uses JSON Schema Draft 7. YAML is parsed into ordinary objects before
+validation. From the repository root, with the documentation dependencies
+installed:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-<span class="w"> </span><span class="s">&lt;&lt;'PY'</span>
+<span class="s">from pathlib import Path</span>
+<span class="s">import yaml</span>
+<span class="s">from jsonschema import Draft7Validator</span>
+
+<span class="s">schema = yaml.safe_load(Path("docs/schemas/fitter-config.schema.yaml").read_text())</span>
+<span class="s">config = yaml.safe_load(Path("docs/examples/FitterConfig.yaml").read_text())</span>
+<span class="s">Draft7Validator.check_schema(schema)</span>
+<span class="s">Draft7Validator(schema).validate(config)</span>
+<span class="s">print("Configuration matches the demonstration schema")</span>
+<span class="s">PY</span>
+</pre></div>
+</div>
+<p>Prefer <code class="docutils literal notranslate"><span class="pre">true</span></code> and <code class="docutils literal notranslate"><span class="pre">false</span></code> over YAML’s legacy <code class="docutils literal notranslate"><span class="pre">Yes</span></code>/<code class="docutils literal notranslate"><span class="pre">No</span></code> spellings, whose
+interpretation varies between YAML implementations. Keys are case-sensitive:
+in particular, retain <code class="docutils literal notranslate"><span class="pre">AdaptionOptions</span></code>, <code class="docutils literal notranslate"><span class="pre">DoAdaption</span></code>, and <code class="docutils literal notranslate"><span class="pre">initial_scale</span></code>.</p>
+<p>The schema captures types, descriptions, example values, selected numeric
+bounds, and a few structural constraints. For example, <code class="docutils literal notranslate"><span class="pre">SigmaArray</span></code> must include
+zero, range arrays contain two values, and the two predictive parameter
+selection lists cannot both be nonempty.</p>
+</section>
+<section id="general">
+<h2>General<a class="headerlink" href="#general" title="Link to this heading">#</a></h2>
+<section class="config-setting" id="config-general">
+<h3><code class="docutils literal notranslate"><span class="pre">General</span></code><a class="headerlink" href="#config-general" title="Link to this heading">#</a></h3>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<p>Output, algorithm selection, and common fitter settings.</p>
+<section class="config-setting" id="config-general-outputfile">
+<h4><code class="docutils literal notranslate"><span class="pre">General.OutputFile</span></code><a class="headerlink" href="#config-general-outputfile" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>string</p>
+<p>Path to the output ROOT file.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">OutputFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test.root</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-tutorialsamples">
+<h4><code class="docutils literal notranslate"><span class="pre">General.TutorialSamples</span></code><a class="headerlink" href="#config-general-tutorialsamples" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>array of string</p>
+<p>Tutorial-specific list of sample configuration YAML paths.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">TutorialSamples</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TutorialConfigs/Samples/SampleHandler_Tutorial.yaml</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-fittingalgorithm">
+<h4><code class="docutils literal notranslate"><span class="pre">General.FittingAlgorithm</span></code><a class="headerlink" href="#config-general-fittingalgorithm" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>string</p>
+<p>Fitter algorithm name. The supplied example uses MR2T2; other names depend on the factory and registered plugins, so no exhaustive enum is imposed.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">FittingAlgorithm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MR2T2</span>
+</pre></div>
+</div>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">FittingAlgorithm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DelayedMR2T2</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-processmcmc">
+<h4><code class="docutils literal notranslate"><span class="pre">General.ProcessMCMC</span></code><a class="headerlink" href="#config-general-processmcmc" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Request chain processing after fitting, where supported by the driver.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ProcessMCMC</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-debug">
+<h4><code class="docutils literal notranslate"><span class="pre">General.Debug</span></code><a class="headerlink" href="#config-general-debug" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Enable additional debugging output where supported.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Debug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-seed">
+<h4><code class="docutils literal notranslate"><span class="pre">General.Seed</span></code><a class="headerlink" href="#config-general-seed" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 0</p>
+<p>Random seed; the interpretation of zero is implementation-dependent.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Seed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-fitter">
+<h4><code class="docutils literal notranslate"><span class="pre">General.Fitter</span></code><a class="headerlink" href="#config-general-fitter" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<section class="config-setting" id="config-general-fitter-fittestlikelihood">
+<h5><code class="docutils literal notranslate"><span class="pre">General.Fitter.FitTestLikelihood</span></code><a class="headerlink" href="#config-general-fitter-fittestlikelihood" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Use the fitter’s test-likelihood mode instead of the normal analysis.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Fitter</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">FitTestLikelihood</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="config-setting" id="config-general-minuit2">
+<h4><code class="docutils literal notranslate"><span class="pre">General.Minuit2</span></code><a class="headerlink" href="#config-general-minuit2" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<p>Settings used by the Minuit fitter.</p>
+<section class="config-setting" id="config-general-minuit2-nsteps">
+<h5><code class="docutils literal notranslate"><span class="pre">General.Minuit2.NSteps</span></code><a class="headerlink" href="#config-general-minuit2-nsteps" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 1</p>
+<p>Maximum allowed number of iterations.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Minuit2</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">NSteps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100000</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="config-setting" id="config-general-pso">
+<h4><code class="docutils literal notranslate"><span class="pre">General.PSO</span></code><a class="headerlink" href="#config-general-pso" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<p>Particle swarm optimisation settings; coefficient semantics are provisional.</p>
+<section class="config-setting" id="config-general-pso-constriction">
+<h5><code class="docutils literal notranslate"><span class="pre">General.PSO.Constriction</span></code><a class="headerlink" href="#config-general-pso-constriction" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>number</p>
+<p>Constriction coefficient.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSO</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Constriction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-pso-inertia">
+<h5><code class="docutils literal notranslate"><span class="pre">General.PSO.Inertia</span></code><a class="headerlink" href="#config-general-pso-inertia" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>number</p>
+<p>Inertial contribution to particle motion.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSO</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Inertia</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-pso-one">
+<h5><code class="docutils literal notranslate"><span class="pre">General.PSO.One</span></code><a class="headerlink" href="#config-general-pso-one" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>number</p>
+<p>First acceleration coefficient.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSO</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">One</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-pso-two">
+<h5><code class="docutils literal notranslate"><span class="pre">General.PSO.Two</span></code><a class="headerlink" href="#config-general-pso-two" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>number</p>
+<p>Second acceleration coefficient.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSO</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Two</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-pso-particles">
+<h5><code class="docutils literal notranslate"><span class="pre">General.PSO.Particles</span></code><a class="headerlink" href="#config-general-pso-particles" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 1</p>
+<p>Number of swarm particles.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSO</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Particles</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-pso-iterations">
+<h5><code class="docutils literal notranslate"><span class="pre">General.PSO.Iterations</span></code><a class="headerlink" href="#config-general-pso-iterations" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 1</p>
+<p>Maximum swarm iterations.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSO</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Iterations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-pso-convergence">
+<h5><code class="docutils literal notranslate"><span class="pre">General.PSO.Convergence</span></code><a class="headerlink" href="#config-general-pso-convergence" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>number</p>
+<p>Swarm convergence threshold.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSO</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Convergence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-pso-testlikelihooddim">
+<h5><code class="docutils literal notranslate"><span class="pre">General.PSO.TestLikelihoodDim</span></code><a class="headerlink" href="#config-general-pso-testlikelihooddim" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 1</p>
+<p>Dimensionality of the test likelihood.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PSO</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">TestLikelihoodDim</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="config-setting" id="config-general-mcmc">
+<h4><code class="docutils literal notranslate"><span class="pre">General.MCMC</span></code><a class="headerlink" href="#config-general-mcmc" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<p>Chain length, checkpointing, multicanonical sampling, and delayed rejection.</p>
+<section class="config-setting" id="config-general-mcmc-nsteps">
+<h5><code class="docutils literal notranslate"><span class="pre">General.MCMC.NSteps</span></code><a class="headerlink" href="#config-general-mcmc-nsteps" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 1</p>
+<p>Number of MCMC steps.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">NSteps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-autosave">
+<h5><code class="docutils literal notranslate"><span class="pre">General.MCMC.AutoSave</span></code><a class="headerlink" href="#config-general-mcmc-autosave" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 1</p>
+<p>Number of steps between chain autosaves; shorter intervals reduce work lost on interruption.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">AutoSave</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical">
+<h5><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<p>Bias sampling of a chosen parameter. Spline and umbrella settings are mode-dependent; the appropriate bias must be accounted for when reconstructing the posterior.</p>
+<section class="config-setting" id="config-general-mcmc-multicanonical-enabled">
+<h6><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Enabled</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-enabled" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Enable multicanonical sampling.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical-variablename">
+<h6><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.VariableName</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-variablename" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>string</p>
+<p>Branch name of the parameter to bias.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">VariableName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">delta_cp</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical-beta">
+<h6><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Beta</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-beta" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>number</p>
+<p>Bias strength: the example describes 1 as full strength and 0 as no bias.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical-spline">
+<h6><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Spline</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-spline" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<section class="config-setting" id="config-general-mcmc-multicanonical-spline-splinemode">
+<h6 aria-level="7"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Spline.SplineMode</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-spline-splinemode" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Use a spline bias rather than an analytic umbrella.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Spline</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">SplineMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical-spline-splinefile">
+<h6 aria-level="7"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Spline.SplineFile</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-spline-splinefile" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>string</p>
+<p>ROOT file containing a TGraph of parameter value versus bias weight.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Spline</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">SplineFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bias/dcp_spline.root</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical-umbrella">
+<h6><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-umbrella" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<section class="config-setting" id="config-general-mcmc-multicanonical-umbrella-umbrellabiasfunction">
+<h6 aria-level="7"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.UmbrellaBiasFunction</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-umbrella-umbrellabiasfunction" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>string · Choices: “gaussian”, “generalisedGaussian”, “vonMises”</p>
+<p>Analytic umbrella shape; names are taken from the example’s comments.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Umbrella</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">UmbrellaBiasFunction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">generalisedGaussian</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical-umbrella-umbrellamean">
+<h6 aria-level="7"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.UmbrellaMean</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-umbrella-umbrellamean" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>number</p>
+<p>Centre of the umbrella bias.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Umbrella</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">UmbrellaMean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.6</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical-umbrella-umbrellawidth">
+<h6 aria-level="7"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.UmbrellaWidth</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-umbrella-umbrellawidth" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>number · Greater than: 0</p>
+<p>Width parameter for the selected bias function.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Umbrella</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">UmbrellaWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.25</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical-umbrella-umbrellaadjuststepscale">
+<h6 aria-level="7"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.UmbrellaAdjustStepScale</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-umbrella-umbrellaadjuststepscale" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Adjust proposal scale using the umbrella width; the example notes a delta_cp-specific assumption.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Umbrella</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">UmbrellaAdjustStepScale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical-umbrella-umbrellastepscalefactor">
+<h6 aria-level="7"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.UmbrellaStepScaleFactor</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-umbrella-umbrellastepscalefactor" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>number · Greater than: 0</p>
+<p>Additional proposal-scale multiplier.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Umbrella</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">UmbrellaStepScaleFactor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical-umbrella-autooverlapmode">
+<h6 aria-level="7"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.AutoOverlapMode</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-umbrella-autooverlapmode" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Estimate widths from a target overlap; experimental according to the supplied comments.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Umbrella</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">AutoOverlapMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical-umbrella-umbrellanumber">
+<h6 aria-level="7"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.UmbrellaNumber</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-umbrella-umbrellanumber" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 1</p>
+<p>Number of umbrella windows.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Umbrella</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">UmbrellaNumber</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical-umbrella-sigmaoverlap">
+<h6 aria-level="7"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.SigmaOverlap</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-umbrella-sigmaoverlap" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>number · Greater than: 0</p>
+<p>Target overlap in sigma units.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Umbrella</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">SigmaOverlap</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-multicanonical-umbrella-flipwindow">
+<h6 aria-level="7"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.FlipWindow</span></code><a class="headerlink" href="#config-general-mcmc-multicanonical-umbrella-flipwindow" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Experimental mirroring around the window centre; the example recommends leaving it disabled.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Umbrella</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">FlipWindow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section class="config-setting" id="config-general-mcmc-printsummary">
+<h5><code class="docutils literal notranslate"><span class="pre">General.MCMC.PrintSummary</span></code><a class="headerlink" href="#config-general-mcmc-printsummary" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Print a delayed-rejection summary.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">PrintSummary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-initial-scale">
+<h5><code class="docutils literal notranslate"><span class="pre">General.MCMC.initial_scale</span></code><a class="headerlink" href="#config-general-mcmc-initial-scale" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>number · Greater than: 0</p>
+<p>First delayed proposal scale relative to the parameter-handler scale; the key is lowercase.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">initial_scale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-decayrate">
+<h5><code class="docutils literal notranslate"><span class="pre">General.MCMC.DecayRate</span></code><a class="headerlink" href="#config-general-mcmc-decayrate" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>number · Greater than: 0</p>
+<p>Multiplier applied to the previous delayed proposal scale.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">DecayRate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-delayonlyoutbounds">
+<h5><code class="docutils literal notranslate"><span class="pre">General.MCMC.DelayOnlyOutBounds</span></code><a class="headerlink" href="#config-general-mcmc-delayonlyoutbounds" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Limit delayed rejection to out-of-bounds proposals.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">DelayOnlyOutBounds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-delayprobability">
+<h5><code class="docutils literal notranslate"><span class="pre">General.MCMC.DelayProbability</span></code><a class="headerlink" href="#config-general-mcmc-delayprobability" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>number · Minimum: 0 · Maximum: 1</p>
+<p>Probability of attempting delayed rejection.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">DelayProbability</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-mcmc-maxrejections">
+<h5><code class="docutils literal notranslate"><span class="pre">General.MCMC.MaxRejections</span></code><a class="headerlink" href="#config-general-mcmc-maxrejections" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 0</p>
+<p>Maximum additional delayed proposals per step.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">MaxRejections</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="config-setting" id="config-general-systematics">
+<h4><code class="docutils literal notranslate"><span class="pre">General.Systematics</span></code><a class="headerlink" href="#config-general-systematics" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<p>Covariance inputs, fixed parameters, PCA, and proposal scaling.</p>
+<section class="config-setting" id="config-general-systematics-xseccovname">
+<h5><code class="docutils literal notranslate"><span class="pre">General.Systematics.XsecCovName</span></code><a class="headerlink" href="#config-general-systematics-xseccovname" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>string</p>
+<p>Name of the covariance matrix or parameter handler.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Systematics</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">XsecCovName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xsec_cov</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-systematics-xsecfix">
+<h5><code class="docutils literal notranslate"><span class="pre">General.Systematics.XsecFix</span></code><a class="headerlink" href="#config-general-systematics-xsecfix" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>array of string</p>
+<p>Names of parameters to hold fixed.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Systematics</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">XsecFix</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">baseline</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">density</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ye</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">prod_height</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-systematics-xseccovfile">
+<h5><code class="docutils literal notranslate"><span class="pre">General.Systematics.XsecCovFile</span></code><a class="headerlink" href="#config-general-systematics-xseccovfile" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>array of string</p>
+<p>Paths to systematic and oscillation model YAML files.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Systematics</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">XsecCovFile</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TutorialConfigs/CovObjs/SystematicModel.yaml</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TutorialConfigs/CovObjs/OscillationModel.yaml</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-systematics-xsecpcathreshold">
+<h5><code class="docutils literal notranslate"><span class="pre">General.Systematics.XsecPCAThreshold</span></code><a class="headerlink" href="#config-general-systematics-xsecpcathreshold" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>number</p>
+<p>PCA threshold; the tutorial uses -1 to disable PCA.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Systematics</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">XsecPCAThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-systematics-xsecpcaparams">
+<h5><code class="docutils literal notranslate"><span class="pre">General.Systematics.XsecPCAParams</span></code><a class="headerlink" href="#config-general-systematics-xsecpcaparams" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>array of integer · Minimum items: 2 · Maximum items: 2</p>
+<p>Pair defining the PCA parameter selection; the example uses sentinel values.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Systematics</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">XsecPCAParams</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-999</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-999</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-general-systematics-xsecstepscale">
+<h5><code class="docutils literal notranslate"><span class="pre">General.Systematics.XsecStepScale</span></code><a class="headerlink" href="#config-general-systematics-xsecstepscale" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>number · Greater than: 0</p>
+<p>Global systematic-parameter proposal scale.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Systematics</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">XsecStepScale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.05</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+<section id="predictive">
+<h2>Predictive<a class="headerlink" href="#predictive" title="Link to this heading">#</a></h2>
+<section class="config-setting" id="config-predictive">
+<h3><code class="docutils literal notranslate"><span class="pre">Predictive</span></code><a class="headerlink" href="#config-predictive" title="Link to this heading">#</a></h3>
+<p class="config-setting-metadata"><strong>Type: </strong>object · Cannot both be nonempty: ThrowParamGroupOnly, ThrowSingleParams</p>
+<p>Prior/posterior predictive ensembles and diagnostic outputs.</p>
+<section class="config-setting" id="config-predictive-ntoy">
+<h4><code class="docutils literal notranslate"><span class="pre">Predictive.Ntoy</span></code><a class="headerlink" href="#config-predictive-ntoy" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 1</p>
+<p>Number of predictive throws.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Predictive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Ntoy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-predictive-fullllh">
+<h4><code class="docutils literal notranslate"><span class="pre">Predictive.FullLLH</span></code><a class="headerlink" href="#config-predictive-fullllh" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Use the full likelihood rather than only the sample contribution.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Predictive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">FullLLH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-predictive-priorpredictive">
+<h4><code class="docutils literal notranslate"><span class="pre">Predictive.PriorPredictive</span></code><a class="headerlink" href="#config-predictive-priorpredictive" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>True selects prior predictive; false selects posterior predictive.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Predictive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PriorPredictive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-predictive-burninsteps">
+<h4><code class="docutils literal notranslate"><span class="pre">Predictive.BurnInSteps</span></code><a class="headerlink" href="#config-predictive-burninsteps" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 0</p>
+<p>Number of initial chain steps excluded as burn-in.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Predictive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">BurnInSteps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-predictive-posteriorfile">
+<h4><code class="docutils literal notranslate"><span class="pre">Predictive.PosteriorFile</span></code><a class="headerlink" href="#config-predictive-posteriorfile" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>string</p>
+<p>ROOT chain file used for posterior sampling.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Predictive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">PosteriorFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test.root</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-predictive-toyfile">
+<h4><code class="docutils literal notranslate"><span class="pre">Predictive.ToyFile</span></code><a class="headerlink" href="#config-predictive-toyfile" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>string</p>
+<p>ROOT file for predictive toys.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Predictive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ToyFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PredictiveToys.root</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-predictive-throwparamgrouponly">
+<h4><code class="docutils literal notranslate"><span class="pre">Predictive.ThrowParamGroupOnly</span></code><a class="headerlink" href="#config-predictive-throwparamgrouponly" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>array of string</p>
+<p>Restrict throws to named parameter groups; do not combine a nonempty list with ThrowSingleParams.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Predictive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ThrowParamGroupOnly</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-predictive-throwsingleparams">
+<h4><code class="docutils literal notranslate"><span class="pre">Predictive.ThrowSingleParams</span></code><a class="headerlink" href="#config-predictive-throwsingleparams" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>array of string</p>
+<p>Restrict throws to named parameters; do not combine a nonempty list with ThrowParamGroupOnly.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Predictive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ThrowSingleParams</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-predictive-standardfluctuation">
+<h4><code class="docutils literal notranslate"><span class="pre">Predictive.StandardFluctuation</span></code><a class="headerlink" href="#config-predictive-standardfluctuation" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Use bin-based Poisson fluctuations rather than the slower event-based approach.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Predictive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">StandardFluctuation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-predictive-debughistograms">
+<h4><code class="docutils literal notranslate"><span class="pre">Predictive.DebugHistograms</span></code><a class="headerlink" href="#config-predictive-debughistograms" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Produce per-bin event-count debugging histograms.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Predictive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">DebugHistograms</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-predictive-parameterbounds">
+<h4><code class="docutils literal notranslate"><span class="pre">Predictive.ParameterBounds</span></code><a class="headerlink" href="#config-predictive-parameterbounds" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>array of tuple [string, array of number]</p>
+<p>Additional predictive restrictions as pairs of parameter name and two numeric bounds.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Predictive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ParameterBounds</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">delm2_23</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">999</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sin2th_23</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-predictive-bymode">
+<h4><code class="docutils literal notranslate"><span class="pre">Predictive.ByMode</span></code><a class="headerlink" href="#config-predictive-bymode" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Produce a mode-by-mode breakdown; may require substantial memory.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Predictive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">ByMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="likelihood-scans">
+<h2>Likelihood scans<a class="headerlink" href="#likelihood-scans" title="Link to this heading">#</a></h2>
+<section class="config-setting" id="config-llhscan">
+<h3><code class="docutils literal notranslate"><span class="pre">LLHScan</span></code><a class="headerlink" href="#config-llhscan" title="Link to this heading">#</a></h3>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<p>One- and two-dimensional likelihood scan settings.</p>
+<section class="config-setting" id="config-llhscan-llhscanskipvector">
+<h4><code class="docutils literal notranslate"><span class="pre">LLHScan.LLHScanSkipVector</span></code><a class="headerlink" href="#config-llhscan-llhscanskipvector" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>array of string</p>
+<p>Parameter names or wildcard patterns excluded from scans.</p>
+</section>
+<section class="config-setting" id="config-llhscan-llhscanbysample">
+<h4><code class="docutils literal notranslate"><span class="pre">LLHScan.LLHScanBySample</span></code><a class="headerlink" href="#config-llhscan-llhscanbysample" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Save individual sample likelihood contributions.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">LLHScan</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">LLHScanBySample</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-llhscan-llhscanpoints">
+<h4><code class="docutils literal notranslate"><span class="pre">LLHScan.LLHScanPoints</span></code><a class="headerlink" href="#config-llhscan-llhscanpoints" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 1</p>
+<p>Number of scan points per parameter.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">LLHScan</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">LLHScanPoints</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">50</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-llhscan-2dllhscanpoints">
+<h4><code class="docutils literal notranslate"><span class="pre">LLHScan.2DLLHScanPoints</span></code><a class="headerlink" href="#config-llhscan-2dllhscanpoints" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 1</p>
+<p>Number of points per axis in a two-dimensional scan.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">LLHScan</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">2DLLHScanPoints</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-llhscan-llhparameters">
+<h4><code class="docutils literal notranslate"><span class="pre">LLHScan.LLHParameters</span></code><a class="headerlink" href="#config-llhscan-llhparameters" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>array of string</p>
+<p>Parameter names selected for likelihood maps.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">LLHScan</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">LLHParameters</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">delta_cp</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sin2th_23</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sin2th_13</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-llhscan-scanranges">
+<h4><code class="docutils literal notranslate"><span class="pre">LLHScan.ScanRanges</span></code><a class="headerlink" href="#config-llhscan-scanranges" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>map of array of number</p>
+<p>Map from parameter name to a pair of physical scan limits.</p>
+<section class="config-setting" id="config-llhscan-scanranges-name">
+<h5><code class="docutils literal notranslate"><span class="pre">LLHScan.ScanRanges.&lt;name&gt;</span></code><a class="headerlink" href="#config-llhscan-scanranges-name" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>array of number · Minimum items: 2 · Maximum items: 2</p>
+</section>
+</section>
+<section class="config-setting" id="config-llhscan-llhtype">
+<h4><code class="docutils literal notranslate"><span class="pre">LLHScan.LLHType</span></code><a class="headerlink" href="#config-llhscan-llhtype" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>string</p>
+<p>Likelihood component or branch to scan.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">LLHScan</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">LLHType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Total_LLH</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-llhscan-stepscaleparameters">
+<h4><code class="docutils literal notranslate"><span class="pre">LLHScan.StepScaleParameters</span></code><a class="headerlink" href="#config-llhscan-stepscaleparameters" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>array of string</p>
+<p>Parameter names selected for step-scale studies (inferred from the setting name).</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">LLHScan</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">StepScaleParameters</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="sigma-variations">
+<h2>Sigma variations<a class="headerlink" href="#sigma-variations" title="Link to this heading">#</a></h2>
+<section class="config-setting" id="config-sigmavar">
+<h3><code class="docutils literal notranslate"><span class="pre">SigmaVar</span></code><a class="headerlink" href="#config-sigmavar" title="Link to this heading">#</a></h3>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<p>Parameter variations for sigma-variation plots.</p>
+<section class="config-setting" id="config-sigmavar-sigmaarray">
+<h4><code class="docutils literal notranslate"><span class="pre">SigmaVar.SigmaArray</span></code><a class="headerlink" href="#config-sigmavar-sigmaarray" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>array of number · Must contain: 0</p>
+<p>Sigma offsets to evaluate; must include zero.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">SigmaVar</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">SigmaArray</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-3</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-sigmavar-skipvector">
+<h4><code class="docutils literal notranslate"><span class="pre">SigmaVar.SkipVector</span></code><a class="headerlink" href="#config-sigmavar-skipvector" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>array of string</p>
+<p>Parameter names to skip.</p>
+</section>
+<section class="config-setting" id="config-sigmavar-customrange">
+<h4><code class="docutils literal notranslate"><span class="pre">SigmaVar.CustomRange</span></code><a class="headerlink" href="#config-sigmavar-customrange" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>map of map of number</p>
+<p>Map from parameter names to maps of sigma-offset strings and custom parameter values.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">SigmaVar</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">CustomRange</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Norm_Param_0</span><span class="p">:</span>
+<span class="w">      </span><span class="s">'-3'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.25</span>
+<span class="w">      </span><span class="s">'-1'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+<span class="w">      </span><span class="s">'1'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.25</span>
+<span class="w">      </span><span class="s">'3'</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.5</span>
+</pre></div>
+</div>
+<section class="config-setting" id="config-sigmavar-customrange-name">
+<h5><code class="docutils literal notranslate"><span class="pre">SigmaVar.CustomRange.&lt;name&gt;</span></code><a class="headerlink" href="#config-sigmavar-customrange-name" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>map of number</p>
+<section class="config-setting" id="config-sigmavar-customrange-name-name">
+<h6><code class="docutils literal notranslate"><span class="pre">SigmaVar.CustomRange.&lt;name&gt;.&lt;name&gt;</span></code><a class="headerlink" href="#config-sigmavar-customrange-name-name" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>number</p>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="adaptation">
+<h2>Adaptation<a class="headerlink" href="#adaptation" title="Link to this heading">#</a></h2>
+<section class="config-setting" id="config-adaptionoptions">
+<h3><code class="docutils literal notranslate"><span class="pre">AdaptionOptions</span></code><a class="headerlink" href="#config-adaptionoptions" title="Link to this heading">#</a></h3>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<p>Adaptive covariance and Robbins-Monro settings; preserve the spelling AdaptionOptions.</p>
+<section class="config-setting" id="config-adaptionoptions-settings">
+<h4><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings</span></code><a class="headerlink" href="#config-adaptionoptions-settings" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<section class="config-setting" id="config-adaptionoptions-settings-startthrow">
+<h5><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.StartThrow</span></code><a class="headerlink" href="#config-adaptionoptions-settings-startthrow" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 0</p>
+<p>Step at which proposals start using the adapted covariance.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AdaptionOptions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Settings</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">StartThrow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-adaptionoptions-settings-startupdate">
+<h5><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.StartUpdate</span></code><a class="headerlink" href="#config-adaptionoptions-settings-startupdate" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 0</p>
+<p>Step at which covariance accumulation starts.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AdaptionOptions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Settings</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">StartUpdate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-adaptionoptions-settings-endupdate">
+<h5><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.EndUpdate</span></code><a class="headerlink" href="#config-adaptionoptions-settings-endupdate" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 0</p>
+<p>Step after which covariance updates stop.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AdaptionOptions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Settings</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">EndUpdate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-adaptionoptions-settings-updatestep">
+<h5><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.UpdateStep</span></code><a class="headerlink" href="#config-adaptionoptions-settings-updatestep" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 1</p>
+<p>Number of steps between covariance updates.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AdaptionOptions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Settings</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">UpdateStep</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-adaptionoptions-settings-saveniterations">
+<h5><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.SaveNIterations</span></code><a class="headerlink" href="#config-adaptionoptions-settings-saveniterations" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 1</p>
+<p>Number of steps between saving adaptation state.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AdaptionOptions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Settings</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">SaveNIterations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-adaptionoptions-settings-outputfilename">
+<h5><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.OutputFileName</span></code><a class="headerlink" href="#config-adaptionoptions-settings-outputfilename" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>string</p>
+<p>ROOT file containing adaptation output.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AdaptionOptions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Settings</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">OutputFileName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Adapt.root</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-adaptionoptions-settings-userobbinsmonro">
+<h5><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.UseRobbinsMonro</span></code><a class="headerlink" href="#config-adaptionoptions-settings-userobbinsmonro" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Enable Robbins-Monro proposal adaptation.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AdaptionOptions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Settings</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">UseRobbinsMonro</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-adaptionoptions-settings-targetacceptance">
+<h5><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.TargetAcceptance</span></code><a class="headerlink" href="#config-adaptionoptions-settings-targetacceptance" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>number · Greater than: 0 · Less than: 1</p>
+<p>Target acceptance probability.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AdaptionOptions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Settings</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">TargetAcceptance</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.234</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-adaptionoptions-settings-totalrobbinsmonrorestarts">
+<h5><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.TotalRobbinsMonroRestarts</span></code><a class="headerlink" href="#config-adaptionoptions-settings-totalrobbinsmonrorestarts" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 0</p>
+<p>Number of Robbins-Monro counter restarts.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AdaptionOptions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Settings</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">TotalRobbinsMonroRestarts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-adaptionoptions-settings-acceptanceratebatchsize">
+<h5><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.AcceptanceRateBatchSize</span></code><a class="headerlink" href="#config-adaptionoptions-settings-acceptanceratebatchsize" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>integer · Minimum: 1</p>
+<p>Batch size for acceptance-rate adaptation.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AdaptionOptions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Settings</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">AcceptanceRateBatchSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5000</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section class="config-setting" id="config-adaptionoptions-covariance">
+<h4><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Covariance</span></code><a class="headerlink" href="#config-adaptionoptions-covariance" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>map of object</p>
+<p>Map keyed by covariance-matrix name.</p>
+<section class="config-setting" id="config-adaptionoptions-covariance-name">
+<h5><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Covariance.&lt;name&gt;</span></code><a class="headerlink" href="#config-adaptionoptions-covariance-name" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<section class="config-setting" id="config-adaptionoptions-covariance-name-doadaption">
+<h6><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Covariance.&lt;name&gt;.DoAdaption</span></code><a class="headerlink" href="#config-adaptionoptions-covariance-name-doadaption" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>boolean</p>
+<p>Enable adaptation for this covariance.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AdaptionOptions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Covariance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">DoAdaption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-adaptionoptions-covariance-name-parameterstoskip">
+<h6><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Covariance.&lt;name&gt;.ParametersToSkip</span></code><a class="headerlink" href="#config-adaptionoptions-covariance-name-parameterstoskip" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>array of string</p>
+<p>Parameter names or wildcard patterns excluded from adaptation.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">AdaptionOptions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Covariance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">ParametersToSkip</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">delm2_*</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sin2th_*</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">delta_cp</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="kinematic-distribution-plots">
+<h2>Kinematic distribution plots<a class="headerlink" href="#kinematic-distribution-plots" title="Link to this heading">#</a></h2>
+<section class="config-setting" id="config-kinematicdistributionplots">
+<h3><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots</span></code><a class="headerlink" href="#config-kinematicdistributionplots" title="Link to this heading">#</a></h3>
+<p class="config-setting-metadata"><strong>Type: </strong>array of object</p>
+<p>Additional one- or two-dimensional kinematic distributions to plot.</p>
+<section class="config-setting" id="config-kinematicdistributionplots-item">
+<h4><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[]</span></code><a class="headerlink" href="#config-kinematicdistributionplots-item" title="Link to this heading">#</a></h4>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<section class="config-setting" id="config-kinematicdistributionplots-item-name">
+<h5><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[].Name</span></code><a class="headerlink" href="#config-kinematicdistributionplots-item-name" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>string</p>
+<p>Human-readable plot label.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">KinematicDistributionPlots</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Q2 vs True Enu</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-kinematicdistributionplots-item-varstrings">
+<h5><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[].VarStrings</span></code><a class="headerlink" href="#config-kinematicdistributionplots-item-varstrings" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>array of string · Minimum items: 1</p>
+<p>Kinematic variable names defining the plot axes.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">KinematicDistributionPlots</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">VarStrings</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TrueNeutrinoEnergy</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TrueQ2</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-kinematicdistributionplots-item-kinematiccuts">
+<h5><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[].KinematicCuts</span></code><a class="headerlink" href="#config-kinematicdistributionplots-item-kinematiccuts" title="Link to this heading">#</a></h5>
+<p class="config-setting-metadata"><strong>Type: </strong>array of object</p>
+<p>Optional cuts restricting the plotted events.</p>
+<section class="config-setting" id="config-kinematicdistributionplots-item-kinematiccuts-item">
+<h6><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[].KinematicCuts[]</span></code><a class="headerlink" href="#config-kinematicdistributionplots-item-kinematiccuts-item" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>object</p>
+<section class="config-setting" id="config-kinematicdistributionplots-item-kinematiccuts-item-varstring">
+<h6 aria-level="7"><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[].KinematicCuts[].VarString</span></code><a class="headerlink" href="#config-kinematicdistributionplots-item-kinematiccuts-item-varstring" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>string</p>
+<p>Kinematic variable to cut.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">KinematicDistributionPlots</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">KinematicCuts</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">VarString</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TrueNeutrinoEnergy</span>
+</pre></div>
+</div>
+</section>
+<section class="config-setting" id="config-kinematicdistributionplots-item-kinematiccuts-item-range">
+<h6 aria-level="7"><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[].KinematicCuts[].Range</span></code><a class="headerlink" href="#config-kinematicdistributionplots-item-kinematiccuts-item-range" title="Link to this heading">#</a></h6>
+<p class="config-setting-metadata"><strong>Type: </strong>array of number · Minimum items: 2 · Maximum items: 2</p>
+<p>Pair of numeric cut bounds; ordering is not checked by this schema.</p>
+<p><em>Example (not a default):</em></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">KinematicDistributionPlots</span><span class="p">:</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">KinematicCuts</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Range</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.5</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="example-configuration">
+<h2>Example configuration<a class="headerlink" href="#example-configuration" title="Link to this heading">#</a></h2>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">General</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">OutputFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test.root</span>
+<span class="w">  </span><span class="nt">TutorialSamples</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">TutorialConfigs/Samples/SampleHandler_Tutorial.yaml</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">FittingAlgorithm</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MR2T2</span>
+<span class="w">  </span><span class="nt">ProcessMCMC</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">Debug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">Seed</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="w">  </span><span class="nt">Fitter</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">FitTestLikelihood</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">Minuit2</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">NSteps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100000</span>
+<span class="w">  </span><span class="nt">PSO</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Constriction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">Inertia</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">    </span><span class="nt">One</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">    </span><span class="nt">Two</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">    </span><span class="nt">Particles</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span>
+<span class="w">    </span><span class="nt">Iterations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+<span class="w">    </span><span class="nt">Convergence</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">    </span><span class="nt">TestLikelihoodDim</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9</span>
+<span class="w">  </span><span class="nt">MCMC</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">NSteps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+<span class="w">    </span><span class="nt">AutoSave</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+<span class="w">    </span><span class="nt">Multicanonical</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">Enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">      </span><span class="nt">VariableName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">delta_cp</span>
+<span class="w">      </span><span class="nt">Beta</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">      </span><span class="nt">Spline</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">SplineMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">        </span><span class="nt">SplineFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bias/dcp_spline.root</span>
+<span class="w">      </span><span class="nt">Umbrella</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">UmbrellaBiasFunction</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">generalisedGaussian</span>
+<span class="w">        </span><span class="nt">UmbrellaMean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.6</span>
+<span class="w">        </span><span class="nt">UmbrellaWidth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.25</span>
+<span class="w">        </span><span class="nt">UmbrellaAdjustStepScale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">        </span><span class="nt">UmbrellaStepScaleFactor</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">        </span><span class="nt">AutoOverlapMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">        </span><span class="nt">UmbrellaNumber</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">        </span><span class="nt">SigmaOverlap</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">        </span><span class="nt">FlipWindow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">PrintSummary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">initial_scale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">DecayRate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1</span>
+<span class="w">    </span><span class="nt">DelayOnlyOutBounds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">DelayProbability</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0</span>
+<span class="w">    </span><span class="nt">MaxRejections</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">Systematics</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">XsecCovName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">xsec_cov</span>
+<span class="w">    </span><span class="nt">XsecFix</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">baseline</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">density</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Ye</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">prod_height</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">XsecCovFile</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TutorialConfigs/CovObjs/SystematicModel.yaml</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TutorialConfigs/CovObjs/OscillationModel.yaml</span>
+<span class="w">    </span><span class="nt">XsecPCAThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+<span class="w">    </span><span class="nt">XsecPCAParams</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-999</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-999</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">XsecStepScale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.05</span>
+<span class="nt">Predictive</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Ntoy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">  </span><span class="nt">FullLLH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">PriorPredictive</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">  </span><span class="nt">BurnInSteps</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">  </span><span class="nt">PosteriorFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Test.root</span>
+<span class="w">  </span><span class="nt">ToyFile</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PredictiveToys.root</span>
+<span class="w">  </span><span class="nt">ThrowParamGroupOnly</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">  </span><span class="nt">ThrowSingleParams</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">  </span><span class="nt">StandardFluctuation</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">DebugHistograms</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">ParameterBounds</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">  </span><span class="nt">ByMode</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">LLHScan</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">LLHScanBySample</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="w">  </span><span class="nt">LLHParameters</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">delta_cp</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">sin2th_23</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">sin2th_13</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">ScanRanges</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">delta_cp</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-3.14</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3.14</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">sin2th_23</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.35</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0.65</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">LLHType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Total_LLH</span>
+<span class="w">  </span><span class="nt">StepScaleParameters</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="nt">SigmaVar</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">SigmaArray</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">-3</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">0</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="nt">SkipVector</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
+<span class="w">  </span><span class="nt">CustomRange</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">Norm_Param_0</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="s">"-3"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.25</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"-1"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"1"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">1.25</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"3"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">1.5</span><span class="p p-Indicator">}</span>
+<span class="nt">AdaptionOptions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">Settings</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">StartThrow</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">StartUpdate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">    </span><span class="nt">EndUpdate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+<span class="w">    </span><span class="nt">UpdateStep</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1000</span>
+<span class="w">    </span><span class="nt">SaveNIterations</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10000</span>
+<span class="w">    </span><span class="nt">OutputFileName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Adapt.root</span>
+<span class="w">    </span><span class="nt">UseRobbinsMonro</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="w">    </span><span class="nt">TargetAcceptance</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.234</span>
+<span class="w">    </span><span class="nt">TotalRobbinsMonroRestarts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span>
+<span class="w">    </span><span class="nt">AcceptanceRateBatchSize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5000</span>
+<span class="w">  </span><span class="nt">Covariance</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">xsec_cov</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">DoAdaption</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="nt">KinematicDistributionPlots</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True Neutrino Energy (0.5 GeV &lt; Enu &lt; 3 GeV)</span>
+<span class="w">    </span><span class="nt">VarStrings</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">TrueNeutrinoEnergy</span><span class="p p-Indicator">]</span>
+<span class="w">    </span><span class="nt">KinematicCuts</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">VarString</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TrueNeutrinoEnergy</span>
+<span class="w">        </span><span class="nt">Range</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">0.5</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">3</span><span class="p p-Indicator">]</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Q2 vs True Enu</span>
+<span class="w">    </span><span class="nt">VarStrings</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">TrueNeutrinoEnergy</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">TrueQ2</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="cli.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">The <code class="docutils literal notranslate"><span class="pre">mach3</span></code> command</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="faq.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">FAQ</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal" tabindex="-1"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#files-and-validation">Files and validation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#general">General</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general"><code class="docutils literal notranslate"><span class="pre">General</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-outputfile"><code class="docutils literal notranslate"><span class="pre">General.OutputFile</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-tutorialsamples"><code class="docutils literal notranslate"><span class="pre">General.TutorialSamples</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-fittingalgorithm"><code class="docutils literal notranslate"><span class="pre">General.FittingAlgorithm</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-processmcmc"><code class="docutils literal notranslate"><span class="pre">General.ProcessMCMC</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-debug"><code class="docutils literal notranslate"><span class="pre">General.Debug</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-seed"><code class="docutils literal notranslate"><span class="pre">General.Seed</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-fitter"><code class="docutils literal notranslate"><span class="pre">General.Fitter</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-fitter-fittestlikelihood"><code class="docutils literal notranslate"><span class="pre">General.Fitter.FitTestLikelihood</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-minuit2"><code class="docutils literal notranslate"><span class="pre">General.Minuit2</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-minuit2-nsteps"><code class="docutils literal notranslate"><span class="pre">General.Minuit2.NSteps</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-pso"><code class="docutils literal notranslate"><span class="pre">General.PSO</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-pso-constriction"><code class="docutils literal notranslate"><span class="pre">General.PSO.Constriction</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-pso-inertia"><code class="docutils literal notranslate"><span class="pre">General.PSO.Inertia</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-pso-one"><code class="docutils literal notranslate"><span class="pre">General.PSO.One</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-pso-two"><code class="docutils literal notranslate"><span class="pre">General.PSO.Two</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-pso-particles"><code class="docutils literal notranslate"><span class="pre">General.PSO.Particles</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-pso-iterations"><code class="docutils literal notranslate"><span class="pre">General.PSO.Iterations</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-pso-convergence"><code class="docutils literal notranslate"><span class="pre">General.PSO.Convergence</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-pso-testlikelihooddim"><code class="docutils literal notranslate"><span class="pre">General.PSO.TestLikelihoodDim</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc"><code class="docutils literal notranslate"><span class="pre">General.MCMC</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-nsteps"><code class="docutils literal notranslate"><span class="pre">General.MCMC.NSteps</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-autosave"><code class="docutils literal notranslate"><span class="pre">General.MCMC.AutoSave</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-enabled"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Enabled</span></code></a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-variablename"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.VariableName</span></code></a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-beta"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Beta</span></code></a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-spline"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Spline</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h7 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-spline-splinemode"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Spline.SplineMode</span></code></a></li>
+<li class="toc-h7 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-spline-splinefile"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Spline.SplineFile</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-umbrella"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h7 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-umbrella-umbrellabiasfunction"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.UmbrellaBiasFunction</span></code></a></li>
+<li class="toc-h7 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-umbrella-umbrellamean"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.UmbrellaMean</span></code></a></li>
+<li class="toc-h7 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-umbrella-umbrellawidth"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.UmbrellaWidth</span></code></a></li>
+<li class="toc-h7 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-umbrella-umbrellaadjuststepscale"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.UmbrellaAdjustStepScale</span></code></a></li>
+<li class="toc-h7 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-umbrella-umbrellastepscalefactor"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.UmbrellaStepScaleFactor</span></code></a></li>
+<li class="toc-h7 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-umbrella-autooverlapmode"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.AutoOverlapMode</span></code></a></li>
+<li class="toc-h7 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-umbrella-umbrellanumber"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.UmbrellaNumber</span></code></a></li>
+<li class="toc-h7 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-umbrella-sigmaoverlap"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.SigmaOverlap</span></code></a></li>
+<li class="toc-h7 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-multicanonical-umbrella-flipwindow"><code class="docutils literal notranslate"><span class="pre">General.MCMC.Multicanonical.Umbrella.FlipWindow</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-printsummary"><code class="docutils literal notranslate"><span class="pre">General.MCMC.PrintSummary</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-initial-scale"><code class="docutils literal notranslate"><span class="pre">General.MCMC.initial_scale</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-decayrate"><code class="docutils literal notranslate"><span class="pre">General.MCMC.DecayRate</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-delayonlyoutbounds"><code class="docutils literal notranslate"><span class="pre">General.MCMC.DelayOnlyOutBounds</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-delayprobability"><code class="docutils literal notranslate"><span class="pre">General.MCMC.DelayProbability</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-mcmc-maxrejections"><code class="docutils literal notranslate"><span class="pre">General.MCMC.MaxRejections</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-systematics"><code class="docutils literal notranslate"><span class="pre">General.Systematics</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-systematics-xseccovname"><code class="docutils literal notranslate"><span class="pre">General.Systematics.XsecCovName</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-systematics-xsecfix"><code class="docutils literal notranslate"><span class="pre">General.Systematics.XsecFix</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-systematics-xseccovfile"><code class="docutils literal notranslate"><span class="pre">General.Systematics.XsecCovFile</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-systematics-xsecpcathreshold"><code class="docutils literal notranslate"><span class="pre">General.Systematics.XsecPCAThreshold</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-systematics-xsecpcaparams"><code class="docutils literal notranslate"><span class="pre">General.Systematics.XsecPCAParams</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-general-systematics-xsecstepscale"><code class="docutils literal notranslate"><span class="pre">General.Systematics.XsecStepScale</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predictive">Predictive</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-predictive"><code class="docutils literal notranslate"><span class="pre">Predictive</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-predictive-ntoy"><code class="docutils literal notranslate"><span class="pre">Predictive.Ntoy</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-predictive-fullllh"><code class="docutils literal notranslate"><span class="pre">Predictive.FullLLH</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-predictive-priorpredictive"><code class="docutils literal notranslate"><span class="pre">Predictive.PriorPredictive</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-predictive-burninsteps"><code class="docutils literal notranslate"><span class="pre">Predictive.BurnInSteps</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-predictive-posteriorfile"><code class="docutils literal notranslate"><span class="pre">Predictive.PosteriorFile</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-predictive-toyfile"><code class="docutils literal notranslate"><span class="pre">Predictive.ToyFile</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-predictive-throwparamgrouponly"><code class="docutils literal notranslate"><span class="pre">Predictive.ThrowParamGroupOnly</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-predictive-throwsingleparams"><code class="docutils literal notranslate"><span class="pre">Predictive.ThrowSingleParams</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-predictive-standardfluctuation"><code class="docutils literal notranslate"><span class="pre">Predictive.StandardFluctuation</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-predictive-debughistograms"><code class="docutils literal notranslate"><span class="pre">Predictive.DebugHistograms</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-predictive-parameterbounds"><code class="docutils literal notranslate"><span class="pre">Predictive.ParameterBounds</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-predictive-bymode"><code class="docutils literal notranslate"><span class="pre">Predictive.ByMode</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#likelihood-scans">Likelihood scans</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-llhscan"><code class="docutils literal notranslate"><span class="pre">LLHScan</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-llhscan-llhscanskipvector"><code class="docutils literal notranslate"><span class="pre">LLHScan.LLHScanSkipVector</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-llhscan-llhscanbysample"><code class="docutils literal notranslate"><span class="pre">LLHScan.LLHScanBySample</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-llhscan-llhscanpoints"><code class="docutils literal notranslate"><span class="pre">LLHScan.LLHScanPoints</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-llhscan-2dllhscanpoints"><code class="docutils literal notranslate"><span class="pre">LLHScan.2DLLHScanPoints</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-llhscan-llhparameters"><code class="docutils literal notranslate"><span class="pre">LLHScan.LLHParameters</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-llhscan-scanranges"><code class="docutils literal notranslate"><span class="pre">LLHScan.ScanRanges</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-llhscan-scanranges-name"><code class="docutils literal notranslate"><span class="pre">LLHScan.ScanRanges.&lt;name&gt;</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-llhscan-llhtype"><code class="docutils literal notranslate"><span class="pre">LLHScan.LLHType</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-llhscan-stepscaleparameters"><code class="docutils literal notranslate"><span class="pre">LLHScan.StepScaleParameters</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sigma-variations">Sigma variations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-sigmavar"><code class="docutils literal notranslate"><span class="pre">SigmaVar</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-sigmavar-sigmaarray"><code class="docutils literal notranslate"><span class="pre">SigmaVar.SigmaArray</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-sigmavar-skipvector"><code class="docutils literal notranslate"><span class="pre">SigmaVar.SkipVector</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-sigmavar-customrange"><code class="docutils literal notranslate"><span class="pre">SigmaVar.CustomRange</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-sigmavar-customrange-name"><code class="docutils literal notranslate"><span class="pre">SigmaVar.CustomRange.&lt;name&gt;</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#config-sigmavar-customrange-name-name"><code class="docutils literal notranslate"><span class="pre">SigmaVar.CustomRange.&lt;name&gt;.&lt;name&gt;</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptation">Adaptation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-settings"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-settings-startthrow"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.StartThrow</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-settings-startupdate"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.StartUpdate</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-settings-endupdate"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.EndUpdate</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-settings-updatestep"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.UpdateStep</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-settings-saveniterations"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.SaveNIterations</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-settings-outputfilename"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.OutputFileName</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-settings-userobbinsmonro"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.UseRobbinsMonro</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-settings-targetacceptance"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.TargetAcceptance</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-settings-totalrobbinsmonrorestarts"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.TotalRobbinsMonroRestarts</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-settings-acceptanceratebatchsize"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Settings.AcceptanceRateBatchSize</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-covariance"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Covariance</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-covariance-name"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Covariance.&lt;name&gt;</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-covariance-name-doadaption"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Covariance.&lt;name&gt;.DoAdaption</span></code></a></li>
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#config-adaptionoptions-covariance-name-parameterstoskip"><code class="docutils literal notranslate"><span class="pre">AdaptionOptions.Covariance.&lt;name&gt;.ParametersToSkip</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kinematic-distribution-plots">Kinematic distribution plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#config-kinematicdistributionplots"><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#config-kinematicdistributionplots-item"><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[]</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-kinematicdistributionplots-item-name"><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[].Name</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-kinematicdistributionplots-item-varstrings"><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[].VarStrings</span></code></a></li>
+<li class="toc-h5 nav-item toc-entry"><a class="reference internal nav-link" href="#config-kinematicdistributionplots-item-kinematiccuts"><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[].KinematicCuts</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h6 nav-item toc-entry"><a class="reference internal nav-link" href="#config-kinematicdistributionplots-item-kinematiccuts-item"><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[].KinematicCuts[]</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h7 nav-item toc-entry"><a class="reference internal nav-link" href="#config-kinematicdistributionplots-item-kinematiccuts-item-varstring"><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[].KinematicCuts[].VarString</span></code></a></li>
+<li class="toc-h7 nav-item toc-entry"><a class="reference internal nav-link" href="#config-kinematicdistributionplots-item-kinematiccuts-item-range"><code class="docutils literal notranslate"><span class="pre">KinematicDistributionPlots[].KinematicCuts[].Range</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-configuration">Example configuration</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=75c7c72ae941e8b558d8"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=75c7c72ae941e8b558d8"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright MaCh3 Collaboration.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.24.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

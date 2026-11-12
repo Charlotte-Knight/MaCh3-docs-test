@@ -1,0 +1,14 @@
+.. _exhale_enum_SampleHandlerBase_8h_1acd80f4d29c8405ff6fa2dd89ff4e9365:
+
+Enum SamplePlotType
+===================
+
+- Defined in :ref:`file_Samples_SampleHandlerBase.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: SamplePlotType
+   :project: MaCh3

@@ -1,0 +1,55 @@
+
+.. _file_Samples_SampleHandlerFunctional.h:
+
+File SampleHandlerFunctional.h
+==============================
+
+|exhale_lsh| :ref:`Parent directory <dir_Samples>` (``Samples``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+Definition (``Samples/SampleHandlerFunctional.h``)
+--------------------------------------------------
+
+
+.. toctree::
+   :maxdepth: 1
+
+   program_listing_file_Samples_SampleHandlerFunctional.h.rst
+
+
+
+
+
+Includes
+--------
+
+
+- ``functional``
+
+- ``vector``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_Samples_SampleHandlerBase.h`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_M3`
+
+- :ref:`namespace_M3__detail`
+

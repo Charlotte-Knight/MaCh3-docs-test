@@ -1,0 +1,239 @@
+
+.. _program_listing_file_Parameters_AdaptiveMCMCHandler.h:
+
+Program Listing for File AdaptiveMCMCHandler.h
+==============================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file_Parameters_AdaptiveMCMCHandler.h>` (``Parameters/AdaptiveMCMCHandler.h``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #pragma once
+   
+   // MaCh3 Includes
+   #include "Manager/Manager.h"
+   #include "Parameters/ParameterHandlerUtils.h"
+   
+   _MaCh3_Safe_Include_Start_ //{
+   #include "Math/DistFunc.h"
+   _MaCh3_Safe_Include_End_ //}
+   
+   
+   class AdaptiveMCMCHandler
+   {
+    public:
+     AdaptiveMCMCHandler();
+   
+     virtual ~AdaptiveMCMCHandler();
+   
+     void Print() const;
+   
+     bool InitFromConfig(const YAML::Node &adapt_manager, const std::string &matrix_name_str,
+                         const std::vector<std::string> *parameter_names,
+                         const std::vector<double> *parameters,
+                         const std::vector<double> *fixed,
+                         const std::vector<bool> *param_skip_adapt_flags,
+                         const TMatrixDSym* throwMatrix,
+                         const double initial_scale_);
+   
+     void CreateNewAdaptiveCovariance();
+   
+     void SetAdaptiveBlocks(const std::vector<std::vector<int>> &block_indices);
+   
+     void SaveAdaptiveToFile(const std::string &outFileName, const std::string &systematicName, const bool is_final = false);
+   
+     void SetThrowMatrixFromFile(const std::string &matrix_file_name,
+                                 const std::string &matrix_name,
+                                 const std::string &means_name,
+                                 bool &use_adaptive);
+   
+     void CheckMatrixValidityForAdaption(const TMatrixDSym *covMatrix) const;
+   
+     void UpdateAdaptiveCovariance();
+   
+     bool IndivStepScaleAdapt() const;
+   
+     bool ShouldUpdateMatrixAdapt();
+   
+     bool AdaptionUpdate() const;
+   
+     bool SkipAdaption() const;
+   
+     int GetParIndex(const std::string& name) const {
+       // HH: Adapted from ParameterHandlerBase.cpp
+       int index = M3::_BAD_INT_;
+       for (size_t i = 0; i < _ParamNames->size(); i++) {
+         if(name == _ParamNames->at(i)) {
+           index = static_cast<int>(i);
+           break;
+         }
+       }
+       return index;
+     }
+   
+     std::vector<int> GetParIndicesFromNames(const std::vector<std::string>& param_names) const {
+       std::vector<int> indices;
+       for (const auto& name : param_names) {
+         int index = GetParIndex(name);
+         if (index != M3::_BAD_INT_) {
+           indices.push_back(index);
+         } else {
+           MACH3LOG_ERROR("Parameter name {} not found in parameter list", name);
+           throw MaCh3Exception(__FILE__, __LINE__);
+         }
+       }
+       return indices;
+     }
+   
+     void SetParams(const std::vector<double> *params)
+     {
+       _fCurrVal = params;
+     }
+   
+     void SetFixed(const std::vector<double> *fix)
+     {
+       _fFixedPars = fix;
+     }
+   
+     int GetNFixed() const
+     {
+       if (!_fFixedPars)
+       {
+         return 0;
+       }
+       int n_fixed = 0;
+       for (int i = 0; i < static_cast<int>(_fFixedPars->size()); i++)
+       {
+         if ((*_fFixedPars)[i] < 0)
+         {
+           n_fixed++;
+         }
+       }
+       return n_fixed;
+     }
+   
+     int GetNumParams() const
+     {
+       return static_cast<int>(_fCurrVal->size());
+     }
+   
+     bool IsFixed(const int ipar) const
+     {
+       if (!_fFixedPars)
+       {
+         return false;
+       }
+       return ((*_fFixedPars)[ipar] < 0);
+     }
+   
+     double CurrVal(const int par_index) const;
+   
+     int GetTotalSteps() const
+     {
+       return total_steps;
+     }
+   
+     void SetTotalSteps(const int nsteps)
+     {
+       total_steps = nsteps;
+     }
+   
+     void IncrementNSteps()
+     {
+       total_steps++;
+     }
+   
+     void IncrementAcceptedSteps()
+     {
+       prev_step_accepted = true;
+     }
+   
+     const TMatrixDSym *GetAdaptiveCovariance() const
+     {
+       return adaptive_covariance;
+     }
+   
+     std::vector<double> GetParameterMeans() const
+     {
+       return par_means;
+     }
+   
+     std::string GetOutFileName() const
+     {
+       return output_file_name;
+     }
+   
+     double GetAdaptionScale() const
+     {
+       return adaption_scale;
+     }
+   
+     bool GetStartRobbinsMonro() const
+     {
+       return use_robbins_monro && total_steps>start_adaptive_throw && total_steps<end_adaptive_update;
+     }
+   
+     bool GetUseRobbinsMonro() const{
+       return use_robbins_monro;
+     }
+   
+     void UpdateRobbinsMonroScale();
+   
+   private:
+     void CalculateRobbinsMonroStepLength();
+   
+     int start_adaptive_throw;
+   
+     int start_adaptive_update;
+   
+     int end_adaptive_update;
+   
+     int adaptive_update_step;
+   
+     int adaptive_save_n_iterations;
+   
+     std::string output_file_name;
+   
+     std::vector<int> adapt_block_matrix_indices;
+   
+     std::vector<int> adapt_block_sizes;
+   
+     // Variables directedly linked to adaption
+     std::vector<double> par_means;
+   
+     TMatrixDSym *adaptive_covariance;
+   
+     int total_steps;
+   
+     double adaption_scale;
+   
+     double initial_scale;
+   
+     const std::vector<double> *_fFixedPars;
+   
+     const std::vector<double> *_fCurrVal;
+   
+     const std::vector<std::string> *_ParamNames;
+   
+     int acceptance_rate_batch_size;
+   
+     double target_acceptance;
+   
+     bool use_robbins_monro;
+   
+     double c_robbins_monro;
+   
+     int n_rm_restarts;
+   
+     int total_rm_restarts;
+   
+     bool prev_step_accepted;
+   
+     const std::vector<bool>* _param_skip_adapt_flags;
+   
+     const TMatrixDSym* initial_throw_matrix;
+   
+     bool initial_throw_matrix_saved = false;
+   };

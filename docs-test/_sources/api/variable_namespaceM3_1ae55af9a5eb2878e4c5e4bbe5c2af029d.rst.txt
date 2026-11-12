@@ -1,0 +1,14 @@
+.. _exhale_variable_namespaceM3_1ae55af9a5eb2878e4c5e4bbe5c2af029d:
+
+Variable M3::KinematicUpBound
+=============================
+
+- Defined in :ref:`file_Manager_Core.h`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: M3::KinematicUpBound
+   :project: MaCh3
