@@ -21,7 +21,11 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
     "api_navigation",
+    "cli_help",
+    "config_reference",
 ]
+
+mach3_executable = os.environ.get("MACH3_EXECUTABLE", "mach3")
 
 root_doc = "index"
 primary_domain = "cpp"

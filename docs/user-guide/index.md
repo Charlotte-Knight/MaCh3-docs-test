@@ -7,6 +7,8 @@ handling, and running MaCh3 in common environments.
 :maxdepth: 2
 
 overview
+cli
+configuration
 faq
 bayesian-analysis
 posterior-predictive

@@ -1,0 +1,311 @@
+$schema: http://json-schema.org/draft-07/schema#
+title: MaCh3 fitter configuration (demonstration)
+description: >-
+  Provisional schema inferred from a tutorial configuration and selected MaCh3
+  source checks. It is not a complete or authoritative runtime specification.
+  Settings are optional here because requirements depend on the executable and
+  algorithm. Additional keys are permitted for experiment-specific extensions.
+  Example values are illustrative, not runtime defaults.
+type: object
+additionalProperties: true
+properties:
+  General:
+    type: object
+    description: Output, algorithm selection, and common fitter settings.
+    properties:
+      OutputFile:
+        type: string
+        description: Path to the output ROOT file.
+        examples: [Test.root]
+      TutorialSamples:
+        type: array
+        description: Tutorial-specific list of sample configuration YAML paths.
+        items: {type: string}
+        examples: [[TutorialConfigs/Samples/SampleHandler_Tutorial.yaml]]
+      FittingAlgorithm:
+        type: string
+        description: >-
+          Fitter algorithm name. The supplied example uses MR2T2; other names
+          depend on the factory and registered plugins, so no exhaustive enum
+          is imposed.
+        examples: [MR2T2, DelayedMR2T2]
+      ProcessMCMC:
+        type: boolean
+        description: Request chain processing after fitting, where supported by the driver.
+        examples: [false]
+      Debug:
+        type: boolean
+        description: Enable additional debugging output where supported.
+        examples: [false]
+      Seed:
+        type: integer
+        minimum: 0
+        description: Random seed; the interpretation of zero is implementation-dependent.
+        examples: [0]
+      Fitter:
+        type: object
+        properties:
+          FitTestLikelihood:
+            type: boolean
+            description: Use the fitter's test-likelihood mode instead of the normal analysis.
+            examples: [false]
+      Minuit2:
+        type: object
+        description: Settings used by the Minuit fitter.
+        properties:
+          NSteps:
+            type: integer
+            minimum: 1
+            description: Maximum allowed number of iterations.
+            examples: [100000]
+      PSO:
+        type: object
+        description: Particle swarm optimisation settings; coefficient semantics are provisional.
+        properties:
+          Constriction: {type: number, description: Constriction coefficient., examples: [1]}
+          Inertia: {type: number, description: Inertial contribution to particle motion., examples: [1.0]}
+          One: {type: number, description: First acceleration coefficient., examples: [1.0]}
+          Two: {type: number, description: Second acceleration coefficient., examples: [1.0]}
+          Particles: {type: integer, minimum: 1, description: Number of swarm particles., examples: [10]}
+          Iterations: {type: integer, minimum: 1, description: Maximum swarm iterations., examples: [10000]}
+          Convergence: {type: number, description: Swarm convergence threshold., examples: [1.0]}
+          TestLikelihoodDim: {type: integer, minimum: 1, description: Dimensionality of the test likelihood., examples: [9]}
+      MCMC:
+        type: object
+        description: Chain length, checkpointing, multicanonical sampling, and delayed rejection.
+        properties:
+          NSteps: {type: integer, minimum: 1, description: Number of MCMC steps., examples: [10000]}
+          AutoSave:
+            type: integer
+            minimum: 1
+            description: Number of steps between chain autosaves; shorter intervals reduce work lost on interruption.
+            examples: [10000]
+          Multicanonical:
+            type: object
+            description: >-
+              Bias sampling of a chosen parameter. Spline and umbrella settings
+              are mode-dependent; the appropriate bias must be accounted for
+              when reconstructing the posterior.
+            properties:
+              Enabled: {type: boolean, description: Enable multicanonical sampling., examples: [false]}
+              VariableName: {type: string, description: Branch name of the parameter to bias., examples: [delta_cp]}
+              Beta: {type: number, description: "Bias strength: the example describes 1 as full strength and 0 as no bias.", examples: [1.0]}
+              Spline:
+                type: object
+                properties:
+                  SplineMode: {type: boolean, description: Use a spline bias rather than an analytic umbrella., examples: [false]}
+                  SplineFile:
+                    type: string
+                    description: ROOT file containing a TGraph of parameter value versus bias weight.
+                    examples: [bias/dcp_spline.root]
+              Umbrella:
+                type: object
+                properties:
+                  UmbrellaBiasFunction:
+                    type: string
+                    description: Analytic umbrella shape; names are taken from the example's comments.
+                    enum: [gaussian, generalisedGaussian, vonMises]
+                    examples: [generalisedGaussian]
+                  UmbrellaMean: {type: number, description: Centre of the umbrella bias., examples: [0.6]}
+                  UmbrellaWidth: {type: number, exclusiveMinimum: 0, description: Width parameter for the selected bias function., examples: [0.25]}
+                  UmbrellaAdjustStepScale:
+                    type: boolean
+                    description: Adjust proposal scale using the umbrella width; the example notes a delta_cp-specific assumption.
+                    examples: [true]
+                  UmbrellaStepScaleFactor: {type: number, exclusiveMinimum: 0, description: Additional proposal-scale multiplier., examples: [1.0]}
+                  AutoOverlapMode:
+                    type: boolean
+                    description: Estimate widths from a target overlap; experimental according to the supplied comments.
+                    examples: [false]
+                  UmbrellaNumber: {type: integer, minimum: 1, description: Number of umbrella windows., examples: [5]}
+                  SigmaOverlap: {type: number, exclusiveMinimum: 0, description: Target overlap in sigma units., examples: [2]}
+                  FlipWindow:
+                    type: boolean
+                    description: Experimental mirroring around the window centre; the example recommends leaving it disabled.
+                    examples: [false]
+          PrintSummary: {type: boolean, description: Print a delayed-rejection summary., examples: [false]}
+          initial_scale:
+            type: number
+            exclusiveMinimum: 0
+            description: First delayed proposal scale relative to the parameter-handler scale; the key is lowercase.
+            examples: [1]
+          DecayRate: {type: number, exclusiveMinimum: 0, description: Multiplier applied to the previous delayed proposal scale., examples: [0.1]}
+          DelayOnlyOutBounds: {type: boolean, description: Limit delayed rejection to out-of-bounds proposals., examples: [false]}
+          DelayProbability: {type: number, minimum: 0, maximum: 1, description: Probability of attempting delayed rejection., examples: [1.0]}
+          MaxRejections: {type: integer, minimum: 0, description: Maximum additional delayed proposals per step., examples: [1]}
+      Systematics:
+        type: object
+        description: Covariance inputs, fixed parameters, PCA, and proposal scaling.
+        properties:
+          XsecCovName: {type: string, description: Name of the covariance matrix or parameter handler., examples: [xsec_cov]}
+          XsecFix:
+            type: array
+            description: Names of parameters to hold fixed.
+            items: {type: string}
+            examples: [[baseline, density, Ye, prod_height]]
+          XsecCovFile:
+            type: array
+            description: Paths to systematic and oscillation model YAML files.
+            items: {type: string}
+            examples: [[TutorialConfigs/CovObjs/SystematicModel.yaml, TutorialConfigs/CovObjs/OscillationModel.yaml]]
+          XsecPCAThreshold:
+            type: number
+            description: PCA threshold; the tutorial uses -1 to disable PCA.
+            examples: [-1]
+          XsecPCAParams:
+            type: array
+            description: Pair defining the PCA parameter selection; the example uses sentinel values.
+            minItems: 2
+            maxItems: 2
+            items: {type: integer}
+            examples: [[-999, -999]]
+          XsecStepScale: {type: number, exclusiveMinimum: 0, description: Global systematic-parameter proposal scale., examples: [0.05]}
+  Predictive:
+    type: object
+    description: Prior/posterior predictive ensembles and diagnostic outputs.
+    properties:
+      Ntoy: {type: integer, minimum: 1, description: Number of predictive throws., examples: [1000]}
+      FullLLH: {type: boolean, description: Use the full likelihood rather than only the sample contribution., examples: [false]}
+      PriorPredictive: {type: boolean, description: "True selects prior predictive; false selects posterior predictive.", examples: [false]}
+      BurnInSteps: {type: integer, minimum: 0, description: Number of initial chain steps excluded as burn-in., examples: [1000]}
+      PosteriorFile: {type: string, description: ROOT chain file used for posterior sampling., examples: [Test.root]}
+      ToyFile: {type: string, description: ROOT file for predictive toys., examples: [PredictiveToys.root]}
+      ThrowParamGroupOnly:
+        type: array
+        description: Restrict throws to named parameter groups; do not combine a nonempty list with ThrowSingleParams.
+        items: {type: string}
+        examples: [[]]
+      ThrowSingleParams:
+        type: array
+        description: Restrict throws to named parameters; do not combine a nonempty list with ThrowParamGroupOnly.
+        items: {type: string}
+        examples: [[]]
+      StandardFluctuation: {type: boolean, description: Use bin-based Poisson fluctuations rather than the slower event-based approach., examples: [true]}
+      DebugHistograms: {type: boolean, description: Produce per-bin event-count debugging histograms., examples: [true]}
+      ParameterBounds:
+        type: array
+        description: Additional predictive restrictions as pairs of parameter name and two numeric bounds.
+        items:
+          type: array
+          minItems: 2
+          maxItems: 2
+          items:
+            - {type: string, description: Parameter name.}
+            - type: array
+              minItems: 2
+              maxItems: 2
+              items: {type: number}
+        examples: [[[delm2_23, [0, 999]], [sin2th_23, [0.5, 1]]]]
+      ByMode: {type: boolean, description: Produce a mode-by-mode breakdown; may require substantial memory., examples: [false]}
+    not:
+      required: [ThrowParamGroupOnly, ThrowSingleParams]
+      properties:
+        ThrowParamGroupOnly: {minItems: 1}
+        ThrowSingleParams: {minItems: 1}
+  LLHScan:
+    type: object
+    description: One- and two-dimensional likelihood scan settings.
+    properties:
+      LLHScanSkipVector:
+        type: array
+        description: Parameter names or wildcard patterns excluded from scans.
+        items: {type: string}
+      LLHScanBySample: {type: boolean, description: Save individual sample likelihood contributions., examples: [true]}
+      LLHScanPoints: {type: integer, minimum: 1, description: Number of scan points per parameter., examples: [50]}
+      2DLLHScanPoints: {type: integer, minimum: 1, description: Number of points per axis in a two-dimensional scan., examples: [20]}
+      LLHParameters:
+        type: array
+        description: Parameter names selected for likelihood maps.
+        items: {type: string}
+        examples: [[delta_cp, sin2th_23, sin2th_13]]
+      ScanRanges:
+        type: object
+        description: Map from parameter name to a pair of physical scan limits.
+        additionalProperties:
+          type: array
+          minItems: 2
+          maxItems: 2
+          items: {type: number}
+      LLHType: {type: string, description: Likelihood component or branch to scan., examples: [Total_LLH]}
+      StepScaleParameters:
+        type: array
+        description: Parameter names selected for step-scale studies (inferred from the setting name).
+        items: {type: string}
+        examples: [[]]
+  SigmaVar:
+    type: object
+    description: Parameter variations for sigma-variation plots.
+    properties:
+      SigmaArray:
+        type: array
+        description: Sigma offsets to evaluate; must include zero.
+        items: {type: number}
+        contains: {const: 0}
+        examples: [[-3, -1, 0, 1, 3]]
+      SkipVector:
+        type: array
+        description: Parameter names to skip.
+        items: {type: string}
+      CustomRange:
+        type: object
+        description: Map from parameter names to maps of sigma-offset strings and custom parameter values.
+        additionalProperties:
+          type: object
+          additionalProperties: {type: number}
+        examples: [{Norm_Param_0: {"-3": 0.25, "-1": 0.5, "1": 1.25, "3": 1.5}}]
+  AdaptionOptions:
+    type: object
+    description: Adaptive covariance and Robbins-Monro settings; preserve the spelling AdaptionOptions.
+    properties:
+      Settings:
+        type: object
+        properties:
+          StartThrow: {type: integer, minimum: 0, description: Step at which proposals start using the adapted covariance., examples: [1000]}
+          StartUpdate: {type: integer, minimum: 0, description: Step at which covariance accumulation starts., examples: [1]}
+          EndUpdate: {type: integer, minimum: 0, description: Step after which covariance updates stop., examples: [10000]}
+          UpdateStep: {type: integer, minimum: 1, description: Number of steps between covariance updates., examples: [1000]}
+          SaveNIterations: {type: integer, minimum: 1, description: Number of steps between saving adaptation state., examples: [10000]}
+          OutputFileName: {type: string, description: ROOT file containing adaptation output., examples: [Adapt.root]}
+          UseRobbinsMonro: {type: boolean, description: Enable Robbins-Monro proposal adaptation., examples: [false]}
+          TargetAcceptance: {type: number, exclusiveMinimum: 0, exclusiveMaximum: 1, description: Target acceptance probability., examples: [0.234]}
+          TotalRobbinsMonroRestarts: {type: integer, minimum: 0, description: Number of Robbins-Monro counter restarts., examples: [5]}
+          AcceptanceRateBatchSize: {type: integer, minimum: 1, description: Batch size for acceptance-rate adaptation., examples: [5000]}
+      Covariance:
+        type: object
+        description: Map keyed by covariance-matrix name.
+        additionalProperties:
+          type: object
+          properties:
+            DoAdaption: {type: boolean, description: Enable adaptation for this covariance., examples: [false]}
+            ParametersToSkip:
+              type: array
+              description: Parameter names or wildcard patterns excluded from adaptation.
+              items: {type: string}
+              examples: [[delm2_*, sin2th_*, delta_cp]]
+  KinematicDistributionPlots:
+    type: array
+    description: Additional one- or two-dimensional kinematic distributions to plot.
+    items:
+      type: object
+      properties:
+        Name: {type: string, description: Human-readable plot label., examples: ["Q2 vs True Enu"]}
+        VarStrings:
+          type: array
+          minItems: 1
+          description: Kinematic variable names defining the plot axes.
+          items: {type: string}
+          examples: [[TrueNeutrinoEnergy, TrueQ2]]
+        KinematicCuts:
+          type: array
+          description: Optional cuts restricting the plotted events.
+          items:
+            type: object
+            properties:
+              VarString: {type: string, description: Kinematic variable to cut., examples: [TrueNeutrinoEnergy]}
+              Range:
+                type: array
+                minItems: 2
+                maxItems: 2
+                description: Pair of numeric cut bounds; ordering is not checked by this schema.
+                items: {type: number}
+                examples: [[0.5, 3]]

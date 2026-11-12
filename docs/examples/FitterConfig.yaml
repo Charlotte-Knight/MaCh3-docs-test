@@ -1,0 +1,104 @@
+General:
+  OutputFile: Test.root
+  TutorialSamples: [TutorialConfigs/Samples/SampleHandler_Tutorial.yaml]
+  FittingAlgorithm: MR2T2
+  ProcessMCMC: false
+  Debug: false
+  Seed: 0
+  Fitter:
+    FitTestLikelihood: false
+  Minuit2:
+    NSteps: 100000
+  PSO:
+    Constriction: 1
+    Inertia: 1.0
+    One: 1.0
+    Two: 1.0
+    Particles: 10
+    Iterations: 10000
+    Convergence: 1.0
+    TestLikelihoodDim: 9
+  MCMC:
+    NSteps: 10000
+    AutoSave: 10000
+    Multicanonical:
+      Enabled: false
+      VariableName: delta_cp
+      Beta: 1.0
+      Spline:
+        SplineMode: false
+        SplineFile: bias/dcp_spline.root
+      Umbrella:
+        UmbrellaBiasFunction: generalisedGaussian
+        UmbrellaMean: 0.6
+        UmbrellaWidth: 0.25
+        UmbrellaAdjustStepScale: true
+        UmbrellaStepScaleFactor: 1.0
+        AutoOverlapMode: false
+        UmbrellaNumber: 5
+        SigmaOverlap: 2
+        FlipWindow: false
+    PrintSummary: false
+    initial_scale: 1
+    DecayRate: 0.1
+    DelayOnlyOutBounds: false
+    DelayProbability: 1.0
+    MaxRejections: 1
+  Systematics:
+    XsecCovName: xsec_cov
+    XsecFix: [baseline, density, Ye, prod_height]
+    XsecCovFile:
+      - TutorialConfigs/CovObjs/SystematicModel.yaml
+      - TutorialConfigs/CovObjs/OscillationModel.yaml
+    XsecPCAThreshold: -1
+    XsecPCAParams: [-999, -999]
+    XsecStepScale: 0.05
+Predictive:
+  Ntoy: 1000
+  FullLLH: false
+  PriorPredictive: false
+  BurnInSteps: 1000
+  PosteriorFile: Test.root
+  ToyFile: PredictiveToys.root
+  ThrowParamGroupOnly: []
+  ThrowSingleParams: []
+  StandardFluctuation: true
+  DebugHistograms: true
+  ParameterBounds: []
+  ByMode: false
+LLHScan:
+  LLHScanBySample: true
+  LLHParameters: [delta_cp, sin2th_23, sin2th_13]
+  ScanRanges:
+    delta_cp: [-3.14, 3.14]
+    sin2th_23: [0.35, 0.65]
+  LLHType: Total_LLH
+  StepScaleParameters: []
+SigmaVar:
+  SigmaArray: [-3, -1, 0, 1, 3]
+  SkipVector: []
+  CustomRange:
+    Norm_Param_0: {"-3": 0.25, "-1": 0.5, "1": 1.25, "3": 1.5}
+AdaptionOptions:
+  Settings:
+    StartThrow: 1000
+    StartUpdate: 1
+    EndUpdate: 10000
+    UpdateStep: 1000
+    SaveNIterations: 10000
+    OutputFileName: Adapt.root
+    UseRobbinsMonro: false
+    TargetAcceptance: 0.234
+    TotalRobbinsMonroRestarts: 5
+    AcceptanceRateBatchSize: 5000
+  Covariance:
+    xsec_cov:
+      DoAdaption: false
+KinematicDistributionPlots:
+  - Name: True Neutrino Energy (0.5 GeV < Enu < 3 GeV)
+    VarStrings: [TrueNeutrinoEnergy]
+    KinematicCuts:
+      - VarString: TrueNeutrinoEnergy
+        Range: [0.5, 3]
+  - Name: Q2 vs True Enu
+    VarStrings: [TrueNeutrinoEnergy, TrueQ2]

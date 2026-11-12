@@ -46,7 +46,7 @@ jobs:
       - name: Test versioned publishing
         run: .venv/bin/python -m unittest discover -s .github/CIscripts -p 'test_*.py' -v
 
-      - name: Test API navigation
+      - name: Test documentation extensions
         run: .venv/bin/python -m unittest discover -s docs/_ext -p 'test_*.py' -v
 
       - name: Build Doxygen 1.9.8
@@ -87,6 +87,7 @@ jobs:
       - name: Build documentation
         env:
           PYTHONPATH: ${{ github.workspace }}/build-docs
+          MACH3_EXECUTABLE: ${{ github.workspace }}/build-docs/bin/mach3
           DOCS_VERSION: ${{ github.ref_type == 'tag' && github.ref_name || 'develop' }}
           DOCS_VERSIONS_URL: ${{ steps.pages.outputs.base_url || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}/versions.json
         run: |

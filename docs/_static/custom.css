@@ -2,3 +2,17 @@
   box-sizing: content-box;
   width: 10ch;
 }
+
+.config-setting {
+  margin-block: 1.5rem;
+}
+
+.config-setting > :is(h2, h3, h4, h5, h6) {
+  font-size: 1.1rem;
+  overflow-wrap: anywhere;
+}
+
+.config-setting-metadata {
+  color: var(--pst-color-text-muted);
+  font-size: 0.9rem;
+}

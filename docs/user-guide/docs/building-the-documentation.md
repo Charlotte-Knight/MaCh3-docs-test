@@ -37,6 +37,7 @@ cmake --build build-docs --parallel 4
 cmake --install build-docs
 export PYTHONPATH="$PWD/build-docs${PYTHONPATH:+:$PYTHONPATH}"
 export LD_LIBRARY_PATH="$PWD/build-docs/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export MACH3_EXECUTABLE="$PWD/build-docs/bin/mach3"
 python -c "from pyMaCh3 import manager, samples, splines, fitters, parameters, plotting"
 sphinx-build -W --keep-going -b html docs docs/_build/html
 ```
@@ -45,6 +46,13 @@ ROOT and the normal MaCh3 build prerequisites must already be installed.
 Do not use a different Python version for the bindings and Sphinx.
 The build deliberately fails if pyMaCh3 cannot be imported; the Python API
 reference is generated from real bindings, not mocks.
+The [CLI guide](../cli.md) also executes this build's `mach3 --help` and each
+discovered subcommand's help. `MACH3_EXECUTABLE` selects the executable; otherwise
+it must be available as `mach3` on `PATH`. `MACH3_PLUGINS` is removed from these
+help subprocesses so the reference consistently documents built-in commands.
+Missing executables, unsuccessful help commands, and runtime errors fail the
+documentation build. On macOS, if the executable cannot locate its libraries,
+also set `DYLD_LIBRARY_PATH` to the build's `lib` directory.
 
 Exhale runs Doxygen during the Sphinx build and writes XML for Breathe to
 consume. The generated API pages are written to `docs/api/` and are not
@@ -85,6 +93,23 @@ To run its tests separately:
 ```sh
 python -B -m unittest discover -s docs/_ext -p 'test_*.py' -v
 ```
+
+## Schema-driven configuration reference
+
+The [configuration reference](../configuration.md) is a proof of concept built
+with the local `config_reference` extension. Its JSON Schema is written in
+YAML at `docs/schemas/fitter-config.schema.yaml`; MyST `config-reference`
+directives take a schema filename and a top-level property name. They render
+linked setting entries with types, constraints, descriptions, and YAML examples,
+including nested properties, dynamic map keys, and arrays of objects. Edit property
+descriptions, types, and examples in the schema rather than maintaining
+duplicate reference entries. Sphinx rebuilds the reference from that file.
+
+The sanitized example at `docs/examples/FitterConfig.yaml` is validated with
+`jsonschema` in the documentation extension tests, including CI. The tests also
+check coverage of example fields and selected invalid configurations. This
+does not add validation to MaCh3 itself or make the provisional schema an
+authoritative specification. Review inferred constraints before production use.
 
 ## Automatic Python API reference
 
