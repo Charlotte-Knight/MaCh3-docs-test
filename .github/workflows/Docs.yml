@@ -46,6 +46,9 @@ jobs:
       - name: Test versioned publishing
         run: .venv/bin/python -m unittest discover -s .github/CIscripts -p 'test_*.py' -v
 
+      - name: Test API navigation
+        run: .venv/bin/python -m unittest discover -s docs/_ext -p 'test_*.py' -v
+
       - name: Build Doxygen 1.9.8
         run: |
           curl --fail --location --retry 3 \

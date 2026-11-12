@@ -84,7 +84,7 @@ def assemble(
     versions[version] = {"version": version, "name": version, "url": base_url + version + "/"}
     for name, entry in versions.items():
         entry["url"] = base_url + name + "/"
-        entry["name"] = "Development" if name == "develop" else name
+        entry["name"] = name
         entry.pop("preferred", None)
     releases = sorted(
         (name for name in versions if name != "develop"), key=release_key, reverse=True,

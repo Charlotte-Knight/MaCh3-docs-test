@@ -59,6 +59,33 @@ Diagrams use SVG with the same monospace font stack as PyData's API signatures,
 so labels use the reader's available fonts rather than a font baked into a PNG.
 The matching Graphviz font stack is configured in `docs/conf.py`.
 
+## Automatic C++ API navigation
+
+The left sidebar groups API entities by the directory containing their declaring
+header, including nested source directories. For example, classes declared in
+`Fitters/Algorithms/` appear beneath **C++ API > Fitters > Algorithms**.
+Each directory has one overview page with section headings for classes, structs,
+unions, enums, functions, variables, type aliases, and macros, rather than
+separate category pages. Individual entries retain their own API pages.
+Only nonempty sections appear,
+and entries are sorted alphabetically within each category. Namespaces, Doxygen
+pages, and the directory-grouped source-file index have separate sections.
+Entities without a known declaring file appear under **Other API entities**.
+
+The local `api_navigation` Sphinx extension runs after Exhale, using its parsed
+Doxygen file locations and generated page names to create nested toctrees.
+New entities and source directories appear automatically; no class lists need
+maintenance. Existing API pages, cross-reference targets, diagrams, and the
+landing page's hierarchy views are preserved. Generated navigation lives under
+`docs/api/_navigation/` and is ignored along with the rest of `docs/api/`.
+
+The normal `sphinx-build` command runs this step both locally and in CI.
+To run its tests separately:
+
+```sh
+python -B -m unittest discover -s docs/_ext -p 'test_*.py' -v
+```
+
 ## Automatic Python API reference
 
 The [pyMaCh3 guides](../../pymach3/index.md) use Sphinx autodoc to import each

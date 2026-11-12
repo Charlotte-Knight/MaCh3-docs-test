@@ -4,9 +4,12 @@ author = "MaCh3 Collaboration"
 
 import os
 import re
+import sys
+from pathlib import Path
 
 from exhale.utils import makeCustomSpecificationsMapping
 
+sys.path.insert(0, str(Path(__file__).parent / "_ext"))
 
 extensions = [
     "breathe",
@@ -17,6 +20,7 @@ extensions = [
     "sphinxcontrib.bibtex",
     "sphinx.ext.autodoc",
     "sphinx.ext.napoleon",
+    "api_navigation",
 ]
 
 root_doc = "index"
@@ -130,6 +134,7 @@ html_title = "MaCh3 documentation"
 html_logo = "_static/mach3logo.png"
 html_favicon = "_static/mach3logo.png"
 html_static_path = ["_static"]
+html_css_files = ["custom.css"]
 templates_path = ["_templates"]
 html_js_files = ["version-switcher.js"]
 html_context = {
@@ -142,7 +147,9 @@ html_theme_options = {
         "image_dark": "_static/mach3logo.png",
     },
     "github_url": "https://github.com/mach3-software/MaCh3",
-    "navbar_start": ["navbar-logo", "docs-version-switcher"],
+    "navbar_start": ["navbar-logo"],
+    "navbar_end": ["docs-version-switcher", "theme-switcher", "navbar-icon-links"],
+    "show_nav_level": 1,
 }
 
 

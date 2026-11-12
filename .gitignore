@@ -16,6 +16,7 @@ Doc/sphinx/source/conf.py
 docs/api/
 docs/xml/
 docs/_build/
+docs/_ext/__pycache__/
 .cache/
 
 sphinx_env/

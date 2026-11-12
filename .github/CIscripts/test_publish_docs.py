@@ -26,6 +26,7 @@ class PublishingTests(unittest.TestCase):
         manifest = self.publish("develop")
         self.assertIn(self.base + "develop/", (self.site / "index.html").read_text())
         self.assertTrue(manifest[0]["preferred"])
+        self.assertEqual(manifest[0]["name"], "develop")
         self.assertEqual(manifest[1:], json.loads(self.legacy.read_text()))
         self.assertTrue((self.site / ".nojekyll").is_file())
 
@@ -85,7 +86,7 @@ class PublishingTests(unittest.TestCase):
     def test_newer_legacy_entries_survive_an_older_release_build(self):
         manifest = self.publish("develop")
         extra = {
-            "version": "v1.0.0", "name": "v1.0.0 (legacy Doxygen)",
+            "version": "v1.0.0", "name": "v1.0.0 (Doxygen)",
             "url": "https://example.org/v1.0.0/", "legacy": True,
         }
         manifest.append(extra)
