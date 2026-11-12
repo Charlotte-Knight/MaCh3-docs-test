@@ -1,5 +1,0 @@
-<map id="%3" name="%3">
-<area shape="rect" id="node1" title="SampleHandlerBase" alt="" coords="24,5,233,53"/>
-<area shape="rect" id="node2" title="SampleHandlerInterface" alt="" coords="5,101,252,149"/>
-<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="131,54,131,88,126,88,126,54"/>
-</map>

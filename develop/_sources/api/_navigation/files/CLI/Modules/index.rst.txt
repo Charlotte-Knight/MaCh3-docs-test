@@ -1,0 +1,10 @@
+Modules
+=======
+
+.. toctree::
+   :maxdepth: 1
+
+   ../../../../dir_CLI_Modules.rst
+   ../../../../file_CLI_Modules_DiagMCMCModule.hpp.rst
+   ../../../../file_CLI_Modules_GetPenaltyTermModule.hpp.rst
+   ../../../../file_CLI_Modules_ProcessMCMCModule.hpp.rst

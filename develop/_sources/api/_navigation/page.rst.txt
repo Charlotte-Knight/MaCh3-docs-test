@@ -1,0 +1,7 @@
+Doxygen pages
+=============
+
+.. toctree::
+   :maxdepth: 1
+
+   ../page_citelist.rst

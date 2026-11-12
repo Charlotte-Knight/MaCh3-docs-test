@@ -1,7 +1,0 @@
-<map id="%3" name="%3">
-<area shape="rect" id="node1" title="IModuleBase" alt="" coords="50,101,190,149"/>
-<area shape="rect" id="node3" title="M3::IPlugin" alt="" coords="57,197,183,245"/>
-<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="123,150,123,184,117,184,117,150"/>
-<area shape="rect" id="node2" title="M3::DiagMCMCModule" alt="" coords="5,5,235,53"/>
-<area shape="poly" id="edge2" title="public&#45;inheritance" alt="" coords="123,54,123,88,117,88,117,54"/>
-</map>

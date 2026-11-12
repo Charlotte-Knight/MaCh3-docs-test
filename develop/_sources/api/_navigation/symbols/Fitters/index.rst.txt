@@ -1,0 +1,8 @@
+Fitters
+=======
+
+.. toctree::
+   :maxdepth: 1
+
+   Algorithms/index.rst
+   Processing/index.rst

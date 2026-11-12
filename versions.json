@@ -1,91 +1,91 @@
 [
   {
     "version": "develop",
-    "name": "Development",
+    "name": "develop",
     "url": "https://charlotte-knight.github.io/MaCh3-docs-test/develop/",
     "preferred": true
   },
   {
     "version": "legacy-develop",
-    "name": "Development (legacy Doxygen)",
+    "name": "develop (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/",
     "legacy": true
   },
   {
     "version": "v2.7.0",
-    "name": "v2.7.0 (legacy Doxygen)",
+    "name": "v2.7.0 (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/.Archive/v2.7.0/index.html",
     "legacy": true
   },
   {
     "version": "v2.6.0",
-    "name": "v2.6.0 (legacy Doxygen)",
+    "name": "v2.6.0 (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/.Archive/v2.6.0/index.html",
     "legacy": true
   },
   {
     "version": "v2.5.0",
-    "name": "v2.5.0 (legacy Doxygen)",
+    "name": "v2.5.0 (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/.Archive/v2.5.0/index.html",
     "legacy": true
   },
   {
     "version": "v2.4.0",
-    "name": "v2.4.0 (legacy Doxygen)",
+    "name": "v2.4.0 (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/.Archive/v2.4.0/index.html",
     "legacy": true
   },
   {
     "version": "v2.3.0",
-    "name": "v2.3.0 (legacy Doxygen)",
+    "name": "v2.3.0 (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/.Archive/v2.3.0/index.html",
     "legacy": true
   },
   {
     "version": "v2.2.0",
-    "name": "v2.2.0 (legacy Doxygen)",
+    "name": "v2.2.0 (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/.Archive/v2.2.0/index.html",
     "legacy": true
   },
   {
     "version": "v2.1.0",
-    "name": "v2.1.0 (legacy Doxygen)",
+    "name": "v2.1.0 (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/.Archive/v2.1.0/index.html",
     "legacy": true
   },
   {
     "version": "v2.0.0",
-    "name": "v2.0.0 (legacy Doxygen)",
+    "name": "v2.0.0 (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/.Archive/v2.0.0/index.html",
     "legacy": true
   },
   {
     "version": "v1.5.0",
-    "name": "v1.5.0 (legacy Doxygen)",
+    "name": "v1.5.0 (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/.Archive/v1.5.0/index.html",
     "legacy": true
   },
   {
     "version": "v1.4.0",
-    "name": "v1.4.0 (legacy Doxygen)",
+    "name": "v1.4.0 (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/.Archive/v1.4.0/index.html",
     "legacy": true
   },
   {
     "version": "v1.3.0",
-    "name": "v1.3.0 (legacy Doxygen)",
+    "name": "v1.3.0 (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/.Archive/v1.3.0/index.html",
     "legacy": true
   },
   {
     "version": "v1.2.0",
-    "name": "v1.2.0 (legacy Doxygen)",
+    "name": "v1.2.0 (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/.Archive/v1.2.0/index.html",
     "legacy": true
   },
   {
     "version": "v1.1.0",
-    "name": "v1.1.0 (legacy Doxygen)",
+    "name": "v1.1.0 (Doxygen)",
     "url": "https://mach3-software.github.io/MaCh3/.Archive/v1.1.0/index.html",
     "legacy": true
   }

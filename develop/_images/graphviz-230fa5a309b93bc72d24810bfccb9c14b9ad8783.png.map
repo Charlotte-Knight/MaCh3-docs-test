@@ -1,5 +1,0 @@
-<map id="%3" name="%3">
-<area shape="rect" id="node1" title="M3::IPlugin" alt="" coords="25,101,150,149"/>
-<area shape="rect" id="node2" title="M3::PluginBase" alt="" coords="5,5,169,53"/>
-<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="90,54,90,88,85,88,85,54"/>
-</map>

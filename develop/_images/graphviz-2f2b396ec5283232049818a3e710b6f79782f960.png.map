@@ -1,7 +1,0 @@
-<map id="%3" name="%3">
-<area shape="rect" id="node1" title="TF1_red" alt="" coords="7,5,102,53"/>
-<area shape="rect" id="node2" title="TResponseFunction_red" alt="" coords="5,101,245,149"/>
-<area shape="poly" id="edge1" title="public&#45;inheritance" alt="" coords="74,52,102,89,98,92,70,55"/>
-<area shape="rect" id="node3" title="TSpline3_red" alt="" coords="127,5,268,53"/>
-<area shape="poly" id="edge2" title="public&#45;inheritance" alt="" coords="182,55,153,92,149,89,177,52"/>
-</map>

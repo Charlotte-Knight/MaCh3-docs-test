@@ -1,0 +1,11 @@
+CLI
+===
+
+.. toctree::
+   :maxdepth: 1
+
+   API/index.rst
+   Modules/index.rst
+   ../../../dir_CLI.rst
+   ../../../file_CLI_DynamicPlugin.hpp.rst
+   ../../../file_CLI_MaCh3Program.hpp.rst

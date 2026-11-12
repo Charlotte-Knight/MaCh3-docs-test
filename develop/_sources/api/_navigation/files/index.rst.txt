@@ -1,0 +1,15 @@
+Source files
+============
+
+.. toctree::
+   :maxdepth: 1
+
+   CLI/index.rst
+   Doc/index.rst
+   Fitters/index.rst
+   Manager/index.rst
+   NuDock/index.rst
+   Parameters/index.rst
+   Samples/index.rst
+   Splines/index.rst
+   Utils/index.rst

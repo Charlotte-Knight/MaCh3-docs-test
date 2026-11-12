@@ -106,7 +106,7 @@ Functions
 
 - :ref:`exhale_function_namespaceM3_1_1Plotting_1a894dcf7a8543769506cc006b9899c09c`
 
-- :ref:`exhale_function_namespaceM3_1_1Plotting_1a42c78cbe11e4b7244441b871f3ad3e45`
-
 - :ref:`exhale_function_namespaceM3_1_1Plotting_1a1185f525313b8e84842cd0688258b235`
+
+- :ref:`exhale_function_namespaceM3_1_1Plotting_1a42c78cbe11e4b7244441b871f3ad3e45`
 

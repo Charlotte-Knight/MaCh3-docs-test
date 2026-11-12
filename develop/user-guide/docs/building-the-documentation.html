@@ -32,6 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=4ae1632d" />
     <link rel="stylesheet" type="text/css" href="../../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=e55cc7bf" />
   
   <!-- So that users can add custom icons -->
   <script defer src="../../_static/scripts/fontawesome.js?digest=75c7c72ae941e8b558d8"></script>
@@ -133,17 +134,6 @@
   
 </a></div>
     
-      <div class="navbar-item"><div class="pst-js-only">
-  <select class="form-select form-select-sm docs-version-switcher"
-          aria-label="Documentation version"
-          data-version="develop"
-          data-page="user-guide/docs/building-the-documentation.html"
-          data-manifest="https://charlotte-knight.github.io/MaCh3-docs-test/versions.json">
-    <option value="">develop</option>
-  </select>
-  <small class="docs-version-error" role="status" hidden></small>
-</div></div>
-    
   </div>
   
   <div class="col-lg-9 navbar-header-items">
@@ -237,6 +227,17 @@
 </button>
         </div>
       
+      
+        <div class="navbar-item"><div class="pst-js-only">
+  <select class="form-select form-select-sm docs-version-switcher"
+          aria-label="Documentation version"
+          data-version="develop"
+          data-page="user-guide/docs/building-the-documentation.html"
+          data-manifest="https://charlotte-knight.github.io/MaCh3-docs-test/versions.json">
+    <option value="">develop</option>
+  </select>
+  <small class="docs-version-error" role="status" hidden></small>
+</div></div>
       
         <div class="navbar-item">
 
@@ -378,6 +379,17 @@
     
     
       <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><div class="pst-js-only">
+  <select class="form-select form-select-sm docs-version-switcher"
+          aria-label="Documentation version"
+          data-version="develop"
+          data-page="user-guide/docs/building-the-documentation.html"
+          data-manifest="https://charlotte-knight.github.io/MaCh3-docs-test/versions.json">
+    <option value="">develop</option>
+  </select>
+  <small class="docs-version-error" role="status" hidden></small>
+</div></div>
         
           <div class="navbar-item">
 
@@ -551,7 +563,34 @@ committed.</p>
 Exhale adds Breathe’s graph option to every generated class and struct page,
 and Sphinx renders available diagrams with Graphviz. These diagrams are
 regenerated automatically on every documentation build; no per-class pages
-or diagram files need to be maintained by hand.</p>
+or diagram files need to be maintained by hand.
+Diagrams use SVG with the same monospace font stack as PyData’s API signatures,
+so labels use the reader’s available fonts rather than a font baked into a PNG.
+The matching Graphviz font stack is configured in <code class="docutils literal notranslate"><span class="pre">docs/conf.py</span></code>.</p>
+<section id="automatic-c-api-navigation">
+<h2>Automatic C++ API navigation<a class="headerlink" href="#automatic-c-api-navigation" title="Link to this heading">#</a></h2>
+<p>The left sidebar groups API entities by the directory containing their declaring
+header, including nested source directories. For example, classes declared in
+<code class="docutils literal notranslate"><span class="pre">Fitters/Algorithms/</span></code> appear beneath <strong>C++ API &gt; Fitters &gt; Algorithms</strong>.
+Each directory has one overview page with section headings for classes, structs,
+unions, enums, functions, variables, type aliases, and macros, rather than
+separate category pages. Individual entries retain their own API pages.
+Only nonempty sections appear,
+and entries are sorted alphabetically within each category. Namespaces, Doxygen
+pages, and the directory-grouped source-file index have separate sections.
+Entities without a known declaring file appear under <strong>Other API entities</strong>.</p>
+<p>The local <code class="docutils literal notranslate"><span class="pre">api_navigation</span></code> Sphinx extension runs after Exhale, using its parsed
+Doxygen file locations and generated page names to create nested toctrees.
+New entities and source directories appear automatically; no class lists need
+maintenance. Existing API pages, cross-reference targets, diagrams, and the
+landing page’s hierarchy views are preserved. Generated navigation lives under
+<code class="docutils literal notranslate"><span class="pre">docs/api/_navigation/</span></code> and is ignored along with the rest of <code class="docutils literal notranslate"><span class="pre">docs/api/</span></code>.</p>
+<p>The normal <code class="docutils literal notranslate"><span class="pre">sphinx-build</span></code> command runs this step both locally and in CI.
+To run its tests separately:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-B<span class="w"> </span>-m<span class="w"> </span>unittest<span class="w"> </span>discover<span class="w"> </span>-s<span class="w"> </span>docs/_ext<span class="w"> </span>-p<span class="w"> </span><span class="s1">'test_*.py'</span><span class="w"> </span>-v
+</pre></div>
+</div>
+</section>
 <section id="automatic-python-api-reference">
 <h2>Automatic Python API reference<a class="headerlink" href="#automatic-python-api-reference" title="Link to this heading">#</a></h2>
 <p>The <a class="reference internal" href="../../pymach3/index.html"><span class="std std-doc">pyMaCh3 guides</span></a> use Sphinx autodoc to import each
@@ -698,6 +737,7 @@ Read the Docs’ server-side search and page-ranking configuration are not used.
   </div>
   <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-c-api-navigation">Automatic C++ API navigation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#automatic-python-api-reference">Automatic Python API reference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#publishing-with-github-pages">Publishing with GitHub Pages</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#versions-and-legacy-documentation">Versions and legacy documentation</a></li>
