@@ -738,7 +738,10 @@ deployments, and TagDoxygen no longer archives stale <code class="docutils liter
 tags; the original documentation build jobs remain available. The existing
 upstream Doxygen site is also linked from the Sphinx sidebar.</p>
 <p>GitHub Pages serves the static site, including Sphinx’s browser-side search.
-Read the Docs’ server-side search and page-ranking configuration are not used.</p>
+Read the Docs’ server-side search and page-ranking configuration are not used.
+The custom search scorer demotes C++ API pages and Python API entries relative
+to similarly relevant guide pages; API entries remain searchable. Python guide
+text and headings are not demoted.</p>
 </section>
 </section>
 </section>

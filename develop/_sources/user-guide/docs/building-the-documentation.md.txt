@@ -241,3 +241,6 @@ upstream Doxygen site is also linked from the Sphinx sidebar.
 
 GitHub Pages serves the static site, including Sphinx's browser-side search.
 Read the Docs' server-side search and page-ranking configuration are not used.
+The custom search scorer demotes C++ API pages and Python API entries relative
+to similarly relevant guide pages; API entries remain searchable. Python guide
+text and headings are not demoted.
