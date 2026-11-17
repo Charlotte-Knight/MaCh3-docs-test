@@ -138,6 +138,7 @@ exclude_patterns = ["_build", "README.md"]
 html_theme = "pydata_sphinx_theme"
 html_title = "MaCh3 documentation"
 html_show_sourcelink = False
+html_search_scorer = "_static/search-scorer.js"
 html_logo = "_static/mach3logo.png"
 html_favicon = "_static/mach3logo.png"
 html_static_path = ["_static"]
